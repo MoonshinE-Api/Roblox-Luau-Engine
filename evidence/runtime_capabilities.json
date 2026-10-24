@@ -1,0 +1,4820 @@
+{
+  "class": {
+    "Accessory": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Accoutrement"
+    },
+    "AccessoryDescription": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AccountService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Accoutrement": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AchievementService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ActivityHistoryEventService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Actor": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Model"
+    },
+    "AdGui": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "SurfaceGuiBase"
+    },
+    "AdPortal": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AdvLuaDragger": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AirController": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ControllerBase"
+    },
+    "AlignOrientation": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Constraint"
+    },
+    "AlignPosition": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Constraint"
+    },
+    "AnalyticsService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "AngularVelocity": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Constraint"
+    },
+    "Animation": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AnimationClip": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AnimationClipProvider": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "AnimationConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Constraint"
+    },
+    "AnimationController": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AnimationFromVideoCreatorService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "AnimationGraphDefinition": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "AnimationClip"
+    },
+    "AnimationNodeDefinition": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AnimationRigData": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AnimationStreamTrack": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BaseAnimationTrack"
+    },
+    "AnimationTrack": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BaseAnimationTrack"
+    },
+    "Animator": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Annotation": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AnnotationsService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "AppAgeSignalsService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "AppLifecycleObserverService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "AppRatingPromptService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "AppStorageService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "LocalStorageService"
+    },
+    "AppUpdateService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ArcHandles": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "HandlesBase"
+    },
+    "AssetCounterService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "AssetDeliveryProxy": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "AssetImportSession": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ImportSession"
+    },
+    "AssetPatchSettings": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AssetQualityService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "AssetService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "Atmosphere": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AtmosphereSensor": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "SensorBase"
+    },
+    "Attachment": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioAnalyzer": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioChannelMixer": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioChannelSplitter": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioChorus": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioCompressor": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioDeviceInput": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioDeviceOutput": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioDistortion": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioEcho": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioEmitter": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioEqualizer": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioFDNReverb": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "AudioFader": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioFilter": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioFlanger": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioFocusService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "AudioGate": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioLimiter": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioListener": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioPages": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Pages"
+    },
+    "AudioPitchShifter": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioPlayer": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioRecorder": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioReverb": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioSearchParams": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioSpeechToText": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioTextToSpeech": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioTremolo": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AudioWindSynthesizer": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "AuroraScript": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "LuaSourceContainer"
+    },
+    "AuroraScriptObject": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AuroraScriptService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "AuroraService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "AvatarAbilityRules": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AvatarAccessoryRules": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AvatarAnimationRules": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AvatarBodyRules": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AvatarChatService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "AvatarClothingRules": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AvatarCollisionRules": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AvatarCreationService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "AvatarEditorService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "AvatarRules": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "AvatarSettings": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Backpack": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "BackpackItem": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Model"
+    },
+    "BadgeService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "BallSocketConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Constraint"
+    },
+    "BanHistoryPages": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Pages"
+    },
+    "BaseCoreGuiConfiguration": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "BasePart": {
+      "creation": "not directly creatable",
+      "parent": "PVInstance"
+    },
+    "BasePlayerGui": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "BaseRemoteEvent": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "BaseScript": {
+      "creation": "not directly creatable",
+      "parent": "LuaSourceContainer"
+    },
+    "BaseWrap": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Beam": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "BevelMesh": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "DataModelMesh"
+    },
+    "BillboardGui": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiLayerCollector"
+    },
+    "BinaryStringValue": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ValueBase"
+    },
+    "BindableEvent": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "BindableFunction": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "BlockMesh": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BevelMesh"
+    },
+    "BloomEffect": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PostEffect"
+    },
+    "BlurEffect": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PostEffect"
+    },
+    "BodyAngularVelocity": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BodyMover"
+    },
+    "BodyColors": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "LegacyCharacterAppearance"
+    },
+    "BodyForce": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BodyMover"
+    },
+    "BodyGyro": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BodyMover"
+    },
+    "BodyMover": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "BodyPartDescription": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "BodyPosition": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BodyMover"
+    },
+    "BodyThrust": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BodyMover"
+    },
+    "BodyVelocity": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BodyMover"
+    },
+    "Bone": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Attachment"
+    },
+    "BoneInstance": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Attachment"
+    },
+    "BoolValue": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ValueBase"
+    },
+    "BoxHandleAdornment": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "HandleAdornment"
+    },
+    "BranchService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "BrickColorValue": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ValueBase"
+    },
+    "BrowserService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "BubbleChatConfiguration": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "TextChatConfigurations"
+    },
+    "BubbleChatMessageProperties": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "TextChatMessagePropertiesClass"
+    },
+    "BugReporterService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "BuoyancySensor": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "SensorBase"
+    },
+    "CFramePose": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PoseBase"
+    },
+    "CFrameValue": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ValueBase"
+    },
+    "CSGDictionaryService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "FlyweightService"
+    },
+    "CacheableContentProvider": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Camera": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PVInstance"
+    },
+    "CanvasGroup": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiObject"
+    },
+    "Capture": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Object"
+    },
+    "CaptureService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "CapturesPages": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Pages"
+    },
+    "CapturesViewConfiguration": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BaseCoreGuiConfiguration"
+    },
+    "ChangeHistoryService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ChangeHistoryStreamingService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ChannelTabsConfiguration": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "TextChatConfigurations"
+    },
+    "CharacterMesh": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "CharacterAppearance"
+    },
+    "Chat": {
+      "creation": "not directly creatable",
+      "parent": "Instance"
+    },
+    "ChatInputBarConfiguration": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "TextChatConfigurations"
+    },
+    "ChatService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ChatWindowConfiguration": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "TextChatConfigurations"
+    },
+    "ChatWindowMessageProperties": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "TextChatMessagePropertiesClass"
+    },
+    "ChorusSoundEffect": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "ClickDetector": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "ClientStorageService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ClimbController": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ControllerBase"
+    },
+    "Clothing": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "CharacterAppearance"
+    },
+    "CloudCRUDService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "CloudExecutionService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Clouds": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Collaborator": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "CollaboratorsService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "CollectionService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "Color3Value": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ValueBase"
+    },
+    "ColorCorrectionEffect": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PostEffect"
+    },
+    "ColorGradingEffect": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PostEffect"
+    },
+    "CommerceService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "CompositeValueCurve": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "CompressorSoundEffect": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "ConeHandleAdornment": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "HandleAdornment"
+    },
+    "ConfigService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ConfigSnapshot": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Object"
+    },
+    "Configuration": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "ConfigureServerService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ConnectivityService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Constraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "ContentProvider": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "ContextActionService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "Controller": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "ControllerBase": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "ControllerManager": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "ControllerPartSensor": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ControllerSensor"
+    },
+    "ControllerSensor": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "SensorBase"
+    },
+    "ControllerService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "CookiesService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "CoreGui": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BasePlayerGui"
+    },
+    "CoreGuiConfiguration": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "CoreGuiService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BasePlayerGui"
+    },
+    "CorePackages": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "CoreScript": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BaseScript"
+    },
+    "CoreScriptSyncService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "CornerWedgeInstance": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BasePart"
+    },
+    "CornerWedgePart": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BasePart"
+    },
+    "CreationDBService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "CurveAnimation": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "AnimationClip"
+    },
+    "CustomEvent": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "CustomEventReceiver": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "CustomLog": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "CustomParticleEmitter": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "CylinderHandleAdornment": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "HandleAdornment"
+    },
+    "CylinderMesh": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BevelMesh"
+    },
+    "CylindricalConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "SlidingBallConstraint"
+    },
+    "DataModel": {
+      "creation": "not directly creatable",
+      "parent": "ServiceProvider"
+    },
+    "DataModelDiff": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Object"
+    },
+    "DataModelMesh": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "DataModelPatchService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "DataStore": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "DataStore2": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "DataStore"
+    },
+    "DataStoreGetOptions": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "DataStoreIncrementOptions": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "DataStoreInfo": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "DataStoreKey": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "DataStoreKeyInfo": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "DataStoreKeyPages": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Pages"
+    },
+    "DataStoreListingPages": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Pages"
+    },
+    "DataStoreObjectVersionInfo": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "DataStoreOptions": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "DataStorePages": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Pages"
+    },
+    "DataStoreService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "DataStoreSetOptions": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "DataStoreVersionPages": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Pages"
+    },
+    "Debris": {
+      "creation": "not directly creatable",
+      "parent": "Instance"
+    },
+    "DebrisService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "DebugSettings": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "DebuggerBreakpoint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "DebuggerManager": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "DebuggerWatch": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "Decal": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "FaceInstance"
+    },
+    "DecalTexture": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Decal"
+    },
+    "DeferredAssetManagerService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "DepthOfFieldEffect": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PostEffect"
+    },
+    "DesignFoundationsService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "DeviceDisplayService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "DeviceIdService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Dialog": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "DialogChoice": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "DialogRoot": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "DigitsRigDescription": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "DisplayWakeLock": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "DistortionSoundEffect": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "DockWidgetPluginGui": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PluginGui"
+    },
+    "DoubleConstrainedValue": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ValueBase"
+    },
+    "DoublePose": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PoseBase"
+    },
+    "DoubleValue": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ValueBase"
+    },
+    "DraftsService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "DragDetector": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ClickDetector"
+    },
+    "DraggerService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "DynamicRotate": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "JointInstance"
+    },
+    "EchoSoundEffect": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "EditableImage": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Object"
+    },
+    "EditableMesh": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Object"
+    },
+    "EditableService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "EditorSourceService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "EncodingService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "EqualizerSoundEffect": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "EulerRotationCurve": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "EventIngestService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ExampleV2Service": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ExperienceAuthService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ExperienceInviteOptions": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "ExperienceNotificationService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ExperienceService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ExperienceStateCaptureService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ExplorerServiceVisibilityService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Explosion": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "ExtrudedPartInstance": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BasePart"
+    },
+    "FaceAnimatorService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "FaceControls": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "FaceInstance": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "FacialAgeEstimationService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "FacialAnimationStreamingServiceStats": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "FacialAnimationStreamingServiceV2": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "FacialAnimationStreamingSubsessionStats": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Feature": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "FeatureRestrictionManager": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "File": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "FileManagerService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "FileMesh": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "DataModelMesh"
+    },
+    "FileSyncItem": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "FileSyncReplicationService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "FileSyncService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Fire": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Flag": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Tool"
+    },
+    "FlagStand": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Part"
+    },
+    "FlagStandService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "FlangeSoundEffect": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "FloatCurve": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "FloorWire": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiBase3d"
+    },
+    "FluidForceSensor": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "SensorBase"
+    },
+    "FlyweightService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Folder": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "ForceField": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "FormFactorPart": {
+      "creation": "not directly creatable",
+      "parent": "BasePart"
+    },
+    "Frame": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiObject"
+    },
+    "FriendPages": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Pages"
+    },
+    "FriendService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "FunctionalTest": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "GamePassService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "GameSettings": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "GamepadService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "GeneratedFolder": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Folder"
+    },
+    "GenerationService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "GenericChallengeService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "GeometryService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "GeometryService_Deprecated": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "GlobalAdvancedSettings": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Settings"
+    },
+    "GlobalBasicSettings": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Settings"
+    },
+    "GlobalDataStore": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "GlobalSettings": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "Glue": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "JointInstance"
+    },
+    "GongService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "GroundController": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ControllerBase"
+    },
+    "GroupService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "GuiBase": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "GuiBase2d": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiBase"
+    },
+    "GuiBase3d": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiBase"
+    },
+    "GuiButton": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiObject"
+    },
+    "GuiImageButton": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiButton"
+    },
+    "GuiLabel": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiObject"
+    },
+    "GuiLayerCollector": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiBase2d"
+    },
+    "GuiMain": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ScreenGui"
+    },
+    "GuiObject": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiBase2d"
+    },
+    "GuiService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "GuiTextButton": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiButton"
+    },
+    "GuidRegistryService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "HSRDataContentProvider": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "CacheableContentProvider"
+    },
+    "HandRigDescription": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "HandleAdornment": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PVAdornment"
+    },
+    "Handles": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "HandlesBase"
+    },
+    "HandlesBase": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PartAdornment"
+    },
+    "HapticEffect": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "HapticService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "HarmonyService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Hat": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Accoutrement"
+    },
+    "HeapProfilerService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "HeatmapQueryService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "HeatmapService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "HeightmapImporterService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "HiddenSurfaceRemovalAsset": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Highlight": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "HingeConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Constraint"
+    },
+    "Hint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Message"
+    },
+    "Hole": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Feature"
+    },
+    "Hopper": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "HopperBin": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BackpackItem"
+    },
+    "HttpRbxApiService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "HttpRequestWrapper": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "HttpService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "Humanoid": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "HumanoidController": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Controller"
+    },
+    "HumanoidDescription": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "HumanoidRigDescription": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "IKControl": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "IXPService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "IkControl": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "ImageButton": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiButton"
+    },
+    "ImageHandleAdornment": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "HandleAdornment"
+    },
+    "ImageLabel": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiLabel"
+    },
+    "ImageScreenCaptureService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ImportSession": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "IncrementalPatchBuilder": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "InputAction": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "InputActionLabel": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiObject"
+    },
+    "InputBinding": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "InputContext": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "InputObject": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "InsertService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "Instance": {
+      "creation": "not directly creatable",
+      "parent": ""
+    },
+    "InstanceAdornment": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiBase3d"
+    },
+    "InstanceExtensionsService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "InstanceFileSyncService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "IntConstrainedValue": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ValueBase"
+    },
+    "IntValue": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ValueBase"
+    },
+    "IntentService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "InternalMessagingService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "InternalMessagingServiceVerifier": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "IntersectOperation": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PartOperation"
+    },
+    "InventoryPages": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Pages"
+    },
+    "Item": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "JointInstance": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "JointsService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "KeyboardService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Keyframe": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "KeyframeMarker": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "KeyframeSequence": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "AnimationClip"
+    },
+    "LanguageService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "LayerCollector": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiBase2d"
+    },
+    "LegacyHopperService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Light": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Lighting": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "LineForce": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Constraint"
+    },
+    "LineHandleAdornment": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "HandleAdornment"
+    },
+    "LinearVelocity": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Constraint"
+    },
+    "LinkingService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "LiveSyncService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "LocalBackpack": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "LocalBackpackItem": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "LocalScript": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Script"
+    },
+    "LocalStorageService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "LocalizationService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "LocalizationTable": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "LodDataEntity": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "LodDataService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "LogReporterService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "LogService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "Logger": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Object"
+    },
+    "LoginService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "LuaDragger": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "LuaSourceContainer": {
+      "creation": "not directly creatable",
+      "parent": "Instance"
+    },
+    "LuaWebService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "LuauExpressionBridge": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Object"
+    },
+    "LuauExpressionService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "MLModelDeliveryService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "MLService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "MLSession": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Object"
+    },
+    "MakeupDescription": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "ManualGlue": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ManualSurfaceJointInstance"
+    },
+    "ManualSurfaceJointInstance": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "JointInstance"
+    },
+    "ManualWeld": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ManualSurfaceJointInstance"
+    },
+    "MarkerCurve": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "MarketplaceService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "MatchmakingService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "MaterialService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "MaterialVariant": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "MemStorageConnection": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "MemStorageService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "MemoryStoreDistributedCounter": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "MemoryStoreHashMap": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "MemoryStoreHashMapPages": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Pages"
+    },
+    "MemoryStoreQueue": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "MemoryStoreService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "MemoryStoreSortedMap": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "MeshContentProvider": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "CacheableContentProvider"
+    },
+    "MeshPart": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "TriangleMeshPart"
+    },
+    "Message": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "MessageBusService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "MessagingService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "MicroProfilerService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Model": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PVInstance"
+    },
+    "ModerationService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ModuleScript": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "LuaSourceContainer"
+    },
+    "Motor": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "JointInstance"
+    },
+    "Motor6D": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Motor"
+    },
+    "MotorFeature": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Feature"
+    },
+    "Mouse": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "MouseService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "NegateOperation": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PartOperation"
+    },
+    "NetworkClient": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "NetworkPeer"
+    },
+    "NetworkMarker": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "NetworkPeer": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "NetworkReplicator": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "NetworkServer": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "NetworkPeer"
+    },
+    "NetworkSettings": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "NoCollisionConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Noise": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "NonReplicatedCSGDictionaryService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "FlyweightService"
+    },
+    "NotificationService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "NumberPose": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PoseBase"
+    },
+    "NumberValue": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ValueBase"
+    },
+    "ObjectValue": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ValueBase"
+    },
+    "OmniRecommendationsService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "OpenCloudApiV1": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "OpenCloudService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "OperationGraph": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "OrderedDataStore": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "DataStore"
+    },
+    "OutfitPages": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Pages"
+    },
+    "PVAdornment": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiBase3d"
+    },
+    "PVInstance": {
+      "creation": "not directly creatable",
+      "parent": "Instance"
+    },
+    "PackageLink": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PackageService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "PackageUIService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Packages": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Pages": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Pants": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Clothing"
+    },
+    "ParabolaAdornment": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PVAdornment"
+    },
+    "ParallelRampPart": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "Part": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "FormFactorPart"
+    },
+    "PartAdornment": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiBase3d"
+    },
+    "PartOperation": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "TriangleMeshPart"
+    },
+    "PartOperationAsset": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PartPairLasso": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "ParticleEmitter": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PartyEmulatorService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "PatchBundlerFileWatch": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "PatchMapping": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Path": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Path2D": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiBase"
+    },
+    "Path3D": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PathfindingLink": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PathfindingModifier": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PathfindingService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "PerformanceControlService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "PermissionsService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "PhysicsService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "PinShortcutService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "PitchShiftSoundEffect": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "PlaceAssetIdsService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "PlaceStats": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Plane": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PlaneConstraint"
+    },
+    "PlaneConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Constraint"
+    },
+    "Platform": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Part"
+    },
+    "PlatformCloudStorageService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "PlatformFriendsService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "PlatformLibraries": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Player": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PlayerControlState": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PlayerData": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PlayerDataRecord": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PlayerDataRecordConfig": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PlayerDataService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "PlayerEmulatorService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "PlayerGui": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BasePlayerGui"
+    },
+    "PlayerHydrationService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "PlayerListConfiguration": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BaseCoreGuiConfiguration"
+    },
+    "PlayerMouse": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Mouse"
+    },
+    "PlayerScripts": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PlayerViewService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Players": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "Plugin": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PluginAction": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PluginUIElement"
+    },
+    "PluginCapabilities": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PluginDebugService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "PluginDragEvent": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PluginGui": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiLayerCollector"
+    },
+    "PluginGuiService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PluginManager": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PluginManagerInterface": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PluginMenu": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PluginUIElement"
+    },
+    "PluginMouse": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Mouse"
+    },
+    "PluginToolbar": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PluginUIElement"
+    },
+    "PluginToolbarButton": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PluginUIElement"
+    },
+    "PointLight": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Light"
+    },
+    "PointsService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "PolicyService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "PopLatencyService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Pose": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PoseBase"
+    },
+    "PoseBase": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "PostEffect": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Preloaded": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "PrismPart": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "PrismaticConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "SlidingBallConstraint"
+    },
+    "ProceduralBehaviorSchedulerService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ProceduralModel": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Model"
+    },
+    "ProcessInstancePhysicsService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ProfilingItem": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "ProximityPrompt": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "ProximityPromptService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "PublishService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "PyramidHandleAdornment": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "HandleAdornment"
+    },
+    "PyramidPart": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "QWidgetPluginGui": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PluginGui"
+    },
+    "RESTRICTED_ILegacyStudioBridge": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "RESTRICTED_LegacyStudioBridge": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "RESTRICTED_ILegacyStudioBridge"
+    },
+    "RESTRICTED_StudioService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "RayValue": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ValueBase"
+    },
+    "RbxAnalyticsService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "RealtimeMedia": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "RecommendationPages": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Pages"
+    },
+    "RecommendationService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ReflectionService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "RelativeGui": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiObject"
+    },
+    "RemoteEvent": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BaseRemoteEvent"
+    },
+    "RemoteFunction": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "RenderSettings": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "RenderingTest": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "ReplicatedFirst": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "ReplicatedStorage": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "ReverbSoundEffect": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "RightAngleRampPart": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "RigidConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Constraint"
+    },
+    "RobloxPluginGuiService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PluginGuiServiceBase"
+    },
+    "RobloxReplicatedStorage": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "RobloxSerializableInstance": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "RobloxServerStorage": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Rocket": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BodyMover"
+    },
+    "RocketPropulsion": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BodyMover"
+    },
+    "RodConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Constraint"
+    },
+    "RolloutValidation": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "RolloutValidationService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "RomarkRbxAnalyticsService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "RomarkService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "RootInstance": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "RopeConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Constraint"
+    },
+    "Rotate": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "JointInstance"
+    },
+    "RotateP": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "DynamicRotate"
+    },
+    "RotateV": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "DynamicRotate"
+    },
+    "RotationCurve": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "RtMessagingService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "RunService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "RuntimeContentService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "SceneAnalysisService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ScreenGui": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiLayerCollector"
+    },
+    "ScreenshotCapture": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Capture"
+    },
+    "ScreenshotHud": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Script": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BaseScript"
+    },
+    "ScriptBuilder": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "ScriptChangeService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ScriptContext": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ScriptDebugger": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "ScriptProfilerService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ScriptRegistrationService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ScriptScannerService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ScriptService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ScrollingFrame": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiObject"
+    },
+    "Seat": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Part"
+    },
+    "Selection": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "SelectionBox": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "InstanceAdornment"
+    },
+    "SelectionHighlightManager": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "SelectionLasso": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiBase3d"
+    },
+    "SelectionPartLasso": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "SelectionLasso"
+    },
+    "SelectionPointLasso": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "SelectionLasso"
+    },
+    "SelectionSphere": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PVAdornment"
+    },
+    "SelfViewConfiguration": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BaseCoreGuiConfiguration"
+    },
+    "SensorBase": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "SerializationService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ServerScriptService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "ServerStorage": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "ServiceProvider": {
+      "creation": "not directly creatable",
+      "parent": "Instance"
+    },
+    "ServiceVisibilityService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "SessionCheckService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "SessionService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Settings": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceProvider"
+    },
+    "SharedTableRegistry": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Shirt": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Clothing"
+    },
+    "ShirtGraphic": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "LegacyCharacterAppearance"
+    },
+    "SkateboardController": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Controller"
+    },
+    "SkateboardPlatform": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Part"
+    },
+    "Skin": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "LegacyCharacterAppearance"
+    },
+    "Sky": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "SlidingBallConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Constraint"
+    },
+    "SlimAnimationDataEntity": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "SlimAnimationReplicationService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "SlimContentProvider": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "CacheableContentProvider"
+    },
+    "SlimReplicationService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "SlimService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Smoke": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "SmoothVoxelsUpgraderService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Snap": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "JointInstance"
+    },
+    "SocialService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "SolidModelContentProvider": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "CacheableContentProvider"
+    },
+    "Sound": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "SoundGroup": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "SoundService": {
+      "creation": "not directly creatable",
+      "parent": "Instance"
+    },
+    "Sparkles": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "SpawnLocation": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Part"
+    },
+    "SpawnerService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "SpecialMesh": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "FileMesh"
+    },
+    "SpecialShape": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "FileMesh"
+    },
+    "SphereHandleAdornment": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "HandleAdornment"
+    },
+    "SpotLight": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Light"
+    },
+    "SpringConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Constraint"
+    },
+    "StandalonePluginScripts": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "StandardPages": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Pages"
+    },
+    "StarterCharacterScripts": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "StarterPlayerScripts"
+    },
+    "StarterGear": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "StarterGui": {
+      "creation": "not directly creatable",
+      "parent": "BasePlayerGui"
+    },
+    "StarterGuiService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BasePlayerGui"
+    },
+    "StarterPack": {
+      "creation": "not directly creatable",
+      "parent": "Instance"
+    },
+    "StarterPackService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "StarterPlayer": {
+      "creation": "not directly creatable",
+      "parent": "Instance"
+    },
+    "StarterPlayerScripts": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "StarterPlayerService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "StartupMessageService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Stats": {
+      "creation": "not directly creatable",
+      "parent": ""
+    },
+    "StatsItem": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Status": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Model"
+    },
+    "StatusInstance": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Model"
+    },
+    "StockSound": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "StopWatchReporter": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "StringValue": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ValueBase"
+    },
+    "Studio": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "StudioCameraService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "StudioCaptureService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "StudioData": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "StudioDeviceEmulatorService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "StudioDeviceSimulatorService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "StudioPublishService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "StudioScreenshotCapture": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "StudioService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "StyleBase": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "StyleDerive": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "StyleLink": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "StyleQuery": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "StyleRule": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "StyleBase"
+    },
+    "StyleSheet": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "StyleBase"
+    },
+    "SunRaysEffect": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PostEffect"
+    },
+    "SurfaceAppearance": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "SurfaceGui": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "SurfaceGuiBase"
+    },
+    "SurfaceGuiBase": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiLayerCollector"
+    },
+    "SurfaceLight": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Light"
+    },
+    "SurfaceSelection": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PartAdornment"
+    },
+    "SwimController": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ControllerBase"
+    },
+    "SystemThemeService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "TaskScheduler": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Team": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "TeamCreateData": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "TeamCreatePublishService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Teams": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "TelemetryService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "TeleportAsyncResult": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "TeleportOptions": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "TeleportService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "TemporaryCageMeshProvider": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "TemporaryScriptService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Terrain": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BasePart"
+    },
+    "TerrainDetail": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "TerrainIterateOperation": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Object"
+    },
+    "TerrainModifyOperation": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Object"
+    },
+    "TerrainReadOperation": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Object"
+    },
+    "TerrainRegion": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "TerrainWriteOperation": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Object"
+    },
+    "TestCase": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "TestService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "TextBox": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiObject"
+    },
+    "TextBoxService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "TextButton": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiButton"
+    },
+    "TextChannel": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "TextChannelWindow": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiObject"
+    },
+    "TextChatCommand": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "TextChatConfigurations": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "TextChatMessage": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "TextChatMessagePropertiesClass": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "TextChatService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "TextFilterResultInstance": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "TextFilterTranslatedResultInstance": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "TextGenerator": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "TextLabel": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiLabel"
+    },
+    "TextService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "TextSource": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Texture": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Decal"
+    },
+    "ThirdPartyUserService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "TimerService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Tool": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BackpackItem"
+    },
+    "Torque": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Constraint"
+    },
+    "TorsionSpringConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Constraint"
+    },
+    "TouchInputService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "TouchTransmitter": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "TraceRouteService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "TracerService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "TrackerLodController": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "TrackerStreamAnimation": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Trail": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "TranslatorInstance": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "TremoloSoundEffect": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": ""
+    },
+    "TriangleMeshPart": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BasePart"
+    },
+    "TrussPart": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BasePart"
+    },
+    "Tween": {
+      "creation": "not directly creatable",
+      "parent": "TweenBase"
+    },
+    "TweenBase": {
+      "creation": "not directly creatable",
+      "parent": "Instance"
+    },
+    "TweenService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "UGCAvatarService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "UGCValidationService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "UIAspectRatioConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UIConstraint"
+    },
+    "UIBase": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "UIComponent": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UIBase"
+    },
+    "UIConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UIComponent"
+    },
+    "UICorner": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UIComponent"
+    },
+    "UIDragDetector": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UIComponent"
+    },
+    "UIDragDetectorService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "UIFlexItem": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UIComponent"
+    },
+    "UIGradient": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UIComponent"
+    },
+    "UIGridLayout": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UIGridStyleLayout"
+    },
+    "UIGridStyleLayout": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UILayout"
+    },
+    "UILayout": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UIComponent"
+    },
+    "UIListLayout": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UIGridStyleLayout"
+    },
+    "UIPadding": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UIComponent"
+    },
+    "UIPageLayout": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UIGridStyleLayout"
+    },
+    "UIScale": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UIComponent"
+    },
+    "UIShadow": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UIComponent"
+    },
+    "UISizeConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UIConstraint"
+    },
+    "UIStroke": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UIComponent"
+    },
+    "UITableLayout": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UIGridStyleLayout"
+    },
+    "UITextSizeConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "UIConstraint"
+    },
+    "UnionOperation": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "PartOperation"
+    },
+    "UniqueIdLookupService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "UniversalConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Constraint"
+    },
+    "UnreliableRemoteEvent": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BaseRemoteEvent"
+    },
+    "UnvalidatedAssetService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "UserInputService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "UserService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "UserStorageService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "LocalStorageService"
+    },
+    "VRService": {
+      "creation": "not directly creatable",
+      "parent": "ServiceInstance"
+    },
+    "ValueBase": {
+      "creation": "not directly creatable",
+      "parent": "Instance"
+    },
+    "ValueCurve": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Vector3Curve": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "Vector3Value": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ValueBase"
+    },
+    "VectorForce": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Constraint"
+    },
+    "VehicleController": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Controller"
+    },
+    "VehicleSeat": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BasePart"
+    },
+    "VelocityMotor": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "JointInstance"
+    },
+    "VersionControlService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "VideoCapture": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Capture"
+    },
+    "VideoCaptureService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "VideoDisplay": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiObject"
+    },
+    "VideoFrame": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiObject"
+    },
+    "VideoPlayer": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "VideoSampler": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Object"
+    },
+    "VideoScreenCaptureService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "VideoService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "ViewportCamera": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Camera"
+    },
+    "ViewportFrame": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "GuiObject"
+    },
+    "VirtualInput": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Object"
+    },
+    "VirtualInputManager": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "VirtualUser": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Visit": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "VisualizationMode": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "VisualizationModeCategory": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "VisualizationModeService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "VoiceChatInternal": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "VoiceChatService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "VoxelBuffer": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Object"
+    },
+    "WebSocketClient": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "WebSocketService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "WebStreamClient": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Object"
+    },
+    "WebViewService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "WedgePart": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "FormFactorPart"
+    },
+    "Weld": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "JointInstance"
+    },
+    "WeldConstraint": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "WindowProtocolService": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "Wire": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    },
+    "WireframeHandleAdornment": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "HandleAdornment"
+    },
+    "Workspace": {
+      "creation": "not directly creatable",
+      "parent": "WorldRoot"
+    },
+    "WorkspaceAnnotation": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Annotation"
+    },
+    "WorldModel": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "WorldRoot"
+    },
+    "WorldRoot": {
+      "creation": "not directly creatable",
+      "parent": "Model"
+    },
+    "WrapDeformMeshProvider": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "ServiceInstance"
+    },
+    "WrapDeformer": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BaseWrap"
+    },
+    "WrapLayer": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BaseWrap"
+    },
+    "WrapTarget": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "BaseWrap"
+    },
+    "WrapTextureTransfer": {
+      "creation": "permitted by current runtime (native rules incomplete)",
+      "parent": "Instance"
+    }
+  },
+  "constructor": {
+    "Axes": {
+      "new": "function"
+    },
+    "BrickColor": {
+      "Black": "function",
+      "Blue": "function",
+      "DarkGray": "function",
+      "Gray": "function",
+      "Green": "function",
+      "New": "function",
+      "Random": "function",
+      "Red": "function",
+      "White": "function",
+      "Yellow": "function",
+      "new": "function",
+      "palette": "function",
+      "random": "function"
+    },
+    "CFrame": {
+      "Angles": "function",
+      "fromEulerAnglesXYZ": "function",
+      "fromMatrix": "function",
+      "identity": "CFrame",
+      "lookAt": "function",
+      "new": "function"
+    },
+    "Color3": {
+      "fromHSV": "function",
+      "fromRGB": "function",
+      "new": "function"
+    },
+    "ColorSequence": {
+      "new": "function"
+    },
+    "ColorSequenceKeypoint": {
+      "new": "function"
+    },
+    "DateTime": {
+      "fromIsoDate": "function",
+      "fromLocalTime": "function",
+      "fromUniversalTime": "function",
+      "fromUnixTimestamp": "function",
+      "fromUnixTimestampMillis": "function",
+      "now": "function"
+    },
+    "Faces": {
+      "new": "function"
+    },
+    "Font": {
+      "fromEnum": "function",
+      "fromId": "function",
+      "fromName": "function",
+      "new": "function"
+    },
+    "NumberRange": {
+      "new": "function"
+    },
+    "NumberSequence": {
+      "new": "function"
+    },
+    "NumberSequenceKeypoint": {
+      "new": "function"
+    },
+    "OverlapParams": {
+      "new": "function"
+    },
+    "PathWaypoint": {
+      "new": "function"
+    },
+    "PhysicalProperties": {
+      "new": "function"
+    },
+    "Random": {
+      "new": "function"
+    },
+    "Ray": {
+      "new": "function"
+    },
+    "RaycastParams": {
+      "new": "function"
+    },
+    "Rect": {
+      "new": "function"
+    },
+    "TweenInfo": {
+      "new": "function"
+    },
+    "UDim": {
+      "new": "function"
+    },
+    "UDim2": {
+      "fromOffset": "function",
+      "fromScale": "function",
+      "new": "function"
+    },
+    "Vector2": {
+      "new": "function",
+      "one": "Vector2",
+      "xAxis": "Vector2",
+      "yAxis": "Vector2",
+      "zero": "Vector2"
+    },
+    "Vector3": {
+      "new": "function",
+      "one": "Vector3",
+      "xAxis": "Vector3",
+      "yAxis": "Vector3",
+      "zAxis": "Vector3",
+      "zero": "Vector3"
+    }
+  },
+  "event": {
+    "BasePart": {
+      "TouchEnded": "",
+      "Touched": ""
+    },
+    "BindableEvent": {
+      "Event": ""
+    },
+    "Player": {
+      "CharacterAdded": "",
+      "CharacterRemoving": ""
+    },
+    "Players": {
+      "PlayerAdded": "",
+      "PlayerRemoving": ""
+    },
+    "RemoteEvent": {
+      "OnClientEvent": "",
+      "OnServerEvent": ""
+    },
+    "RunService": {
+      "Heartbeat": "",
+      "PostSimulation": "",
+      "PreRender": "",
+      "PreSimulation": "",
+      "RenderStepped": "",
+      "Stepped": ""
+    },
+    "TweenBase": {
+      "Completed": ""
+    }
+  },
+  "getter": {
+    "BasePart": {
+      "AssemblyCenterOfMass": "",
+      "AssemblyMass": "",
+      "AssemblyRootPart": "",
+      "BrickColor": "",
+      "CenterOfMass": "",
+      "CurrentPhysicalProperties": "",
+      "Mass": "",
+      "Position": ""
+    },
+    "BindableFunction": {
+      "OnInvoke": ""
+    },
+    "DataModel": {
+      "CreatorId": "",
+      "GameId": "",
+      "JobId": "",
+      "PlaceId": ""
+    },
+    "Model": {
+      "WorldPivot": ""
+    },
+    "Players": {
+      "LocalPlayer": ""
+    },
+    "RemoteFunction": {
+      "OnClientInvoke": "",
+      "OnServerInvoke": ""
+    },
+    "Tween": {
+      "Instance": "",
+      "TweenInfo": ""
+    },
+    "TweenBase": {
+      "PlaybackState": ""
+    }
+  },
+  "global": {
+    "": {
+      "Axes": "table",
+      "BrickColor": "table",
+      "CFrame": "table",
+      "Color3": "table",
+      "ColorSequence": "table",
+      "ColorSequenceKeypoint": "table",
+      "DateTime": "table",
+      "Enum": "Enums",
+      "Faces": "table",
+      "Font": "table",
+      "Instance": "table",
+      "NumberRange": "table",
+      "NumberSequence": "table",
+      "NumberSequenceKeypoint": "table",
+      "OverlapParams": "table",
+      "PathWaypoint": "table",
+      "PhysicalProperties": "table",
+      "Random": "table",
+      "Ray": "table",
+      "RaycastParams": "table",
+      "Rect": "table",
+      "TweenInfo": "table",
+      "UDim": "table",
+      "UDim2": "table",
+      "Vector2": "table",
+      "Vector3": "table",
+      "_G": "table",
+      "_VERSION": "string",
+      "assert": "function",
+      "bit32": "table",
+      "buffer": "table",
+      "collectgarbage": "function",
+      "coroutine": "table",
+      "debug": "table",
+      "delay": "function",
+      "error": "function",
+      "game": "Instance",
+      "gcinfo": "function",
+      "getfenv": "function",
+      "getmetatable": "function",
+      "ipairs": "function",
+      "math": "table",
+      "newproxy": "function",
+      "next": "function",
+      "os": "table",
+      "pairs": "function",
+      "pcall": "function",
+      "print": "function",
+      "rawequal": "function",
+      "rawget": "function",
+      "rawlen": "function",
+      "rawset": "function",
+      "require": "function",
+      "script": "Instance (per script environment)",
+      "select": "function",
+      "setfenv": "function",
+      "setmetatable": "function",
+      "shared": "table",
+      "spawn": "function",
+      "string": "table",
+      "table": "table",
+      "task": "table",
+      "tick": "function",
+      "time": "function",
+      "tonumber": "function",
+      "tostring": "function",
+      "type": "function",
+      "typeof": "function",
+      "unpack": "function",
+      "utf8": "table",
+      "vector": "table",
+      "wait": "function",
+      "warn": "function",
+      "workspace": "Instance",
+      "xpcall": "function"
+    }
+  },
+  "instance": {
+    "Instance": {
+      "AddTag": "method",
+      "ClearAllChildren": "method",
+      "Clone": "method",
+      "Destroy": "method",
+      "FindFirstAncestor": "method",
+      "FindFirstAncestorOfClass": "method",
+      "FindFirstAncestorWhichIsA": "method",
+      "FindFirstChild": "method",
+      "FindFirstChildOfClass": "method",
+      "FindFirstChildWhichIsA": "method",
+      "GetAttribute": "method",
+      "GetAttributeChangedSignal": "method",
+      "GetAttributes": "method",
+      "GetChildren": "method",
+      "GetDescendants": "method",
+      "GetFullName": "method",
+      "GetPropertyChangedSignal": "method",
+      "GetTags": "method",
+      "HasTag": "method",
+      "IsA": "method",
+      "IsAncestorOf": "method",
+      "IsDescendantOf": "method",
+      "Remove": "method",
+      "RemoveTag": "method",
+      "SetAttribute": "method",
+      "WaitForChild": "method",
+      "children": "method",
+      "destroy": "method",
+      "findFirstChild": "method",
+      "getChildren": "method",
+      "isA": "method",
+      "remove": "method"
+    }
+  },
+  "library": {
+    "bit32": {
+      "arshift": "function",
+      "band": "function",
+      "bnot": "function",
+      "bor": "function",
+      "btest": "function",
+      "bxor": "function",
+      "byteswap": "function",
+      "countlz": "function",
+      "countrz": "function",
+      "extract": "function",
+      "lrotate": "function",
+      "lshift": "function",
+      "replace": "function",
+      "rrotate": "function",
+      "rshift": "function"
+    },
+    "buffer": {
+      "copy": "function",
+      "create": "function",
+      "fill": "function",
+      "fromstring": "function",
+      "len": "function",
+      "readbits": "function",
+      "readf32": "function",
+      "readf64": "function",
+      "readi16": "function",
+      "readi32": "function",
+      "readi8": "function",
+      "readstring": "function",
+      "readu16": "function",
+      "readu32": "function",
+      "readu8": "function",
+      "tostring": "function",
+      "writebits": "function",
+      "writef32": "function",
+      "writef64": "function",
+      "writei16": "function",
+      "writei32": "function",
+      "writei8": "function",
+      "writestring": "function",
+      "writeu16": "function",
+      "writeu32": "function",
+      "writeu8": "function"
+    },
+    "coroutine": {
+      "close": "function",
+      "create": "function",
+      "isyieldable": "function",
+      "resume": "function",
+      "running": "function",
+      "status": "function",
+      "wrap": "function",
+      "yield": "function"
+    },
+    "debug": {
+      "info": "function",
+      "traceback": "function"
+    },
+    "math": {
+      "abs": "function",
+      "acos": "function",
+      "asin": "function",
+      "atan": "function",
+      "atan2": "function",
+      "ceil": "function",
+      "clamp": "function",
+      "cos": "function",
+      "cosh": "function",
+      "deg": "function",
+      "e": "number",
+      "exp": "function",
+      "floor": "function",
+      "fmod": "function",
+      "frexp": "function",
+      "huge": "number",
+      "isfinite": "function",
+      "isinf": "function",
+      "isnan": "function",
+      "ldexp": "function",
+      "lerp": "function",
+      "log": "function",
+      "log10": "function",
+      "map": "function",
+      "max": "function",
+      "min": "function",
+      "modf": "function",
+      "nan": "number",
+      "noise": "function",
+      "phi": "number",
+      "pi": "number",
+      "pow": "function",
+      "rad": "function",
+      "random": "function",
+      "randomseed": "function",
+      "round": "function",
+      "sign": "function",
+      "sin": "function",
+      "sinh": "function",
+      "sqrt": "function",
+      "sqrt2": "number",
+      "tan": "function",
+      "tanh": "function",
+      "tau": "number"
+    },
+    "os": {
+      "clock": "function",
+      "date": "function",
+      "difftime": "function",
+      "time": "function"
+    },
+    "string": {
+      "byte": "function",
+      "char": "function",
+      "find": "function",
+      "format": "function",
+      "gmatch": "function",
+      "gsub": "function",
+      "len": "function",
+      "lower": "function",
+      "match": "function",
+      "pack": "function",
+      "packsize": "function",
+      "rep": "function",
+      "reverse": "function",
+      "split": "function",
+      "sub": "function",
+      "unpack": "function",
+      "upper": "function"
+    },
+    "table": {
+      "clear": "function",
+      "clone": "function",
+      "concat": "function",
+      "create": "function",
+      "find": "function",
+      "foreach": "function",
+      "foreachi": "function",
+      "freeze": "function",
+      "getn": "function",
+      "insert": "function",
+      "isfrozen": "function",
+      "maxn": "function",
+      "move": "function",
+      "pack": "function",
+      "remove": "function",
+      "sort": "function",
+      "unpack": "function"
+    },
+    "task": {
+      "cancel": "function",
+      "defer": "function",
+      "delay": "function",
+      "spawn": "function",
+      "wait": "function"
+    },
+    "utf8": {
+      "char": "function",
+      "charpattern": "string",
+      "codepoint": "function",
+      "codes": "function",
+      "len": "function",
+      "offset": "function"
+    },
+    "vector": {
+      "abs": "function",
+      "angle": "function",
+      "ceil": "function",
+      "clamp": "function",
+      "create": "function",
+      "cross": "function",
+      "dot": "function",
+      "floor": "function",
+      "lerp": "function",
+      "magnitude": "function",
+      "max": "function",
+      "min": "function",
+      "normalize": "function",
+      "one": "vector",
+      "sign": "function",
+      "zero": "vector"
+    }
+  },
+  "method": {
+    "AssetService": {
+      "LoadAssetAsync": ""
+    },
+    "BasePart": {
+      "GetMass": "",
+      "GetPivot": "",
+      "PivotTo": "",
+      "getMass": ""
+    },
+    "BindableEvent": {
+      "Fire": ""
+    },
+    "BindableFunction": {
+      "Invoke": ""
+    },
+    "CollectionService": {
+      "AddTag": "",
+      "GetAllTags": "",
+      "GetInstanceAddedSignal": "",
+      "GetInstanceRemovedSignal": "",
+      "GetTagged": "",
+      "GetTags": "",
+      "HasTag": "",
+      "RemoveTag": ""
+    },
+    "DataModel": {
+      "BindToClose": "",
+      "GetObjects": "",
+      "IsLoaded": ""
+    },
+    "Debris": {
+      "AddItem": ""
+    },
+    "EncodingService": {
+      "Base64Decode": "",
+      "Base64Encode": "",
+      "CompressBuffer": "",
+      "CompressBufferZstd": "",
+      "ComputeBufferHash": "",
+      "ComputeStringHash": "",
+      "DecompressBuffer": "",
+      "DecompressBufferZstd": "",
+      "GetDecompressedBufferSize": "",
+      "GetDecompressedBufferSizeZstd": ""
+    },
+    "HttpService": {
+      "GenerateGUID": "",
+      "GetAsync": "",
+      "JSONDecode": "",
+      "JSONEncode": "",
+      "PostAsync": "",
+      "RequestAsync": "",
+      "UrlEncode": ""
+    },
+    "InsertService": {
+      "LoadAsset": "",
+      "LoadAssetVersion": "",
+      "loadAsset": ""
+    },
+    "MaterialService": {
+      "GetBaseMaterialOverride": "",
+      "GetMaterialVariant": "",
+      "SetBaseMaterialOverride": ""
+    },
+    "Model": {
+      "GetBoundingBox": "",
+      "GetExtentsSize": "",
+      "GetPivot": "",
+      "MoveTo": "",
+      "PivotTo": ""
+    },
+    "PhysicsService": {
+      "CollisionGroupContainsPart": "",
+      "CollisionGroupSetCollidable": "",
+      "CollisionGroupsAreCollidable": "",
+      "CreateCollisionGroup": "",
+      "GetCollisionGroupId": "",
+      "GetCollisionGroupName": "",
+      "GetCollisionGroups": "",
+      "GetMaxCollisionGroups": "",
+      "GetRegisteredCollisionGroups": "",
+      "IsCollisionGroupRegistered": "",
+      "RegisterCollisionGroup": "",
+      "RemoveCollisionGroup": "",
+      "RenameCollisionGroup": "",
+      "SetPartCollisionGroup": "",
+      "UnregisterCollisionGroup": ""
+    },
+    "Players": {
+      "GetPlayerByUserId": "",
+      "GetPlayerFromCharacter": "",
+      "GetPlayers": ""
+    },
+    "RemoteEvent": {
+      "FireAllClients": "",
+      "FireClient": "",
+      "FireServer": ""
+    },
+    "RemoteFunction": {
+      "InvokeClient": "",
+      "InvokeServer": ""
+    },
+    "RunService": {
+      "IsClient": "",
+      "IsEdit": "",
+      "IsRunning": "",
+      "IsServer": "",
+      "IsStudio": ""
+    },
+    "ServiceProvider": {
+      "FindService": "",
+      "GetService": "",
+      "service": ""
+    },
+    "TweenBase": {
+      "Cancel": "",
+      "Pause": "",
+      "Play": ""
+    },
+    "TweenService": {
+      "Create": "",
+      "GetValue": ""
+    },
+    "WorldRoot": {
+      "GetPartBoundsInBox": "",
+      "GetPartBoundsInRadius": "",
+      "GetPartsInPart": "",
+      "Raycast": ""
+    }
+  },
+  "property": {
+    "Actor": {
+      "PrimaryPart": "Instance? = nil",
+      "WorldPivot": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1"
+    },
+    "BackpackItem": {
+      "PrimaryPart": "Instance? = nil",
+      "WorldPivot": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1"
+    },
+    "BasePart": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "BaseScript": {
+      "Disabled": "boolean = false",
+      "Enabled": "boolean = true",
+      "RunContext": "Enum.RunContext = Enum.RunContext.Legacy"
+    },
+    "BoolValue": {
+      "Value": "boolean = false"
+    },
+    "BrickColorValue": {
+      "Value": "BrickColor = Medium stone grey"
+    },
+    "CFrameValue": {
+      "Value": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1"
+    },
+    "Camera": {
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CameraSubject": "Instance? = nil",
+      "FieldOfView": "number = 70",
+      "Focus": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1"
+    },
+    "Color3Value": {
+      "Value": "Color3 = 0, 0, 0"
+    },
+    "CoreScript": {
+      "Disabled": "boolean = false",
+      "Enabled": "boolean = true",
+      "RunContext": "Enum.RunContext = Enum.RunContext.Legacy"
+    },
+    "CornerWedgeInstance": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "CornerWedgePart": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "ExtrudedPartInstance": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "Flag": {
+      "PrimaryPart": "Instance? = nil",
+      "WorldPivot": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1"
+    },
+    "FlagStand": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "FormFactorPart": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "HopperBin": {
+      "PrimaryPart": "Instance? = nil",
+      "WorldPivot": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1"
+    },
+    "HttpService": {
+      "HttpEnabled": "boolean = false"
+    },
+    "Humanoid": {
+      "Health": "number = 100",
+      "JumpHeight": "number = 7.2",
+      "JumpPower": "number = 50",
+      "MaxHealth": "number = 100",
+      "UseJumpPower": "boolean = true",
+      "WalkSpeed": "number = 16"
+    },
+    "IntValue": {
+      "Value": "number = 0"
+    },
+    "IntersectOperation": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "LocalScript": {
+      "Disabled": "boolean = false",
+      "Enabled": "boolean = true",
+      "RunContext": "Enum.RunContext = Enum.RunContext.Legacy"
+    },
+    "MaterialVariant": {
+      "BaseMaterial": "Enum.Material = Enum.Material.Plastic",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil"
+    },
+    "MeshPart": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "Model": {
+      "PrimaryPart": "Instance? = nil",
+      "WorldPivot": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1"
+    },
+    "NegateOperation": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "NumberValue": {
+      "Value": "number = 0"
+    },
+    "ObjectValue": {
+      "Value": "Instance? = nil"
+    },
+    "Part": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Shape": "Enum.PartType = Enum.PartType.Block",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "PartOperation": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "Platform": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "Player": {
+      "Character": "Instance? = nil",
+      "DisplayName": "string = LocalPlayer",
+      "UserId": "number = 1"
+    },
+    "ProceduralModel": {
+      "PrimaryPart": "Instance? = nil",
+      "WorldPivot": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1"
+    },
+    "Script": {
+      "Disabled": "boolean = false",
+      "Enabled": "boolean = true",
+      "RunContext": "Enum.RunContext = Enum.RunContext.Legacy"
+    },
+    "Seat": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "SkateboardPlatform": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "SpawnLocation": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "Status": {
+      "PrimaryPart": "Instance? = nil",
+      "WorldPivot": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1"
+    },
+    "StatusInstance": {
+      "PrimaryPart": "Instance? = nil",
+      "WorldPivot": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1"
+    },
+    "StringValue": {
+      "Value": "string = "
+    },
+    "Terrain": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "Tool": {
+      "PrimaryPart": "Instance? = nil",
+      "WorldPivot": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1"
+    },
+    "TriangleMeshPart": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "TrussPart": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "UnionOperation": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "Vector3Value": {
+      "Value": "Vector3 = 0, 0, 0"
+    },
+    "VehicleSeat": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "WedgePart": {
+      "Anchored": "boolean = false",
+      "AssemblyAngularVelocity": "Vector3 = 0, 0, 0",
+      "AssemblyLinearVelocity": "Vector3 = 0, 0, 0",
+      "BackSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "BottomSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "CFrame": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "CanCollide": "boolean = true",
+      "CanQuery": "boolean = true",
+      "CanTouch": "boolean = true",
+      "CastShadow": "boolean = true",
+      "CollisionGroup": "string = Default",
+      "Color": "Color3 = 0.6392156862745098, 0.6352941176470588, 0.6470588235294118",
+      "CustomPhysicalProperties": "PhysicalProperties? = nil",
+      "FrontSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "LeftSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Locked": "boolean = false",
+      "Massless": "boolean = false",
+      "Material": "Enum.Material = Enum.Material.Plastic",
+      "MaterialVariant": "string = ",
+      "PivotOffset": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+      "Reflectance": "number = 0",
+      "RightSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "RootPriority": "number = 0",
+      "RotVelocity": "Vector3 = 0, 0, 0",
+      "Size": "Vector3 = 4, 1.2, 2",
+      "TopSurface": "Enum.SurfaceType = Enum.SurfaceType.Smooth",
+      "Transparency": "number = 0",
+      "Velocity": "Vector3 = 0, 0, 0"
+    },
+    "Workspace": {
+      "CurrentCamera": "Instance? = nil",
+      "FallenPartsDestroyHeight": "number = -500",
+      "Gravity": "number = 196.2",
+      "PrimaryPart": "Instance? = nil",
+      "StreamingEnabled": "boolean = false",
+      "WorldPivot": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1"
+    },
+    "WorldModel": {
+      "PrimaryPart": "Instance? = nil",
+      "WorldPivot": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1"
+    },
+    "WorldRoot": {
+      "PrimaryPart": "Instance? = nil",
+      "WorldPivot": "CFrame = 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1"
+    }
+  },
+  "service": {
+    "AssetService": {
+      "": ""
+    },
+    "BadgeService": {
+      "": ""
+    },
+    "Chat": {
+      "": ""
+    },
+    "CollectionService": {
+      "": ""
+    },
+    "ContentProvider": {
+      "": ""
+    },
+    "ContextActionService": {
+      "": ""
+    },
+    "DataStoreService": {
+      "": ""
+    },
+    "Debris": {
+      "": ""
+    },
+    "EncodingService": {
+      "": ""
+    },
+    "GroupService": {
+      "": ""
+    },
+    "GuiService": {
+      "": ""
+    },
+    "HttpService": {
+      "": ""
+    },
+    "InsertService": {
+      "": ""
+    },
+    "Lighting": {
+      "": ""
+    },
+    "LocalizationService": {
+      "": ""
+    },
+    "LogService": {
+      "": ""
+    },
+    "MarketplaceService": {
+      "": ""
+    },
+    "MaterialService": {
+      "": ""
+    },
+    "MemoryStoreService": {
+      "": ""
+    },
+    "MessagingService": {
+      "": ""
+    },
+    "PathfindingService": {
+      "": ""
+    },
+    "PhysicsService": {
+      "": ""
+    },
+    "Players": {
+      "": ""
+    },
+    "PolicyService": {
+      "": ""
+    },
+    "ReplicatedFirst": {
+      "": ""
+    },
+    "ReplicatedStorage": {
+      "": ""
+    },
+    "RunService": {
+      "": ""
+    },
+    "ServerScriptService": {
+      "": ""
+    },
+    "ServerStorage": {
+      "": ""
+    },
+    "SoundService": {
+      "": ""
+    },
+    "StarterGui": {
+      "": ""
+    },
+    "StarterPack": {
+      "": ""
+    },
+    "StarterPlayer": {
+      "": ""
+    },
+    "Stats": {
+      "": ""
+    },
+    "Teams": {
+      "": ""
+    },
+    "TeleportService": {
+      "": ""
+    },
+    "TestService": {
+      "": ""
+    },
+    "TextChatService": {
+      "": ""
+    },
+    "TextService": {
+      "": ""
+    },
+    "TweenService": {
+      "": ""
+    },
+    "UserInputService": {
+      "": ""
+    },
+    "VRService": {
+      "": ""
+    },
+    "Workspace": {
+      "": ""
+    }
+  },
+  "setter": {
+    "BasePart": {
+      "BrickColor": "",
+      "CollisionGroup": "",
+      "Color": "",
+      "Position": ""
+    },
+    "BindableFunction": {
+      "OnInvoke": ""
+    },
+    "Model": {
+      "PrimaryPart": "",
+      "WorldPivot": ""
+    },
+    "RemoteFunction": {
+      "OnClientInvoke": "",
+      "OnServerInvoke": ""
+    }
+  }
+}

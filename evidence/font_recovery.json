@@ -1,0 +1,488 @@
+{
+  "version": "0.735.19.7351131",
+  "enum_fonts": {
+    "Legacy": {
+      "enum_value": 0,
+      "family": "rbxasset://fonts/families/LegacyArial.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Arial": {
+      "enum_value": 1,
+      "family": "rbxasset://fonts/families/Arial.json",
+      "weight": 400,
+      "style": 0
+    },
+    "ArialBold": {
+      "enum_value": 2,
+      "family": "rbxasset://fonts/families/Arial.json",
+      "weight": 700,
+      "style": 0
+    },
+    "SourceSans": {
+      "enum_value": 3,
+      "family": "rbxasset://fonts/families/SourceSansPro.json",
+      "weight": 400,
+      "style": 0
+    },
+    "SourceSansBold": {
+      "enum_value": 4,
+      "family": "rbxasset://fonts/families/SourceSansPro.json",
+      "weight": 700,
+      "style": 0
+    },
+    "SourceSansLight": {
+      "enum_value": 5,
+      "family": "rbxasset://fonts/families/SourceSansPro.json",
+      "weight": 300,
+      "style": 0
+    },
+    "SourceSansItalic": {
+      "enum_value": 6,
+      "family": "rbxasset://fonts/families/SourceSansPro.json",
+      "weight": 400,
+      "style": 1
+    },
+    "Bodoni": {
+      "enum_value": 7,
+      "family": "rbxasset://fonts/families/AccanthisADFStd.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Garamond": {
+      "enum_value": 8,
+      "family": "rbxasset://fonts/families/Guru.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Cartoon": {
+      "enum_value": 9,
+      "family": "rbxasset://fonts/families/ComicNeueAngular.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Code": {
+      "enum_value": 10,
+      "family": "rbxasset://fonts/families/Inconsolata.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Highway": {
+      "enum_value": 11,
+      "family": "rbxasset://fonts/families/HighwayGothic.json",
+      "weight": 400,
+      "style": 0
+    },
+    "SciFi": {
+      "enum_value": 12,
+      "family": "rbxasset://fonts/families/Zekton.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Arcade": {
+      "enum_value": 13,
+      "family": "rbxasset://fonts/families/PressStart2P.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Fantasy": {
+      "enum_value": 14,
+      "family": "rbxasset://fonts/families/Balthazar.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Antique": {
+      "enum_value": 15,
+      "family": "rbxasset://fonts/families/RomanAntique.json",
+      "weight": 400,
+      "style": 0
+    },
+    "SourceSansSemibold": {
+      "enum_value": 16,
+      "family": "rbxasset://fonts/families/SourceSansPro.json",
+      "weight": 600,
+      "style": 0
+    },
+    "Gotham": {
+      "enum_value": 17,
+      "family": "rbxasset://fonts/families/GothamSSm.json",
+      "weight": 400,
+      "style": 0
+    },
+    "GothamMedium": {
+      "enum_value": 18,
+      "family": "rbxasset://fonts/families/GothamSSm.json",
+      "weight": 500,
+      "style": 0
+    },
+    "GothamBold": {
+      "enum_value": 19,
+      "family": "rbxasset://fonts/families/GothamSSm.json",
+      "weight": 700,
+      "style": 0
+    },
+    "GothamBlack": {
+      "enum_value": 20,
+      "family": "rbxasset://fonts/families/GothamSSm.json",
+      "weight": 900,
+      "style": 0
+    },
+    "AmaticSC": {
+      "enum_value": 21,
+      "family": "rbxasset://fonts/families/AmaticSC.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Bangers": {
+      "enum_value": 22,
+      "family": "rbxasset://fonts/families/Bangers.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Creepster": {
+      "enum_value": 23,
+      "family": "rbxasset://fonts/families/Creepster.json",
+      "weight": 400,
+      "style": 0
+    },
+    "DenkOne": {
+      "enum_value": 24,
+      "family": "rbxasset://fonts/families/DenkOne.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Fondamento": {
+      "enum_value": 25,
+      "family": "rbxasset://fonts/families/Fondamento.json",
+      "weight": 400,
+      "style": 0
+    },
+    "FredokaOne": {
+      "enum_value": 26,
+      "family": "rbxasset://fonts/families/FredokaOne.json",
+      "weight": 400,
+      "style": 0
+    },
+    "GrenzeGotisch": {
+      "enum_value": 27,
+      "family": "rbxasset://fonts/families/GrenzeGotisch.json",
+      "weight": 400,
+      "style": 0
+    },
+    "IndieFlower": {
+      "enum_value": 28,
+      "family": "rbxasset://fonts/families/IndieFlower.json",
+      "weight": 400,
+      "style": 0
+    },
+    "JosefinSans": {
+      "enum_value": 29,
+      "family": "rbxasset://fonts/families/JosefinSans.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Jura": {
+      "enum_value": 30,
+      "family": "rbxasset://fonts/families/Jura.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Kalam": {
+      "enum_value": 31,
+      "family": "rbxasset://fonts/families/Kalam.json",
+      "weight": 400,
+      "style": 0
+    },
+    "LuckiestGuy": {
+      "enum_value": 32,
+      "family": "rbxasset://fonts/families/LuckiestGuy.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Merriweather": {
+      "enum_value": 33,
+      "family": "rbxasset://fonts/families/Merriweather.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Michroma": {
+      "enum_value": 34,
+      "family": "rbxasset://fonts/families/Michroma.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Nunito": {
+      "enum_value": 35,
+      "family": "rbxasset://fonts/families/Nunito.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Oswald": {
+      "enum_value": 36,
+      "family": "rbxasset://fonts/families/Oswald.json",
+      "weight": 400,
+      "style": 0
+    },
+    "PatrickHand": {
+      "enum_value": 37,
+      "family": "rbxasset://fonts/families/PatrickHand.json",
+      "weight": 400,
+      "style": 0
+    },
+    "PermanentMarker": {
+      "enum_value": 38,
+      "family": "rbxasset://fonts/families/PermanentMarker.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Roboto": {
+      "enum_value": 39,
+      "family": "rbxasset://fonts/families/Roboto.json",
+      "weight": 400,
+      "style": 0
+    },
+    "RobotoCondensed": {
+      "enum_value": 40,
+      "family": "rbxasset://fonts/families/RobotoCondensed.json",
+      "weight": 400,
+      "style": 0
+    },
+    "RobotoMono": {
+      "enum_value": 41,
+      "family": "rbxasset://fonts/families/RobotoMono.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Sarpanch": {
+      "enum_value": 42,
+      "family": "rbxasset://fonts/families/Sarpanch.json",
+      "weight": 400,
+      "style": 0
+    },
+    "SpecialElite": {
+      "enum_value": 43,
+      "family": "rbxasset://fonts/families/SpecialElite.json",
+      "weight": 400,
+      "style": 0
+    },
+    "TitilliumWeb": {
+      "enum_value": 44,
+      "family": "rbxasset://fonts/families/TitilliumWeb.json",
+      "weight": 400,
+      "style": 0
+    },
+    "Ubuntu": {
+      "enum_value": 45,
+      "family": "rbxasset://fonts/families/Ubuntu.json",
+      "weight": 400,
+      "style": 0
+    },
+    "BuilderSans": {
+      "enum_value": 46,
+      "family": "rbxasset://fonts/families/BuilderSans.json",
+      "weight": 400,
+      "style": 0
+    },
+    "BuilderSansMedium": {
+      "enum_value": 47,
+      "family": "rbxasset://fonts/families/BuilderSans.json",
+      "weight": 500,
+      "style": 0
+    },
+    "BuilderSansBold": {
+      "enum_value": 48,
+      "family": "rbxasset://fonts/families/BuilderSans.json",
+      "weight": 700,
+      "style": 0
+    },
+    "BuilderSansExtraBold": {
+      "enum_value": 49,
+      "family": "rbxasset://fonts/families/BuilderSans.json",
+      "weight": 800,
+      "style": 0
+    },
+    "Arimo": {
+      "enum_value": 50,
+      "family": "rbxasset://fonts/families/Arimo.json",
+      "weight": 400,
+      "style": 0
+    },
+    "ArimoBold": {
+      "enum_value": 51,
+      "family": "rbxasset://fonts/families/Arimo.json",
+      "weight": 700,
+      "style": 0
+    }
+  },
+  "native_rows_verified": 52,
+  "initializer_sha256": "d0768c7d2752554af606847862d9d128bf534177846f294b3673730818a768a2",
+  "resource_files": {
+    "LegacyArial.json": {
+      "sha256": "9a49686425c899c695bdef8e9f9514c82da176841f0b76e542af6b90b66fb7e0",
+      "faces": 2
+    },
+    "SourceSansPro.json": {
+      "sha256": "c09f02584dcfb24cc9eba138638789f7b44460c3e71455e29140439813336402",
+      "faces": 12
+    },
+    "AccanthisADFStd.json": {
+      "sha256": "003e924d3646c486eb01fc671455ae690a5fcd9a6fe731b3229d4217b7d92536",
+      "faces": 1
+    },
+    "Guru.json": {
+      "sha256": "28cb4601586764e84b1e3a7ffe61b960033fc5fd49af52069e0eb024b0496541",
+      "faces": 1
+    },
+    "ComicNeueAngular.json": {
+      "sha256": "1ae460decee1806925f48242179f967ee863a930145d812b8eaa5798950110a0",
+      "faces": 1
+    },
+    "Inconsolata.json": {
+      "sha256": "baed21edee2d2aa7d7009d7126d4819edf454971f10dc79fbc200057c90a471c",
+      "faces": 8
+    },
+    "HighwayGothic.json": {
+      "sha256": "b3ac457e6d83ea6fa3979205b8d5efbcab908605064f6904b59c9cb8bb2a1c11",
+      "faces": 1
+    },
+    "Zekton.json": {
+      "sha256": "7ddc3bbcc78092be15c01ad69e2647e92e6a2e75414cb1fc2d40dda84d4c7a3e",
+      "faces": 1
+    },
+    "PressStart2P.json": {
+      "sha256": "7912e431bd1cc8bae767deb045e8b61cfef90421b038b451804f4cdb63deed08",
+      "faces": 1
+    },
+    "Balthazar.json": {
+      "sha256": "36f22e7ffc11a293056e42fa706911f3806b0c70ea7a480fd1810c6df092e501",
+      "faces": 1
+    },
+    "RomanAntique.json": {
+      "sha256": "0f78ddf1fa778d86db684f31b8d86f1ceef4de3e6ffb5b1f7294615bed393961",
+      "faces": 1
+    },
+    "AmaticSC.json": {
+      "sha256": "74444aa5c78ad8c1b0039e030acf712866675c4e44b33cb96ec77f5f940ee629",
+      "faces": 2
+    },
+    "Bangers.json": {
+      "sha256": "20b30e91615fa35c4c9761f383978764851772e165e3333f76ab909433e02676",
+      "faces": 1
+    },
+    "Creepster.json": {
+      "sha256": "4d5ddee56c259c6dd5f50b0766c8aedc9e718359996495cdef99234af545ab8d",
+      "faces": 1
+    },
+    "DenkOne.json": {
+      "sha256": "91c08ce315ef386bfb1f82f76250b170862ccb2fe5b765b0d3c6a5e8e150e911",
+      "faces": 1
+    },
+    "Fondamento.json": {
+      "sha256": "7a603973359d190e7e09e5bf1283364a533b17ec34b642fc09a0ecca76546d45",
+      "faces": 2
+    },
+    "FredokaOne.json": {
+      "sha256": "f26abce19b0ade85dba627ea2dfa56d3cca789e3be7b5d63d2a14279d93a8d84",
+      "faces": 1
+    },
+    "GrenzeGotisch.json": {
+      "sha256": "7e51199cfcf97674dfa66fbd59a46386c1a5613c1b8ead03dde914c89ec29026",
+      "faces": 9
+    },
+    "IndieFlower.json": {
+      "sha256": "41a4a6e783e014ff6b00a263e52ecec1de680519d058efce3d6e1721bdf613b3",
+      "faces": 1
+    },
+    "JosefinSans.json": {
+      "sha256": "dca867267c5263d0a8cf8660f4d05580148ad075badc45ead1796c022aba0a6b",
+      "faces": 14
+    },
+    "Jura.json": {
+      "sha256": "e6ff47943be27ef09829379d0a4527c0717350837e7f7db0406dd74d52c32063",
+      "faces": 5
+    },
+    "Kalam.json": {
+      "sha256": "d0805f87adc8eeb2ddb202ec752d8a58541adc56911b11ec4a041a05d193dceb",
+      "faces": 3
+    },
+    "LuckiestGuy.json": {
+      "sha256": "8bef44b1790ec720c1f691234ce4caeed12820fda0f2916c970ba14dc5b5c4ac",
+      "faces": 1
+    },
+    "Merriweather.json": {
+      "sha256": "89ec2be71a44da4ab7191297298ed94b2dfe2a4cbf243fdbd7dde1509042a100",
+      "faces": 8
+    },
+    "Michroma.json": {
+      "sha256": "aa1ef7a2b9fc180af24ae8539207eec7b90b641ef10d187c2d60b9469b3bf9fe",
+      "faces": 1
+    },
+    "Nunito.json": {
+      "sha256": "5d939526886c1ae333cfd40e881d9ecae46223cd9a2b73ebab54fdb49fb905b3",
+      "faces": 14
+    },
+    "Oswald.json": {
+      "sha256": "b5a69e73101d70bf6836ea9d7684ba44bcec8ded4af92d1072d9a83c09b88f6a",
+      "faces": 6
+    },
+    "PatrickHand.json": {
+      "sha256": "2f28fc0a9b9c77dac68ce8c73ea28d3fa919e617ff28e52e43ac8a8a601556d8",
+      "faces": 1
+    },
+    "PermanentMarker.json": {
+      "sha256": "6a2260c10cd036c0c10a093ac1b5c527cb61fa0f0dbb98948a5d00c644a211ca",
+      "faces": 1
+    },
+    "Roboto.json": {
+      "sha256": "d0707c08fc6d835ac7c9ba3cd32c5f33c93973ade729e5f91e32d6c31f27fb34",
+      "faces": 12
+    },
+    "RobotoCondensed.json": {
+      "sha256": "85bc1bb2fcc201c17ab9192ffbb6dc778ea0d2ca6411923af32e63f5b3814289",
+      "faces": 6
+    },
+    "RobotoMono.json": {
+      "sha256": "158a438a7f2caa3a2d434efa42ee6a78e25a7d8a32b915f82e56414921528400",
+      "faces": 14
+    },
+    "Sarpanch.json": {
+      "sha256": "2ff0bd80690ce6aadec54b58fae093ec3aac7b0a140ea53d1f096d00341d9fea",
+      "faces": 6
+    },
+    "SpecialElite.json": {
+      "sha256": "74f49d9d69a6aec05fb0c5a384e88bac245281a97c469e010b9b5e068a31801e",
+      "faces": 1
+    },
+    "TitilliumWeb.json": {
+      "sha256": "653a11786c213d01dae18869306ac058991c52f7625c87aaeb3e4a73f4a832a5",
+      "faces": 11
+    },
+    "Ubuntu.json": {
+      "sha256": "7a93d793981854e7685d6174e0279d1ed93dc4c71a1d27a3603695e4667a611a",
+      "faces": 8
+    },
+    "BuilderSans.json": {
+      "sha256": "875a02d39749399fc7120268a8d0ff68c3610998febddab52e0baab20dce2916",
+      "faces": 7
+    },
+    "Arimo.json": {
+      "sha256": "93ba9eb9d330aecdf71369695696abafc3d25175ce4b37bfc19c164232bc2ef3",
+      "faces": 8
+    }
+  },
+  "from_id_bridge_sha256": "8ad996a515f79575f9733f78132ebf0a7b274379799118b976f1c446446a477b",
+  "from_id_review": [
+    "0x104657be6: cvttsd2si r14, xmm0",
+    "0x104657bfe: mov rsi, r14"
+  ],
+  "source_sha256": {
+    "_free/_free_g.part001.c": "e69b0fbed27b6ab57c2560ada306a5a65cf9aa3dc26d65be7e8c87f820ebb59e",
+    "rbx/FontInfo.c": "712400fb876140838c049cfc9bd9b3a9410e6ba16a0ad04b04e839a739a3babe",
+    "script/FontBridge.c": "e54427a3a44ca9ca4c1c229591783639983096259c4821b5dc15d3ce42368249"
+  },
+  "limits": [
+    "Family/weight/style only; no renderer/font asset loading.",
+    "Native 0.735 fromId converts via signed int32 then unsigned int32.",
+    "Mutable value copying is implemented semantically."
+  ]
+}

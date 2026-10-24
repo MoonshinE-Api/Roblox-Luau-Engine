@@ -1,0 +1,66 @@
+; __Z11luaS_resizeP9lua_Statei
+; original address 0x1031e6911, source {'file': '_free/_free_l.part002.c', 'line': 7756}
+0x1031e6911: 55                       push     rbp
+0x1031e6912: 4889e5                   mov      rbp, rsp
+0x1031e6915: 4157                     push     r15
+0x1031e6917: 4156                     push     r14
+0x1031e6919: 4155                     push     r13
+0x1031e691b: 4154                     push     r12
+0x1031e691d: 53                       push     rbx
+0x1031e691e: 50                       push     rax
+0x1031e691f: 4989fe                   mov      r14, rdi
+0x1031e6922: 85f6                     test     esi, esi
+0x1031e6924: 0f889a000000             js       0x1031e69c4
+0x1031e692a: 89f3                     mov      ebx, esi
+0x1031e692c: 4189f4                   mov      r12d, esi
+0x1031e692f: 49c1e403                 shl      r12, 3
+0x1031e6933: 4c89f7                   mov      rdi, r14
+0x1031e6936: 4c89e6                   mov      rsi, r12
+0x1031e6939: 31d2                     xor      edx, edx
+0x1031e693b: e890d8ffff               call     0x1031e41d0
+0x1031e6940: 4989c7                   mov      r15, rax
+0x1031e6943: 4d8b6e30                 mov      r13, qword ptr [r14 + 0x30]
+0x1031e6947: 85db                     test     ebx, ebx
+0x1031e6949: 740b                     je       0x1031e6956
+0x1031e694b: 4c89ff                   mov      rdi, r15
+0x1031e694e: 4c89e6                   mov      rsi, r12
+0x1031e6951: e854c06305               call     0x1088229aa
+0x1031e6956: 49635508                 movsxd   rdx, dword ptr [r13 + 8]
+0x1031e695a: 4885d2                   test     rdx, rdx
+0x1031e695d: 7e3c                     jle      0x1031e699b
+0x1031e695f: 4863c3                   movsxd   rax, ebx
+0x1031e6962: 48ffc8                   dec      rax
+0x1031e6965: 31c9                     xor      ecx, ecx
+0x1031e6967: 498b7500                 mov      rsi, qword ptr [r13]
+0x1031e696b: 488b34ce                 mov      rsi, qword ptr [rsi + rcx*8]
+0x1031e696f: 4885f6                   test     rsi, rsi
+0x1031e6972: 741f                     je       0x1031e6993
+0x1031e6974: 488b7e08                 mov      rdi, qword ptr [rsi + 8]
+0x1031e6978: 4c634610                 movsxd   r8, dword ptr [rsi + 0x10]
+0x1031e697c: 4921c0                   and      r8, rax
+0x1031e697f: 4f8b0cc7                 mov      r9, qword ptr [r15 + r8*8]
+0x1031e6983: 4c894e08                 mov      qword ptr [rsi + 8], r9
+0x1031e6987: 4b8934c7                 mov      qword ptr [r15 + r8*8], rsi
+0x1031e698b: 4889fe                   mov      rsi, rdi
+0x1031e698e: 4885ff                   test     rdi, rdi
+0x1031e6991: 75e1                     jne      0x1031e6974
+0x1031e6993: 48ffc1                   inc      rcx
+0x1031e6996: 4839d1                   cmp      rcx, rdx
+0x1031e6999: 75cc                     jne      0x1031e6967
+0x1031e699b: 498b7500                 mov      rsi, qword ptr [r13]
+0x1031e699f: 48c1e203                 shl      rdx, 3
+0x1031e69a3: 4c89f7                   mov      rdi, r14
+0x1031e69a6: 31c9                     xor      ecx, ecx
+0x1031e69a8: e81edcffff               call     0x1031e45cb
+0x1031e69ad: 41895d08                 mov      dword ptr [r13 + 8], ebx
+0x1031e69b1: 4d897d00                 mov      qword ptr [r13], r15
+0x1031e69b5: 4883c408                 add      rsp, 8
+0x1031e69b9: 5b                       pop      rbx
+0x1031e69ba: 415c                     pop      r12
+0x1031e69bc: 415d                     pop      r13
+0x1031e69be: 415e                     pop      r14
+0x1031e69c0: 415f                     pop      r15
+0x1031e69c2: 5d                       pop      rbp
+0x1031e69c3: c3                       ret      
+0x1031e69c4: 4c89f7                   mov      rdi, r14
+0x1031e69c7: e8f2d7ffff               call     0x1031e41be

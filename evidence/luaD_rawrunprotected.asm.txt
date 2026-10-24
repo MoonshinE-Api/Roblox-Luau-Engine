@@ -1,0 +1,55 @@
+; __Z20luaD_rawrunprotectedP9lua_StatePFvS0_PvES1_
+; original address 0x1031dc6f4, source {'file': '_free/_free_l.part002.c', 'line': 4525}
+0x1031dc6f4: 55                       push     rbp
+0x1031dc6f5: 4889e5                   mov      rbp, rsp
+0x1031dc6f8: 4157                     push     r15
+0x1031dc6fa: 4156                     push     r14
+0x1031dc6fc: 53                       push     rbx
+0x1031dc6fd: 50                       push     rax
+0x1031dc6fe: 4889f0                   mov      rax, rsi
+0x1031dc701: 4989fe                   mov      r14, rdi
+0x1031dc704: 31db                     xor      ebx, ebx
+0x1031dc706: 4889d6                   mov      rsi, rdx
+0x1031dc709: ffd0                     call     rax
+0x1031dc70b: 89d8                     mov      eax, ebx
+0x1031dc70d: 4883c408                 add      rsp, 8
+0x1031dc711: 5b                       pop      rbx
+0x1031dc712: 415e                     pop      r14
+0x1031dc714: 415f                     pop      r15
+0x1031dc716: 5d                       pop      rbp
+0x1031dc717: c3                       ret      
+0x1031dc718: 4989d7                   mov      r15, rdx
+0x1031dc71b: 4889c3                   mov      rbx, rax
+0x1031dc71e: 4183ff02                 cmp      r15d, 2
+0x1031dc722: 750d                     jne      0x1031dc731
+0x1031dc724: 4889df                   mov      rdi, rbx
+0x1031dc727: e89c626405               call     0x1088229c8
+0x1031dc72c: 8b5810                   mov      ebx, dword ptr [rax + 0x10]
+0x1031dc72f: eb27                     jmp      0x1031dc758
+0x1031dc731: 4183ff01                 cmp      r15d, 1
+0x1031dc735: 754c                     jne      0x1031dc783
+0x1031dc737: 4889df                   mov      rdi, rbx
+0x1031dc73a: e889626405               call     0x1088229c8
+0x1031dc73f: 488b08                   mov      rcx, qword ptr [rax]
+0x1031dc742: 4889c7                   mov      rdi, rax
+0x1031dc745: ff5110                   call     qword ptr [rcx + 0x10]
+0x1031dc748: bb02000000               mov      ebx, 2
+0x1031dc74d: 4c89f7                   mov      rdi, r14
+0x1031dc750: 4889c6                   mov      rsi, rax
+0x1031dc753: e8bdf4ffff               call     0x1031dbc15
+0x1031dc758: e877626405               call     0x1088229d4
+0x1031dc75d: ebac                     jmp      0x1031dc70b
+0x1031dc75f: 4889c3                   mov      rbx, rax
+0x1031dc762: 4439fa                   cmp      edx, r15d
+0x1031dc765: 7517                     jne      0x1031dc77e
+0x1031dc767: 4889df                   mov      rdi, rbx
+0x1031dc76a: e859626405               call     0x1088229c8
+0x1031dc76f: bb04000000               mov      ebx, 4
+0x1031dc774: e85b626405               call     0x1088229d4
+0x1031dc779: ebdd                     jmp      0x1031dc758
+0x1031dc77b: 4889c3                   mov      rbx, rax
+0x1031dc77e: e851626405               call     0x1088229d4
+0x1031dc783: 4889df                   mov      rdi, rbx
+0x1031dc786: e80b1c6405               call     0x10881e396
+0x1031dc78b: 4889c7                   mov      rdi, rax
+0x1031dc78e: e83df26000               call     0x1037eb9d0

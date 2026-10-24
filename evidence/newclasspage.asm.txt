@@ -1,0 +1,30 @@
+; __ZL12newclasspageP9lua_StatePP8lua_PageS3_hb
+; original address 0x1031e4c3e, source {'file': '_free/_free_n.part004.c', 'line': 10831}
+0x1031e4c3e: 55                       push     rbp
+0x1031e4c3f: 4889e5                   mov      rbp, rsp
+0x1031e4c42: 4156                     push     r14
+0x1031e4c44: 53                       push     rbx
+0x1031e4c45: 4989d1                   mov      r9, rdx
+0x1031e4c48: 4889f3                   mov      rbx, rsi
+0x1031e4c4b: 488d05125b110a           lea      rax, [rip + 0xa115b12]
+0x1031e4c52: 4189ce                   mov      r14d, ecx
+0x1031e4c55: 428b04b0                 mov      eax, dword ptr [rax + r14*4]
+0x1031e4c59: 4531d2                   xor      r10d, r10d
+0x1031e4c5c: 3d01020000               cmp      eax, 0x201
+0x1031e4c61: 410f9dc2                 setge    r10b
+0x1031e4c65: 41c1e20e                 shl      r10d, 0xe
+0x1031e4c69: 4181cae83f0000           or       r10d, 0x3fe8
+0x1031e4c70: 428d0cc0                 lea      ecx, [rax + r8*8]
+0x1031e4c74: 498d42c0                 lea      rax, [r10 - 0x40]
+0x1031e4c78: 4863c9                   movsxd   rcx, ecx
+0x1031e4c7b: 31d2                     xor      edx, edx
+0x1031e4c7d: 48f7f1                   div      rcx
+0x1031e4c80: 4c89ce                   mov      rsi, r9
+0x1031e4c83: 4489d2                   mov      edx, r10d
+0x1031e4c86: 4189c0                   mov      r8d, eax
+0x1031e4c89: e8c7f7ffff               call     0x1031e4455
+0x1031e4c8e: 4a8904f3                 mov      qword ptr [rbx + r14*8], rax
+0x1031e4c92: 5b                       pop      rbx
+0x1031e4c93: 415e                     pop      r14
+0x1031e4c95: 5d                       pop      rbp
+0x1031e4c96: c3                       ret      

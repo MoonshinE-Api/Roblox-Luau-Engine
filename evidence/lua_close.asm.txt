@@ -1,0 +1,16 @@
+; __Z9lua_closeP9lua_State
+; original address 0x1031e6875, source {'file': '_free/_free_l.part002.c', 'line': 7706}
+0x1031e6875: 55                       push     rbp
+0x1031e6876: 4889e5                   mov      rbp, rsp
+0x1031e6879: 53                       push     rbx
+0x1031e687a: 50                       push     rax
+0x1031e687b: 488b4730                 mov      rax, qword ptr [rdi + 0x30]
+0x1031e687f: 488b9888000000           mov      rbx, qword ptr [rax + 0x88]
+0x1031e6886: 488b7340                 mov      rsi, qword ptr [rbx + 0x40]
+0x1031e688a: 4889df                   mov      rdi, rbx
+0x1031e688d: e86872ffff               call     0x1031ddafa
+0x1031e6892: 4889df                   mov      rdi, rbx
+0x1031e6895: 4883c408                 add      rsp, 8
+0x1031e6899: 5b                       pop      rbx
+0x1031e689a: 5d                       pop      rbp
+0x1031e689b: e965ffffff               jmp      0x1031e6805

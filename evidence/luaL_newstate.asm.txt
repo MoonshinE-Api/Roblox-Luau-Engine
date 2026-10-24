@@ -1,0 +1,8 @@
+; __Z13luaL_newstatev
+; original address 0x1031e21b9, source {'file': '_free/_free_l.part002.c', 'line': 6298}
+0x1031e21b9: 55                       push     rbp
+0x1031e21ba: 4889e5                   mov      rbp, rsp
+0x1031e21bd: 488d3d08000000           lea      rdi, [rip + 8]
+0x1031e21c4: 31f6                     xor      esi, esi
+0x1031e21c6: 5d                       pop      rbp
+0x1031e21c7: e933420000               jmp      0x1031e63ff

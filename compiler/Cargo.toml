@@ -1,0 +1,12 @@
+[package]
+name = "recovery-luau-compile"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+mlua = { version = "=0.12.2", features = ["luau", "vendored", "serialize", "async"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+strip = true

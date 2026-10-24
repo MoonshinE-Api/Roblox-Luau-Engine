@@ -1,0 +1,62 @@
+local service=game:GetService("TweenService")
+local styles,directions=Enum.EasingStyle,Enum.EasingDirection
+local states=Enum.PlaybackState
+local function close(a,b) assert(math.abs(a-b)<1e-6,tostring(a).." ~= "..tostring(b)) end
+for _,style in styles:GetEnumItems() do
+    for _,direction in directions:GetEnumItems() do
+        close(service:GetValue(0,style,direction),0)
+        close(service:GetValue(1,style,direction),1)
+        local midpoint=service:GetValue(0.5,style,direction)
+        assert(midpoint==midpoint and math.abs(midpoint)<10)
+    end
+end
+close(service:GetValue(0.5,styles.Quad,directions.In),0.25)
+close(service:GetValue(0.5,styles.Quad,directions.Out),0.75)
+local start=CFrame.new(0,2,0)
+local goal=CFrame.new(10,4,0)*CFrame.Angles(0,math.pi/2,0)
+local midpoint=start:Lerp(goal,0.5)
+assert(midpoint.Position==Vector3.new(5,3,0))
+assert(midpoint.RightVector:FuzzyEq(Vector3.new(math.sqrt(0.5),0,-math.sqrt(0.5)),1e-7))
+local opposite=CFrame.Angles(math.pi,0,0):Lerp(CFrame.Angles(0,math.pi,0),0.5)
+close(opposite.RightVector.Magnitude,1);close(opposite.RightVector:Dot(opposite.UpVector),0)
+local part=Instance.new("Part",workspace)
+part.CFrame=start
+local completed,pausedSignals=0,0
+local info=TweenInfo.new(0.1,styles.Linear,directions.In)
+local tween=service:Create(part,info,{CFrame=goal,Transparency=0.8,Color=Color3.new(1,0,0)})
+assert(typeof(tween)=="Instance" and tween:IsA("TweenBase") and tween.Instance==part and tween.TweenInfo==info)
+assert(tween.PlaybackState==states.Begin)
+tween.Completed:Connect(function(state) assert(state==states.Completed);completed+=1 end)
+tween:Play()
+assert(tween.PlaybackState==states.Playing)
+task.wait(0.04)
+assert(part.Position.X>0 and part.Position.X<10)
+tween:Pause();assert(tween.PlaybackState==states.Paused)
+local held=part.CFrame
+task.wait(0.1);assert(part.CFrame==held and completed==0)
+tween:Play()
+assert(tween.Completed:Wait()==states.Completed)
+assert(completed==1 and part.CFrame==goal and part.Color==Color3.new(1,0,0));close(part.Transparency,0.8)
+local reverse=service:Create(part,TweenInfo.new(0.05,styles.Linear,directions.In,1,true,0.02),{Transparency=0.2})
+reverse:Play();assert(reverse.PlaybackState==states.Delayed)
+task.wait(0.01);reverse:Pause();assert(reverse.PlaybackState==states.Delayed)
+assert(reverse.Completed:Wait()==states.Completed);close(part.Transparency,0.8)
+local cancelled=0
+local first=service:Create(part,TweenInfo.new(0.2),{Transparency=0.1})
+first.Completed:Connect(function(value) assert(value==states.Cancelled);cancelled+=1 end)
+first:Play()
+local second=service:Create(part,TweenInfo.new(0.03),{Transparency=0.4})
+second:Play()
+assert(first.PlaybackState==states.Cancelled and cancelled==1)
+assert(second.Completed:Wait()==states.Completed);close(part.Transparency,0.4)
+local repeated=service:Create(part,TweenInfo.new(0.01,styles.Linear,directions.In,-1),{Transparency=0.1})
+repeated:Play();task.wait(0.04);assert(repeated.PlaybackState==states.Playing)
+repeated:Cancel();assert(repeated.PlaybackState==states.Cancelled)
+local zero=service:Create(part,TweenInfo.new(0),{Transparency=1})
+zero:Play();assert(zero.Completed:Wait()==states.Completed);assert(part.Transparency==1)
+assert(not pcall(function() service:Create(part,info,{Name="Other"}) end))
+assert(not pcall(function() service:Create(part,info,{AssemblyMass=100}) end))
+assert(not pcall(function() service:Create(part,info,{Size=1}) end))
+assert(not pcall(function() tween.PlaybackState=states.Playing end))
+part:Destroy()
+print("TWEEN AND CFRAME INTERPOLATION CHECKS PASSED")

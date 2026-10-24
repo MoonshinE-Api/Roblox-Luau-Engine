@@ -1,0 +1,14 @@
+; __ZN5LuaVM7compileERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS_13CompileTargetEi
+; original address 0x10468e3a6, source {'file': 'script/LuaVM.c', 'line': 25}
+0x10468e3a6: 55                       push     rbp
+0x10468e3a7: 4889e5                   mov      rbp, rsp
+0x10468e3aa: 53                       push     rbx
+0x10468e3ab: 50                       push     rax
+0x10468e3ac: 4889fb                   mov      rbx, rdi
+0x10468e3af: 488d352a328e07           lea      rsi, [rip + 0x78e322a]
+0x10468e3b6: e87d12cb03               call     0x10833f638
+0x10468e3bb: 4889d8                   mov      rax, rbx
+0x10468e3be: 4883c408                 add      rsp, 8
+0x10468e3c2: 5b                       pop      rbx
+0x10468e3c3: 5d                       pop      rbp
+0x10468e3c4: c3                       ret      

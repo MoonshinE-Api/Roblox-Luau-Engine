@@ -1,0 +1,6 @@
+# Source evidence records byte hashes. Preserve exact bytes on every checkout.
+* -text
+*.exe binary
+*.dll binary
+*.rbxm binary
+*.zip binary

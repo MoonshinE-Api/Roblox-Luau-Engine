@@ -1,0 +1,2545 @@
+{
+  "version": "0.735.19.7351131",
+  "colors": [
+    {
+      "name": "White",
+      "string_site": "0x102a45d69",
+      "number": 1,
+      "rgb": [
+        242,
+        243,
+        243
+      ],
+      "insert_site": "0x102a45d8d"
+    },
+    {
+      "name": "Grey",
+      "string_site": "0x102a45db5",
+      "number": 2,
+      "rgb": [
+        161,
+        165,
+        162
+      ],
+      "insert_site": "0x102a45dd9"
+    },
+    {
+      "name": "Light yellow",
+      "string_site": "0x102a45e01",
+      "number": 3,
+      "rgb": [
+        249,
+        233,
+        153
+      ],
+      "insert_site": "0x102a45e25"
+    },
+    {
+      "name": "Brick yellow",
+      "string_site": "0x102a45e4d",
+      "number": 5,
+      "rgb": [
+        215,
+        197,
+        154
+      ],
+      "insert_site": "0x102a45e71"
+    },
+    {
+      "name": "Light green (Mint)",
+      "string_site": "0x102a45e99",
+      "number": 6,
+      "rgb": [
+        194,
+        218,
+        184
+      ],
+      "insert_site": "0x102a45ebd"
+    },
+    {
+      "name": "Light reddish violet",
+      "string_site": "0x102a45ee5",
+      "number": 9,
+      "rgb": [
+        232,
+        186,
+        200
+      ],
+      "insert_site": "0x102a45f09"
+    },
+    {
+      "name": "Pastel Blue",
+      "string_site": "0x102a45f31",
+      "number": 11,
+      "rgb": [
+        128,
+        187,
+        219
+      ],
+      "insert_site": "0x102a45f55"
+    },
+    {
+      "name": "Light orange brown",
+      "string_site": "0x102a45f7d",
+      "number": 12,
+      "rgb": [
+        203,
+        132,
+        66
+      ],
+      "insert_site": "0x102a45fa1"
+    },
+    {
+      "name": "Nougat",
+      "string_site": "0x102a45fc9",
+      "number": 18,
+      "rgb": [
+        204,
+        142,
+        105
+      ],
+      "insert_site": "0x102a45fed"
+    },
+    {
+      "name": "Bright red",
+      "string_site": "0x102a46015",
+      "number": 21,
+      "rgb": [
+        196,
+        40,
+        28
+      ],
+      "insert_site": "0x102a46039"
+    },
+    {
+      "name": "Med. reddish violet",
+      "string_site": "0x102a46061",
+      "number": 22,
+      "rgb": [
+        196,
+        112,
+        160
+      ],
+      "insert_site": "0x102a46085"
+    },
+    {
+      "name": "Bright blue",
+      "string_site": "0x102a460ad",
+      "number": 23,
+      "rgb": [
+        13,
+        105,
+        172
+      ],
+      "insert_site": "0x102a460d1"
+    },
+    {
+      "name": "Bright yellow",
+      "string_site": "0x102a460f9",
+      "number": 24,
+      "rgb": [
+        245,
+        205,
+        48
+      ],
+      "insert_site": "0x102a4611d"
+    },
+    {
+      "name": "Earth orange",
+      "string_site": "0x102a46145",
+      "number": 25,
+      "rgb": [
+        98,
+        71,
+        50
+      ],
+      "insert_site": "0x102a46169"
+    },
+    {
+      "name": "Black",
+      "string_site": "0x102a46191",
+      "number": 26,
+      "rgb": [
+        27,
+        42,
+        53
+      ],
+      "insert_site": "0x102a461b5"
+    },
+    {
+      "name": "Dark grey",
+      "string_site": "0x102a461dd",
+      "number": 27,
+      "rgb": [
+        109,
+        110,
+        108
+      ],
+      "insert_site": "0x102a46201"
+    },
+    {
+      "name": "Dark green",
+      "string_site": "0x102a46229",
+      "number": 28,
+      "rgb": [
+        40,
+        127,
+        71
+      ],
+      "insert_site": "0x102a4624d"
+    },
+    {
+      "name": "Medium green",
+      "string_site": "0x102a46275",
+      "number": 29,
+      "rgb": [
+        161,
+        196,
+        140
+      ],
+      "insert_site": "0x102a46299"
+    },
+    {
+      "name": "Lig. Yellowich orange",
+      "string_site": "0x102a462c1",
+      "number": 36,
+      "rgb": [
+        243,
+        207,
+        155
+      ],
+      "insert_site": "0x102a462e5"
+    },
+    {
+      "name": "Bright green",
+      "string_site": "0x102a4630d",
+      "number": 37,
+      "rgb": [
+        75,
+        151,
+        75
+      ],
+      "insert_site": "0x102a46331"
+    },
+    {
+      "name": "Dark orange",
+      "string_site": "0x102a46359",
+      "number": 38,
+      "rgb": [
+        160,
+        95,
+        53
+      ],
+      "insert_site": "0x102a4637d"
+    },
+    {
+      "name": "Light bluish violet",
+      "string_site": "0x102a463a5",
+      "number": 39,
+      "rgb": [
+        193,
+        202,
+        222
+      ],
+      "insert_site": "0x102a463c9"
+    },
+    {
+      "name": "Transparent",
+      "string_site": "0x102a463f1",
+      "number": 40,
+      "rgb": [
+        236,
+        236,
+        236
+      ],
+      "insert_site": "0x102a46415"
+    },
+    {
+      "name": "Tr. Red",
+      "string_site": "0x102a4643d",
+      "number": 41,
+      "rgb": [
+        205,
+        84,
+        75
+      ],
+      "insert_site": "0x102a46461"
+    },
+    {
+      "name": "Tr. Lg blue",
+      "string_site": "0x102a46489",
+      "number": 42,
+      "rgb": [
+        193,
+        223,
+        240
+      ],
+      "insert_site": "0x102a464ad"
+    },
+    {
+      "name": "Tr. Blue",
+      "string_site": "0x102a464d5",
+      "number": 43,
+      "rgb": [
+        123,
+        182,
+        232
+      ],
+      "insert_site": "0x102a464f9"
+    },
+    {
+      "name": "Tr. Yellow",
+      "string_site": "0x102a46521",
+      "number": 44,
+      "rgb": [
+        247,
+        241,
+        141
+      ],
+      "insert_site": "0x102a46545"
+    },
+    {
+      "name": "Light blue",
+      "string_site": "0x102a4656d",
+      "number": 45,
+      "rgb": [
+        180,
+        210,
+        228
+      ],
+      "insert_site": "0x102a46591"
+    },
+    {
+      "name": "Tr. Flu. Reddish orange",
+      "string_site": "0x102a465b9",
+      "number": 47,
+      "rgb": [
+        217,
+        133,
+        108
+      ],
+      "insert_site": "0x102a465dd"
+    },
+    {
+      "name": "Tr. Green",
+      "string_site": "0x102a46605",
+      "number": 48,
+      "rgb": [
+        132,
+        182,
+        141
+      ],
+      "insert_site": "0x102a46629"
+    },
+    {
+      "name": "Tr. Flu. Green",
+      "string_site": "0x102a46651",
+      "number": 49,
+      "rgb": [
+        248,
+        241,
+        132
+      ],
+      "insert_site": "0x102a46675"
+    },
+    {
+      "name": "Phosph. White",
+      "string_site": "0x102a4669d",
+      "number": 50,
+      "rgb": [
+        236,
+        232,
+        222
+      ],
+      "insert_site": "0x102a466c1"
+    },
+    {
+      "name": "Light red",
+      "string_site": "0x102a466e9",
+      "number": 100,
+      "rgb": [
+        238,
+        196,
+        182
+      ],
+      "insert_site": "0x102a4670d"
+    },
+    {
+      "name": "Medium red",
+      "string_site": "0x102a46735",
+      "number": 101,
+      "rgb": [
+        218,
+        134,
+        122
+      ],
+      "insert_site": "0x102a46759"
+    },
+    {
+      "name": "Medium blue",
+      "string_site": "0x102a46781",
+      "number": 102,
+      "rgb": [
+        110,
+        153,
+        202
+      ],
+      "insert_site": "0x102a467a5"
+    },
+    {
+      "name": "Light grey",
+      "string_site": "0x102a467cd",
+      "number": 103,
+      "rgb": [
+        199,
+        193,
+        183
+      ],
+      "insert_site": "0x102a467f1"
+    },
+    {
+      "name": "Bright violet",
+      "string_site": "0x102a46819",
+      "number": 104,
+      "rgb": [
+        107,
+        50,
+        124
+      ],
+      "insert_site": "0x102a4683d"
+    },
+    {
+      "name": "Br. yellowish orange",
+      "string_site": "0x102a46865",
+      "number": 105,
+      "rgb": [
+        226,
+        155,
+        64
+      ],
+      "insert_site": "0x102a46889"
+    },
+    {
+      "name": "Bright orange",
+      "string_site": "0x102a468b1",
+      "number": 106,
+      "rgb": [
+        218,
+        133,
+        65
+      ],
+      "insert_site": "0x102a468d5"
+    },
+    {
+      "name": "Bright bluish green",
+      "string_site": "0x102a468fd",
+      "number": 107,
+      "rgb": [
+        0,
+        143,
+        156
+      ],
+      "insert_site": "0x102a4691e"
+    },
+    {
+      "name": "Earth yellow",
+      "string_site": "0x102a46946",
+      "number": 108,
+      "rgb": [
+        104,
+        92,
+        67
+      ],
+      "insert_site": "0x102a4696a"
+    },
+    {
+      "name": "Bright bluish violet",
+      "string_site": "0x102a46992",
+      "number": 110,
+      "rgb": [
+        67,
+        84,
+        147
+      ],
+      "insert_site": "0x102a469b6"
+    },
+    {
+      "name": "Tr. Brown",
+      "string_site": "0x102a469de",
+      "number": 111,
+      "rgb": [
+        191,
+        183,
+        177
+      ],
+      "insert_site": "0x102a46a02"
+    },
+    {
+      "name": "Medium bluish violet",
+      "string_site": "0x102a46a2a",
+      "number": 112,
+      "rgb": [
+        104,
+        116,
+        172
+      ],
+      "insert_site": "0x102a46a4e"
+    },
+    {
+      "name": "Tr. Medi. reddish violet",
+      "string_site": "0x102a46a76",
+      "number": 113,
+      "rgb": [
+        229,
+        173,
+        200
+      ],
+      "insert_site": "0x102a46a9a"
+    },
+    {
+      "name": "Med. yellowish green",
+      "string_site": "0x102a46ac2",
+      "number": 115,
+      "rgb": [
+        199,
+        210,
+        60
+      ],
+      "insert_site": "0x102a46ae6"
+    },
+    {
+      "name": "Med. bluish green",
+      "string_site": "0x102a46b0e",
+      "number": 116,
+      "rgb": [
+        85,
+        165,
+        175
+      ],
+      "insert_site": "0x102a46b32"
+    },
+    {
+      "name": "Light bluish green",
+      "string_site": "0x102a46b5a",
+      "number": 118,
+      "rgb": [
+        183,
+        215,
+        213
+      ],
+      "insert_site": "0x102a46b7e"
+    },
+    {
+      "name": "Br. yellowish green",
+      "string_site": "0x102a46ba6",
+      "number": 119,
+      "rgb": [
+        164,
+        189,
+        71
+      ],
+      "insert_site": "0x102a46bca"
+    },
+    {
+      "name": "Lig. yellowish green",
+      "string_site": "0x102a46bf2",
+      "number": 120,
+      "rgb": [
+        217,
+        228,
+        167
+      ],
+      "insert_site": "0x102a46c16"
+    },
+    {
+      "name": "Med. yellowish orange",
+      "string_site": "0x102a46c3e",
+      "number": 121,
+      "rgb": [
+        231,
+        172,
+        88
+      ],
+      "insert_site": "0x102a46c62"
+    },
+    {
+      "name": "Br. reddish orange",
+      "string_site": "0x102a46c8a",
+      "number": 123,
+      "rgb": [
+        211,
+        111,
+        76
+      ],
+      "insert_site": "0x102a46cae"
+    },
+    {
+      "name": "Bright reddish violet",
+      "string_site": "0x102a46cd6",
+      "number": 124,
+      "rgb": [
+        146,
+        57,
+        120
+      ],
+      "insert_site": "0x102a46cfa"
+    },
+    {
+      "name": "Light orange",
+      "string_site": "0x102a46d22",
+      "number": 125,
+      "rgb": [
+        234,
+        184,
+        146
+      ],
+      "insert_site": "0x102a46d46"
+    },
+    {
+      "name": "Tr. Bright bluish violet",
+      "string_site": "0x102a46d6e",
+      "number": 126,
+      "rgb": [
+        165,
+        165,
+        203
+      ],
+      "insert_site": "0x102a46d92"
+    },
+    {
+      "name": "Gold",
+      "string_site": "0x102a46dba",
+      "number": 127,
+      "rgb": [
+        220,
+        188,
+        129
+      ],
+      "insert_site": "0x102a46dde"
+    },
+    {
+      "name": "Dark nougat",
+      "string_site": "0x102a46e06",
+      "number": 128,
+      "rgb": [
+        174,
+        122,
+        89
+      ],
+      "insert_site": "0x102a46e2a"
+    },
+    {
+      "name": "Silver",
+      "string_site": "0x102a46e52",
+      "number": 131,
+      "rgb": [
+        156,
+        163,
+        168
+      ],
+      "insert_site": "0x102a46e76"
+    },
+    {
+      "name": "Neon orange",
+      "string_site": "0x102a46e9e",
+      "number": 133,
+      "rgb": [
+        213,
+        115,
+        61
+      ],
+      "insert_site": "0x102a46ec2"
+    },
+    {
+      "name": "Neon green",
+      "string_site": "0x102a46eea",
+      "number": 134,
+      "rgb": [
+        216,
+        221,
+        86
+      ],
+      "insert_site": "0x102a46f0e"
+    },
+    {
+      "name": "Sand blue",
+      "string_site": "0x102a46f36",
+      "number": 135,
+      "rgb": [
+        116,
+        134,
+        157
+      ],
+      "insert_site": "0x102a46f5a"
+    },
+    {
+      "name": "Sand violet",
+      "string_site": "0x102a46f82",
+      "number": 136,
+      "rgb": [
+        135,
+        124,
+        144
+      ],
+      "insert_site": "0x102a46fa6"
+    },
+    {
+      "name": "Medium orange",
+      "string_site": "0x102a46fce",
+      "number": 137,
+      "rgb": [
+        224,
+        152,
+        100
+      ],
+      "insert_site": "0x102a46ff2"
+    },
+    {
+      "name": "Sand yellow",
+      "string_site": "0x102a4701a",
+      "number": 138,
+      "rgb": [
+        149,
+        138,
+        115
+      ],
+      "insert_site": "0x102a4703e"
+    },
+    {
+      "name": "Earth blue",
+      "string_site": "0x102a47066",
+      "number": 140,
+      "rgb": [
+        32,
+        58,
+        86
+      ],
+      "insert_site": "0x102a4708a"
+    },
+    {
+      "name": "Earth green",
+      "string_site": "0x102a470b2",
+      "number": 141,
+      "rgb": [
+        39,
+        70,
+        45
+      ],
+      "insert_site": "0x102a470d6"
+    },
+    {
+      "name": "Tr. Flu. Blue",
+      "string_site": "0x102a470fe",
+      "number": 143,
+      "rgb": [
+        207,
+        226,
+        247
+      ],
+      "insert_site": "0x102a47122"
+    },
+    {
+      "name": "Sand blue metallic",
+      "string_site": "0x102a4714a",
+      "number": 145,
+      "rgb": [
+        121,
+        136,
+        161
+      ],
+      "insert_site": "0x102a4716e"
+    },
+    {
+      "name": "Sand violet metallic",
+      "string_site": "0x102a47196",
+      "number": 146,
+      "rgb": [
+        149,
+        142,
+        163
+      ],
+      "insert_site": "0x102a471ba"
+    },
+    {
+      "name": "Sand yellow metallic",
+      "string_site": "0x102a471e2",
+      "number": 147,
+      "rgb": [
+        147,
+        135,
+        103
+      ],
+      "insert_site": "0x102a47206"
+    },
+    {
+      "name": "Dark grey metallic",
+      "string_site": "0x102a4722e",
+      "number": 148,
+      "rgb": [
+        87,
+        88,
+        87
+      ],
+      "insert_site": "0x102a47252"
+    },
+    {
+      "name": "Black metallic",
+      "string_site": "0x102a4727a",
+      "number": 149,
+      "rgb": [
+        22,
+        29,
+        50
+      ],
+      "insert_site": "0x102a4729e"
+    },
+    {
+      "name": "Light grey metallic",
+      "string_site": "0x102a472c6",
+      "number": 150,
+      "rgb": [
+        171,
+        173,
+        172
+      ],
+      "insert_site": "0x102a472ea"
+    },
+    {
+      "name": "Sand green",
+      "string_site": "0x102a47312",
+      "number": 151,
+      "rgb": [
+        120,
+        144,
+        130
+      ],
+      "insert_site": "0x102a47336"
+    },
+    {
+      "name": "Sand red",
+      "string_site": "0x102a4735e",
+      "number": 153,
+      "rgb": [
+        149,
+        121,
+        119
+      ],
+      "insert_site": "0x102a47382"
+    },
+    {
+      "name": "Dark red",
+      "string_site": "0x102a473aa",
+      "number": 154,
+      "rgb": [
+        123,
+        46,
+        47
+      ],
+      "insert_site": "0x102a473ce"
+    },
+    {
+      "name": "Tr. Flu. Yellow",
+      "string_site": "0x102a473f6",
+      "number": 157,
+      "rgb": [
+        255,
+        246,
+        123
+      ],
+      "insert_site": "0x102a4741a"
+    },
+    {
+      "name": "Tr. Flu. Red",
+      "string_site": "0x102a47442",
+      "number": 158,
+      "rgb": [
+        225,
+        164,
+        194
+      ],
+      "insert_site": "0x102a47466"
+    },
+    {
+      "name": "Gun metallic",
+      "string_site": "0x102a4748e",
+      "number": 168,
+      "rgb": [
+        117,
+        108,
+        98
+      ],
+      "insert_site": "0x102a474b2"
+    },
+    {
+      "name": "Red flip/flop",
+      "string_site": "0x102a474da",
+      "number": 176,
+      "rgb": [
+        151,
+        105,
+        91
+      ],
+      "insert_site": "0x102a474fe"
+    },
+    {
+      "name": "Yellow flip/flop",
+      "string_site": "0x102a47526",
+      "number": 178,
+      "rgb": [
+        180,
+        132,
+        85
+      ],
+      "insert_site": "0x102a4754a"
+    },
+    {
+      "name": "Silver flip/flop",
+      "string_site": "0x102a47572",
+      "number": 179,
+      "rgb": [
+        137,
+        135,
+        136
+      ],
+      "insert_site": "0x102a47596"
+    },
+    {
+      "name": "Curry",
+      "string_site": "0x102a475be",
+      "number": 180,
+      "rgb": [
+        215,
+        169,
+        75
+      ],
+      "insert_site": "0x102a475e2"
+    },
+    {
+      "name": "Fire Yellow",
+      "string_site": "0x102a4760a",
+      "number": 190,
+      "rgb": [
+        249,
+        214,
+        46
+      ],
+      "insert_site": "0x102a4762e"
+    },
+    {
+      "name": "Flame yellowish orange",
+      "string_site": "0x102a47656",
+      "number": 191,
+      "rgb": [
+        232,
+        171,
+        45
+      ],
+      "insert_site": "0x102a4767a"
+    },
+    {
+      "name": "Reddish brown",
+      "string_site": "0x102a476a2",
+      "number": 192,
+      "rgb": [
+        105,
+        64,
+        40
+      ],
+      "insert_site": "0x102a476c6"
+    },
+    {
+      "name": "Flame reddish orange",
+      "string_site": "0x102a476ee",
+      "number": 193,
+      "rgb": [
+        207,
+        96,
+        36
+      ],
+      "insert_site": "0x102a47712"
+    },
+    {
+      "name": "Medium stone grey",
+      "string_site": "0x102a4773a",
+      "number": 194,
+      "rgb": [
+        163,
+        162,
+        165
+      ],
+      "insert_site": "0x102a4775e"
+    },
+    {
+      "name": "Royal blue",
+      "string_site": "0x102a47786",
+      "number": 195,
+      "rgb": [
+        70,
+        103,
+        164
+      ],
+      "insert_site": "0x102a477aa"
+    },
+    {
+      "name": "Dark Royal blue",
+      "string_site": "0x102a477d2",
+      "number": 196,
+      "rgb": [
+        35,
+        71,
+        139
+      ],
+      "insert_site": "0x102a477f6"
+    },
+    {
+      "name": "Bright reddish lilac",
+      "string_site": "0x102a4781e",
+      "number": 198,
+      "rgb": [
+        142,
+        66,
+        133
+      ],
+      "insert_site": "0x102a47842"
+    },
+    {
+      "name": "Dark stone grey",
+      "string_site": "0x102a4786a",
+      "number": 199,
+      "rgb": [
+        99,
+        95,
+        98
+      ],
+      "insert_site": "0x102a4788e"
+    },
+    {
+      "name": "Lemon metalic",
+      "string_site": "0x102a478b6",
+      "number": 200,
+      "rgb": [
+        130,
+        138,
+        93
+      ],
+      "insert_site": "0x102a478da"
+    },
+    {
+      "name": "Light stone grey",
+      "string_site": "0x102a47902",
+      "number": 208,
+      "rgb": [
+        229,
+        228,
+        223
+      ],
+      "insert_site": "0x102a47926"
+    },
+    {
+      "name": "Dark Curry",
+      "string_site": "0x102a4794e",
+      "number": 209,
+      "rgb": [
+        176,
+        142,
+        68
+      ],
+      "insert_site": "0x102a47972"
+    },
+    {
+      "name": "Faded green",
+      "string_site": "0x102a4799a",
+      "number": 210,
+      "rgb": [
+        112,
+        149,
+        120
+      ],
+      "insert_site": "0x102a479be"
+    },
+    {
+      "name": "Turquoise",
+      "string_site": "0x102a479e6",
+      "number": 211,
+      "rgb": [
+        121,
+        181,
+        181
+      ],
+      "insert_site": "0x102a47a0a"
+    },
+    {
+      "name": "Light Royal blue",
+      "string_site": "0x102a47a32",
+      "number": 212,
+      "rgb": [
+        159,
+        195,
+        233
+      ],
+      "insert_site": "0x102a47a56"
+    },
+    {
+      "name": "Medium Royal blue",
+      "string_site": "0x102a47a7e",
+      "number": 213,
+      "rgb": [
+        108,
+        129,
+        183
+      ],
+      "insert_site": "0x102a47aa2"
+    },
+    {
+      "name": "Rust",
+      "string_site": "0x102a47aca",
+      "number": 216,
+      "rgb": [
+        144,
+        76,
+        42
+      ],
+      "insert_site": "0x102a47aee"
+    },
+    {
+      "name": "Brown",
+      "string_site": "0x102a47b16",
+      "number": 217,
+      "rgb": [
+        124,
+        92,
+        70
+      ],
+      "insert_site": "0x102a47b3a"
+    },
+    {
+      "name": "Reddish lilac",
+      "string_site": "0x102a47b62",
+      "number": 218,
+      "rgb": [
+        150,
+        112,
+        159
+      ],
+      "insert_site": "0x102a47b86"
+    },
+    {
+      "name": "Lilac",
+      "string_site": "0x102a47bae",
+      "number": 219,
+      "rgb": [
+        107,
+        98,
+        155
+      ],
+      "insert_site": "0x102a47bd2"
+    },
+    {
+      "name": "Light lilac",
+      "string_site": "0x102a47bfa",
+      "number": 220,
+      "rgb": [
+        167,
+        169,
+        206
+      ],
+      "insert_site": "0x102a47c1e"
+    },
+    {
+      "name": "Bright purple",
+      "string_site": "0x102a47c46",
+      "number": 221,
+      "rgb": [
+        205,
+        98,
+        152
+      ],
+      "insert_site": "0x102a47c6a"
+    },
+    {
+      "name": "Light purple",
+      "string_site": "0x102a47c92",
+      "number": 222,
+      "rgb": [
+        228,
+        173,
+        200
+      ],
+      "insert_site": "0x102a47cb6"
+    },
+    {
+      "name": "Light pink",
+      "string_site": "0x102a47cde",
+      "number": 223,
+      "rgb": [
+        220,
+        144,
+        149
+      ],
+      "insert_site": "0x102a47d02"
+    },
+    {
+      "name": "Light brick yellow",
+      "string_site": "0x102a47d2a",
+      "number": 224,
+      "rgb": [
+        240,
+        213,
+        160
+      ],
+      "insert_site": "0x102a47d4e"
+    },
+    {
+      "name": "Warm yellowish orange",
+      "string_site": "0x102a47d76",
+      "number": 225,
+      "rgb": [
+        235,
+        184,
+        127
+      ],
+      "insert_site": "0x102a47d9a"
+    },
+    {
+      "name": "Cool yellow",
+      "string_site": "0x102a47dc2",
+      "number": 226,
+      "rgb": [
+        253,
+        234,
+        141
+      ],
+      "insert_site": "0x102a47de6"
+    },
+    {
+      "name": "Dove blue",
+      "string_site": "0x102a47e0e",
+      "number": 232,
+      "rgb": [
+        125,
+        187,
+        221
+      ],
+      "insert_site": "0x102a47e32"
+    },
+    {
+      "name": "Medium lilac",
+      "string_site": "0x102a47e5a",
+      "number": 268,
+      "rgb": [
+        52,
+        43,
+        117
+      ],
+      "insert_site": "0x102a47e7e"
+    },
+    {
+      "name": "Slime green",
+      "string_site": "0x102a47ea6",
+      "number": 301,
+      "rgb": [
+        80,
+        109,
+        84
+      ],
+      "insert_site": "0x102a47eca"
+    },
+    {
+      "name": "Smoky grey",
+      "string_site": "0x102a47ef2",
+      "number": 302,
+      "rgb": [
+        91,
+        93,
+        105
+      ],
+      "insert_site": "0x102a47f16"
+    },
+    {
+      "name": "Dark blue",
+      "string_site": "0x102a47f3e",
+      "number": 303,
+      "rgb": [
+        0,
+        16,
+        176
+      ],
+      "insert_site": "0x102a47f5f"
+    },
+    {
+      "name": "Parsley green",
+      "string_site": "0x102a47f87",
+      "number": 304,
+      "rgb": [
+        44,
+        101,
+        29
+      ],
+      "insert_site": "0x102a47fab"
+    },
+    {
+      "name": "Steel blue",
+      "string_site": "0x102a47fd3",
+      "number": 305,
+      "rgb": [
+        82,
+        124,
+        174
+      ],
+      "insert_site": "0x102a47ff7"
+    },
+    {
+      "name": "Storm blue",
+      "string_site": "0x102a4801f",
+      "number": 306,
+      "rgb": [
+        51,
+        88,
+        130
+      ],
+      "insert_site": "0x102a48043"
+    },
+    {
+      "name": "Lapis",
+      "string_site": "0x102a4806b",
+      "number": 307,
+      "rgb": [
+        16,
+        42,
+        220
+      ],
+      "insert_site": "0x102a4808f"
+    },
+    {
+      "name": "Dark indigo",
+      "string_site": "0x102a480b7",
+      "number": 308,
+      "rgb": [
+        61,
+        21,
+        133
+      ],
+      "insert_site": "0x102a480db"
+    },
+    {
+      "name": "Sea green",
+      "string_site": "0x102a48103",
+      "number": 309,
+      "rgb": [
+        52,
+        142,
+        64
+      ],
+      "insert_site": "0x102a48127"
+    },
+    {
+      "name": "Shamrock",
+      "string_site": "0x102a4814f",
+      "number": 310,
+      "rgb": [
+        91,
+        154,
+        76
+      ],
+      "insert_site": "0x102a48173"
+    },
+    {
+      "name": "Fossil",
+      "string_site": "0x102a4819b",
+      "number": 311,
+      "rgb": [
+        159,
+        161,
+        172
+      ],
+      "insert_site": "0x102a481bf"
+    },
+    {
+      "name": "Mulberry",
+      "string_site": "0x102a481e7",
+      "number": 312,
+      "rgb": [
+        89,
+        34,
+        89
+      ],
+      "insert_site": "0x102a4820b"
+    },
+    {
+      "name": "Forest green",
+      "string_site": "0x102a48233",
+      "number": 313,
+      "rgb": [
+        31,
+        128,
+        29
+      ],
+      "insert_site": "0x102a48257"
+    },
+    {
+      "name": "Cadet blue",
+      "string_site": "0x102a4827f",
+      "number": 314,
+      "rgb": [
+        159,
+        173,
+        192
+      ],
+      "insert_site": "0x102a482a3"
+    },
+    {
+      "name": "Electric blue",
+      "string_site": "0x102a482cb",
+      "number": 315,
+      "rgb": [
+        9,
+        137,
+        207
+      ],
+      "insert_site": "0x102a482ef"
+    },
+    {
+      "name": "Eggplant",
+      "string_site": "0x102a48317",
+      "number": 316,
+      "rgb": [
+        123,
+        0,
+        123
+      ],
+      "insert_site": "0x102a48338"
+    },
+    {
+      "name": "Moss",
+      "string_site": "0x102a48360",
+      "number": 317,
+      "rgb": [
+        124,
+        156,
+        107
+      ],
+      "insert_site": "0x102a48384"
+    },
+    {
+      "name": "Artichoke",
+      "string_site": "0x102a483ac",
+      "number": 318,
+      "rgb": [
+        138,
+        171,
+        133
+      ],
+      "insert_site": "0x102a483d0"
+    },
+    {
+      "name": "Sage green",
+      "string_site": "0x102a483f8",
+      "number": 319,
+      "rgb": [
+        185,
+        196,
+        177
+      ],
+      "insert_site": "0x102a4841c"
+    },
+    {
+      "name": "Ghost grey",
+      "string_site": "0x102a48444",
+      "number": 320,
+      "rgb": [
+        202,
+        203,
+        209
+      ],
+      "insert_site": "0x102a48468"
+    },
+    {
+      "name": "Lilac",
+      "string_site": "0x102a48490",
+      "number": 321,
+      "rgb": [
+        167,
+        94,
+        155
+      ],
+      "insert_site": "0x102a484b4"
+    },
+    {
+      "name": "Plum",
+      "string_site": "0x102a484dc",
+      "number": 322,
+      "rgb": [
+        123,
+        47,
+        123
+      ],
+      "insert_site": "0x102a48500"
+    },
+    {
+      "name": "Olivine",
+      "string_site": "0x102a48528",
+      "number": 323,
+      "rgb": [
+        148,
+        190,
+        129
+      ],
+      "insert_site": "0x102a4854c"
+    },
+    {
+      "name": "Laurel green",
+      "string_site": "0x102a48574",
+      "number": 324,
+      "rgb": [
+        168,
+        189,
+        153
+      ],
+      "insert_site": "0x102a48598"
+    },
+    {
+      "name": "Quill grey",
+      "string_site": "0x102a485c0",
+      "number": 325,
+      "rgb": [
+        223,
+        223,
+        222
+      ],
+      "insert_site": "0x102a485e4"
+    },
+    {
+      "name": "Crimson",
+      "string_site": "0x102a4860c",
+      "number": 327,
+      "rgb": [
+        151,
+        0,
+        0
+      ],
+      "insert_site": "0x102a4862a"
+    },
+    {
+      "name": "Mint",
+      "string_site": "0x102a48652",
+      "number": 328,
+      "rgb": [
+        177,
+        229,
+        166
+      ],
+      "insert_site": "0x102a48676"
+    },
+    {
+      "name": "Baby blue",
+      "string_site": "0x102a4869e",
+      "number": 329,
+      "rgb": [
+        152,
+        194,
+        219
+      ],
+      "insert_site": "0x102a486c2"
+    },
+    {
+      "name": "Carnation pink",
+      "string_site": "0x102a486ea",
+      "number": 330,
+      "rgb": [
+        255,
+        152,
+        220
+      ],
+      "insert_site": "0x102a4870e"
+    },
+    {
+      "name": "Persimmon",
+      "string_site": "0x102a48736",
+      "number": 331,
+      "rgb": [
+        255,
+        89,
+        89
+      ],
+      "insert_site": "0x102a4875a"
+    },
+    {
+      "name": "Maroon",
+      "string_site": "0x102a48782",
+      "number": 332,
+      "rgb": [
+        117,
+        0,
+        0
+      ],
+      "insert_site": "0x102a487a0"
+    },
+    {
+      "name": "Gold",
+      "string_site": "0x102a487c8",
+      "number": 333,
+      "rgb": [
+        239,
+        184,
+        56
+      ],
+      "insert_site": "0x102a487ec"
+    },
+    {
+      "name": "Daisy orange",
+      "string_site": "0x102a48814",
+      "number": 334,
+      "rgb": [
+        248,
+        217,
+        109
+      ],
+      "insert_site": "0x102a48838"
+    },
+    {
+      "name": "Pearl",
+      "string_site": "0x102a48860",
+      "number": 335,
+      "rgb": [
+        231,
+        231,
+        236
+      ],
+      "insert_site": "0x102a48884"
+    },
+    {
+      "name": "Fog",
+      "string_site": "0x102a488ac",
+      "number": 336,
+      "rgb": [
+        199,
+        212,
+        228
+      ],
+      "insert_site": "0x102a488d0"
+    },
+    {
+      "name": "Salmon",
+      "string_site": "0x102a488f8",
+      "number": 337,
+      "rgb": [
+        255,
+        148,
+        148
+      ],
+      "insert_site": "0x102a4891c"
+    },
+    {
+      "name": "Terra Cotta",
+      "string_site": "0x102a48944",
+      "number": 338,
+      "rgb": [
+        190,
+        104,
+        98
+      ],
+      "insert_site": "0x102a48968"
+    },
+    {
+      "name": "Cocoa",
+      "string_site": "0x102a48990",
+      "number": 339,
+      "rgb": [
+        86,
+        36,
+        36
+      ],
+      "insert_site": "0x102a489b4"
+    },
+    {
+      "name": "Wheat",
+      "string_site": "0x102a489dc",
+      "number": 340,
+      "rgb": [
+        241,
+        231,
+        199
+      ],
+      "insert_site": "0x102a48a00"
+    },
+    {
+      "name": "Buttermilk",
+      "string_site": "0x102a48a28",
+      "number": 341,
+      "rgb": [
+        254,
+        243,
+        187
+      ],
+      "insert_site": "0x102a48a4c"
+    },
+    {
+      "name": "Mauve",
+      "string_site": "0x102a48a74",
+      "number": 342,
+      "rgb": [
+        224,
+        178,
+        208
+      ],
+      "insert_site": "0x102a48a98"
+    },
+    {
+      "name": "Sunrise",
+      "string_site": "0x102a48ac0",
+      "number": 343,
+      "rgb": [
+        212,
+        144,
+        189
+      ],
+      "insert_site": "0x102a48ae4"
+    },
+    {
+      "name": "Tawny",
+      "string_site": "0x102a48b0c",
+      "number": 344,
+      "rgb": [
+        150,
+        85,
+        85
+      ],
+      "insert_site": "0x102a48b30"
+    },
+    {
+      "name": "Rust",
+      "string_site": "0x102a48b58",
+      "number": 345,
+      "rgb": [
+        143,
+        76,
+        42
+      ],
+      "insert_site": "0x102a48b7c"
+    },
+    {
+      "name": "Cashmere",
+      "string_site": "0x102a48ba4",
+      "number": 346,
+      "rgb": [
+        211,
+        190,
+        150
+      ],
+      "insert_site": "0x102a48bc8"
+    },
+    {
+      "name": "Khaki",
+      "string_site": "0x102a48bf0",
+      "number": 347,
+      "rgb": [
+        226,
+        220,
+        188
+      ],
+      "insert_site": "0x102a48c14"
+    },
+    {
+      "name": "Lily white",
+      "string_site": "0x102a48c3c",
+      "number": 348,
+      "rgb": [
+        237,
+        234,
+        234
+      ],
+      "insert_site": "0x102a48c60"
+    },
+    {
+      "name": "Seashell",
+      "string_site": "0x102a48c88",
+      "number": 349,
+      "rgb": [
+        233,
+        218,
+        218
+      ],
+      "insert_site": "0x102a48cac"
+    },
+    {
+      "name": "Burgundy",
+      "string_site": "0x102a48cd4",
+      "number": 350,
+      "rgb": [
+        136,
+        62,
+        62
+      ],
+      "insert_site": "0x102a48cf8"
+    },
+    {
+      "name": "Cork",
+      "string_site": "0x102a48d20",
+      "number": 351,
+      "rgb": [
+        188,
+        155,
+        93
+      ],
+      "insert_site": "0x102a48d44"
+    },
+    {
+      "name": "Burlap",
+      "string_site": "0x102a48d6c",
+      "number": 352,
+      "rgb": [
+        199,
+        172,
+        120
+      ],
+      "insert_site": "0x102a48d90"
+    },
+    {
+      "name": "Beige",
+      "string_site": "0x102a48db8",
+      "number": 353,
+      "rgb": [
+        202,
+        191,
+        163
+      ],
+      "insert_site": "0x102a48ddc"
+    },
+    {
+      "name": "Oyster",
+      "string_site": "0x102a48e04",
+      "number": 354,
+      "rgb": [
+        187,
+        179,
+        178
+      ],
+      "insert_site": "0x102a48e28"
+    },
+    {
+      "name": "Pine Cone",
+      "string_site": "0x102a48e50",
+      "number": 355,
+      "rgb": [
+        108,
+        88,
+        75
+      ],
+      "insert_site": "0x102a48e74"
+    },
+    {
+      "name": "Fawn brown",
+      "string_site": "0x102a48e9c",
+      "number": 356,
+      "rgb": [
+        160,
+        132,
+        79
+      ],
+      "insert_site": "0x102a48ec0"
+    },
+    {
+      "name": "Hurricane grey",
+      "string_site": "0x102a48ee8",
+      "number": 357,
+      "rgb": [
+        149,
+        137,
+        136
+      ],
+      "insert_site": "0x102a48f0c"
+    },
+    {
+      "name": "Cloudy grey",
+      "string_site": "0x102a48f34",
+      "number": 358,
+      "rgb": [
+        171,
+        168,
+        158
+      ],
+      "insert_site": "0x102a48f58"
+    },
+    {
+      "name": "Linen",
+      "string_site": "0x102a48f80",
+      "number": 359,
+      "rgb": [
+        175,
+        148,
+        131
+      ],
+      "insert_site": "0x102a48fa4"
+    },
+    {
+      "name": "Copper",
+      "string_site": "0x102a48fcc",
+      "number": 360,
+      "rgb": [
+        150,
+        103,
+        102
+      ],
+      "insert_site": "0x102a48ff0"
+    },
+    {
+      "name": "Medium brown",
+      "string_site": "0x102a49018",
+      "number": 361,
+      "rgb": [
+        86,
+        66,
+        54
+      ],
+      "insert_site": "0x102a4903c"
+    },
+    {
+      "name": "Bronze",
+      "string_site": "0x102a490b6",
+      "number": 362,
+      "rgb": [
+        126,
+        104,
+        63
+      ],
+      "insert_site": "0x102a490da"
+    },
+    {
+      "name": "Flint",
+      "string_site": "0x102a49102",
+      "number": 363,
+      "rgb": [
+        105,
+        102,
+        92
+      ],
+      "insert_site": "0x102a49126"
+    },
+    {
+      "name": "Dark taupe",
+      "string_site": "0x102a4914e",
+      "number": 364,
+      "rgb": [
+        90,
+        76,
+        66
+      ],
+      "insert_site": "0x102a49172"
+    },
+    {
+      "name": "Burnt Sienna",
+      "string_site": "0x102a4919a",
+      "number": 365,
+      "rgb": [
+        106,
+        57,
+        9
+      ],
+      "insert_site": "0x102a491be"
+    },
+    {
+      "name": "Institutional white",
+      "string_site": "0x102a491e6",
+      "number": 1001,
+      "rgb": [
+        248,
+        248,
+        248
+      ],
+      "insert_site": "0x102a4920a"
+    },
+    {
+      "name": "Mid gray",
+      "string_site": "0x102a49232",
+      "number": 1002,
+      "rgb": [
+        205,
+        205,
+        205
+      ],
+      "insert_site": "0x102a49256"
+    },
+    {
+      "name": "Really black",
+      "string_site": "0x102a4927e",
+      "number": 1003,
+      "rgb": [
+        17,
+        17,
+        17
+      ],
+      "insert_site": "0x102a492a2"
+    },
+    {
+      "name": "Really red",
+      "string_site": "0x102a492ca",
+      "number": 1004,
+      "rgb": [
+        255,
+        0,
+        0
+      ],
+      "insert_site": "0x102a492e8"
+    },
+    {
+      "name": "Deep orange",
+      "string_site": "0x102a49310",
+      "number": 1005,
+      "rgb": [
+        255,
+        176,
+        0
+      ],
+      "insert_site": "0x102a49331"
+    },
+    {
+      "name": "Alder",
+      "string_site": "0x102a49359",
+      "number": 1006,
+      "rgb": [
+        180,
+        128,
+        255
+      ],
+      "insert_site": "0x102a4937d"
+    },
+    {
+      "name": "Dusty Rose",
+      "string_site": "0x102a493a5",
+      "number": 1007,
+      "rgb": [
+        163,
+        75,
+        75
+      ],
+      "insert_site": "0x102a493c9"
+    },
+    {
+      "name": "Olive",
+      "string_site": "0x102a493f1",
+      "number": 1008,
+      "rgb": [
+        193,
+        190,
+        66
+      ],
+      "insert_site": "0x102a49415"
+    },
+    {
+      "name": "New Yeller",
+      "string_site": "0x102a4943d",
+      "number": 1009,
+      "rgb": [
+        255,
+        255,
+        0
+      ],
+      "insert_site": "0x102a4945e"
+    },
+    {
+      "name": "Really blue",
+      "string_site": "0x102a49486",
+      "number": 1010,
+      "rgb": [
+        0,
+        0,
+        255
+      ],
+      "insert_site": "0x102a494a4"
+    },
+    {
+      "name": "Navy blue",
+      "string_site": "0x102a494cc",
+      "number": 1011,
+      "rgb": [
+        0,
+        32,
+        96
+      ],
+      "insert_site": "0x102a494ed"
+    },
+    {
+      "name": "Deep blue",
+      "string_site": "0x102a49515",
+      "number": 1012,
+      "rgb": [
+        33,
+        84,
+        185
+      ],
+      "insert_site": "0x102a49539"
+    },
+    {
+      "name": "Cyan",
+      "string_site": "0x102a49561",
+      "number": 1013,
+      "rgb": [
+        4,
+        175,
+        236
+      ],
+      "insert_site": "0x102a49585"
+    },
+    {
+      "name": "CGA brown",
+      "string_site": "0x102a495ad",
+      "number": 1014,
+      "rgb": [
+        170,
+        85,
+        0
+      ],
+      "insert_site": "0x102a495ce"
+    },
+    {
+      "name": "Magenta",
+      "string_site": "0x102a495f6",
+      "number": 1015,
+      "rgb": [
+        170,
+        0,
+        170
+      ],
+      "insert_site": "0x102a49617"
+    },
+    {
+      "name": "Pink",
+      "string_site": "0x102a4963f",
+      "number": 1016,
+      "rgb": [
+        255,
+        102,
+        204
+      ],
+      "insert_site": "0x102a49663"
+    },
+    {
+      "name": "Deep orange",
+      "string_site": "0x102a4968b",
+      "number": 1017,
+      "rgb": [
+        255,
+        175,
+        0
+      ],
+      "insert_site": "0x102a496ac"
+    },
+    {
+      "name": "Teal",
+      "string_site": "0x102a496d4",
+      "number": 1018,
+      "rgb": [
+        18,
+        238,
+        212
+      ],
+      "insert_site": "0x102a496f8"
+    },
+    {
+      "name": "Toothpaste",
+      "string_site": "0x102a49720",
+      "number": 1019,
+      "rgb": [
+        0,
+        255,
+        255
+      ],
+      "insert_site": "0x102a49741"
+    },
+    {
+      "name": "Lime green",
+      "string_site": "0x102a49769",
+      "number": 1020,
+      "rgb": [
+        0,
+        255,
+        0
+      ],
+      "insert_site": "0x102a49787"
+    },
+    {
+      "name": "Camo",
+      "string_site": "0x102a497af",
+      "number": 1021,
+      "rgb": [
+        58,
+        125,
+        21
+      ],
+      "insert_site": "0x102a497d3"
+    },
+    {
+      "name": "Grime",
+      "string_site": "0x102a497fb",
+      "number": 1022,
+      "rgb": [
+        127,
+        142,
+        100
+      ],
+      "insert_site": "0x102a4981f"
+    },
+    {
+      "name": "Lavender",
+      "string_site": "0x102a49847",
+      "number": 1023,
+      "rgb": [
+        140,
+        91,
+        159
+      ],
+      "insert_site": "0x102a4986b"
+    },
+    {
+      "name": "Pastel light blue",
+      "string_site": "0x102a49893",
+      "number": 1024,
+      "rgb": [
+        175,
+        221,
+        255
+      ],
+      "insert_site": "0x102a498b7"
+    },
+    {
+      "name": "Pastel orange",
+      "string_site": "0x102a498df",
+      "number": 1025,
+      "rgb": [
+        255,
+        201,
+        201
+      ],
+      "insert_site": "0x102a49903"
+    },
+    {
+      "name": "Pastel violet",
+      "string_site": "0x102a4992b",
+      "number": 1026,
+      "rgb": [
+        177,
+        167,
+        255
+      ],
+      "insert_site": "0x102a4994f"
+    },
+    {
+      "name": "Pastel blue-green",
+      "string_site": "0x102a49977",
+      "number": 1027,
+      "rgb": [
+        159,
+        243,
+        233
+      ],
+      "insert_site": "0x102a4999b"
+    },
+    {
+      "name": "Pastel green",
+      "string_site": "0x102a499c3",
+      "number": 1028,
+      "rgb": [
+        204,
+        255,
+        204
+      ],
+      "insert_site": "0x102a499e7"
+    },
+    {
+      "name": "Pastel yellow",
+      "string_site": "0x102a49a0f",
+      "number": 1029,
+      "rgb": [
+        255,
+        255,
+        204
+      ],
+      "insert_site": "0x102a49a33"
+    },
+    {
+      "name": "Pastel brown",
+      "string_site": "0x102a49a55",
+      "number": 1030,
+      "rgb": [
+        255,
+        204,
+        153
+      ],
+      "insert_site": "0x102a49a76"
+    },
+    {
+      "name": "Royal purple",
+      "string_site": "0x102a49a95",
+      "number": 1031,
+      "rgb": [
+        98,
+        37,
+        209
+      ],
+      "insert_site": "0x102a49ab6"
+    },
+    {
+      "name": "Hot pink",
+      "string_site": "0x102a49ad5",
+      "number": 1032,
+      "rgb": [
+        255,
+        0,
+        191
+      ],
+      "insert_site": "0x102a49af3"
+    }
+  ],
+  "palette": [
+    141,
+    301,
+    107,
+    26,
+    1012,
+    303,
+    1011,
+    304,
+    28,
+    1018,
+    302,
+    305,
+    306,
+    307,
+    308,
+    1021,
+    309,
+    310,
+    1019,
+    135,
+    102,
+    23,
+    1010,
+    312,
+    313,
+    37,
+    1022,
+    1020,
+    1027,
+    311,
+    315,
+    1023,
+    1031,
+    316,
+    151,
+    317,
+    318,
+    319,
+    1024,
+    314,
+    1013,
+    1006,
+    321,
+    322,
+    104,
+    1008,
+    119,
+    323,
+    324,
+    325,
+    320,
+    11,
+    1026,
+    1016,
+    1032,
+    1015,
+    327,
+    1005,
+    1009,
+    29,
+    328,
+    1028,
+    208,
+    45,
+    329,
+    330,
+    331,
+    1004,
+    21,
+    332,
+    333,
+    24,
+    334,
+    226,
+    1029,
+    335,
+    336,
+    342,
+    343,
+    338,
+    1007,
+    339,
+    133,
+    106,
+    340,
+    341,
+    1001,
+    1,
+    9,
+    1025,
+    337,
+    344,
+    345,
+    1014,
+    105,
+    346,
+    347,
+    348,
+    349,
+    1030,
+    125,
+    101,
+    350,
+    192,
+    351,
+    352,
+    353,
+    354,
+    1002,
+    5,
+    18,
+    217,
+    355,
+    356,
+    153,
+    357,
+    358,
+    359,
+    360,
+    38,
+    361,
+    362,
+    199,
+    194,
+    363,
+    364,
+    365,
+    1003
+  ],
+  "source": "rbx/BrickMap.c",
+  "verified_colors": 208,
+  "verified_palette": 128,
+  "constructor_sha256": "3d8e2202f4cc309ec5baa5ac344f8370383d03bf88cb9a708a6f9d3a4cf0a69c",
+  "palette_sha256": "4632821f017e214e850d33b65d83967cfd56ed9225007f4d9fe9f4e9745f4687",
+  "color_byte_multiplier": 0.003921568859368563,
+  "constant_constructors": {
+    "White": 1,
+    "Gray": 194,
+    "DarkGray": 199,
+    "Black": 26,
+    "Red": 21,
+    "Yellow": 24,
+    "Green": 28,
+    "Blue": 23
+  },
+  "class_library": {
+    "new": {
+      "address": "0x104649aa6",
+      "sha256": "40ccdbd6fd16b12b3f1e88ff64e0a2079ee1025be0b075d47b88940d603f5408"
+    },
+    "random": {
+      "address": "0x104649c04",
+      "sha256": "57c12967b3e032bc93aa74c83dcdc2dc40d9f684fbb6ebf3926cec962b5500b5"
+    },
+    "palette": {
+      "address": "0x104649c3d",
+      "sha256": "e7209fd4ff4c81b5835bf00f1d66f1e30a7ba16088d9995231d6a3afa0a83e48"
+    },
+    "New": {
+      "address": "0x104649aa6",
+      "sha256": "40ccdbd6fd16b12b3f1e88ff64e0a2079ee1025be0b075d47b88940d603f5408"
+    },
+    "Random": {
+      "address": "0x104649c04",
+      "sha256": "57c12967b3e032bc93aa74c83dcdc2dc40d9f684fbb6ebf3926cec962b5500b5"
+    },
+    "White": {
+      "address": "0x104649c78",
+      "sha256": "2638e323e843f90affea4ac8d76b74ce3bd7ad4d5c81cc6c40c2e8dec393fcc1"
+    },
+    "Gray": {
+      "address": "0x104649ca0",
+      "sha256": "00854bdd6c9cfbcc292afbb58665537e5f2cd78185aa45ca988157b3656cfc77"
+    },
+    "DarkGray": {
+      "address": "0x104649cc8",
+      "sha256": "92b85ac5fdb997d78bb3621b79474f8caec9a83f69e0ad72feee4996d8e006bd"
+    },
+    "Black": {
+      "address": "0x104649cf0",
+      "sha256": "181e6ac0054209b437b1631817ef16b056aaa6db90db017f1f960158d95d5c36"
+    },
+    "Red": {
+      "address": "0x104649d18",
+      "sha256": "1e09d176835e74daab3dc9f7a7e1bcd0cb741cd07f79faa97ef41fdb5fc4e386"
+    },
+    "Yellow": {
+      "address": "0x104649d40",
+      "sha256": "2f6c5c5063172520efd5a86b006c556c0b4d84bd937173348fde5223cbd2f708"
+    },
+    "Green": {
+      "address": "0x104649d68",
+      "sha256": "4c1ccbc8da4751dbd068238514e2e52f36c094d30fb483c1055f40e3fdf80857"
+    },
+    "Blue": {
+      "address": "0x104649d90",
+      "sha256": "7879d2b84aefd60574dda4d4c2df6b58eb164b5b2829cd59dd971c3fa4ee766c"
+    }
+  },
+  "new_zero_argument": {
+    "observed_result": 1003,
+    "bridge_sha256": "40ccdbd6fd16b12b3f1e88ff64e0a2079ee1025be0b075d47b88940d603f5408",
+    "instructions": [
+      "0x104649aa6: push rbp",
+      "0x104649aa7: mov rbp, rsp",
+      "0x104649aaa: push r15",
+      "0x104649aac: push r14",
+      "0x104649aae: push r12",
+      "0x104649ab0: push rbx",
+      "0x104649ab1: sub rsp, 0x10",
+      "0x104649ab5: mov rbx, rdi",
+      "0x104649ab8: call 0x1031ce6fe",
+      "0x104649abd: cmp eax, 3",
+      "0x104649ac0: mov r15d, 3",
+      "0x104649ac6: cmovl r15d, eax",
+      "0x104649aca: cmp r15d, 1",
+      "0x104649ace: je 0x104649b68",
+      "0x104649ad4: mov r14d, eax",
+      "0x104649ad7: test r15d, r15d",
+      "0x104649ada: jne 0x104649afc",
+      "0x104649adc: mov rsi, qword ptr [rip + 0x8779d95]",
+      "0x104649ae3: mov ecx, dword ptr [rip + 0x8778ad7]",
+      "0x104649ae9: mov edx, 4",
+      "0x104649aee: mov rdi, rbx",
+      "0x104649af1: call 0x10466c811",
+      "0x104649af6: mov dword ptr [rax], 0xc2",
+      "0x104649afc: movaps xmm0, xmmword ptr [rip + 0x48fce3d]",
+      "0x104649b03: movaps xmmword ptr [rbp - 0x30], xmm0",
+      "0x104649b07: test r14d, r14d",
+      "0x104649b0a: jle 0x104649b37",
+      "0x104649b0c: mov r15d, r15d",
+      "0x104649b0f: xor r12d, r12d",
+      "0x104649b12: lea r14, [r12 + 1]",
+      "0x104649b17: mov rdi, rbx",
+      "0x104649b1a: mov esi, r14d",
+      "0x104649b1d: xor edx, edx",
+      "0x104649b1f: call 0x1031cf042",
+      "0x104649b24: cvtsd2ss xmm0, xmm0",
+      "0x104649b28: movss dword ptr [rbp + r12*4 - 0x30], xmm0",
+      "0x104649b2f: mov r12, r14",
+      "0x104649b32: cmp r15, r14",
+      "0x104649b35: jne 0x104649b12",
+      "0x104649b37: movsd xmm0, qword ptr [rbp - 0x30]",
+      "0x104649b3c: movsd xmm1, qword ptr [rbp - 0x28]",
+      "0x104649b41: call 0x102a45390"
+    ],
+    "reason": "Initial 194 userdata is followed by closest(0,0,0) and another allocation; one top result is returned."
+  },
+  "limits": [
+    "Alias map not reconstructed. Palette preference flags used for duplicate names."
+  ]
+}

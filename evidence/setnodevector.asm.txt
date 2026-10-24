@@ -1,0 +1,59 @@
+; __ZL13setnodevectorP9lua_StateP8LuaTablei
+; original address 0x1031ea649, source {'file': '_free/_free_s.part007.c', 'line': 32632}
+0x1031ea649: 55                       push     rbp
+0x1031ea64a: 4889e5                   mov      rbp, rsp
+0x1031ea64d: 4157                     push     r15
+0x1031ea64f: 4156                     push     r14
+0x1031ea651: 4154                     push     r12
+0x1031ea653: 53                       push     rbx
+0x1031ea654: 4889f3                   mov      rbx, rsi
+0x1031ea657: 85d2                     test     edx, edx
+0x1031ea659: 745a                     je       0x1031ea6b5
+0x1031ea65b: 4989ff                   mov      r15, rdi
+0x1031ea65e: ffca                     dec      edx
+0x1031ea660: 89d7                     mov      edi, edx
+0x1031ea662: e895acffff               call     0x1031e52fc
+0x1031ea667: 83f81a                   cmp      eax, 0x1a
+0x1031ea66a: 7d7a                     jge      0x1031ea6e6
+0x1031ea66c: 4189c6                   mov      r14d, eax
+0x1031ea66f: 41ffc6                   inc      r14d
+0x1031ea672: 41bc01000000             mov      r12d, 1
+0x1031ea678: 4489f1                   mov      ecx, r14d
+0x1031ea67b: 41d3e4                   shl      r12d, cl
+0x1031ea67e: 4c89e6                   mov      rsi, r12
+0x1031ea681: 48c1e605                 shl      rsi, 5
+0x1031ea685: 0fb65302                 movzx    edx, byte ptr [rbx + 2]
+0x1031ea689: 4c89ff                   mov      rdi, r15
+0x1031ea68c: e83f9bffff               call     0x1031e41d0
+0x1031ea691: 48894310                 mov      qword ptr [rbx + 0x10], rax
+0x1031ea695: b81c000000               mov      eax, 0x1c
+0x1031ea69a: 31c9                     xor      ecx, ecx
+0x1031ea69c: 4c89e2                   mov      rdx, r12
+0x1031ea69f: 488b7310                 mov      rsi, qword ptr [rbx + 0x10]
+0x1031ea6a3: 890c06                   mov      dword ptr [rsi + rax], ecx
+0x1031ea6a6: 894c06f0                 mov      dword ptr [rsi + rax - 0x10], ecx
+0x1031ea6aa: 4883c020                 add      rax, 0x20
+0x1031ea6ae: 48ffca                   dec      rdx
+0x1031ea6b1: 75ec                     jne      0x1031ea69f
+0x1031ea6b3: eb11                     jmp      0x1031ea6c6
+0x1031ea6b5: 488d0504752e06           lea      rax, [rip + 0x62e7504]
+0x1031ea6bc: 48894310                 mov      qword ptr [rbx + 0x10], rax
+0x1031ea6c0: 4531f6                   xor      r14d, r14d
+0x1031ea6c3: 4531e4                   xor      r12d, r12d
+0x1031ea6c6: b8ffffffff               mov      eax, 0xffffffff
+0x1031ea6cb: 4489f1                   mov      ecx, r14d
+0x1031ea6ce: d3e0                     shl      eax, cl
+0x1031ea6d0: 44887304                 mov      byte ptr [rbx + 4], r14b
+0x1031ea6d4: f6d0                     not      al
+0x1031ea6d6: 884307                   mov      byte ptr [rbx + 7], al
+0x1031ea6d9: 4489630c                 mov      dword ptr [rbx + 0xc], r12d
+0x1031ea6dd: 5b                       pop      rbx
+0x1031ea6de: 415c                     pop      r12
+0x1031ea6e0: 415e                     pop      r14
+0x1031ea6e2: 415f                     pop      r15
+0x1031ea6e4: 5d                       pop      rbp
+0x1031ea6e5: c3                       ret      
+0x1031ea6e6: 488d35e607ab08           lea      rsi, [rip + 0x8ab07e6]
+0x1031ea6ed: 4c89ff                   mov      rdi, r15
+0x1031ea6f0: 31c0                     xor      eax, eax
+0x1031ea6f2: e83a11ffff               call     0x1031db831

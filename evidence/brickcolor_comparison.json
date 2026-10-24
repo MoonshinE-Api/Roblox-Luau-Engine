@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "rgb_cases": 2212,
+  "rgb_overloads_compared": 2,
+  "numeric_cases": 1052,
+  "limits": "Recovered catalog substituted for singleton initialization; alias lookup, events and defaults are separate checks."
+}

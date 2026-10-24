@@ -1,0 +1,169 @@
+{
+  "meaning": "Explicit import class allowlist; property types observed from implemented runtime, not full engine support.",
+  "runtime_version": "0.735.19.7351131",
+  "classes": {
+    "Vector3Value": {
+      "Value": "Vector3"
+    },
+    "Humanoid": {
+      "UseJumpPower": "boolean",
+      "Health": "number",
+      "JumpHeight": "number",
+      "JumpPower": "number",
+      "MaxHealth": "number",
+      "WalkSpeed": "number"
+    },
+    "ModuleScript": {},
+    "LocalScript": {
+      "Enabled": "boolean",
+      "Disabled": "boolean",
+      "RunContext": "Enum.RunContext"
+    },
+    "Configuration": {},
+    "Folder": {},
+    "ObjectValue": {
+      "Value": "Instance?"
+    },
+    "IntValue": {
+      "Value": "number"
+    },
+    "BrickColorValue": {
+      "Value": "BrickColor"
+    },
+    "BoolValue": {
+      "Value": "boolean"
+    },
+    "CFrameValue": {
+      "Value": "CFrame"
+    },
+    "Color3Value": {
+      "Value": "Color3"
+    },
+    "Script": {
+      "Enabled": "boolean",
+      "Disabled": "boolean",
+      "RunContext": "Enum.RunContext"
+    },
+    "WedgePart": {
+      "Reflectance": "number",
+      "Color": "Color3",
+      "CFrame": "CFrame",
+      "RightSurface": "Enum.SurfaceType",
+      "BackSurface": "Enum.SurfaceType",
+      "TopSurface": "Enum.SurfaceType",
+      "RotVelocity": "Vector3",
+      "LeftSurface": "Enum.SurfaceType",
+      "Locked": "boolean",
+      "Material": "Enum.Material",
+      "CustomPhysicalProperties": "PhysicalProperties?",
+      "Size": "Vector3",
+      "AssemblyAngularVelocity": "Vector3",
+      "FrontSurface": "Enum.SurfaceType",
+      "BottomSurface": "Enum.SurfaceType",
+      "CanCollide": "boolean",
+      "RootPriority": "number",
+      "MaterialVariant": "string",
+      "CanTouch": "boolean",
+      "AssemblyLinearVelocity": "Vector3",
+      "CollisionGroup": "string",
+      "Transparency": "number",
+      "Velocity": "Vector3",
+      "CanQuery": "boolean",
+      "Anchored": "boolean",
+      "Massless": "boolean",
+      "CastShadow": "boolean",
+      "PivotOffset": "CFrame"
+    },
+    "StringValue": {
+      "Value": "string"
+    },
+    "CornerWedgePart": {
+      "Reflectance": "number",
+      "Color": "Color3",
+      "CFrame": "CFrame",
+      "RightSurface": "Enum.SurfaceType",
+      "BackSurface": "Enum.SurfaceType",
+      "TopSurface": "Enum.SurfaceType",
+      "RotVelocity": "Vector3",
+      "LeftSurface": "Enum.SurfaceType",
+      "Locked": "boolean",
+      "Material": "Enum.Material",
+      "CustomPhysicalProperties": "PhysicalProperties?",
+      "Size": "Vector3",
+      "AssemblyAngularVelocity": "Vector3",
+      "FrontSurface": "Enum.SurfaceType",
+      "BottomSurface": "Enum.SurfaceType",
+      "CanCollide": "boolean",
+      "RootPriority": "number",
+      "MaterialVariant": "string",
+      "CanTouch": "boolean",
+      "AssemblyLinearVelocity": "Vector3",
+      "CollisionGroup": "string",
+      "Transparency": "number",
+      "Velocity": "Vector3",
+      "CanQuery": "boolean",
+      "Anchored": "boolean",
+      "Massless": "boolean",
+      "CastShadow": "boolean",
+      "PivotOffset": "CFrame"
+    },
+    "RemoteFunction": {},
+    "RemoteEvent": {},
+    "Camera": {
+      "CameraSubject": "Instance?",
+      "CFrame": "CFrame",
+      "FieldOfView": "number",
+      "Focus": "CFrame"
+    },
+    "BindableFunction": {},
+    "Model": {
+      "WorldPivot": "CFrame",
+      "PrimaryPart": "Instance?"
+    },
+    "BindableEvent": {},
+    "NumberValue": {
+      "Value": "number"
+    },
+    "Part": {
+      "Velocity": "Vector3",
+      "Reflectance": "number",
+      "CanQuery": "boolean",
+      "Color": "Color3",
+      "CFrame": "CFrame",
+      "Shape": "Enum.PartType",
+      "RightSurface": "Enum.SurfaceType",
+      "BackSurface": "Enum.SurfaceType",
+      "TopSurface": "Enum.SurfaceType",
+      "RotVelocity": "Vector3",
+      "LeftSurface": "Enum.SurfaceType",
+      "Locked": "boolean",
+      "Material": "Enum.Material",
+      "CustomPhysicalProperties": "PhysicalProperties?",
+      "Size": "Vector3",
+      "AssemblyAngularVelocity": "Vector3",
+      "FrontSurface": "Enum.SurfaceType",
+      "BottomSurface": "Enum.SurfaceType",
+      "CanCollide": "boolean",
+      "RootPriority": "number",
+      "MaterialVariant": "string",
+      "CanTouch": "boolean",
+      "AssemblyLinearVelocity": "Vector3",
+      "CollisionGroup": "string",
+      "Transparency": "number",
+      "BrickColor": "BrickColor",
+      "Position": "Vector3",
+      "Anchored": "boolean",
+      "Massless": "boolean",
+      "CastShadow": "boolean",
+      "PivotOffset": "CFrame"
+    },
+    "MaterialVariant": {
+      "BaseMaterial": "Enum.Material",
+      "CustomPhysicalProperties": "PhysicalProperties?"
+    }
+  },
+  "source_sha256": {
+    "engine/instances.luau": "55436889f6bd542e04aa48d2d921dfc572b992cb98b0560ac9650a50b200a82d",
+    "engine/services.luau": "ae1a16739ebeb4e0aa712002db7867bf3add14ef9e1571f08dc546db95dc5c3e"
+  }
+}

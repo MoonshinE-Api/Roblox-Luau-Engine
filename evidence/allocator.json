@@ -1,0 +1,80 @@
+{
+  "sizeclass_constructor_cases": 32,
+  "sizeclass_count": 36,
+  "sizeclasses": [
+    8,
+    16,
+    24,
+    32,
+    40,
+    48,
+    56,
+    64,
+    80,
+    96,
+    112,
+    128,
+    144,
+    160,
+    176,
+    192,
+    208,
+    224,
+    240,
+    256,
+    288,
+    320,
+    352,
+    384,
+    416,
+    448,
+    480,
+    512,
+    576,
+    640,
+    704,
+    768,
+    832,
+    896,
+    960,
+    1024
+  ],
+  "allocation_comparisons": 3491,
+  "scenarios": [
+    {
+      "scenario": "all_small_sizes",
+      "allocations": 1024,
+      "backing_requests": 46,
+      "total_requested_bytes_including_main_block": 544224
+    },
+    {
+      "scenario": "page_exhaustion",
+      "allocations": 2460,
+      "backing_requests": 13,
+      "total_requested_bytes_including_main_block": 234944
+    },
+    {
+      "scenario": "direct_allocations",
+      "allocations": 7,
+      "backing_requests": 7,
+      "total_requested_bytes_including_main_block": 68579
+    }
+  ],
+  "integrated_stack_initialization_with_actual_allocator": true,
+  "page_and_state_bytes_match": true,
+  "allocation_notifications_match": true,
+  "buffer_canaries_verified": true,
+  "original_allocator_dependencies_replaced": [],
+  "lifecycle_operations_before_final_drain": 197,
+  "free_reuse_resize_payload_and_final_page_release_verified": true,
+  "host_adapters": [
+    "caller-supplied successful backing allocator",
+    "memset for isolated config constructor",
+    "memcpy"
+  ],
+  "limits": [
+    "No garbage-collected object allocator yet",
+    "Original Lua OOM exception path is not implemented",
+    "Still no fully initialized global tables or running scripts"
+  ]
+}

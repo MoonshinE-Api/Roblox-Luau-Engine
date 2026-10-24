@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "original_constructor_cases": 1070,
+  "original_material_indices": 45,
+  "binary_material_vectors_verified": 46,
+  "original_unit_geometry": [
+    "Ball",
+    "Cylinder",
+    "Block",
+    "Wedge",
+    "CornerWedge"
+  ],
+  "original_function_bytes_unchanged": true,
+  "limits": [
+    "Lua bridge nonnumeric/NaN coercion and warning text are not compared.",
+    "MaterialVariant precedence and mass calculations have separate semantic tests."
+  ]
+}

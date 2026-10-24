@@ -1,0 +1,76 @@
+; __ZN15SizeClassConfigC2Ev
+; original address 0x1031e4b18, source {'file': '_external/_s/SizeClassConfig.c', 'line': 5}
+0x1031e4b18: 55                       push     rbp
+0x1031e4b19: 4889e5                   mov      rbp, rsp
+0x1031e4b1c: 53                       push     rbx
+0x1031e4b1d: 50                       push     rax
+0x1031e4b1e: 4889fb                   mov      rbx, rdi
+0x1031e4b21: c787a404000000000000     mov      dword ptr [rdi + 0x4a4], 0
+0x1031e4b2b: 0f57c0                   xorps    xmm0, xmm0
+0x1031e4b2e: 0f1107                   movups   xmmword ptr [rdi], xmm0
+0x1031e4b31: 0f114710                 movups   xmmword ptr [rdi + 0x10], xmm0
+0x1031e4b35: 0f114720                 movups   xmmword ptr [rdi + 0x20], xmm0
+0x1031e4b39: 0f114730                 movups   xmmword ptr [rdi + 0x30], xmm0
+0x1031e4b3d: 0f114740                 movups   xmmword ptr [rdi + 0x40], xmm0
+0x1031e4b41: 0f114750                 movups   xmmword ptr [rdi + 0x50], xmm0
+0x1031e4b45: 0f114760                 movups   xmmword ptr [rdi + 0x60], xmm0
+0x1031e4b49: 0f114770                 movups   xmmword ptr [rdi + 0x70], xmm0
+0x1031e4b4d: 0f118780000000           movups   xmmword ptr [rdi + 0x80], xmm0
+0x1031e4b54: 0f118790000000           movups   xmmword ptr [rdi + 0x90], xmm0
+0x1031e4b5b: 4881c7a0000000           add      rdi, 0xa0
+0x1031e4b62: ba01040000               mov      edx, 0x401
+0x1031e4b67: beff000000               mov      esi, 0xff
+0x1031e4b6c: e87de56305               call     0x1088230ee
+0x1031e4b71: 31c0                     xor      eax, eax
+0x1031e4b73: 83c008                   add      eax, 8
+0x1031e4b76: 48638ba4040000           movsxd   rcx, dword ptr [rbx + 0x4a4]
+0x1031e4b7d: 8d5101                   lea      edx, [rcx + 1]
+0x1031e4b80: 8993a4040000             mov      dword ptr [rbx + 0x4a4], edx
+0x1031e4b86: 89048b                   mov      dword ptr [rbx + rcx*4], eax
+0x1031e4b89: 83f838                   cmp      eax, 0x38
+0x1031e4b8c: 72e5                     jb       0x1031e4b73
+0x1031e4b8e: b830000000               mov      eax, 0x30
+0x1031e4b93: 83c010                   add      eax, 0x10
+0x1031e4b96: 48638ba4040000           movsxd   rcx, dword ptr [rbx + 0x4a4]
+0x1031e4b9d: 8d5101                   lea      edx, [rcx + 1]
+0x1031e4ba0: 8993a4040000             mov      dword ptr [rbx + 0x4a4], edx
+0x1031e4ba6: 89048b                   mov      dword ptr [rbx + rcx*4], eax
+0x1031e4ba9: 3df0000000               cmp      eax, 0xf0
+0x1031e4bae: 72e3                     jb       0x1031e4b93
+0x1031e4bb0: b8e0000000               mov      eax, 0xe0
+0x1031e4bb5: 83c020                   add      eax, 0x20
+0x1031e4bb8: 48638ba4040000           movsxd   rcx, dword ptr [rbx + 0x4a4]
+0x1031e4bbf: 8d5101                   lea      edx, [rcx + 1]
+0x1031e4bc2: 8993a4040000             mov      dword ptr [rbx + 0x4a4], edx
+0x1031e4bc8: 89048b                   mov      dword ptr [rbx + rcx*4], eax
+0x1031e4bcb: 3de0010000               cmp      eax, 0x1e0
+0x1031e4bd0: 72e3                     jb       0x1031e4bb5
+0x1031e4bd2: b8c0010000               mov      eax, 0x1c0
+0x1031e4bd7: 83c040                   add      eax, 0x40
+0x1031e4bda: 48638ba4040000           movsxd   rcx, dword ptr [rbx + 0x4a4]
+0x1031e4be1: 8d5101                   lea      edx, [rcx + 1]
+0x1031e4be4: 8993a4040000             mov      dword ptr [rbx + 0x4a4], edx
+0x1031e4bea: 89048b                   mov      dword ptr [rbx + rcx*4], eax
+0x1031e4bed: 3dc1030000               cmp      eax, 0x3c1
+0x1031e4bf2: 72e3                     jb       0x1031e4bd7
+0x1031e4bf4: 83bba404000000           cmp      dword ptr [rbx + 0x4a4], 0
+0x1031e4bfb: 7e1c                     jle      0x1031e4c19
+0x1031e4bfd: 31c0                     xor      eax, eax
+0x1031e4bff: 48630c83                 movsxd   rcx, dword ptr [rbx + rax*4]
+0x1031e4c03: 88840ba0000000           mov      byte ptr [rbx + rcx + 0xa0], al
+0x1031e4c0a: 48ffc0                   inc      rax
+0x1031e4c0d: 48638ba4040000           movsxd   rcx, dword ptr [rbx + 0x4a4]
+0x1031e4c14: 4839c8                   cmp      rax, rcx
+0x1031e4c17: 7ce6                     jl       0x1031e4bff
+0x1031e4c19: b8a0040000               mov      eax, 0x4a0
+0x1031e4c1e: 807c03ff00               cmp      byte ptr [rbx + rax - 1], 0
+0x1031e4c23: 7907                     jns      0x1031e4c2c
+0x1031e4c25: 8a0c03                   mov      cl, byte ptr [rbx + rax]
+0x1031e4c28: 884c03ff                 mov      byte ptr [rbx + rax - 1], cl
+0x1031e4c2c: 48ffc8                   dec      rax
+0x1031e4c2f: 483da0000000             cmp      rax, 0xa0
+0x1031e4c35: 75e7                     jne      0x1031e4c1e
+0x1031e4c37: 4883c408                 add      rsp, 8
+0x1031e4c3b: 5b                       pop      rbx
+0x1031e4c3c: 5d                       pop      rbp
+0x1031e4c3d: c3                       ret      

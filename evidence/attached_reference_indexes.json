@@ -1,0 +1,16 @@
+[
+  {
+    "section": "classes",
+    "attachment_sha256": "5463bdd481711be6c6540735eef7ec94e9d656e0c0b7428882388d78b1ca252f",
+    "unique_names": 628,
+    "only_in_attachment": [],
+    "only_in_reference": []
+  },
+  {
+    "section": "enums",
+    "attachment_sha256": "75a2d6758e675540014aac18ef1dc96aa550cf36bfe80e9691408348840d6a9f",
+    "unique_names": 518,
+    "only_in_attachment": [],
+    "only_in_reference": []
+  }
+]

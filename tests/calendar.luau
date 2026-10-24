@@ -1,0 +1,17 @@
+assert(os.date("!%Y-%m-%d %H:%M:%S",0)=="1970-01-01 00:00:00")
+assert(os.date("!%a %A %b %B %j %w %p %%",0)=="Thu Thursday Jan January 001 4 AM %")
+assert(os.date("!%z %Z",0)=="+0000 UTC")
+assert(os.date("!%c",0)=="Thu Jan  1 00:00:00 1970")
+local leap=os.time{year=2024,month=2,day=29,hour=12,min=34,sec=56}
+assert(leap==1709210096)
+assert(os.date("!%Y-%m-%d %H:%M:%S",leap)=="2024-02-29 12:34:56")
+local fields=os.date("!*t",leap)
+assert(fields.year==2024 and fields.month==2 and fields.day==29 and fields.hour==12 and fields.min==34 and fields.sec==56)
+assert(fields.wday==5 and fields.yday==60 and fields.isdst==false)
+assert(os.difftime(leap+123,leap)==123)
+local localFields=os.date("*t",leap)
+assert(type(localFields)=="table" and localFields.year==2024)
+assert(type(os.date("%z %Z",leap))=="string")
+assert(not pcall(function() os.date("!%Q",0) end))
+for i=1,100 do assert(os.date("!%Y",leap+i)=="2024") end
+print("CALENDAR HOST BRIDGE CHECKS PASSED")

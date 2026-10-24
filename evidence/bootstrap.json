@@ -1,0 +1,60 @@
+{
+  "counts": {
+    "stringhash": 228,
+    "newstate_preinit": 96,
+    "stack_init": 96
+  },
+  "total_differential_cases": 420,
+  "string_vectors": [
+    {
+      "length": 0,
+      "input_hex": "",
+      "hash": 0
+    },
+    {
+      "length": 31,
+      "input_hex": "10dbaaa1e82d4deedf13658fb846934a388415bc5ee47b527552f6fd778728",
+      "hash": 3653951744
+    },
+    {
+      "length": 32,
+      "input_hex": "ffb027d753a75d00e812214860feb3ad60a19e9750fd95f4d030e3b026e4af1d",
+      "hash": 805305210
+    },
+    {
+      "length": 33,
+      "input_hex": "1fe7f0bcf10f42681b0760a1e9c1073b8025163a7d4801434db09aead2c74b6199",
+      "hash": 2747895178
+    },
+    {
+      "length": 43,
+      "input_hex": "55fef8fed3d940c219611001c101b2cd5f37544ee9027083452459b77f976a6f0b2efc7b72b6f69ac22ad2",
+      "hash": 907934981
+    },
+    {
+      "length": 44,
+      "input_hex": "b006c2ef3125d4c0e3b18e18daa0af98824908cb2041f5fb05ae9d2df88ceefd46f1504209bb516b4e7a7620",
+      "hash": 518342617
+    }
+  ],
+  "entry_bytes_match_original": true,
+  "buffer_canaries_verified": true,
+  "stack_allocations": [
+    384,
+    720
+  ],
+  "stack_slots": 45,
+  "call_info_entries": 8,
+  "main_block_bytes": 19424,
+  "dependency_replacements": {
+    "luaM_new_": "test-owned fixed buffers; original small-block allocator not executed",
+    "luaD_rawrunprotected": "records f_luaopen address; supplies test statuses; does not invoke f_luaopen",
+    "close_state": "records cleanup request; original GC/free path not executed",
+    "__bzero": "ABI-compatible Rust zero fill"
+  },
+  "limits": [
+    "Not a fully initialized VM",
+    "No tables, strings, GC, allocator page lists or real unwinding",
+    "No compilation, bytecode loading, script execution or Engine API yet"
+  ]
+}

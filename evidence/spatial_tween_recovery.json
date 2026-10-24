@@ -1,0 +1,75 @@
+{
+  "build": "0.735.19.7351131",
+  "evidence": {
+    "raycast_constructor": {
+      "source": "script/LuaRaycastParamsBridge.c",
+      "address": "0x104654510",
+      "binary_function_bytes": 52,
+      "binary_function_sha256": "ef14298d0199f0411defa4cc89f657cf17a53a885d23b3371fa448d983e8b4e8",
+      "source_sha256": "45c559ca44fa9521c090962bb810ede60d45127e2b6062e80a59a69dbeddf365"
+    },
+    "overlap_constructor": {
+      "source": "script/LuaOverlapParamsBridge.c",
+      "address": "0x104655592",
+      "binary_function_bytes": 52,
+      "binary_function_sha256": "4db9a446e47634a05b2c862052db1e6c0a372b90599f9dd36c49224dcc58ac0a",
+      "source_sha256": "caee12c5a62a3efc8ec87dc4ad35cb7f8f01b02ab0bcefbf0c893941baf9906a"
+    },
+    "collision_group_default": {
+      "source": "rbx/LuaQueryParams.c",
+      "address": "0x10442f0dc",
+      "binary_function_bytes": 36,
+      "binary_function_sha256": "6459b7af3018110b4eee2ea75ab1b9206aeb412e726bd061640daea156939e61",
+      "source_sha256": "81c538dd2e13d6f295578522dbbd022a476c217a0bedebb3b65809956e456a24"
+    },
+    "tolerance_setter": {
+      "source": "script/LuaOverlapParamsBridge.c",
+      "address": "0x104655aec",
+      "binary_function_bytes": 156,
+      "binary_function_sha256": "830d23be8fedd92b53581e636d73427e49d488ad2626278b341225f78209bbd3",
+      "source_sha256": "caee12c5a62a3efc8ec87dc4ad35cb7f8f01b02ab0bcefbf0c893941baf9906a"
+    },
+    "tween_state_event": {
+      "source": "rbx/TweenBase.c",
+      "address": "0x1073e5aa6",
+      "binary_function_bytes": 88,
+      "binary_function_sha256": "5986c39ccfb05eac351469112b2ffea67f41546612a6365ebdde271c36ebfa85",
+      "source_sha256": "11ed6594348fd0a32e6e830202623fc13cee364fa1bb5222345251817dce9983"
+    },
+    "tween_pause": {
+      "source": "v8datamodel/Tween.c",
+      "address": "0x1073e6148",
+      "binary_function_bytes": 26,
+      "binary_function_sha256": "c3ea81af671ccb43f2c541d55f70d8d53045dfa62ad7d3ee1f6ea2027e8e46fa",
+      "source_sha256": "75864899177b83d67518a744c17fc352304f8a1d8856e594416afded51e59e19"
+    },
+    "tween_cancel": {
+      "source": "v8datamodel/Tween.c",
+      "address": "0x1073e6162",
+      "binary_function_bytes": 32,
+      "binary_function_sha256": "e0ca4689c98c751fb1a7d7007f90ef7740a3d4f025b532cb3449728aacc80fba",
+      "source_sha256": "75864899177b83d67518a744c17fc352304f8a1d8856e594416afded51e59e19"
+    },
+    "tween_play": {
+      "source": "v8datamodel/Tween.c",
+      "address": "0x1073e6182",
+      "binary_function_bytes": 406,
+      "binary_function_sha256": "2f15c0a40f41967bd1c8909dffa5ef71f3bad4aa0410355256916920d4746675",
+      "source_sha256": "75864899177b83d67518a744c17fc352304f8a1d8856e594416afded51e59e19"
+    },
+    "easing_raw": {
+      "source": "v8datamodel/TweenService.c",
+      "address": "0x1073ea058",
+      "binary_function_bytes": 196,
+      "binary_function_sha256": "2cc8ec68a4458b5a09a231c443090c9f83a0c465fff768aaab79954623724dc9",
+      "source_sha256": "5070989fcbedc92b45e4b3c4250b44bfeada3aaf1eb410a729751c05f7925104"
+    }
+  },
+  "limits": [
+    "Semantic Engine API, not a port of the complete C++ engine.",
+    "Raycast and exact overlap presently support block Parts only. Bounding queries use oriented bounds.",
+    "Tolerance default upper bound comes from public documentation; dynamic FFlag overrides are not restored.",
+    "Tween curves and quaternion interpolation are double precision; native float32/engine job order are not bitwise validated.",
+    "Modern query IncludeInstances/ExcludeInstances/Margin/SizeGradient are absent from the inspected 0.735 bridges."
+  ]
+}

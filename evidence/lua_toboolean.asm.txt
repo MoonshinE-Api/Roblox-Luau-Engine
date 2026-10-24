@@ -1,0 +1,35 @@
+; __Z13lua_tobooleanP9lua_Statei
+; original address 0x1031cf1db, source {'file': '_free/_free_l.part001.c', 'line': 17280}
+0x1031cf1db: 55                       push     rbp
+0x1031cf1dc: 4889e5                   mov      rbp, rsp
+0x1031cf1df: 85f6                     test     esi, esi
+0x1031cf1e1: 7e22                     jle      0x1031cf205
+0x1031cf1e3: 488b4738                 mov      rax, qword ptr [rdi + 0x38]
+0x1031cf1e7: 89f1                     mov      ecx, esi
+0x1031cf1e9: 48c1e104                 shl      rcx, 4
+0x1031cf1ed: 4801c1                   add      rcx, rax
+0x1031cf1f0: 4883c1f0                 add      rcx, -0x10
+0x1031cf1f4: 483b4f58                 cmp      rcx, qword ptr [rdi + 0x58]
+0x1031cf1f8: 488d0571283006           lea      rax, [rip + 0x6302871]
+0x1031cf1ff: 480f42c1                 cmovb    rax, rcx
+0x1031cf203: eb1a                     jmp      0x1031cf21f
+0x1031cf205: 81fef1d8ffff             cmp      esi, 0xffffd8f1
+0x1031cf20b: 7c0d                     jl       0x1031cf21a
+0x1031cf20d: 4863c6                   movsxd   rax, esi
+0x1031cf210: 48c1e004                 shl      rax, 4
+0x1031cf214: 48034758                 add      rax, qword ptr [rdi + 0x58]
+0x1031cf218: eb05                     jmp      0x1031cf21f
+0x1031cf21a: e8c5390000               call     0x1031d2be4
+0x1031cf21f: 8b480c                   mov      ecx, dword ptr [rax + 0xc]
+0x1031cf222: 85c9                     test     ecx, ecx
+0x1031cf224: 7414                     je       0x1031cf23a
+0x1031cf226: 83f901                   cmp      ecx, 1
+0x1031cf229: 750a                     jne      0x1031cf235
+0x1031cf22b: 31c9                     xor      ecx, ecx
+0x1031cf22d: 833800                   cmp      dword ptr [rax], 0
+0x1031cf230: 0f95c1                   setne    cl
+0x1031cf233: eb05                     jmp      0x1031cf23a
+0x1031cf235: b901000000               mov      ecx, 1
+0x1031cf23a: 89c8                     mov      eax, ecx
+0x1031cf23c: 5d                       pop      rbp
+0x1031cf23d: c3                       ret      

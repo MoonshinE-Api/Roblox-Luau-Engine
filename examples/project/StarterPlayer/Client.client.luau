@@ -1,0 +1,12 @@
+local store = game:GetService("ReplicatedStorage")
+local nextCount = require(store.Counter)
+assert(nextCount() == 1, "Module cache must be separate on client")
+assert(game:GetService("RunService"):IsClient())
+assert(game:GetService("Players").LocalPlayer ~= nil)
+local remote = store:WaitForChild("TestRemote", 1)
+local result
+remote.OnClientEvent:Connect(function(value) result = value end)
+remote:FireServer(10)
+assert(result == 11)
+assert(workspace.ServerPart.Anchored)
+print("LocalScript and local remotes passed", script.ClassName)

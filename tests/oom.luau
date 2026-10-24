@@ -1,0 +1,5 @@
+local ok,message=pcall(function() return buffer.create(64*1024*1024) end)
+assert(not ok and string.find(tostring(message),"memory",1,true))
+local part=Instance.new("Part",workspace)
+assert(part.Parent==workspace)
+print("OOM recovered and VM still usable")

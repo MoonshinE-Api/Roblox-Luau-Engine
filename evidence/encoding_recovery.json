@@ -1,0 +1,69 @@
+{
+  "source": "D:\\0.735-full\\rbx\\EncodingService.c",
+  "source_sha256": "f9ef506ce4a62bdb64a89cf5eed610a98eefe8a9ef723dc03e3e3c18ebd615bf",
+  "selected_functions": [
+    {
+      "address": "0x104ab5cd6",
+      "symbol": "__ZN3RBX15EncodingService12base64EncodeENS_9ArrayViewIcEE",
+      "decompiled_body_sha256": "99c28ce5519b7fbca280272a98d65c75adbf05b1236d2ca63b2828cf32564ab2"
+    },
+    {
+      "address": "0x104ab5e50",
+      "symbol": "__ZN3RBX15EncodingService12base64DecodeENS_9ArrayViewIcEE",
+      "decompiled_body_sha256": "01763ce1f237280c3bbbc2d2adb1e39ec9fa1f622a7b08068b7f78bfd7453e94"
+    },
+    {
+      "address": "0x104ab5eb0",
+      "symbol": "__ZN3RBX15EncodingService17computeStringHashENS_10StringViewENS_5Enums13HashAlgorithmE",
+      "decompiled_body_sha256": "d7338963fa689b413f62123f700a7bbc8100b23e5dad51068128251c58849202"
+    },
+    {
+      "address": "0x104ab5fac",
+      "symbol": "__ZN3RBX15EncodingService17computeBufferHashENS_9ArrayViewIcEENS_5Enums13HashAlgorithmE",
+      "decompiled_body_sha256": "08c20c83ef30c3cbac01241fde102e85f479033fcd8caf5cea0ad6be1a9b5591"
+    },
+    {
+      "address": "0x104ab6078",
+      "symbol": "__ZN3RBX15EncodingService14compressBufferENS_9ArrayViewIhEENS_5Enums20CompressionAlgorithmEi",
+      "decompiled_body_sha256": "f2cff252c1c3aeb48d12bfe390dec632bc7ffb8086cd01cd9a6bef08945d7366"
+    },
+    {
+      "address": "0x104ab6186",
+      "symbol": "__ZN3RBX15EncodingService25getDecompressedBufferSizeENS_9ArrayViewIhEENS_5Enums20CompressionAlgorithmE",
+      "decompiled_body_sha256": "ce80f70023f676b95ee0f9a476259036e24061e6ef39ef3ff77aa0e7adde2fe0"
+    },
+    {
+      "address": "0x104ab61ae",
+      "symbol": "__ZN3RBX15EncodingService16decompressBufferENS_9ArrayViewIhEENS_5Enums20CompressionAlgorithmE",
+      "decompiled_body_sha256": "b57f41a14a6f3280b725ad7fdccf70af910849678f1603c0d36718f2fe556242"
+    }
+  ],
+  "recovered_contract": {
+    "Blake2b_digest_bytes": 32,
+    "Blake3_digest_bytes": 32,
+    "hash_result": "binary string / copied bytes for buffer",
+    "zstd_compression_level": [
+      -7,
+      22
+    ],
+    "max_decompressed_size": 1073741824,
+    "unknown_frame_size": "nil getter / error on decompress"
+  },
+  "implementation": "semantic Python/Rust host implementation; not original native code execution",
+  "unverified": [
+    "exact compressed bytes",
+    "Base64 tolerance",
+    "native errors/argument coercion"
+  ],
+  "compatibility_aliases": [
+    "CompressBufferZstd",
+    "DecompressBufferZstd",
+    "GetDecompressedBufferSizeZstd"
+  ],
+  "aliases_native_presence_verified": false,
+  "references": [
+    "https://create.roblox.com/docs/reference/engine/classes/EncodingService",
+    "https://docs.python.org/3.14/library/compression.zstd.html",
+    "https://github.com/BLAKE3-team/BLAKE3/blob/1.8.2/test_vectors/test_vectors.json"
+  ]
+}

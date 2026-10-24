@@ -1,0 +1,21 @@
+; __Z9luaO_log2j
+; original address 0x1031e52fc, source {'file': '_free/_free_l.part002.c', 'line': 7112}
+0x1031e52fc: 55                       push     rbp
+0x1031e52fd: 4889e5                   mov      rbp, rsp
+0x1031e5300: b9ffffffff               mov      ecx, 0xffffffff
+0x1031e5305: 81ff00010000             cmp      edi, 0x100
+0x1031e530b: 7214                     jb       0x1031e5321
+0x1031e530d: 89f8                     mov      eax, edi
+0x1031e530f: 83c108                   add      ecx, 8
+0x1031e5312: c1e808                   shr      eax, 8
+0x1031e5315: 81ffffff0000             cmp      edi, 0xffff
+0x1031e531b: 89c7                     mov      edi, eax
+0x1031e531d: 77f0                     ja       0x1031e530f
+0x1031e531f: eb02                     jmp      0x1031e5323
+0x1031e5321: 89f8                     mov      eax, edi
+0x1031e5323: 89c0                     mov      eax, eax
+0x1031e5325: 488d1554c72e06           lea      rdx, [rip + 0x62ec754]
+0x1031e532c: 0fb60410                 movzx    eax, byte ptr [rax + rdx]
+0x1031e5330: 01c8                     add      eax, ecx
+0x1031e5332: 5d                       pop      rbp
+0x1031e5333: c3                       ret      

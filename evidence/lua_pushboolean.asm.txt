@@ -1,0 +1,35 @@
+; __Z15lua_pushbooleanP9lua_Statei
+; original address 0x1031d0053, source {'file': '_free/_free_l.part001.c', 'line': 18142}
+0x1031d0053: 55                       push     rbp
+0x1031d0054: 4889e5                   mov      rbp, rsp
+0x1031d0057: 4156                     push     r14
+0x1031d0059: 53                       push     rbx
+0x1031d005a: 4189f6                   mov      r14d, esi
+0x1031d005d: 4889fb                   mov      rbx, rdi
+0x1031d0060: 488b4f50                 mov      rcx, qword ptr [rdi + 0x50]
+0x1031d0064: 488b4758                 mov      rax, qword ptr [rdi + 0x58]
+0x1031d0068: 488d5010                 lea      rdx, [rax + 0x10]
+0x1031d006c: 483b11                   cmp      rdx, qword ptr [rcx]
+0x1031d006f: 7615                     jbe      0x1031d0086
+0x1031d0071: 4889df                   mov      rdi, rbx
+0x1031d0074: be01000000               mov      esi, 1
+0x1031d0079: e8d4e2ffff               call     0x1031ce352
+0x1031d007e: 85c0                     test     eax, eax
+0x1031d0080: 741f                     je       0x1031d00a1
+0x1031d0082: 488b4358                 mov      rax, qword ptr [rbx + 0x58]
+0x1031d0086: 31c9                     xor      ecx, ecx
+0x1031d0088: 4585f6                   test     r14d, r14d
+0x1031d008b: 0f95c1                   setne    cl
+0x1031d008e: 8908                     mov      dword ptr [rax], ecx
+0x1031d0090: c7400c01000000           mov      dword ptr [rax + 0xc], 1
+0x1031d0097: 4883435810               add      qword ptr [rbx + 0x58], 0x10
+0x1031d009c: 5b                       pop      rbx
+0x1031d009d: 415e                     pop      r14
+0x1031d009f: 5d                       pop      rbp
+0x1031d00a0: c3                       ret      
+0x1031d00a1: 488d350797ac08           lea      rsi, [rip + 0x8ac9707]
+0x1031d00a8: 4889df                   mov      rdi, rbx
+0x1031d00ab: 31c0                     xor      eax, eax
+0x1031d00ad: e823560100               call     0x1031e56d5
+0x1031d00b2: 4889df                   mov      rdi, rbx
+0x1031d00b5: e824e3ffff               call     0x1031ce3de

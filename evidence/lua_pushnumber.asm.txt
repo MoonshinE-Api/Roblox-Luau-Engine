@@ -1,0 +1,33 @@
+; __Z14lua_pushnumberP9lua_Stated
+; original address 0x1031cfaa9, source {'file': '_free/_free_l.part001.c', 'line': 17855}
+0x1031cfaa9: 55                       push     rbp
+0x1031cfaaa: 4889e5                   mov      rbp, rsp
+0x1031cfaad: 53                       push     rbx
+0x1031cfaae: 50                       push     rax
+0x1031cfaaf: 4889fb                   mov      rbx, rdi
+0x1031cfab2: 488b4f50                 mov      rcx, qword ptr [rdi + 0x50]
+0x1031cfab6: 488b4758                 mov      rax, qword ptr [rdi + 0x58]
+0x1031cfaba: 488d5010                 lea      rdx, [rax + 0x10]
+0x1031cfabe: 483b11                   cmp      rdx, qword ptr [rcx]
+0x1031cfac1: 761f                     jbe      0x1031cfae2
+0x1031cfac3: f20f1145f0               movsd    qword ptr [rbp - 0x10], xmm0
+0x1031cfac8: 4889df                   mov      rdi, rbx
+0x1031cfacb: be01000000               mov      esi, 1
+0x1031cfad0: e87de8ffff               call     0x1031ce352
+0x1031cfad5: 85c0                     test     eax, eax
+0x1031cfad7: 7420                     je       0x1031cfaf9
+0x1031cfad9: 488b4358                 mov      rax, qword ptr [rbx + 0x58]
+0x1031cfadd: f20f1045f0               movsd    xmm0, qword ptr [rbp - 0x10]
+0x1031cfae2: f20f1100                 movsd    qword ptr [rax], xmm0
+0x1031cfae6: c7400c03000000           mov      dword ptr [rax + 0xc], 3
+0x1031cfaed: 4883435810               add      qword ptr [rbx + 0x58], 0x10
+0x1031cfaf2: 4883c408                 add      rsp, 8
+0x1031cfaf6: 5b                       pop      rbx
+0x1031cfaf7: 5d                       pop      rbp
+0x1031cfaf8: c3                       ret      
+0x1031cfaf9: 488d35af9cac08           lea      rsi, [rip + 0x8ac9caf]
+0x1031cfb00: 4889df                   mov      rdi, rbx
+0x1031cfb03: 31c0                     xor      eax, eax
+0x1031cfb05: e8cb5b0100               call     0x1031e56d5
+0x1031cfb0a: 4889df                   mov      rdi, rbx
+0x1031cfb0d: e8cce8ffff               call     0x1031ce3de

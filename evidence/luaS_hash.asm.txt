@@ -1,0 +1,45 @@
+; __Z9luaS_hashPKcm
+; original address 0x1031e68a0, source {'file': '_free/_free_l.part002.c', 'line': 7716}
+0x1031e68a0: 55                       push     rbp
+0x1031e68a1: 4889e5                   mov      rbp, rsp
+0x1031e68a4: 89f0                     mov      eax, esi
+0x1031e68a6: 4883fe20                 cmp      rsi, 0x20
+0x1031e68aa: 7240                     jb       0x1031e68ec
+0x1031e68ac: 31c9                     xor      ecx, ecx
+0x1031e68ae: 31d2                     xor      edx, edx
+0x1031e68b0: 030f                     add      ecx, dword ptr [rdi]
+0x1031e68b2: 035704                   add      edx, dword ptr [rdi + 4]
+0x1031e68b5: 034708                   add      eax, dword ptr [rdi + 8]
+0x1031e68b8: 31c1                     xor      ecx, eax
+0x1031e68ba: 4189c0                   mov      r8d, eax
+0x1031e68bd: 41c1c012                 rol      r8d, 0x12
+0x1031e68c1: 4429c1                   sub      ecx, r8d
+0x1031e68c4: 31ca                     xor      edx, ecx
+0x1031e68c6: 4189c8                   mov      r8d, ecx
+0x1031e68c9: 41c1c015                 rol      r8d, 0x15
+0x1031e68cd: 4429c2                   sub      edx, r8d
+0x1031e68d0: 31d0                     xor      eax, edx
+0x1031e68d2: 4189d0                   mov      r8d, edx
+0x1031e68d5: 41c1c007                 rol      r8d, 7
+0x1031e68d9: 4429c0                   sub      eax, r8d
+0x1031e68dc: 4883c70c                 add      rdi, 0xc
+0x1031e68e0: 4883c6f4                 add      rsi, -0xc
+0x1031e68e4: 4883fe1f                 cmp      rsi, 0x1f
+0x1031e68e8: 77c6                     ja       0x1031e68b0
+0x1031e68ea: eb05                     jmp      0x1031e68f1
+0x1031e68ec: 4885f6                   test     rsi, rsi
+0x1031e68ef: 741e                     je       0x1031e690f
+0x1031e68f1: 89c1                     mov      ecx, eax
+0x1031e68f3: 89c8                     mov      eax, ecx
+0x1031e68f5: c1e005                   shl      eax, 5
+0x1031e68f8: 89ca                     mov      edx, ecx
+0x1031e68fa: c1ea02                   shr      edx, 2
+0x1031e68fd: 01c2                     add      edx, eax
+0x1031e68ff: 0fb64437ff               movzx    eax, byte ptr [rdi + rsi - 1]
+0x1031e6904: 01d0                     add      eax, edx
+0x1031e6906: 31c8                     xor      eax, ecx
+0x1031e6908: 89c1                     mov      ecx, eax
+0x1031e690a: 48ffce                   dec      rsi
+0x1031e690d: 75e4                     jne      0x1031e68f3
+0x1031e690f: 5d                       pop      rbp
+0x1031e6910: c3                       ret      

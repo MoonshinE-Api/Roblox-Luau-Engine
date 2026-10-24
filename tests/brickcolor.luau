@@ -1,0 +1,37 @@
+local function rejects(fn) assert(not pcall(fn),"Expected error") end
+local red=BrickColor.new("Bright red")
+assert(typeof(red)=="BrickColor" and red.Number==21 and red.Name=="Bright red" and tostring(red)==red.Name)
+assert(red==BrickColor.new(21) and red==BrickColor.new("21"))
+assert(red==BrickColor.new(red.Color) and red==BrickColor.new(red.r,red.g,red.b))
+assert(red.r==red.Color.R and red.g==red.Color.G and red.b==red.Color.B)
+assert(BrickColor.White().Number==1 and BrickColor.Gray().Number==194 and BrickColor.DarkGray().Number==199)
+assert(BrickColor.Black().Number==26 and BrickColor.Red()==red)
+assert(BrickColor.Yellow().Number==24 and BrickColor.Green().Number==28 and BrickColor.Blue().Number==23)
+assert(BrickColor.new(-1).Number==194 and BrickColor.new("missing").Number==194)
+assert(BrickColor.new(21.99)==red)
+for _,n in {4294967317,-4294967275,2147483669,1e20,-1e20,math.huge,0/0} do
+    assert(BrickColor.new(n).Number==194,"Out-of-range int32 must not wrap to a valid color ID")
+end
+-- This observed 0.735 no-arg fallthrough differs from the documented default.
+assert(BrickColor.new().Number==1003)
+assert(BrickColor.palette(0).Number==141 and BrickColor.palette(127).Number==1003)
+local allowed={};for i=0,127 do local c=BrickColor.palette(i);allowed[c.Number]=true;assert(c==BrickColor.new(c.Number)) end
+for _=1,100 do assert(allowed[BrickColor.random().Number]) end
+rejects(function() red.Number=2 end)
+rejects(function() BrickColor.palette(-1) end)
+rejects(function() BrickColor.palette(128) end)
+rejects(function() BrickColor.palette(4294967296) end)
+rejects(function() BrickColor.new({}) end)
+local part=Instance.new("Part",workspace)
+local changed=0;part:GetPropertyChangedSignal("BrickColor"):Connect(function() changed+=1 end)
+part.BrickColor=red;assert(part.Color==red.Color and part.BrickColor==red)
+part.Color=BrickColor.Blue().Color;assert(part.BrickColor==BrickColor.Blue())
+local value=Instance.new("BrickColorValue",part)
+assert(value.Value==BrickColor.Gray())
+local signaled;value.Changed:Connect(function(v) signaled=v end)
+value.Value=red;part:SetAttribute("Paint",red)
+task.wait()
+assert(changed==2 and signaled==red and part:GetAttribute("Paint")==red)
+local clone=part:Clone();assert(clone.BrickColor==part.BrickColor and clone:GetAttribute("Paint")==red and clone.BrickColorValue.Value==red)
+rejects(function() part.BrickColor=Color3.new() end)
+print("PASS BrickColor: constructors/palette, color mapping, attributes, Value/Changed and Clone")

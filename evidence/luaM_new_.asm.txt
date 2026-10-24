@@ -1,0 +1,58 @@
+; __Z9luaM_new_P9lua_Statemh
+; original address 0x1031e41d0, source {'file': '_free/_free_l.part002.c', 'line': 6390}
+0x1031e41d0: 55                       push     rbp
+0x1031e41d1: 4889e5                   mov      rbp, rsp
+0x1031e41d4: 4157                     push     r15
+0x1031e41d6: 4156                     push     r14
+0x1031e41d8: 4155                     push     r13
+0x1031e41da: 4154                     push     r12
+0x1031e41dc: 53                       push     rbx
+0x1031e41dd: 50                       push     rax
+0x1031e41de: 4189d7                   mov      r15d, edx
+0x1031e41e1: 4889f3                   mov      rbx, rsi
+0x1031e41e4: 4989fe                   mov      r14, rdi
+0x1031e41e7: 4c8b6f30                 mov      r13, qword ptr [rdi + 0x30]
+0x1031e41eb: 488d46ff                 lea      rax, [rsi - 1]
+0x1031e41ef: 483dff030000             cmp      rax, 0x3ff
+0x1031e41f5: 7720                     ja       0x1031e4217
+0x1031e41f7: 488d056665110a           lea      rax, [rip + 0xa116566]
+0x1031e41fe: 0fbeb403a0000000         movsx    esi, byte ptr [rbx + rax + 0xa0]
+0x1031e4206: 85f6                     test     esi, esi
+0x1031e4208: 780d                     js       0x1031e4217
+0x1031e420a: 4c89f7                   mov      rdi, r14
+0x1031e420d: e868000000               call     0x1031e427a
+0x1031e4212: 4989c4                   mov      r12, rax
+0x1031e4215: eb1c                     jmp      0x1031e4233
+0x1031e4217: 498b7d40                 mov      rdi, qword ptr [r13 + 0x40]
+0x1031e421b: 31f6                     xor      esi, esi
+0x1031e421d: 31d2                     xor      edx, edx
+0x1031e421f: 4889d9                   mov      rcx, rbx
+0x1031e4222: 41ff5538                 call     qword ptr [r13 + 0x38]
+0x1031e4226: 4989c4                   mov      r12, rax
+0x1031e4229: 4885db                   test     rbx, rbx
+0x1031e422c: 7405                     je       0x1031e4233
+0x1031e422e: 4d85e4                   test     r12, r12
+0x1031e4231: 743a                     je       0x1031e426d
+0x1031e4233: 49015d58                 add      qword ptr [r13 + 0x58], rbx
+0x1031e4237: 410fb6c7                 movzx    eax, r15b
+0x1031e423b: 49019cc5402c0000         add      qword ptr [r13 + rax*8 + 0x2c40], rbx
+0x1031e4243: 498b8538050000           mov      rax, qword ptr [r13 + 0x538]
+0x1031e424a: 4885c0                   test     rax, rax
+0x1031e424d: 7512                     jne      0x1031e4261
+0x1031e424f: 4c89e0                   mov      rax, r12
+0x1031e4252: 4883c408                 add      rsp, 8
+0x1031e4256: 5b                       pop      rbx
+0x1031e4257: 415c                     pop      r12
+0x1031e4259: 415d                     pop      r13
+0x1031e425b: 415e                     pop      r14
+0x1031e425d: 415f                     pop      r15
+0x1031e425f: 5d                       pop      rbp
+0x1031e4260: c3                       ret      
+0x1031e4261: 4c89f7                   mov      rdi, r14
+0x1031e4264: 31f6                     xor      esi, esi
+0x1031e4266: 4889da                   mov      rdx, rbx
+0x1031e4269: ffd0                     call     rax
+0x1031e426b: ebe2                     jmp      0x1031e424f
+0x1031e426d: 4c89f7                   mov      rdi, r14
+0x1031e4270: be04000000               mov      esi, 4
+0x1031e4275: e81985ffff               call     0x1031dc793

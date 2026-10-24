@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "calendar_timestamp_iso_vectors": 3200,
+  "native_duration_cases": 404,
+  "format_vectors": 4944,
+  "format_reference": "Moment.js 2.30.1 formatter with recovered Studio locale tables",
+  "host_timezone_checks": [
+    {
+      "timezone": "UTC0",
+      "cases": 254,
+      "offset_now": 0
+    },
+    {
+      "timezone": "PST8PDT",
+      "cases": 254,
+      "offset_now": -25200
+    },
+    {
+      "timezone": "JST-9",
+      "cases": 254,
+      "offset_now": 32400
+    }
+  ],
+  "original_comparisons": "Gregorian Julian days, DateTime::getUnixTimestamp, Boost duration ticks; original function bytes unchanged.",
+  "independent_reference": "Python datetime for UTC fields, milliseconds and ISO strings.",
+  "limits": "Original ISO/locale C++ stream pipeline and macOS timezone database are not executed."
+}

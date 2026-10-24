@@ -1,0 +1,66 @@
+{
+  "full_successful_f_luaopen_bytes_match": true,
+  "vm_dependencies_replaced": [],
+  "gc_trace_userdata_flag": false,
+  "original_code_hashes_verified": 34,
+  "intern_operations": 185,
+  "initial_interned_strings": 36,
+  "initial_type_names": [
+    "nil",
+    "boolean",
+    "userdata",
+    "number",
+    "integer",
+    "vector",
+    "string",
+    "table",
+    "function",
+    "userdata",
+    "thread",
+    "buffer",
+    "class",
+    "object"
+  ],
+  "initial_event_names": [
+    "__index",
+    "__newindex",
+    "__mode",
+    "__namecall",
+    "__call",
+    "__iter",
+    "__len",
+    "__eq",
+    "__add",
+    "__sub",
+    "__mul",
+    "__div",
+    "__idiv",
+    "__mod",
+    "__pow",
+    "__unm",
+    "__lt",
+    "__le",
+    "__concat",
+    "__type",
+    "__metatable"
+  ],
+  "initialized_fields": [
+    "stack",
+    "global table",
+    "registry",
+    "string hash table",
+    "fixed type/event/error strings",
+    "GC threshold"
+  ],
+  "memory_snapshot_includes": [
+    "main state",
+    "all backing pages",
+    "allocation/free events",
+    "buffer canaries"
+  ],
+  "limits": [
+    "Successful initialization only; OOM/unwinding pending",
+    "Not yet a bytecode interpreter or Engine API",
+    "GC allocation exists; tracing collection is not restored"
+  ]
+}

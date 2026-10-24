@@ -1,0 +1,138 @@
+{
+  "source_build": "0.735.19.7351131",
+  "sources": {
+    "v8datamodel/HttpService.c": {
+      "sha256": "93bb941a1e1b3a806463f26780d6932da00e5adccb0ecfd9a12780d50f2a7374",
+      "functions": {
+        "0x10567159e": {
+          "name": "__ZN3RBX11HttpService13decodeJSONLuaEP9lua_State\r",
+          "reason": "JSONDecode Lua bridge, parse failure versus null result",
+          "function_text_sha256": "a100973a6e7d0fdc1737dab15412cb4590bec2856a631dcb02ef413ed868e935"
+        },
+        "0x10567185a": {
+          "name": "__ZN3RBX11HttpService13encodeJSONLuaEP9lua_State\r",
+          "reason": "JSONEncode Lua bridge",
+          "function_text_sha256": "ed64ce8e70127dbaf86fc6eb27cc910b01234ad191acb41fe18612f81c7b85fc"
+        },
+        "0x10567194c": {
+          "name": "__ZN3RBX11HttpService9urlEncodeENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE\r",
+          "reason": "UrlEncode wrapper",
+          "function_text_sha256": "df69317eeb7b3eab8d655ee4cb8f6eaa05c44dcd8b7a7b0dbe2ba20b86b7af59"
+        },
+        "0x105671984": {
+          "name": "__ZN3RBX11HttpService12generateGuidEb\r",
+          "reason": "GUID wrapper and lowercase feature flag",
+          "function_text_sha256": "94d3db6f8a83d43cfb0401231c7d747fae3081d4fa195abf49893339d2560fb6"
+        }
+      }
+    },
+    "v8xml/WebParser.c": {
+      "sha256": "56cfdaab5eadd840b5083c57ad406bd8570bde599159c72f2708b59f21a09db4",
+      "functions": {
+        "0x1049680a8": {
+          "name": "__ZN3RBX9WebParser18parseJSONObjectLuaEP9lua_StateNS_10StringViewE\r",
+          "reason": "JSON parse entry",
+          "function_text_sha256": "c5463d4fe26c5a5273e8642978fcfb912b7977c65eab8fdbcda3343f95076f70"
+        },
+        "0x104968d6e": {
+          "name": "__ZN3RBX9WebParser12writeJSONLuaEP9lua_StateiRNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEE\r",
+          "reason": "JSON Lua writer entry",
+          "function_text_sha256": "e8ca9c3c20f2585c8cc48fffe520d881d677f43e6c346810ad9c91b2a73accc3"
+        }
+      }
+    },
+    "free/_free_w.part001.c": {
+      "sha256": "7d1393dbd6d1068afe4971d7eb1281a55ec4425af15f2e3931b60e7a2be06768",
+      "functions": {
+        "0x104968a82": {
+          "name": "__ZN3RBXL27writeCompressedBase64KeyvalERNS_4json6WriterEPKcjhj\r",
+          "reason": "buffer base64 versus Zstandard compression",
+          "function_text_sha256": "dfd76b7525264e4179db6950789af8fe33d0a34cb48c8fcb26f5d0eae487e23d"
+        },
+        "0x104968e6d": {
+          "name": "__ZN3RBXL19writeToRapidJSONLuaEP9lua_StateiRNS_4json6WriterENS_9WebParser15NonJSONBehaviorEPNS_12DenseHashMapIPKvbNS_4HashIS9_EENSt3__18equal_toIS9_EEEE\r",
+          "reason": "raw array length, string UTF-8, cycles, feature-flag numeric variants",
+          "function_text_sha256": "0735865a6c06849b70078d96ffedc0261166ae91ccb82f1b651527ab77853791"
+        }
+      }
+    },
+    "free/_free_p.c": {
+      "sha256": "1c69956f4ea58285c3aeb90d31d2245b75859b45c0eda42aea639cfa414e077a",
+      "functions": {
+        "0x104967219": {
+          "name": "__ZN3RBX34populateValueTableFromRapidJsonLuaEP9lua_StateRKNS_4json5ValueEPNS_23WebParserLimitsMetaDataEi\r",
+          "reason": "null skipping and tagged engine values",
+          "function_text_sha256": "d3dd3f55c2f951405af077b259b9030fd702530ab367b18c2379811c89bd8d9e"
+        },
+        "0x104968033": {
+          "name": "__ZN3RBXL23parseJSONObjectInternalENS_10StringViewERNS_4json8DocumentENS_9WebParser22JSONParseCompatibilityE\r",
+          "reason": "strict versus relaxed parser",
+          "function_text_sha256": "bb4721eb2bd60a8edb49926ef9d0b5eccda0c56acb844f781fe82335ff74bd82"
+        }
+      }
+    },
+    "free/_free_h.c": {
+      "sha256": "1346d2e477ef508744fbf4c160795ddbaaa94ce1a4e347819e8a563747a6c0e1",
+      "functions": {
+        "0x104969f28": {
+          "name": "__ZN3RBXL17handleNonJSONTypeERNS_4json6WriterENS_9WebParser15NonJSONBehaviorERKNS_13StringLiteralE\r",
+          "reason": "non-JSON values serialize as null",
+          "function_text_sha256": "4ae445a7849d854a7c6592785ff3c6b9e46e8c38a54f820c84ac0bd4afe8c82b"
+        }
+      }
+    },
+    "script/LuaArguments.c": {
+      "sha256": "82b0087e22e23eff75c3be618b01d003c1a709e18b3f75c7619bd6f07d04dc3a",
+      "functions": {
+        "0x10462f00a": {
+          "name": "__ZN3RBX3Lua12LuaArguments17getTableKeyStringEP9lua_State\r",
+          "reason": "non-string table keys",
+          "function_text_sha256": "dd6517f93d55c4ef9f48adba750a1450eb9805aa63709c15f044fb37518ca9d4"
+        }
+      }
+    },
+    "rbx/Url.c": {
+      "sha256": "c7467344e2876f54093295f9e8087d089b358fa49170990d1f9cb4670300bc53",
+      "functions": {
+        "0x102bd0a20": {
+          "name": "__ZN3RBX3Url9urlEncodeEPKcm\r",
+          "reason": "URL encoding entry",
+          "function_text_sha256": "4be0e537d374a9cd6bd99ef796510bad75cdccd5c6dc92f8cc7662c904548e9d"
+        },
+        "0x102bd0a5e": {
+          "name": "__ZN3RBX3Url15appendUrlEncodeIXadL_ZNS_21urlEncodeShouldEncodeEhEEEEvRNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEPKcm\r",
+          "reason": "ASCII alphanumeric byte predicate",
+          "function_text_sha256": "4a29c16f15b70cff5b1261aec6d36097cdd12024776f215a721bfa3004ccd444"
+        }
+      }
+    }
+  },
+  "restored_semantics": [
+    "rawlen/rawget arrays; dictionary keys ignored when array length > 0",
+    "empty table becomes []",
+    "cycles rejected; shared noncyclic tables permitted",
+    "UTF-8 string validation",
+    "JSON null skips object members and leaves array holes",
+    "non-JSON userdata/functions/threads become null",
+    "all non-ASCII-alphanumeric URL bytes percent encoded",
+    "uncompressed base64 buffer envelope m:null,t:buffer,base64:string"
+  ],
+  "host_implementation": "JSON recreated in Luau; OS GUID entropy; Python stdlib HTTP workers; native ABI copies responses",
+  "not_proven": [
+    "original native JSON parser/writer differential parity",
+    "live fast-flag configuration",
+    "exact float decimal spelling",
+    "Zstandard buffer encoding/decoding",
+    "Studio HTTP caches, rate limits, cloud policies and TLS backend"
+  ],
+  "choices": {
+    "nonfinite_encode": "null branch; tagged numeric decode supported",
+    "guid_case": "lowercase",
+    "json_max_depth": 128,
+    "buffer_max_bytes": 52428800,
+    "http_max_active_workers": 64,
+    "http_default_and_max_timeout_seconds": 30,
+    "response_max_bytes": 52428800,
+    "http_enabled_default": false
+  }
+}
