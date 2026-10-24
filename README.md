@@ -81,9 +81,9 @@ compilation, and returns exit code 124. A non-yielding loop is not stopped by
 | `asset-codec/` | XML/RBXM codec using rbx-dom |
 | Root Python modules | VM loading, projects, models, HTTP, and assets |
 | `data/` | Required catalogs, schemas, and version-specific VM metadata |
-| `tests/` | Differential checks, integration tests, and fixtures |
+| `tests/` | Validation runner, differential checks, integration tests, and fixtures |
 | `examples/` | Runnable scripts and a small sample project |
-| `extract_*.py`, `recover.py`, `inspect_vm.py` | Metadata reconstruction tools |
+| `tools/` | Metadata extraction, reconstruction, and VM inspection utilities |
 
 Compiled programs, build archives, disassembly listings, and generated test
 reports are excluded from version control.
@@ -110,15 +110,15 @@ implementation or an official Roblox source release.
 After building the native components, install the analysis dependencies and run:
 
 ```powershell
-python -m pip install -r .\requirements.txt
-powershell -File .\validate.ps1 -Binary $studio
+python -m pip install -r .\tools\requirements.txt
+powershell -File .\tests\validate.ps1 -Binary $studio
 ```
 
 Validation covers 8 differential suites and 35 runtime/CLI scenarios, including
 HTTP against local fixtures, model imports, nested Fiu execution, memory limits,
 and worker timeouts. Passing these checks does not establish compatibility with
 every Roblox script. Generated diagnostics remain local and are ignored by Git.
-The optional external vLua model is not bundled. Metadata reconstruction tools
+The optional external vLua model is not bundled. Metadata reconstruction tools in `tools/`
 may additionally require original source artifacts; ordinary execution uses the
 checked-in `data/` files.
 
