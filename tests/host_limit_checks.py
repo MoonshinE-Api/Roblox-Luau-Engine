@@ -64,7 +64,7 @@ def main():
     report={'status':'PASS','infinite_loop_timeout_seconds':20,'observed_elapsed_seconds':elapsed,
         'checks':['normal script/output','runtime and compiler error status/location','non-yielding infinite loop','deadline includes startup','invalid bounds','Job owns VM and descendant processes; no survivors'],
         'limits':['Optional CLI process deadline; not an in-VM instruction budget or security sandbox.','Forced timeout stops all script contexts together.']}
-    (root/'evidence/host_limit_comparison.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    (root/'data/host_limit_comparison.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print('HOST DEADLINE/PROCESS TREE CHECKS PASSED')
 
 

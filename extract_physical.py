@@ -56,7 +56,7 @@ def main():
         for row in rows:assert seen.get(row['site'])==row['properties'],(row,seen.get(row['site']))
         dll=C.CDLL(str(root/'vm0735.dll'))
         with Original(binary,{'functions':functions},dll,enabled=Original.ENGINE_PHYSICAL) as image:
-            enums=json.loads((root/'evidence/enum_catalog.json').read_text(encoding='utf-8'))['enums']['Material']
+            enums=json.loads((root/'data/enum_catalog.json').read_text(encoding='utf-8'))['enums']['Material']
             materials={}
             for name,value in enums.items():
                 index=image.call_u('material_index',value,0)
@@ -80,7 +80,7 @@ def main():
         'numeric_defaults':{'FrictionWeight':1.0,'ElasticityWeight':three_defaults[0],'AcousticAbsorption':three_defaults[1]},
         'source_sha256':{name:hashlib.sha256((args.dump/name).read_bytes()).hexdigest() for name in source_paths},
         'limits':['World MaterialService/MaterialVariant overrides are a separate subsystem.','Lua bridge coercion and warning frequency not executed natively.']}
-    (root/'evidence/physical_recovery.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    (root/'data/physical_recovery.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'materials':len(materials),'binary_argument_vectors':len(rows)}))
 
 if __name__=='__main__':main()

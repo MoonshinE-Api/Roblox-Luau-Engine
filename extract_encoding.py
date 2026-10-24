@@ -25,7 +25,7 @@ def main():
         'references':['https://create.roblox.com/docs/reference/engine/classes/EncodingService',
             'https://docs.python.org/3.14/library/compression.zstd.html',
             'https://github.com/BLAKE3-team/BLAKE3/blob/1.8.2/test_vectors/test_vectors.json']}
-    (Path(__file__).resolve().parent/'evidence/encoding_recovery.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    (Path(__file__).resolve().parent/'data/encoding_recovery.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'functions':len(selected),'source_sha256':report['source_sha256']}))
 
 if __name__=='__main__':main()

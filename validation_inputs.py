@@ -5,9 +5,9 @@ import hashlib,json
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parent
-SNAPSHOT='evidence/validation_inputs.json'
-OUTPUTS={'BUILD.json',SNAPSHOT,'evidence/runtime_capabilities.json','evidence/api_coverage.json',
-    'evidence/differential.json','evidence/bootstrap.json','evidence/allocator.json','evidence/initialization.json'}
+SNAPSHOT='data/validation_inputs.json'
+OUTPUTS={'BUILD.json',SNAPSHOT,'data/runtime_capabilities.json','data/api_coverage.json',
+    'data/differential.json','data/bootstrap.json','data/allocator.json','data/initialization.json'}
 
 
 def inputs(root=ROOT):
@@ -16,7 +16,7 @@ def inputs(root=ROOT):
         if not path.is_file() or any(part in {'__pycache__','target'} for part in path.relative_to(root).parts):continue
         relative=path.relative_to(root).as_posix()
         if relative in OUTPUTS or path.name.endswith('_comparison.json'):continue
-        if path.suffix in {'.py','.lua','.luau','.ps1','.rs','.toml','.lock','.exe','.dll'} or (path.suffix=='.json' and relative.startswith('evidence/')):
+        if path.suffix in {'.py','.lua','.luau','.ps1','.rs','.toml','.lock','.exe','.dll'} or (path.suffix=='.json' and relative.startswith('data/')):
             result[relative]=hashlib.sha256(path.read_bytes()).hexdigest()
     return result
 

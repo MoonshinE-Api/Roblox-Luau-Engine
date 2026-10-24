@@ -49,6 +49,6 @@ def main():
             'min_seconds':-17987443200,'max_seconds':253402300799,
             'limits':['Formatting/ISO parser behavior is reconstructed; full original C++ locale/stream pipeline is not executed.',
                       'Timezone rules come from host UCRT; historical macOS zone databases can differ.']}
-    (root/'evidence/datetime_recovery.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (root/'data/datetime_recovery.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'locale_count':len(locales),'token_count':len(tokens),'epoch_ticks':epoch}))
 if __name__=='__main__':main()

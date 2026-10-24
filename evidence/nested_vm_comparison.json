@@ -1,9 +1,0 @@
-{
-  "interpreter": "Fiu",
-  "revision": "fa1983d39f11f2b650b871d7a2d4e3b4c3e4ef2b",
-  "source_sha256": "b2e301fa7ff35087070c0d6aac87628bd0315dbb45afe6d1e5b240dab6f93d3e",
-  "bytecode_version": 9,
-  "payload_sha256": "86ab3265ef78ff33b16440176d49b452ea5066ca6447ad8d6c52e5c6735affde",
-  "result": "NESTED LUAU VM ENGINE AND HTTP PASSED\thello, chatgpt",
-  "full_compatibility_proven": false
-}

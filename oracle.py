@@ -24,9 +24,9 @@ def state_from(data, count, capacity):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--binary', type=Path, required=True)
-    parser.add_argument('--report', type=Path, default=Path(__file__).parent/'evidence/recovery.json')
+    parser.add_argument('--report', type=Path, default=Path(__file__).parent/'data/recovery.json')
     parser.add_argument('--dll', type=Path, default=Path(__file__).parent/'vm0735.dll')
-    parser.add_argument('--out', type=Path, default=Path(__file__).parent/'evidence/differential.json')
+    parser.add_argument('--out', type=Path, default=Path(__file__).parent/'data/differential.json')
     args = parser.parse_args()
     report = json.loads(args.report.read_text(encoding='utf-8'))
     dll = ctypes.CDLL(str(args.dll.resolve()))

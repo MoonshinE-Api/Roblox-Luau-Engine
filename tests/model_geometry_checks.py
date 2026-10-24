@@ -154,5 +154,5 @@ report={'status':'PASS','classes':len(SCHEMA),'observed_property_declarations':s
         'Part transforms/size/color/enums','ValueBase typed values','server/client startup after reference binding',
         'Model bounds/Clone/PivotTo/raycast','binary require/LoadAsset/GetObjects references','invalid inputs and original binary source labels'],
     'limits':'Explicit runtime schema; unsupported classes/properties still fail, no full place/mesh/physics simulation'}
-(root/'evidence/model_geometry_comparison.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+(root/'data/model_geometry_comparison.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 print('MODEL GEOMETRY/REFERENCES/BINARY/ASSET CHECKS PASSED')

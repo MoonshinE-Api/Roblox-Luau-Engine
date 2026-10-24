@@ -42,7 +42,7 @@ def main():
             elif ins.mnemonic=='call':
                 calls[ins.address]=(dict(regs),ops[0].imm if ops[0].type==CS_OP_IMM else None)
                 regs={};vectors={}
-        enums=json.loads((root/'evidence/enum_catalog.json').read_text(encoding='utf-8'))['enums']['Font']
+        enums=json.loads((root/'data/enum_catalog.json').read_text(encoding='utf-8'))['enums']['Font']
         by_number={value:name for name,value in enums.items()};result={};resources={}
         first=rows[0]['destination'];target=None
         for index,row in enumerate(rows):
@@ -68,7 +68,7 @@ def main():
         'from_id_bridge_sha256':hashlib.sha256(bridge).hexdigest(),'from_id_review':instructions,
         'source_sha256':{name:hashlib.sha256((args.dump/name).read_bytes()).hexdigest() for name in (relative,'rbx/FontInfo.c','script/FontBridge.c')},
         'limits':['Family/weight/style only; no renderer/font asset loading.','Native 0.735 fromId converts via signed int32 then unsigned int32.','Mutable value copying is implemented semantically.']}
-    (root/'evidence/font_recovery.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    (root/'data/font_recovery.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'native_enum_fonts':len(result),'resources':len(resources)}))
 
 if __name__=='__main__':main()

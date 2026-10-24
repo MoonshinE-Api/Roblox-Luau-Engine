@@ -4,7 +4,7 @@ const fs=require('fs');const path=require('path');
 const moment=require(process.argv[2]);
 if(moment.version!=='2.30.1')throw new Error('Reference version must be 2.30.1');
 const root=path.resolve(__dirname,'..');
-const source=JSON.parse(fs.readFileSync(path.join(root,'evidence/datetime_recovery.json'),'utf8'));
+const source=JSON.parse(fs.readFileSync(path.join(root,'data/datetime_recovery.json'),'utf8'));
 const vectors=[];
 for(const [name,config] of Object.entries(source.locales)){
     const locale='recovered-'+name;
@@ -28,5 +28,5 @@ for(const [name,config] of Object.entries(source.locales)){
 const result={reference:'Moment.js 2.30.1 formatter with recovered Studio locale tables',
     source_locale_sha256:source.locale_file_sha256,vector_count:vectors.length,vectors,
     limits:'Does not validate native C++ stream execution, locale fallback selection, invalid ISO handling or timezone rules.'};
-fs.writeFileSync(path.join(root,'evidence/datetime_format_vectors.json'),JSON.stringify(result,null,2)+'\n');
+fs.writeFileSync(path.join(root,'tests/fixtures/datetime_format_vectors.json'),JSON.stringify(result,null,2)+'\n');
 console.log(JSON.stringify({reference:result.reference,vector_count:vectors.length}));

@@ -174,5 +174,5 @@ run.main()
     checks.append('Cross-process saved login -> require(id) -> model compilation -> original VM; logout and API-key login')
 
 report={'status':'PASS','credentials':'synthetic only; no real account accessed','live_authenticated_roblox_asset_verified':False,'checks':checks}
-(root/'evidence/asset_auth_comparison.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+(root/'data/asset_auth_comparison.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 print('ASSET AUTH/DPAPI/REDIRECT/VM CHECKS PASSED')

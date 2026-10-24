@@ -67,7 +67,7 @@ def main():
     p.add_argument('--timezone-worker',action='store_true')
     args=p.parse_args();root=Path(__file__).parent
     if args.timezone_worker:return timezone_worker(args)
-    report=json.loads((root/'evidence/datetime_recovery.json').read_text(encoding='utf-8'))
+    report=json.loads((root/'data/datetime_recovery.json').read_text(encoding='utf-8'))
     dll=C.CDLL(str((root/'vm0735.dll').resolve()));rng=random.Random(7351131)
     epoch=D.datetime(1970,1,1);vectors=[];date_memory=C.c_uint32();state=C.c_int64()
     with MachO(args.binary) as binary,Original(binary,report,dll,enabled=report['functions']) as original:
@@ -120,7 +120,7 @@ end
 return #vectors,#durations
 '''
             counts=execute_source(runtime,root,probe,working,'datetime-differential')
-            formatting=json.loads((root/'evidence/datetime_format_vectors.json').read_text(encoding='utf-8'))
+            formatting=json.loads((root/'tests/fixtures/datetime_format_vectors.json').read_text(encoding='utf-8'))
             assert formatting['source_locale_sha256']==report['locale_file_sha256'],'Stale locale format vectors'
             format_probe='local rows='+lua_literal(formatting['vectors'])+'''
 for i,row in rows do
@@ -144,6 +144,6 @@ return #rows
             'original_comparisons':'Gregorian Julian days, DateTime::getUnixTimestamp, Boost duration ticks; original function bytes unchanged.',
             'independent_reference':'Python datetime for UTC fields, milliseconds and ISO strings.',
             'limits':'Original ISO/locale C++ stream pipeline and macOS timezone database are not executed.'}
-    (root/'evidence/datetime_comparison.json').write_text(json.dumps(result,indent=2)+'\n')
+    (root/'data/datetime_comparison.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(result))
 if __name__=='__main__':main()

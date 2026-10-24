@@ -19,7 +19,7 @@ def in_vm(address):
 def main():
     p=argparse.ArgumentParser()
     p.add_argument('--binary',type=Path,required=True)
-    p.add_argument('--out',type=Path,default=Path(__file__).parent/'evidence/vm_core.json')
+    p.add_argument('--out',type=Path,default=Path(__file__).parent/'data/vm_core.json')
     args=p.parse_args()
     cs=Cs(CS_ARCH_X86,CS_MODE_64);cs.detail=True
     with MachO(args.binary) as binary:

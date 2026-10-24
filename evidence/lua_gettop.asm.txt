@@ -1,9 +1,0 @@
-; __Z10lua_gettopP9lua_State
-; original address 0x1031ce6fe, source {'file': '_free/_free_l.part001.c', 'line': 16627}
-0x1031ce6fe: 55                       push     rbp
-0x1031ce6ff: 4889e5                   mov      rbp, rsp
-0x1031ce702: 488b4758                 mov      rax, qword ptr [rdi + 0x58]
-0x1031ce706: 482b4738                 sub      rax, qword ptr [rdi + 0x38]
-0x1031ce70a: 48c1e804                 shr      rax, 4
-0x1031ce70e: 5d                       pop      rbp
-0x1031ce70f: c3                       ret      

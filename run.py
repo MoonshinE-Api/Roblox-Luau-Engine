@@ -29,16 +29,16 @@ def lua_literal(value):
 
 
 def bootstrap(root,config):
-    catalog=json.loads((root/'evidence/class_catalog.json').read_text(encoding='utf-8'))['classes']
+    catalog=json.loads((root/'data/class_catalog.json').read_text(encoding='utf-8'))['classes']
     parents={name:record['parent'] for name,record in catalog.items() if record.get('parent')}
-    fallback=json.loads((root/'evidence/hierarchy_fallback.json').read_text(encoding='utf-8'))['parents']
+    fallback=json.loads((root/'data/hierarchy_fallback.json').read_text(encoding='utf-8'))['parents']
     for name,parent in fallback.items():parents.setdefault(name,parent)
     known={name:True for name in catalog}
-    enums=json.loads((root/'evidence/enum_catalog.json').read_text(encoding='utf-8'))['enums']
-    brickcolors=json.loads((root/'evidence/brickcolor_catalog.json').read_text(encoding='utf-8'))
-    dates=json.loads((root/'evidence/datetime_recovery.json').read_text(encoding='utf-8'))
-    physical=json.loads((root/'evidence/physical_recovery.json').read_text(encoding='utf-8'))
-    fonts=json.loads((root/'evidence/font_recovery.json').read_text(encoding='utf-8'))
+    enums=json.loads((root/'data/enum_catalog.json').read_text(encoding='utf-8'))['enums']
+    brickcolors=json.loads((root/'data/brickcolor_catalog.json').read_text(encoding='utf-8'))
+    dates=json.loads((root/'data/datetime_recovery.json').read_text(encoding='utf-8'))
+    physical=json.loads((root/'data/physical_recovery.json').read_text(encoding='utf-8'))
+    fonts=json.loads((root/'data/font_recovery.json').read_text(encoding='utf-8'))
     colors=[[row['number'],row['name'],*row['rgb']] for row in brickcolors['colors']]
     source='local R={proxy=__host_proxy,config='+lua_literal(config)+',classes='+lua_literal(parents)+',knownClasses='+lua_literal(known)+',enumCatalog='+lua_literal(enums)+',brickColors='+lua_literal(colors)+',brickPalette='+lua_literal(brickcolors['palette'])+',brickConstants='+lua_literal(brickcolors['constant_constructors'])+'}\n'
     source+='R.dateTimeLocales='+lua_literal(dates['locales'])+';R.dateTimeTokens='+lua_literal(dates['tokens'])+';R.dateTimeFallbacks='+lua_literal(dates['language_fallbacks'])+'\n'

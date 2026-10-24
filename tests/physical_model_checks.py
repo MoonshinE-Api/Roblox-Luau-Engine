@@ -66,5 +66,5 @@ result={'status':'PASS','formats':['XML','compressed RBXM'],'contexts':['server'
         'classes':len(SCHEMA),'property_declarations':sum(len(row) for row in SCHEMA.values()),
         'checks':['six-field properties','legacy five-field properties/default absorption','null/default properties',
             'MaterialVariant enum and physical data','Wedge and CornerWedge','Clone and dynamic mass/variant lookup','invalid XML']}
-(root/'evidence/physical_model_comparison.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+(root/'data/physical_model_comparison.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
 print('PHYSICAL MODEL XML/BINARY CHECKS PASSED')

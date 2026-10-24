@@ -15,7 +15,7 @@ LIMIT=16*1024*1024
 
 @cache
 def brick_numbers():
-    catalog=json.loads((Path(__file__).resolve().parent/'evidence/brickcolor_catalog.json').read_text(encoding='utf-8'))
+    catalog=json.loads((Path(__file__).resolve().parent/'data/brickcolor_catalog.json').read_text(encoding='utf-8'))
     return {row['number'] for row in catalog['colors']}
 
 

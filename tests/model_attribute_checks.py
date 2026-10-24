@@ -102,5 +102,5 @@ report={'status':'PASS','attribute_values':len(records),'compact_rotations':24,
         'XML -> compressed RBXM -> XML','import before ModuleScript execution','Clone/signals','malformed/bounded input'],
     'limits':{'payload_bytes':16*1024*1024,'attribute_count':1024,'sequence_keypoints':20},
     'unsupported':['EnumItem','nonfinite numeric values']}
-(root/'evidence/model_attribute_comparison.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+(root/'data/model_attribute_comparison.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 print('MODEL ATTRIBUTES FORMAT/BINARY/VM CHECKS PASSED')

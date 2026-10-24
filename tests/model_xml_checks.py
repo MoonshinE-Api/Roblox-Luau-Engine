@@ -105,6 +105,6 @@ print('XML TREE/CONTEXT CHECK PASSED')''',encoding='utf-8')
                 'sources':[{'path':x['label'],'sha256':hashlib.sha256(x['source'].encode()).hexdigest()}
                     for x in [record['items'][0],*record['items'][0]['children']]],
                 'status':'PASS'}
-            (root/'evidence/user_xml_comparison.json').write_text(json.dumps(evidence,indent=2)+'\n',encoding='utf-8')
+            (root/'data/user_xml_comparison.json').write_text(json.dumps(evidence,indent=2)+'\n',encoding='utf-8')
             for output in outputs:print(output['mode'],output['stdout'])
         finally:server.shutdown();server.server_close()

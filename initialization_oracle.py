@@ -19,10 +19,10 @@ U = C.c_size_t
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--binary',type=Path,required=True)
-    parser.add_argument('--out',type=Path,default=Path(__file__).parent/'evidence/initialization.json')
+    parser.add_argument('--out',type=Path,default=Path(__file__).parent/'data/initialization.json')
     args = parser.parse_args()
     root = Path(__file__).parent
-    report = json.loads((root/'evidence/recovery.json').read_text(encoding='utf-8'))
+    report = json.loads((root/'data/recovery.json').read_text(encoding='utf-8'))
     dll = C.CDLL(str((root/'vm0735.dll').resolve()))
     dll.oracle_dependency.argtypes,dll.oracle_dependency.restype = [C.c_uint],U
     dll.oracle_set_callback.argtypes = [C.c_uint,U]

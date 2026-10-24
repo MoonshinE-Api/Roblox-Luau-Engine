@@ -11,7 +11,7 @@ def string(value):
     value=value.encode('utf-8');return struct.pack('<I',len(value))+value
 def entry(name,weight,style,family,cached=''):
     return string(name)+b'\x21'+struct.pack('<HB',weight,style)+string(family)+string(cached)
-fonts=json.loads((root/'evidence/font_recovery.json').read_text())['enum_fonts']
+fonts=json.loads((root/'data/font_recovery.json').read_text())['enum_fonts']
 assert len(fonts)==52
 rows=[('ImportedFont',700,1,'rbxasset://fonts/families/Arial.json','rbxasset://fonts/Arial-Bold.ttf'),
       ('FallbackFont',123,17,'rbxassetid://11702779409',''),('UnicodeFont',100,0,'rbxassetid://шрифт','cached'),
@@ -61,5 +61,5 @@ print('FONT CATALOG AND MODEL CHECK PASSED')
 report={'status':'PASS','builtin_rows':52,'formats':['XML','compressed RBXM','normalized XML'], 'contexts':['server','client'],
     'checks':['recovered builtin family/weight/style rows','Font attribute byte layout','cached face bytes survive independent codec roundtrip','reader enum fallback','UTF-8 family','attribute and clone copy isolation','malformed input'],
     'limits':['font metadata only; no glyph rendering or downloading','constructor fromId follows native 0.735 int32 bridge','ContentId normalization beyond slash/NUL not exhaustively compared','not a dynamic native Font oracle']}
-(root/'evidence/font_comparison.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+(root/'data/font_comparison.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 print('FONT CATALOG/MODEL CHECKS PASSED')

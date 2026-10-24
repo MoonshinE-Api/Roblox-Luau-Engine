@@ -13,7 +13,7 @@ def main():
     p=argparse.ArgumentParser()
     p.add_argument('--dump',type=Path,required=True)
     p.add_argument('--binary',type=Path,required=True)
-    p.add_argument('--out',type=Path,default=Path(__file__).parent/'evidence/enum_catalog.json')
+    p.add_argument('--out',type=Path,default=Path(__file__).parent/'data/enum_catalog.json')
     args=p.parse_args()
     records=[]
     header=re.compile(r'^// Address: (0x[0-9a-fA-F]+) \| Name: (.+)$',re.M)

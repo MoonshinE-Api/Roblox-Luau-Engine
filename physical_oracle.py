@@ -15,7 +15,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--binary',type=Path,default=Path('D:/Release-RobloxStudioApp/RobloxStudio.app/Contents/MacOS/RobloxStudio'))
     args=p.parse_args();root=Path(__file__).resolve().parent
-    report=json.loads((root/'evidence/physical_recovery.json').read_text(encoding='utf-8'))
+    report=json.loads((root/'data/physical_recovery.json').read_text(encoding='utf-8'))
     rng=random.Random(735);inputs=[]
     for _ in range(1000):inputs.append([rng.uniform(-10,120),rng.uniform(-2,4),rng.uniform(-1,2),rng.uniform(-5,110),rng.uniform(-5,110),rng.uniform(-1,2)])
     inputs += [[0,0,0,0,0,0],[100,2,1,100,100,1],[.7,.3,.5,1,1,1],[1e300,-1e300,1e-300,1e300,-1e300,1e300]]
@@ -70,7 +70,7 @@ return true
         'binary_material_vectors_verified':report['verified_binary_argument_vectors'],'original_unit_geometry':geometries,
         'original_function_bytes_unchanged':True,
         'limits':['Lua bridge nonnumeric/NaN coercion and warning text are not compared.','MaterialVariant precedence and mass calculations have separate semantic tests.']}
-    (root/'evidence/physical_comparison.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+    (root/'data/physical_comparison.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(result))
 
 if __name__=='__main__':main()

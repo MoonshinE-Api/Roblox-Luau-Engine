@@ -1,4 +1,4 @@
--- Interface contracts: Roblox/creator-docs, see evidence/api_reference.json.
+-- Interface contracts: Roblox/creator-docs, see NOTICE.md.
 -- Semantic implementation; float32 rounding and native error text remain unverified.
 return function(R)
     local record=R.makeRecord

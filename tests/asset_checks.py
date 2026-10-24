@@ -96,7 +96,7 @@ print('ASSET XML/BINARY/REQUIRE/CACHE CHECKS PASSED')
         result=subprocess.run([sys.executable,'-c',launcher,str(main),'--mode','client',*sys.argv[1:]],capture_output=True,text=True,encoding='utf-8',timeout=60)
         assert result.returncode==0 and 'CLIENT ASSET RESTRICTION PASSED' in result.stdout,(result.stdout,result.stderr)
         assert sum(hits.values())==before,'Client made asset network requests'
-        (root/'evidence/asset_comparison.json').write_text(json.dumps({'status':'PASS','fixture_transport':'loopback HTTP',
+        (root/'data/asset_comparison.json').write_text(json.dumps({'status':'PASS','fixture_transport':'loopback HTTP',
             'binary_codec':'rbx_binary 3.0.1 / rbx_xml 3.0.1','public_live_asset_verified':False,
             'checks':['XML and compressed binary','compile in worker/load bytecode in native VM','nested require(id)',
                 'parallel require coalescing','nil cache','fresh LoadAsset instances','asset version query','GetObjects',

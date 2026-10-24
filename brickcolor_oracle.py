@@ -28,7 +28,7 @@ def extract(binary,root):
                          'data_references':[hex(a) for a in sorted(refs)],'instructions':listing}
     result={'functions':functions,'source':'util/BrickColor.c; rbx/BrickMap.c',
             'singleton_hook':'0x102a44546','colorinfo_begin':'0x10cfbc510','colorinfo_end':'0x10cfbc518'}
-    (root/'evidence/brickcolor_recovery.json').write_text(json.dumps(result,indent=2)+'\n')
+    (root/'data/brickcolor_recovery.json').write_text(json.dumps(result,indent=2)+'\n')
     return result
 
 def f32(value):return struct.unpack('<f',struct.pack('<f',value))[0]
@@ -36,7 +36,7 @@ def pair(a,b):return struct.unpack('<d',struct.pack('<ff',a,b))[0]
 def main():
     p=argparse.ArgumentParser();p.add_argument('--binary',type=Path,required=True);p.add_argument('--extract',action='store_true')
     args=p.parse_args();root=Path(__file__).parent
-    catalog=json.loads((root/'evidence/brickcolor_catalog.json').read_text())
+    catalog=json.loads((root/'data/brickcolor_catalog.json').read_text())
     info=C.create_string_buffer(1033*48);base=C.addressof(info)
     for row in catalog['colors']:
         address=base+48*row['number'];C.c_ubyte.from_address(address).value=1
@@ -53,7 +53,7 @@ def main():
     ids=list(range(-2,1040))+[2147483647,-2147483648]
     nearest=[];constructed=[]
     with MachO(args.binary) as binary:
-        report=extract(binary,root) if args.extract else json.loads((root/'evidence/brickcolor_recovery.json').read_text())
+        report=extract(binary,root) if args.extract else json.loads((root/'data/brickcolor_recovery.json').read_text())
         overrides={0x10cfbc510:struct.pack('<Q',base),0x10cfbc518:struct.pack('<Q',base+len(info))}
         hooks={0x102a44546:dll.host_import_address(b'oracle_noop',11)}
         with Original(binary,report,dll,hooks=hooks,enabled=report['functions'],data_overrides=overrides) as image:
@@ -98,6 +98,6 @@ return table.concat(out,",")
     assert not runtime.owned and not runtime.backing_errors
     result={'status':'PASS','rgb_cases':len(inputs),'rgb_overloads_compared':2,'numeric_cases':len(ids),
             'limits':'Recovered catalog substituted for singleton initialization; alias lookup, events and defaults are separate checks.'}
-    (root/'evidence/brickcolor_comparison.json').write_text(json.dumps(result,indent=2)+'\n')
+    (root/'data/brickcolor_comparison.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(result))
 if __name__=='__main__':main()

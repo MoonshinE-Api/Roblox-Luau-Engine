@@ -6,8 +6,8 @@ import struct
 from model_attributes import brick_numbers
 
 ROOT=Path(__file__).resolve().parent
-SCHEMA=json.loads((ROOT/'evidence/model_property_schema.json').read_text(encoding='utf-8'))['classes']
-ENUMS=json.loads((ROOT/'evidence/enum_catalog.json').read_text(encoding='utf-8'))['enums']
+SCHEMA=json.loads((ROOT/'data/model_property_schema.json').read_text(encoding='utf-8'))['classes']
+ENUMS=json.loads((ROOT/'data/enum_catalog.json').read_text(encoding='utf-8'))['enums']
 ALIASES={'size':'Size','shape':'Shape','Color3uint8':'Color','WorldPivotData':'WorldPivot'}
 
 

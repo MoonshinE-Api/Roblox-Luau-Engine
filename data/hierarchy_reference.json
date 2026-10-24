@@ -1,0 +1,3144 @@
+{
+  "revision": "46be165f526ec23305394ac0c56a95edd2d7f7d9",
+  "documentation_studio_version": "0.744.0.7441077\nversion-7aaa6838d36c4448",
+  "classes": {
+    "Accessory": {
+      "inherits": [
+        "Accoutrement"
+      ]
+    },
+    "AccessoryDescription": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Accoutrement": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Actor": {
+      "inherits": [
+        "Model"
+      ]
+    },
+    "AdGui": {
+      "inherits": [
+        "SurfaceGuiBase"
+      ]
+    },
+    "AdPortal": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AdService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AdvancedDragger": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AirController": {
+      "inherits": [
+        "ControllerBase"
+      ]
+    },
+    "AlignOrientation": {
+      "inherits": [
+        "Constraint"
+      ]
+    },
+    "AlignPosition": {
+      "inherits": [
+        "Constraint"
+      ]
+    },
+    "AnalyticsService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AngularVelocity": {
+      "inherits": [
+        "Constraint"
+      ]
+    },
+    "Animation": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AnimationClip": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AnimationClipProvider": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AnimationConstraint": {
+      "inherits": [
+        "Constraint"
+      ]
+    },
+    "AnimationController": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AnimationNodeDefinition": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AnimationRigData": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AnimationTrack": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AnimationValueNodeDefinition": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AnimationValueOutputDefinition": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Animator": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ArcHandles": {
+      "inherits": [
+        "HandlesBase"
+      ]
+    },
+    "AssetDeliveryProxy": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AssetPatchSettings": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AssetService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Atmosphere": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AtmosphereSensor": {
+      "inherits": [
+        "SensorBase"
+      ]
+    },
+    "Attachment": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioAnalyzer": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioChannelMixer": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioChannelSplitter": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioChorus": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioCompressor": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioDeviceInput": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioDeviceOutput": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioDistortion": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioEcho": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioEmitter": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioEqualizer": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioFader": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioFilter": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioFlanger": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioGate": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioLimiter": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioListener": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioPages": {
+      "inherits": [
+        "Pages"
+      ]
+    },
+    "AudioPitchShifter": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioPlayer": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioRecorder": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioReverb": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioSearchParams": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioSpeechToText": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioTextToSpeech": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AudioTremolo": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AvatarCreationService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "AvatarEditorService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Backpack": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "BackpackItem": {
+      "inherits": [
+        "Model"
+      ]
+    },
+    "BadgeService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "BallSocketConstraint": {
+      "inherits": [
+        "Constraint"
+      ]
+    },
+    "BanHistoryPages": {
+      "inherits": [
+        "Pages"
+      ]
+    },
+    "BaseCoreGuiConfiguration": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "BasePart": {
+      "inherits": [
+        "PVInstance"
+      ]
+    },
+    "BasePlayerGui": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "BaseRemoteEvent": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "BaseScript": {
+      "inherits": [
+        "LuaSourceContainer"
+      ]
+    },
+    "BaseWrap": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Beam": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "BevelMesh": {
+      "inherits": [
+        "DataModelMesh"
+      ]
+    },
+    "BillboardGui": {
+      "inherits": [
+        "LayerCollector"
+      ]
+    },
+    "BinaryStringValue": {
+      "inherits": [
+        "ValueBase"
+      ]
+    },
+    "BindableEvent": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "BindableFunction": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "BlockMesh": {
+      "inherits": [
+        "BevelMesh"
+      ]
+    },
+    "BloomEffect": {
+      "inherits": [
+        "PostEffect"
+      ]
+    },
+    "BlurEffect": {
+      "inherits": [
+        "PostEffect"
+      ]
+    },
+    "BodyAngularVelocity": {
+      "inherits": [
+        "BodyMover"
+      ]
+    },
+    "BodyColors": {
+      "inherits": [
+        "CharacterAppearance"
+      ]
+    },
+    "BodyForce": {
+      "inherits": [
+        "BodyMover"
+      ]
+    },
+    "BodyGyro": {
+      "inherits": [
+        "BodyMover"
+      ]
+    },
+    "BodyMover": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "BodyPartDescription": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "BodyPosition": {
+      "inherits": [
+        "BodyMover"
+      ]
+    },
+    "BodyThrust": {
+      "inherits": [
+        "BodyMover"
+      ]
+    },
+    "BodyVelocity": {
+      "inherits": [
+        "BodyMover"
+      ]
+    },
+    "Bone": {
+      "inherits": [
+        "Attachment"
+      ]
+    },
+    "BoolValue": {
+      "inherits": [
+        "ValueBase"
+      ]
+    },
+    "BoxHandleAdornment": {
+      "inherits": [
+        "HandleAdornment"
+      ]
+    },
+    "BrickColorValue": {
+      "inherits": [
+        "ValueBase"
+      ]
+    },
+    "BrowserService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "BubbleChatConfiguration": {
+      "inherits": [
+        "TextChatConfigurations"
+      ]
+    },
+    "BubbleChatMessageProperties": {
+      "inherits": [
+        "TextChatMessageProperties"
+      ]
+    },
+    "BuoyancySensor": {
+      "inherits": [
+        "SensorBase"
+      ]
+    },
+    "CFrameValue": {
+      "inherits": [
+        "ValueBase"
+      ]
+    },
+    "CacheableContentProvider": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Camera": {
+      "inherits": [
+        "PVInstance"
+      ]
+    },
+    "CanvasGroup": {
+      "inherits": [
+        "GuiObject"
+      ]
+    },
+    "Capture": {
+      "inherits": [
+        "Object"
+      ]
+    },
+    "CaptureService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "CapturesPages": {
+      "inherits": [
+        "Pages"
+      ]
+    },
+    "CapturesViewConfiguration": {
+      "inherits": [
+        "BaseCoreGuiConfiguration"
+      ]
+    },
+    "CatalogPages": {
+      "inherits": [
+        "Pages"
+      ]
+    },
+    "ChangeHistoryService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ChannelTabsConfiguration": {
+      "inherits": [
+        "TextChatConfigurations"
+      ]
+    },
+    "CharacterAppearance": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "CharacterMesh": {
+      "inherits": [
+        "CharacterAppearance"
+      ]
+    },
+    "Chat": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ChatInputBarConfiguration": {
+      "inherits": [
+        "TextChatConfigurations"
+      ]
+    },
+    "ChatWindowConfiguration": {
+      "inherits": [
+        "TextChatConfigurations"
+      ]
+    },
+    "ChatWindowMessageProperties": {
+      "inherits": [
+        "TextChatMessageProperties"
+      ]
+    },
+    "ChorusSoundEffect": {
+      "inherits": [
+        "SoundEffect"
+      ]
+    },
+    "ClickDetector": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ClientReplicator": {
+      "inherits": [
+        "NetworkReplicator"
+      ]
+    },
+    "ClimbController": {
+      "inherits": [
+        "ControllerBase"
+      ]
+    },
+    "Clothing": {
+      "inherits": [
+        "CharacterAppearance"
+      ]
+    },
+    "Clouds": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ClusterPacketCache": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "CollectionService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Color3Value": {
+      "inherits": [
+        "ValueBase"
+      ]
+    },
+    "ColorCorrectionEffect": {
+      "inherits": [
+        "PostEffect"
+      ]
+    },
+    "ColorGradingEffect": {
+      "inherits": [
+        "PostEffect"
+      ]
+    },
+    "CommerceService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "CompositeValueCurve": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "CompressorSoundEffect": {
+      "inherits": [
+        "SoundEffect"
+      ]
+    },
+    "ConeHandleAdornment": {
+      "inherits": [
+        "HandleAdornment"
+      ]
+    },
+    "ConfigService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ConfigSnapshot": {
+      "inherits": [
+        "Object"
+      ]
+    },
+    "Configuration": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ConfigureServerService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Constraint": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ContentProvider": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ContextActionService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Controller": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ControllerBase": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ControllerManager": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ControllerPartSensor": {
+      "inherits": [
+        "ControllerSensor"
+      ]
+    },
+    "ControllerSensor": {
+      "inherits": [
+        "SensorBase"
+      ]
+    },
+    "ControllerService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "CookiesService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "CoreGui": {
+      "inherits": [
+        "BasePlayerGui"
+      ]
+    },
+    "CoreGuiConfiguration": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "CornerWedgePart": {
+      "inherits": [
+        "BasePart"
+      ]
+    },
+    "CreatorStoreService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "CurveAnimation": {
+      "inherits": [
+        "AnimationClip"
+      ]
+    },
+    "CustomEvent": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "CustomEventReceiver": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "CustomLog": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "CylinderHandleAdornment": {
+      "inherits": [
+        "HandleAdornment"
+      ]
+    },
+    "CylinderMesh": {
+      "inherits": [
+        "BevelMesh"
+      ]
+    },
+    "CylindricalConstraint": {
+      "inherits": [
+        "SlidingBallConstraint"
+      ]
+    },
+    "DataModel": {
+      "inherits": [
+        "ServiceProvider"
+      ]
+    },
+    "DataModelMesh": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "DataStore": {
+      "inherits": [
+        "GlobalDataStore"
+      ]
+    },
+    "DataStoreGetOptions": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "DataStoreIncrementOptions": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "DataStoreInfo": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "DataStoreKey": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "DataStoreKeyInfo": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "DataStoreKeyPages": {
+      "inherits": [
+        "Pages"
+      ]
+    },
+    "DataStoreListingPages": {
+      "inherits": [
+        "Pages"
+      ]
+    },
+    "DataStoreObjectVersionInfo": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "DataStoreOptions": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "DataStorePages": {
+      "inherits": [
+        "Pages"
+      ]
+    },
+    "DataStoreService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "DataStoreSetOptions": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "DataStoreVersionPages": {
+      "inherits": [
+        "Pages"
+      ]
+    },
+    "Debris": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "DebugSettings": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Decal": {
+      "inherits": [
+        "FaceInstance"
+      ]
+    },
+    "DepthOfFieldEffect": {
+      "inherits": [
+        "PostEffect"
+      ]
+    },
+    "Dialog": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "DialogChoice": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "DigitsRigDescription": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "DistortionSoundEffect": {
+      "inherits": [
+        "SoundEffect"
+      ]
+    },
+    "DockWidgetPluginGui": {
+      "inherits": [
+        "PluginGui"
+      ]
+    },
+    "DoubleConstrainedValue": {
+      "inherits": [
+        "ValueBase"
+      ]
+    },
+    "DraftsService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "DragDetector": {
+      "inherits": [
+        "ClickDetector"
+      ]
+    },
+    "Dragger": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "DraggerService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "DynamicRotate": {
+      "inherits": [
+        "JointInstance"
+      ]
+    },
+    "EchoSoundEffect": {
+      "inherits": [
+        "SoundEffect"
+      ]
+    },
+    "EditableImage": {
+      "inherits": [
+        "Object"
+      ]
+    },
+    "EditableMesh": {
+      "inherits": [
+        "Object"
+      ]
+    },
+    "EncodingService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "EqualizerSoundEffect": {
+      "inherits": [
+        "SoundEffect"
+      ]
+    },
+    "EulerRotationCurve": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ExperienceInviteOptions": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ExperienceNotificationService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Explosion": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "FaceControls": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "FaceInstance": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Feature": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "File": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "FileMesh": {
+      "inherits": [
+        "DataModelMesh"
+      ]
+    },
+    "Fire": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Flag": {
+      "inherits": [
+        "Tool"
+      ]
+    },
+    "FlagStand": {
+      "inherits": [
+        "Part"
+      ]
+    },
+    "FlagStandService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "FlangeSoundEffect": {
+      "inherits": [
+        "SoundEffect"
+      ]
+    },
+    "FloatCurve": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "FloorWire": {
+      "inherits": [
+        "GuiBase3d"
+      ]
+    },
+    "FluidForceSensor": {
+      "inherits": [
+        "SensorBase"
+      ]
+    },
+    "Folder": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ForceField": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "FormFactorPart": {
+      "inherits": [
+        "BasePart"
+      ]
+    },
+    "Frame": {
+      "inherits": [
+        "GuiObject"
+      ]
+    },
+    "FriendPages": {
+      "inherits": [
+        "Pages"
+      ]
+    },
+    "FriendService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "FunctionalTest": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "GamePassService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "GameSettings": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "GamepadService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "GeneratedFolder": {
+      "inherits": [
+        "Folder"
+      ]
+    },
+    "GenerationService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "GenericSettings": {
+      "inherits": [
+        "ServiceProvider"
+      ]
+    },
+    "Geometry": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "GeometryService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "GetTextBoundsParams": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "GlobalDataStore": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "GlobalSettings": {
+      "inherits": [
+        "GenericSettings"
+      ]
+    },
+    "Glue": {
+      "inherits": [
+        "JointInstance"
+      ]
+    },
+    "GroundController": {
+      "inherits": [
+        "ControllerBase"
+      ]
+    },
+    "GroupService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "GuiBase": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "GuiBase2d": {
+      "inherits": [
+        "GuiBase"
+      ]
+    },
+    "GuiBase3d": {
+      "inherits": [
+        "GuiBase"
+      ]
+    },
+    "GuiButton": {
+      "inherits": [
+        "GuiObject"
+      ]
+    },
+    "GuiLabel": {
+      "inherits": [
+        "GuiObject"
+      ]
+    },
+    "GuiMain": {
+      "inherits": [
+        "ScreenGui"
+      ]
+    },
+    "GuiObject": {
+      "inherits": [
+        "GuiBase2d"
+      ]
+    },
+    "GuiService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "GuidRegistryService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "HSRDataContentProvider": {
+      "inherits": [
+        "CacheableContentProvider"
+      ]
+    },
+    "HandleAdornment": {
+      "inherits": [
+        "PVAdornment"
+      ]
+    },
+    "Handles": {
+      "inherits": [
+        "HandlesBase"
+      ]
+    },
+    "HandlesBase": {
+      "inherits": [
+        "PartAdornment"
+      ]
+    },
+    "HapticEffect": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "HapticService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Hat": {
+      "inherits": [
+        "Accoutrement"
+      ]
+    },
+    "HeapProfilerService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "HeightmapImporterService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "HiddenSurfaceRemovalAsset": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Highlight": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "HingeConstraint": {
+      "inherits": [
+        "Constraint"
+      ]
+    },
+    "Hint": {
+      "inherits": [
+        "Message"
+      ]
+    },
+    "Hole": {
+      "inherits": [
+        "Feature"
+      ]
+    },
+    "Hopper": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "HopperBin": {
+      "inherits": [
+        "BackpackItem"
+      ]
+    },
+    "HttpService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Humanoid": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "HumanoidController": {
+      "inherits": [
+        "Controller"
+      ]
+    },
+    "HumanoidDescription": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "HumanoidRigDescription": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "IKControl": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ILegacyStudioBridge": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ImageButton": {
+      "inherits": [
+        "GuiButton"
+      ]
+    },
+    "ImageHandleAdornment": {
+      "inherits": [
+        "HandleAdornment"
+      ]
+    },
+    "ImageLabel": {
+      "inherits": [
+        "GuiLabel"
+      ]
+    },
+    "IncrementalPatchBuilder": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "InputAction": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "InputActionLabel": {
+      "inherits": [
+        "GuiObject"
+      ]
+    },
+    "InputBinding": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "InputContext": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "InputObject": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "InsertService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Instance": {
+      "inherits": [
+        "Object"
+      ]
+    },
+    "InstanceAdornment": {
+      "inherits": [
+        "GuiBase3d"
+      ]
+    },
+    "InstanceFileSyncService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "IntConstrainedValue": {
+      "inherits": [
+        "ValueBase"
+      ]
+    },
+    "IntValue": {
+      "inherits": [
+        "ValueBase"
+      ]
+    },
+    "IntersectOperation": {
+      "inherits": [
+        "PartOperation"
+      ]
+    },
+    "InventoryPages": {
+      "inherits": [
+        "Pages"
+      ]
+    },
+    "JointInstance": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "JointsService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "KeyboardService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Keyframe": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "KeyframeMarker": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "KeyframeSequence": {
+      "inherits": [
+        "AnimationClip"
+      ]
+    },
+    "KeyframeSequenceProvider": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "LayerCollector": {
+      "inherits": [
+        "GuiBase2d"
+      ]
+    },
+    "Light": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Lighting": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "LineForce": {
+      "inherits": [
+        "Constraint"
+      ]
+    },
+    "LineHandleAdornment": {
+      "inherits": [
+        "HandleAdornment"
+      ]
+    },
+    "LinearVelocity": {
+      "inherits": [
+        "Constraint"
+      ]
+    },
+    "LocalScript": {
+      "inherits": [
+        "Script"
+      ]
+    },
+    "LocalizationService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "LocalizationTable": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "LogService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Logger": {
+      "inherits": [
+        "Object"
+      ]
+    },
+    "LoginService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "LuaSettings": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "LuaSourceContainer": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "LuaWebService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "MLService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "MLSession": {
+      "inherits": [
+        "Object"
+      ]
+    },
+    "MakeupDescription": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ManualGlue": {
+      "inherits": [
+        "ManualSurfaceJointInstance"
+      ]
+    },
+    "ManualSurfaceJointInstance": {
+      "inherits": [
+        "JointInstance"
+      ]
+    },
+    "ManualWeld": {
+      "inherits": [
+        "ManualSurfaceJointInstance"
+      ]
+    },
+    "MarkerCurve": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "MarketplaceService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "MatchmakingService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "MaterialService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "MaterialVariant": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "MemStorageConnection": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "MemoryStoreHashMap": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "MemoryStoreHashMapPages": {
+      "inherits": [
+        "Pages"
+      ]
+    },
+    "MemoryStoreQueue": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "MemoryStoreService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "MemoryStoreSortedMap": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "MeshContentProvider": {
+      "inherits": [
+        "CacheableContentProvider"
+      ]
+    },
+    "MeshPart": {
+      "inherits": [
+        "TriangleMeshPart"
+      ]
+    },
+    "Message": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "MessagingService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Model": {
+      "inherits": [
+        "PVInstance"
+      ]
+    },
+    "ModerationService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ModuleScript": {
+      "inherits": [
+        "LuaSourceContainer"
+      ]
+    },
+    "Motor": {
+      "inherits": [
+        "JointInstance"
+      ]
+    },
+    "Motor6D": {
+      "inherits": [
+        "Motor"
+      ]
+    },
+    "MotorFeature": {
+      "inherits": [
+        "Feature"
+      ]
+    },
+    "Mouse": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "MouseService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "NegateOperation": {
+      "inherits": [
+        "PartOperation"
+      ]
+    },
+    "NetworkClient": {
+      "inherits": [
+        "NetworkPeer"
+      ]
+    },
+    "NetworkMarker": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "NetworkPeer": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "NetworkReplicator": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "NetworkServer": {
+      "inherits": [
+        "NetworkPeer"
+      ]
+    },
+    "NetworkSettings": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "NoCollisionConstraint": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "NumberPose": {
+      "inherits": [
+        "PoseBase"
+      ]
+    },
+    "NumberValue": {
+      "inherits": [
+        "ValueBase"
+      ]
+    },
+    "Object": {
+      "inherits": []
+    },
+    "ObjectValue": {
+      "inherits": [
+        "ValueBase"
+      ]
+    },
+    "OpenCloudApiV1": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "OpenCloudService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "OrderedDataStore": {
+      "inherits": [
+        "GlobalDataStore"
+      ]
+    },
+    "OutfitPages": {
+      "inherits": [
+        "Pages"
+      ]
+    },
+    "PVAdornment": {
+      "inherits": [
+        "GuiBase3d"
+      ]
+    },
+    "PVInstance": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PackageLink": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PackageService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Pages": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Pants": {
+      "inherits": [
+        "Clothing"
+      ]
+    },
+    "Part": {
+      "inherits": [
+        "FormFactorPart"
+      ]
+    },
+    "PartAdornment": {
+      "inherits": [
+        "GuiBase3d"
+      ]
+    },
+    "PartOperation": {
+      "inherits": [
+        "TriangleMeshPart"
+      ]
+    },
+    "PartOperationAsset": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ParticleEmitter": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Path": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Path2D": {
+      "inherits": [
+        "GuiBase"
+      ]
+    },
+    "PathfindingLink": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PathfindingModifier": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PathfindingService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PhysicsService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PhysicsSettings": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PitchShiftSoundEffect": {
+      "inherits": [
+        "SoundEffect"
+      ]
+    },
+    "Plane": {
+      "inherits": [
+        "PlaneConstraint"
+      ]
+    },
+    "PlaneConstraint": {
+      "inherits": [
+        "Constraint"
+      ]
+    },
+    "Platform": {
+      "inherits": [
+        "Part"
+      ]
+    },
+    "Player": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PlayerGui": {
+      "inherits": [
+        "BasePlayerGui"
+      ]
+    },
+    "PlayerListConfiguration": {
+      "inherits": [
+        "BaseCoreGuiConfiguration"
+      ]
+    },
+    "PlayerMouse": {
+      "inherits": [
+        "Mouse"
+      ]
+    },
+    "PlayerScripts": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PlayerViewService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Players": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Plugin": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PluginAction": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PluginCapabilities": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PluginConnection": {
+      "inherits": [
+        "Object"
+      ]
+    },
+    "PluginConnectionService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PluginDebugService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PluginDragEvent": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PluginGui": {
+      "inherits": [
+        "LayerCollector"
+      ]
+    },
+    "PluginGuiService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PluginManagementService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PluginManager": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PluginManagerInterface": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PluginMenu": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PluginMouse": {
+      "inherits": [
+        "Mouse"
+      ]
+    },
+    "PluginToolbar": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PluginToolbarButton": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PointLight": {
+      "inherits": [
+        "Light"
+      ]
+    },
+    "PointsService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PolicyService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Pose": {
+      "inherits": [
+        "PoseBase"
+      ]
+    },
+    "PoseBase": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PostEffect": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PrismaticConstraint": {
+      "inherits": [
+        "SlidingBallConstraint"
+      ]
+    },
+    "ProceduralModel": {
+      "inherits": [
+        "Model"
+      ]
+    },
+    "ProcessInstancePhysicsService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ProximityPrompt": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ProximityPromptService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PublishService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "PyramidHandleAdornment": {
+      "inherits": [
+        "HandleAdornment"
+      ]
+    },
+    "RayValue": {
+      "inherits": [
+        "ValueBase"
+      ]
+    },
+    "RecommendationPages": {
+      "inherits": [
+        "Pages"
+      ]
+    },
+    "RecommendationService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ReflectionMetadata": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ReflectionMetadataCallbacks": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ReflectionMetadataClass": {
+      "inherits": [
+        "ReflectionMetadataItem"
+      ]
+    },
+    "ReflectionMetadataClasses": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ReflectionMetadataEnum": {
+      "inherits": [
+        "ReflectionMetadataItem"
+      ]
+    },
+    "ReflectionMetadataEnumItem": {
+      "inherits": [
+        "ReflectionMetadataItem"
+      ]
+    },
+    "ReflectionMetadataEnums": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ReflectionMetadataEvents": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ReflectionMetadataFunctions": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ReflectionMetadataItem": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ReflectionMetadataMember": {
+      "inherits": [
+        "ReflectionMetadataItem"
+      ]
+    },
+    "ReflectionMetadataProperties": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ReflectionMetadataYieldFunctions": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ReflectionService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "RemoteCommandService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "RemoteDebuggerServer": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "RemoteEvent": {
+      "inherits": [
+        "BaseRemoteEvent"
+      ]
+    },
+    "RemoteFunction": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "RenderSettings": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ReplicatedFirst": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ReplicatedStorage": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ReverbSoundEffect": {
+      "inherits": [
+        "SoundEffect"
+      ]
+    },
+    "RigidConstraint": {
+      "inherits": [
+        "Constraint"
+      ]
+    },
+    "RocketPropulsion": {
+      "inherits": [
+        "BodyMover"
+      ]
+    },
+    "RodConstraint": {
+      "inherits": [
+        "Constraint"
+      ]
+    },
+    "RopeConstraint": {
+      "inherits": [
+        "Constraint"
+      ]
+    },
+    "Rotate": {
+      "inherits": [
+        "JointInstance"
+      ]
+    },
+    "RotateP": {
+      "inherits": [
+        "DynamicRotate"
+      ]
+    },
+    "RotateV": {
+      "inherits": [
+        "DynamicRotate"
+      ]
+    },
+    "RotationCurve": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "RunService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "RunningAverageItemDouble": {
+      "inherits": [
+        "StatsItem"
+      ]
+    },
+    "RunningAverageItemInt": {
+      "inherits": [
+        "StatsItem"
+      ]
+    },
+    "RunningAverageTimeIntervalItem": {
+      "inherits": [
+        "StatsItem"
+      ]
+    },
+    "SceneAnalysisService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ScreenGui": {
+      "inherits": [
+        "LayerCollector"
+      ]
+    },
+    "ScreenshotCapture": {
+      "inherits": [
+        "Capture"
+      ]
+    },
+    "ScreenshotHud": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Script": {
+      "inherits": [
+        "BaseScript"
+      ]
+    },
+    "ScriptContext": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ScriptDebuggerService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ScriptDocument": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ScriptEditorService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ScriptProfilerService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ScriptService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ScrollingFrame": {
+      "inherits": [
+        "GuiObject"
+      ]
+    },
+    "Seat": {
+      "inherits": [
+        "Part"
+      ]
+    },
+    "Selection": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "SelectionBox": {
+      "inherits": [
+        "InstanceAdornment"
+      ]
+    },
+    "SelectionHighlightManager": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "SelectionLasso": {
+      "inherits": [
+        "GuiBase3d"
+      ]
+    },
+    "SelectionPartLasso": {
+      "inherits": [
+        "SelectionLasso"
+      ]
+    },
+    "SelectionPointLasso": {
+      "inherits": [
+        "SelectionLasso"
+      ]
+    },
+    "SelectionSphere": {
+      "inherits": [
+        "PVAdornment"
+      ]
+    },
+    "SelfViewConfiguration": {
+      "inherits": [
+        "BaseCoreGuiConfiguration"
+      ]
+    },
+    "SensorBase": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "SerializationService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ServerReplicator": {
+      "inherits": [
+        "NetworkReplicator"
+      ]
+    },
+    "ServerScriptService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ServerStorage": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ServiceProvider": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "SharedTableRegistry": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Shirt": {
+      "inherits": [
+        "Clothing"
+      ]
+    },
+    "ShirtGraphic": {
+      "inherits": [
+        "CharacterAppearance"
+      ]
+    },
+    "SkateboardController": {
+      "inherits": [
+        "Controller"
+      ]
+    },
+    "SkateboardPlatform": {
+      "inherits": [
+        "Part"
+      ]
+    },
+    "Skin": {
+      "inherits": [
+        "CharacterAppearance"
+      ]
+    },
+    "Sky": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "SlidingBallConstraint": {
+      "inherits": [
+        "Constraint"
+      ]
+    },
+    "SlimContentProvider": {
+      "inherits": [
+        "CacheableContentProvider"
+      ]
+    },
+    "Smoke": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Snap": {
+      "inherits": [
+        "JointInstance"
+      ]
+    },
+    "SocialService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "SolidModelContentProvider": {
+      "inherits": [
+        "CacheableContentProvider"
+      ]
+    },
+    "Sound": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "SoundEffect": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "SoundGroup": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "SoundService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Sparkles": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "SpawnLocation": {
+      "inherits": [
+        "Part"
+      ]
+    },
+    "SpawnerService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "SpecialMesh": {
+      "inherits": [
+        "FileMesh"
+      ]
+    },
+    "SphereHandleAdornment": {
+      "inherits": [
+        "HandleAdornment"
+      ]
+    },
+    "SpotLight": {
+      "inherits": [
+        "Light"
+      ]
+    },
+    "SpringConstraint": {
+      "inherits": [
+        "Constraint"
+      ]
+    },
+    "StandalonePluginScripts": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "StandardPages": {
+      "inherits": [
+        "Pages"
+      ]
+    },
+    "StarterCharacterScripts": {
+      "inherits": [
+        "StarterPlayerScripts"
+      ]
+    },
+    "StarterGear": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "StarterGui": {
+      "inherits": [
+        "BasePlayerGui"
+      ]
+    },
+    "StarterPack": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "StarterPlayer": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "StarterPlayerScripts": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Stats": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "StatsItem": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Status": {
+      "inherits": [
+        "Model"
+      ]
+    },
+    "StopWatchReporter": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "StringValue": {
+      "inherits": [
+        "ValueBase"
+      ]
+    },
+    "Studio": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "StudioCaptureService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "StudioDeviceSimulatorService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "StudioScreenshotCapture": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "StudioService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "StudioTestService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "StudioTheme": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "StyleBase": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "StyleDerive": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "StyleLink": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "StyleQuery": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "StyleRule": {
+      "inherits": [
+        "StyleBase"
+      ]
+    },
+    "StyleSheet": {
+      "inherits": [
+        "StyleBase"
+      ]
+    },
+    "SunRaysEffect": {
+      "inherits": [
+        "PostEffect"
+      ]
+    },
+    "SurfaceAppearance": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "SurfaceGui": {
+      "inherits": [
+        "SurfaceGuiBase"
+      ]
+    },
+    "SurfaceGuiBase": {
+      "inherits": [
+        "LayerCollector"
+      ]
+    },
+    "SurfaceLight": {
+      "inherits": [
+        "Light"
+      ]
+    },
+    "SurfaceSelection": {
+      "inherits": [
+        "PartAdornment"
+      ]
+    },
+    "SwimController": {
+      "inherits": [
+        "ControllerBase"
+      ]
+    },
+    "TaskScheduler": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Team": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Teams": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TeleportAsyncResult": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TeleportOptions": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TeleportService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Terrain": {
+      "inherits": [
+        "BasePart"
+      ]
+    },
+    "TerrainDetail": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TerrainRegion": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TestService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TextBox": {
+      "inherits": [
+        "GuiObject"
+      ]
+    },
+    "TextBoxService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TextButton": {
+      "inherits": [
+        "GuiButton"
+      ]
+    },
+    "TextChannel": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TextChannelWindow": {
+      "inherits": [
+        "GuiObject"
+      ]
+    },
+    "TextChatCommand": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TextChatConfigurations": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TextChatMessage": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TextChatMessageProperties": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TextChatService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TextFilterResult": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TextFilterTranslatedResult": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TextGenerator": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TextLabel": {
+      "inherits": [
+        "GuiLabel"
+      ]
+    },
+    "TextService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TextSource": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Texture": {
+      "inherits": [
+        "Decal"
+      ]
+    },
+    "TimerService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Tool": {
+      "inherits": [
+        "BackpackItem"
+      ]
+    },
+    "Torque": {
+      "inherits": [
+        "Constraint"
+      ]
+    },
+    "TorsionSpringConstraint": {
+      "inherits": [
+        "Constraint"
+      ]
+    },
+    "TotalCountTimeIntervalItem": {
+      "inherits": [
+        "StatsItem"
+      ]
+    },
+    "TouchInputService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TouchTransmitter": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Trail": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Translator": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TremoloSoundEffect": {
+      "inherits": [
+        "SoundEffect"
+      ]
+    },
+    "TriangleMeshPart": {
+      "inherits": [
+        "BasePart"
+      ]
+    },
+    "TrussPart": {
+      "inherits": [
+        "BasePart"
+      ]
+    },
+    "Tween": {
+      "inherits": [
+        "TweenBase"
+      ]
+    },
+    "TweenBase": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "TweenService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "UIAspectRatioConstraint": {
+      "inherits": [
+        "UIConstraint"
+      ]
+    },
+    "UIBase": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "UIComponent": {
+      "inherits": [
+        "UIBase"
+      ]
+    },
+    "UIConstraint": {
+      "inherits": [
+        "UIComponent"
+      ]
+    },
+    "UICorner": {
+      "inherits": [
+        "UIComponent"
+      ]
+    },
+    "UIDragDetector": {
+      "inherits": [
+        "UIComponent"
+      ]
+    },
+    "UIFlexItem": {
+      "inherits": [
+        "UIComponent"
+      ]
+    },
+    "UIGradient": {
+      "inherits": [
+        "UIComponent"
+      ]
+    },
+    "UIGridLayout": {
+      "inherits": [
+        "UIGridStyleLayout"
+      ]
+    },
+    "UIGridStyleLayout": {
+      "inherits": [
+        "UILayout"
+      ]
+    },
+    "UILayout": {
+      "inherits": [
+        "UIComponent"
+      ]
+    },
+    "UIListLayout": {
+      "inherits": [
+        "UIGridStyleLayout"
+      ]
+    },
+    "UIPadding": {
+      "inherits": [
+        "UIComponent"
+      ]
+    },
+    "UIPageLayout": {
+      "inherits": [
+        "UIGridStyleLayout"
+      ]
+    },
+    "UIScale": {
+      "inherits": [
+        "UIComponent"
+      ]
+    },
+    "UIShadow": {
+      "inherits": [
+        "UIComponent"
+      ]
+    },
+    "UISizeConstraint": {
+      "inherits": [
+        "UIConstraint"
+      ]
+    },
+    "UIStroke": {
+      "inherits": [
+        "UIComponent"
+      ]
+    },
+    "UITableLayout": {
+      "inherits": [
+        "UIGridStyleLayout"
+      ]
+    },
+    "UITextSizeConstraint": {
+      "inherits": [
+        "UIConstraint"
+      ]
+    },
+    "UnionOperation": {
+      "inherits": [
+        "PartOperation"
+      ]
+    },
+    "UniqueIdLookupService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "UniversalConstraint": {
+      "inherits": [
+        "Constraint"
+      ]
+    },
+    "UnreliableRemoteEvent": {
+      "inherits": [
+        "BaseRemoteEvent"
+      ]
+    },
+    "UserGameSettings": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "UserInputService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "UserService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "UserSettings": {
+      "inherits": [
+        "GenericSettings"
+      ]
+    },
+    "VRService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ValueBase": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ValueCurve": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Vector3Curve": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Vector3Value": {
+      "inherits": [
+        "ValueBase"
+      ]
+    },
+    "VectorForce": {
+      "inherits": [
+        "Constraint"
+      ]
+    },
+    "VehicleController": {
+      "inherits": [
+        "Controller"
+      ]
+    },
+    "VehicleSeat": {
+      "inherits": [
+        "BasePart"
+      ]
+    },
+    "VelocityMotor": {
+      "inherits": [
+        "JointInstance"
+      ]
+    },
+    "VideoCapture": {
+      "inherits": [
+        "Capture"
+      ]
+    },
+    "VideoCaptureService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "VideoDisplay": {
+      "inherits": [
+        "GuiObject"
+      ]
+    },
+    "VideoFrame": {
+      "inherits": [
+        "GuiObject"
+      ]
+    },
+    "VideoPlayer": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "VideoSampler": {
+      "inherits": [
+        "Object"
+      ]
+    },
+    "VideoService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "ViewportFrame": {
+      "inherits": [
+        "GuiObject"
+      ]
+    },
+    "VirtualInput": {
+      "inherits": [
+        "Object"
+      ]
+    },
+    "VirtualInputManager": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "VirtualUser": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "VisibilityCheckDispatcher": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Visit": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "VoiceChatService": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "WebStreamClient": {
+      "inherits": [
+        "Object"
+      ]
+    },
+    "WedgePart": {
+      "inherits": [
+        "FormFactorPart"
+      ]
+    },
+    "Weld": {
+      "inherits": [
+        "JointInstance"
+      ]
+    },
+    "WeldConstraint": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "Wire": {
+      "inherits": [
+        "Instance"
+      ]
+    },
+    "WireframeHandleAdornment": {
+      "inherits": [
+        "HandleAdornment"
+      ]
+    },
+    "Workspace": {
+      "inherits": [
+        "WorldRoot"
+      ]
+    },
+    "WorldModel": {
+      "inherits": [
+        "WorldRoot"
+      ]
+    },
+    "WorldRoot": {
+      "inherits": [
+        "Model"
+      ]
+    },
+    "WrapDeformer": {
+      "inherits": [
+        "BaseWrap"
+      ]
+    },
+    "WrapLayer": {
+      "inherits": [
+        "BaseWrap"
+      ]
+    },
+    "WrapTarget": {
+      "inherits": [
+        "BaseWrap"
+      ]
+    },
+    "WrapTextureTransfer": {
+      "inherits": [
+        "Instance"
+      ]
+    }
+  }
+}

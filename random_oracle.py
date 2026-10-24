@@ -32,7 +32,7 @@ def extract(binary,root):
         functions[name]={'address':hex(address),'size':len(code),'sha256':hashlib.sha256(code).hexdigest(),
                          'data_references':[hex(a) for a in sorted(refs)],'instructions':listing}
     report={'functions':functions,'external_calls':external,'source':'v8datamodel/Random.c; script/RandomBridge.c'}
-    (root/'evidence/random_recovery.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    (root/'data/random_recovery.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     return report
 
 def main():
@@ -49,7 +49,7 @@ def main():
     counts={'seed':0,'number':0,'range':0,'integer':0};vectors=[]
     rng=random.Random(7351131)
     with MachO(args.binary) as binary:
-        report=extract(binary,root) if args.extract else json.loads((root/'evidence/random_recovery.json').read_text())
+        report=extract(binary,root) if args.extract else json.loads((root/'data/random_recovery.json').read_text())
         hooks={int(a,16):dll.host_import_address(b'_ldexp',6) for a in report['external_calls']}
         with Original(binary,report,dll,hooks=hooks,enabled=report['functions']) as original:
             def address(name):return original.functions[name]+original.slide
@@ -83,6 +83,6 @@ def main():
     result={'counts':counts,'number_vectors':vectors,'status':'PASS',
             'comparison':'Original function bytes unchanged; only ldexp import adapted to Windows UCRT.',
             'limits':'Seedless entropy and unit-vector trigonometry are not compared; NaN payloads are not compared.'}
-    (root/'evidence/random_comparison.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+    (root/'data/random_comparison.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(result))
 if __name__=='__main__':main()

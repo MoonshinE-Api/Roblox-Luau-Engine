@@ -95,7 +95,7 @@ close()
                 'source_sha256':hashlib.sha256((root/'tests/vendor/Fiu.luau').read_bytes()).hexdigest(),
                 'bytecode_version':compiled[0],'payload_sha256':hashlib.sha256(compiled).hexdigest(),
                 'result':result.stdout.strip(),'full_compatibility_proven':False}
-        (root/'evidence/nested_vm_comparison.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+        (root/'data/nested_vm_comparison.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
         print(result.stdout.strip())
 finally:
     server.shutdown();server.server_close()

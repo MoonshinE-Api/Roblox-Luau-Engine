@@ -1,5 +1,0 @@
-Runner extracted from the previously delivered ZIP.
-DEMO START	120	targets	12	workers
-DEMO RESULT	120	defeated	1200	points	47	frames
-CLONE CHECK	ServerStorage.ArchivedArena	122	descendants
-READY BUILD SHOWCASE PASSED

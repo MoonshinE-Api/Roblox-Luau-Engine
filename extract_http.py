@@ -54,7 +54,7 @@ def main():
             'http_max_active_workers':64,'http_default_and_max_timeout_seconds':30,
             'response_max_bytes':50*1024*1024,'http_enabled_default':False},
     }
-    target=Path(__file__).resolve().parent/'evidence/http_recovery.json'
+    target=Path(__file__).resolve().parent/'data/http_recovery.json'
     target.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(f'Recorded {sum(len(x["functions"]) for x in records.values())} reviewed HTTP/JSON/URL functions')
 

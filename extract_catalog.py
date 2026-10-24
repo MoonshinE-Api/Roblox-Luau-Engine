@@ -14,7 +14,7 @@ def main():
     p=argparse.ArgumentParser()
     p.add_argument('--dump',type=Path,required=True)
     p.add_argument('--metadata',type=Path,required=True)
-    p.add_argument('--out',type=Path,default=Path(__file__).parent/'evidence/class_catalog.json')
+    p.add_argument('--out',type=Path,default=Path(__file__).parent/'data/class_catalog.json')
     args=p.parse_args()
     classes={}
     root=E.parse(args.metadata).getroot()

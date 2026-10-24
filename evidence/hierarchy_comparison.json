@@ -1,7 +1,0 @@
-{
-  "status": "PASS",
-  "official_fallback_links": 109,
-  "dump_parent_links_preserved": 685,
-  "missing_parent_candidates_skipped": 11,
-  "meaning": "Hierarchy only. No implementation is inferred for missing members."
-}

@@ -31,7 +31,7 @@ class Runtime:
             encoded=name.encode()
             return self.dll.host_import_address(encoded,len(encoded))
         self.binary=MachO(binary_path)
-        report=json.loads((root/'evidence/vm_core.json').read_text(encoding='utf-8'))
+        report=json.loads((root/'data/vm_core.json').read_text(encoding='utf-8'))
         config=C.create_string_buffer(1192)
         self.dll.recovered_sizeclassconfig(C.addressof(config))
         def symbol(name):

@@ -137,5 +137,5 @@ report={'status':'PASS','format_vectors':len(cases),'blake3_published_vectors':l
             'invalid/unknown/oversized/truncated/checksum/trailing frames','original VM binary string/buffer integration',
             'non-yielding coroutine call','legacy Zstd aliases','HttpService zbase64','native OOM pinned-response cleanup'],
         'native_engine_byte_parity_verified':False,'host_limit_bytes':LIMIT}
-(root/'evidence/encoding_comparison.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+(root/'data/encoding_comparison.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 print('ENCODING SERVICE VECTOR/VM/OOM CHECKS PASSED')

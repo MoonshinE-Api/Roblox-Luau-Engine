@@ -4,8 +4,8 @@ from pathlib import Path
 
 def main():
     root=Path(__file__).resolve().parent
-    catalog=json.loads((root/'evidence/class_catalog.json').read_text(encoding='utf-8'))
-    reference=json.loads((root/'evidence/api_reference.json').read_text(encoding='utf-8'))
+    catalog=json.loads((root/'data/class_catalog.json').read_text(encoding='utf-8'))
+    reference=json.loads((root/'data/hierarchy_reference.json').read_text(encoding='utf-8'))
     classes=catalog['classes'];fallback={};skipped={}
     for name,doc in reference['classes'].items():
         if name in classes and not classes[name].get('parent') and doc.get('inherits'):
@@ -24,8 +24,8 @@ def main():
         'meaning':'Official reference fills only missing parent links. Supplied dump evidence always takes precedence. This does not implement missing members.',
         'source_parent_count':len(merged)-len(fallback),'fallback_parent_count':len(fallback),'parents':fallback,
         'skipped_missing_runtime_parent':skipped,
-        'source_sha256':{name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ('evidence/class_catalog.json','evidence/api_reference.json')}}
-    (root/'evidence/hierarchy_fallback.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+        'source_sha256':{name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ('data/class_catalog.json','data/hierarchy_reference.json')}}
+    (root/'data/hierarchy_fallback.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'source_parents':report['source_parent_count'],'official_fallback_parents':len(fallback),'acyclic':True}))
 
 if __name__=='__main__':main()

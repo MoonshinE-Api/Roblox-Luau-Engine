@@ -77,6 +77,6 @@ def main():
                 'new_zero_argument':{'observed_result':1003,'bridge_sha256':hashlib.sha256(new_code).hexdigest(),
                     'instructions':zero_path,'reason':'Initial 194 userdata is followed by closest(0,0,0) and another allocation; one top result is returned.'},
                 'limits':['Alias map not reconstructed. Palette preference flags used for duplicate names.']}
-    (root/'evidence/brickcolor_catalog.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+    (root/'data/brickcolor_catalog.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({k:result[k] for k in ('version','verified_colors','verified_palette','constructor_sha256','palette_sha256')}))
 if __name__=='__main__':main()

@@ -37,7 +37,7 @@ return R.jsonEncode(classes)'''.replace('CLASSES',lua_literal(CLASSES))
     report={'meaning':'Explicit import class allowlist; property types observed from implemented runtime, not full engine support.',
         'runtime_version':'0.735.19.7351131','classes':classes,
         'source_sha256':{name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ('engine/instances.luau','engine/services.luau')}}
-    (root/'evidence/model_property_schema.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    (root/'data/model_property_schema.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'classes':len(classes),'property_declarations':sum(len(x) for x in classes.values())}))
 
 if __name__=='__main__':main()
