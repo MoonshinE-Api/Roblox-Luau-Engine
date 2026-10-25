@@ -1,0 +1,1113 @@
+{
+  "reflection_version": [
+    0,
+    741,
+    19,
+    7411056
+  ],
+  "vm_version": "0.735.19.7351131",
+  "source": "rbx_reflection_database 3.0.1+roblox-741 (rbx-dom)",
+  "source_revision": "03a3e1f63db883c42a2d0929c6058234d0f0785d",
+  "source_sha256": "cca78d6aba8d3daadcf129e6a607c48d063aed2fe48948955755c83d83187178",
+  "reference_revision": "46be165f526ec23305394ac0c56a95edd2d7f7d9",
+  "classes": {
+    "GuiBase2d": {
+      "AutoLocalize": {
+        "kind": "boolean",
+        "values": true
+      },
+      "RootLocalizationTable": {
+        "kind": "Instance?",
+        "values": null,
+        "target": "LocalizationTable"
+      },
+      "SelectionBehaviorDown": {
+        "kind": "Enum.SelectionBehavior",
+        "values": 0
+      },
+      "SelectionBehaviorLeft": {
+        "kind": "Enum.SelectionBehavior",
+        "values": 0
+      },
+      "SelectionBehaviorRight": {
+        "kind": "Enum.SelectionBehavior",
+        "values": 0
+      },
+      "SelectionBehaviorUp": {
+        "kind": "Enum.SelectionBehavior",
+        "values": 0
+      },
+      "SelectionGroup": {
+        "kind": "boolean",
+        "values": false
+      }
+    },
+    "LayerCollector": {
+      "Enabled": {
+        "kind": "boolean",
+        "values": true
+      },
+      "ResetOnSpawn": {
+        "kind": "boolean",
+        "values": true
+      },
+      "ZIndexBehavior": {
+        "kind": "Enum.ZIndexBehavior",
+        "values": 0
+      }
+    },
+    "GuiObject": {
+      "Active": {
+        "kind": "boolean",
+        "values": false
+      },
+      "AnchorPoint": {
+        "kind": "Vector2",
+        "values": [
+          0.0,
+          0.0
+        ]
+      },
+      "AutomaticSize": {
+        "kind": "Enum.AutomaticSize",
+        "values": 0
+      },
+      "BackgroundColor3": {
+        "kind": "Color3",
+        "values": [
+          0.6392157077789307,
+          0.6352941393852234,
+          0.6470588445663452
+        ]
+      },
+      "BackgroundTransparency": {
+        "kind": "number",
+        "values": 0.0
+      },
+      "BorderColor3": {
+        "kind": "Color3",
+        "values": [
+          0.10588235408067703,
+          0.16470588743686676,
+          0.2078431397676468
+        ]
+      },
+      "BorderMode": {
+        "kind": "Enum.BorderMode",
+        "values": 0
+      },
+      "BorderSizePixel": {
+        "kind": "number",
+        "values": 1
+      },
+      "ClipsDescendants": {
+        "kind": "boolean",
+        "values": false
+      },
+      "InputSink": {
+        "kind": "Enum.InputSink",
+        "values": 0
+      },
+      "Interactable": {
+        "kind": "boolean",
+        "values": true
+      },
+      "LayoutOrder": {
+        "kind": "number",
+        "values": 0
+      },
+      "NextSelectionDown": {
+        "kind": "Instance?",
+        "values": null,
+        "target": "GuiObject"
+      },
+      "NextSelectionLeft": {
+        "kind": "Instance?",
+        "values": null,
+        "target": "GuiObject"
+      },
+      "NextSelectionRight": {
+        "kind": "Instance?",
+        "values": null,
+        "target": "GuiObject"
+      },
+      "NextSelectionUp": {
+        "kind": "Instance?",
+        "values": null,
+        "target": "GuiObject"
+      },
+      "Position": {
+        "kind": "UDim2",
+        "values": [
+          [
+            0.0,
+            0
+          ],
+          [
+            0.0,
+            0
+          ]
+        ]
+      },
+      "Rotation": {
+        "kind": "number",
+        "values": 0.0
+      },
+      "Selectable": {
+        "kind": "boolean",
+        "values": false
+      },
+      "SelectionImageObject": {
+        "kind": "Instance?",
+        "values": null,
+        "target": "GuiObject"
+      },
+      "SelectionOrder": {
+        "kind": "number",
+        "values": 0
+      },
+      "Size": {
+        "kind": "UDim2",
+        "values": [
+          [
+            0.0,
+            0
+          ],
+          [
+            0.0,
+            0
+          ]
+        ]
+      },
+      "SizeConstraint": {
+        "kind": "Enum.SizeConstraint",
+        "values": 0
+      },
+      "Visible": {
+        "kind": "boolean",
+        "values": true
+      },
+      "ZIndex": {
+        "kind": "number",
+        "values": 1
+      }
+    },
+    "GuiButton": {
+      "AutoButtonColor": {
+        "kind": "boolean",
+        "values": true
+      },
+      "HoverHapticEffect": {
+        "kind": "Instance?",
+        "values": null,
+        "target": "HapticEffect"
+      },
+      "Modal": {
+        "kind": "boolean",
+        "values": false
+      },
+      "PressHapticEffect": {
+        "kind": "Instance?",
+        "values": null,
+        "target": "HapticEffect"
+      },
+      "Selected": {
+        "kind": "boolean",
+        "values": false
+      },
+      "Style": {
+        "kind": "Enum.ButtonStyle",
+        "values": 0
+      }
+    },
+    "Frame": {
+      "Style": {
+        "kind": "Enum.FrameStyle",
+        "values": 0
+      }
+    },
+    "CanvasGroup": {
+      "GroupColor3": {
+        "kind": "Color3",
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "GroupTransparency": {
+        "kind": "number",
+        "values": 0.0
+      }
+    },
+    "ScreenGui": {
+      "ClipToDeviceSafeArea": {
+        "kind": "boolean",
+        "values": true
+      },
+      "DisplayOrder": {
+        "kind": "number",
+        "values": 0
+      },
+      "IgnoreGuiInset": {
+        "kind": "boolean",
+        "values": false
+      },
+      "SafeAreaCompatibility": {
+        "kind": "Enum.SafeAreaCompatibility",
+        "values": 1
+      },
+      "ScreenInsets": {
+        "kind": "Enum.ScreenInsets",
+        "values": 2
+      }
+    },
+    "TextLabel": {
+      "FontFace": {
+        "kind": "Font",
+        "values": [
+          "rbxasset://fonts/families/LegacyArial.json",
+          "Regular",
+          "Normal",
+          "rbxasset://fonts/Arimo-Regular.ttf"
+        ]
+      },
+      "LineHeight": {
+        "kind": "number",
+        "values": 1.0
+      },
+      "MaxVisibleGraphemes": {
+        "kind": "number",
+        "values": -1
+      },
+      "OpenTypeFeatures": {
+        "kind": "string",
+        "values": ""
+      },
+      "RichText": {
+        "kind": "boolean",
+        "values": false
+      },
+      "Text": {
+        "kind": "string",
+        "values": "Label"
+      },
+      "TextColor3": {
+        "kind": "Color3",
+        "values": [
+          0.10588236153125763,
+          0.16470588743686676,
+          0.20784315466880798
+        ]
+      },
+      "TextDirection": {
+        "kind": "Enum.TextDirection",
+        "values": 0
+      },
+      "TextScaled": {
+        "kind": "boolean",
+        "values": false
+      },
+      "TextSize": {
+        "kind": "number",
+        "values": 8.0
+      },
+      "TextStrokeColor3": {
+        "kind": "Color3",
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "TextStrokeTransparency": {
+        "kind": "number",
+        "values": 1.0
+      },
+      "TextTransparency": {
+        "kind": "number",
+        "values": 0.0
+      },
+      "TextTruncate": {
+        "kind": "Enum.TextTruncate",
+        "values": 0
+      },
+      "TextWrapped": {
+        "kind": "boolean",
+        "values": false
+      },
+      "TextXAlignment": {
+        "kind": "Enum.TextXAlignment",
+        "values": 2
+      },
+      "TextYAlignment": {
+        "kind": "Enum.TextYAlignment",
+        "values": 1
+      }
+    },
+    "TextButton": {
+      "FontFace": {
+        "kind": "Font",
+        "values": [
+          "rbxasset://fonts/families/LegacyArial.json",
+          "Regular",
+          "Normal",
+          "rbxasset://fonts/Arimo-Regular.ttf"
+        ]
+      },
+      "LineHeight": {
+        "kind": "number",
+        "values": 1.0
+      },
+      "MaxVisibleGraphemes": {
+        "kind": "number",
+        "values": -1
+      },
+      "OpenTypeFeatures": {
+        "kind": "string",
+        "values": ""
+      },
+      "RichText": {
+        "kind": "boolean",
+        "values": false
+      },
+      "Text": {
+        "kind": "string",
+        "values": "Button"
+      },
+      "TextColor3": {
+        "kind": "Color3",
+        "values": [
+          0.10588236153125763,
+          0.16470588743686676,
+          0.20784315466880798
+        ]
+      },
+      "TextDirection": {
+        "kind": "Enum.TextDirection",
+        "values": 0
+      },
+      "TextScaled": {
+        "kind": "boolean",
+        "values": false
+      },
+      "TextSize": {
+        "kind": "number",
+        "values": 8.0
+      },
+      "TextStrokeColor3": {
+        "kind": "Color3",
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "TextStrokeTransparency": {
+        "kind": "number",
+        "values": 1.0
+      },
+      "TextTransparency": {
+        "kind": "number",
+        "values": 0.0
+      },
+      "TextTruncate": {
+        "kind": "Enum.TextTruncate",
+        "values": 0
+      },
+      "TextWrapped": {
+        "kind": "boolean",
+        "values": false
+      },
+      "TextXAlignment": {
+        "kind": "Enum.TextXAlignment",
+        "values": 2
+      },
+      "TextYAlignment": {
+        "kind": "Enum.TextYAlignment",
+        "values": 1
+      }
+    },
+    "TextBox": {
+      "ClearTextOnFocus": {
+        "kind": "boolean",
+        "values": true
+      },
+      "CursorPosition": {
+        "kind": "number",
+        "values": -1
+      },
+      "FontFace": {
+        "kind": "Font",
+        "values": [
+          "rbxasset://fonts/families/LegacyArial.json",
+          "Regular",
+          "Normal",
+          "rbxasset://fonts/Arimo-Regular.ttf"
+        ]
+      },
+      "LineHeight": {
+        "kind": "number",
+        "values": 1.0
+      },
+      "MaxVisibleGraphemes": {
+        "kind": "number",
+        "values": -1
+      },
+      "MultiLine": {
+        "kind": "boolean",
+        "values": false
+      },
+      "OpenTypeFeatures": {
+        "kind": "string",
+        "values": ""
+      },
+      "PlaceholderColor3": {
+        "kind": "Color3",
+        "values": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "PlaceholderText": {
+        "kind": "string",
+        "values": ""
+      },
+      "RichText": {
+        "kind": "boolean",
+        "values": false
+      },
+      "SelectionStart": {
+        "kind": "number",
+        "values": -1
+      },
+      "ShowNativeInput": {
+        "kind": "boolean",
+        "values": true
+      },
+      "Text": {
+        "kind": "string",
+        "values": "TextBox"
+      },
+      "TextColor3": {
+        "kind": "Color3",
+        "values": [
+          0.10588236153125763,
+          0.16470588743686676,
+          0.20784315466880798
+        ]
+      },
+      "TextDirection": {
+        "kind": "Enum.TextDirection",
+        "values": 0
+      },
+      "TextEditable": {
+        "kind": "boolean",
+        "values": true
+      },
+      "TextScaled": {
+        "kind": "boolean",
+        "values": false
+      },
+      "TextSize": {
+        "kind": "number",
+        "values": 8.0
+      },
+      "TextStrokeColor3": {
+        "kind": "Color3",
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "TextStrokeTransparency": {
+        "kind": "number",
+        "values": 1.0
+      },
+      "TextTransparency": {
+        "kind": "number",
+        "values": 0.0
+      },
+      "TextTruncate": {
+        "kind": "Enum.TextTruncate",
+        "values": 0
+      },
+      "TextWrapped": {
+        "kind": "boolean",
+        "values": false
+      },
+      "TextXAlignment": {
+        "kind": "Enum.TextXAlignment",
+        "values": 2
+      },
+      "TextYAlignment": {
+        "kind": "Enum.TextYAlignment",
+        "values": 1
+      }
+    },
+    "ImageLabel": {
+      "Image": {
+        "kind": "string",
+        "values": ""
+      },
+      "ImageColor3": {
+        "kind": "Color3",
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "ImageRectOffset": {
+        "kind": "Vector2",
+        "values": [
+          0.0,
+          0.0
+        ]
+      },
+      "ImageRectSize": {
+        "kind": "Vector2",
+        "values": [
+          0.0,
+          0.0
+        ]
+      },
+      "ImageTransparency": {
+        "kind": "number",
+        "values": 0.0
+      },
+      "ResampleMode": {
+        "kind": "Enum.ResamplerMode",
+        "values": 0
+      },
+      "ScaleType": {
+        "kind": "Enum.ScaleType",
+        "values": 0
+      },
+      "SliceCenter": {
+        "kind": "Rect",
+        "values": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "SliceScale": {
+        "kind": "number",
+        "values": 1.0
+      },
+      "TileSize": {
+        "kind": "UDim2",
+        "values": [
+          [
+            1.0,
+            0
+          ],
+          [
+            1.0,
+            0
+          ]
+        ]
+      }
+    },
+    "ImageButton": {
+      "HoverImage": {
+        "kind": "string",
+        "values": ""
+      },
+      "Image": {
+        "kind": "string",
+        "values": ""
+      },
+      "ImageColor3": {
+        "kind": "Color3",
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "ImageRectOffset": {
+        "kind": "Vector2",
+        "values": [
+          0.0,
+          0.0
+        ]
+      },
+      "ImageRectSize": {
+        "kind": "Vector2",
+        "values": [
+          0.0,
+          0.0
+        ]
+      },
+      "ImageTransparency": {
+        "kind": "number",
+        "values": 0.0
+      },
+      "PressedImage": {
+        "kind": "string",
+        "values": ""
+      },
+      "ResampleMode": {
+        "kind": "Enum.ResamplerMode",
+        "values": 0
+      },
+      "ScaleType": {
+        "kind": "Enum.ScaleType",
+        "values": 0
+      },
+      "SliceCenter": {
+        "kind": "Rect",
+        "values": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "SliceScale": {
+        "kind": "number",
+        "values": 1.0
+      },
+      "TileSize": {
+        "kind": "UDim2",
+        "values": [
+          [
+            1.0,
+            0
+          ],
+          [
+            1.0,
+            0
+          ]
+        ]
+      }
+    },
+    "ScrollingFrame": {
+      "AutomaticCanvasSize": {
+        "kind": "Enum.AutomaticSize",
+        "values": 0
+      },
+      "BottomImage": {
+        "kind": "string",
+        "values": "rbxasset://textures/ui/Scroll/scroll-bottom.png"
+      },
+      "CanvasPosition": {
+        "kind": "Vector2",
+        "values": [
+          0.0,
+          0.0
+        ]
+      },
+      "CanvasSize": {
+        "kind": "UDim2",
+        "values": [
+          [
+            0.0,
+            0
+          ],
+          [
+            2.0,
+            0
+          ]
+        ]
+      },
+      "ElasticBehavior": {
+        "kind": "Enum.ElasticBehavior",
+        "values": 0
+      },
+      "HorizontalScrollBarInset": {
+        "kind": "Enum.ScrollBarInset",
+        "values": 0
+      },
+      "MidImage": {
+        "kind": "string",
+        "values": "rbxasset://textures/ui/Scroll/scroll-middle.png"
+      },
+      "ScrollBarImageColor3": {
+        "kind": "Color3",
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "ScrollBarImageTransparency": {
+        "kind": "number",
+        "values": 0.0
+      },
+      "ScrollBarThickness": {
+        "kind": "number",
+        "values": 12
+      },
+      "ScrollingDirection": {
+        "kind": "Enum.ScrollingDirection",
+        "values": 4
+      },
+      "ScrollingEnabled": {
+        "kind": "boolean",
+        "values": true
+      },
+      "TopImage": {
+        "kind": "string",
+        "values": "rbxasset://textures/ui/Scroll/scroll-top.png"
+      },
+      "VerticalScrollBarInset": {
+        "kind": "Enum.ScrollBarInset",
+        "values": 0
+      },
+      "VerticalScrollBarPosition": {
+        "kind": "Enum.VerticalScrollBarPosition",
+        "values": 0
+      }
+    },
+    "ViewportFrame": {
+      "Ambient": {
+        "kind": "Color3",
+        "values": [
+          0.7843137383460999,
+          0.7843137383460999,
+          0.7843137383460999
+        ]
+      },
+      "CurrentCamera": {
+        "kind": "Instance?",
+        "values": null,
+        "target": "Camera"
+      },
+      "ImageColor3": {
+        "kind": "Color3",
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "ImageTransparency": {
+        "kind": "number",
+        "values": 0.0
+      },
+      "LightColor": {
+        "kind": "Color3",
+        "values": [
+          0.5490196347236633,
+          0.5490196347236633,
+          0.5490196347236633
+        ]
+      },
+      "LightDirection": {
+        "kind": "Vector3",
+        "values": [
+          -1.0,
+          -1.0,
+          -1.0
+        ]
+      }
+    },
+    "UICorner": {
+      "BottomLeftRadius": {
+        "kind": "UDim",
+        "values": [
+          0.0,
+          8
+        ]
+      },
+      "BottomRightRadius": {
+        "kind": "UDim",
+        "values": [
+          0.0,
+          8
+        ]
+      },
+      "CornerRadius": {
+        "kind": "UDim",
+        "values": [
+          0.0,
+          8
+        ]
+      },
+      "TopLeftRadius": {
+        "kind": "UDim",
+        "values": [
+          0.0,
+          8
+        ]
+      },
+      "TopRightRadius": {
+        "kind": "UDim",
+        "values": [
+          0.0,
+          8
+        ]
+      }
+    },
+    "UIStroke": {
+      "ApplyStrokeMode": {
+        "kind": "Enum.ApplyStrokeMode",
+        "values": 0
+      },
+      "BorderOffset": {
+        "kind": "UDim",
+        "values": [
+          0.0,
+          0
+        ]
+      },
+      "BorderStrokePosition": {
+        "kind": "Enum.BorderStrokePosition",
+        "values": 0
+      },
+      "Color": {
+        "kind": "Color3",
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Enabled": {
+        "kind": "boolean",
+        "values": true
+      },
+      "LineJoinMode": {
+        "kind": "Enum.LineJoinMode",
+        "values": 0
+      },
+      "StrokeSizingMode": {
+        "kind": "Enum.StrokeSizingMode",
+        "values": 0
+      },
+      "Thickness": {
+        "kind": "number",
+        "values": 1.0
+      },
+      "Transparency": {
+        "kind": "number",
+        "values": 0.0
+      },
+      "ZIndex": {
+        "kind": "number",
+        "values": 1
+      }
+    },
+    "UIGradient": {
+      "Color": {
+        "kind": "ColorSequence",
+        "values": [
+          [
+            [
+              0.0,
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            [
+              1.0,
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ]
+          ]
+        ]
+      },
+      "Enabled": {
+        "kind": "boolean",
+        "values": true
+      },
+      "Offset": {
+        "kind": "Vector2",
+        "values": [
+          0.0,
+          0.0
+        ]
+      },
+      "Rotation": {
+        "kind": "number",
+        "values": 0.0
+      },
+      "Scale": {
+        "kind": "number",
+        "values": 1.0
+      },
+      "TileMode": {
+        "kind": "Enum.GradientTileMode",
+        "values": 0
+      },
+      "Transparency": {
+        "kind": "NumberSequence",
+        "values": [
+          [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        ]
+      },
+      "Type": {
+        "kind": "Enum.GradientType",
+        "values": 0
+      }
+    },
+    "UIScale": {
+      "Scale": {
+        "kind": "number",
+        "values": 1.0
+      }
+    },
+    "UIPadding": {
+      "PaddingBottom": {
+        "kind": "UDim",
+        "values": [
+          0.0,
+          0
+        ]
+      },
+      "PaddingLeft": {
+        "kind": "UDim",
+        "values": [
+          0.0,
+          0
+        ]
+      },
+      "PaddingRight": {
+        "kind": "UDim",
+        "values": [
+          0.0,
+          0
+        ]
+      },
+      "PaddingTop": {
+        "kind": "UDim",
+        "values": [
+          0.0,
+          0
+        ]
+      }
+    },
+    "UISizeConstraint": {
+      "MaxSize": {
+        "kind": "Vector2",
+        "values": [
+          Infinity,
+          Infinity
+        ]
+      },
+      "MinSize": {
+        "kind": "Vector2",
+        "values": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "UIAspectRatioConstraint": {
+      "AspectRatio": {
+        "kind": "number",
+        "values": 1.0
+      },
+      "AspectType": {
+        "kind": "Enum.AspectType",
+        "values": 0
+      },
+      "DominantAxis": {
+        "kind": "Enum.DominantAxis",
+        "values": 0
+      }
+    },
+    "UITextSizeConstraint": {
+      "MaxTextSize": {
+        "kind": "number",
+        "values": 100
+      },
+      "MinTextSize": {
+        "kind": "number",
+        "values": 1
+      }
+    }
+  },
+  "default_overrides": {
+    "CanvasGroup": {
+      "ClipsDescendants": {
+        "kind": "boolean",
+        "values": true
+      }
+    },
+    "TextButton": {
+      "Active": {
+        "kind": "boolean",
+        "values": true
+      },
+      "Selectable": {
+        "kind": "boolean",
+        "values": true
+      }
+    },
+    "TextBox": {
+      "Active": {
+        "kind": "boolean",
+        "values": true
+      },
+      "Selectable": {
+        "kind": "boolean",
+        "values": true
+      }
+    },
+    "ImageButton": {
+      "Active": {
+        "kind": "boolean",
+        "values": true
+      },
+      "Selectable": {
+        "kind": "boolean",
+        "values": true
+      }
+    },
+    "ScrollingFrame": {
+      "ClipsDescendants": {
+        "kind": "boolean",
+        "values": true
+      },
+      "Selectable": {
+        "kind": "boolean",
+        "values": true
+      },
+      "SelectionGroup": {
+        "kind": "boolean",
+        "values": true
+      }
+    }
+  },
+  "skipped": [
+    "ImageLabel.ImageContent: Content datatype not implemented",
+    "ImageButton.HoverImageContent: Content datatype not implemented",
+    "ImageButton.ImageContent: Content datatype not implemented",
+    "ImageButton.PressedImageContent: Content datatype not implemented",
+    "ScrollingFrame.BottomImageContent: Content datatype not implemented",
+    "ScrollingFrame.MidImageContent: Content datatype not implemented",
+    "ScrollingFrame.TopImageContent: Content datatype not implemented"
+  ],
+  "limits": "Typed headless configuration. Rendering, text shaping, input hardware, and automatic/list/grid layout are not implemented. Defaults come from the recorded reflection version, not native 0.735 verification."
+}

@@ -39,12 +39,13 @@ def bootstrap(root,config):
     dates=json.loads((root/'data/datetime_recovery.json').read_text(encoding='utf-8'))
     physical=json.loads((root/'data/physical_recovery.json').read_text(encoding='utf-8'))
     fonts=json.loads((root/'data/font_recovery.json').read_text(encoding='utf-8'))
+    ui=json.loads((root/'data/ui_property_catalog.json').read_text(encoding='utf-8'))
     colors=[[row['number'],row['name'],*row['rgb']] for row in brickcolors['colors']]
     source='local R={proxy=__host_proxy,config='+lua_literal(config)+',classes='+lua_literal(parents)+',knownClasses='+lua_literal(known)+',enumCatalog='+lua_literal(enums)+',brickColors='+lua_literal(colors)+',brickPalette='+lua_literal(brickcolors['palette'])+',brickConstants='+lua_literal(brickcolors['constant_constructors'])+'}\n'
     source+='R.dateTimeLocales='+lua_literal(dates['locales'])+';R.dateTimeTokens='+lua_literal(dates['tokens'])+';R.dateTimeFallbacks='+lua_literal(dates['language_fallbacks'])+'\n'
     source+='R.physicalCatalog='+lua_literal({key:physical[key] for key in ('materials','minimum_density','unit_volume','unit_center')})+'\n'
-    source+='R.fontCatalog='+lua_literal(fonts['enum_fonts'])+'\n'
-    for name in ['datatypes','enums','value_types','physical_properties','font','sequences','random','brickcolor','datetime','query_params','scheduler','instances','services','json','http','encoding','attributes','model_properties','assets','spatial','tweens','bootstrap']:
+    source+='R.fontCatalog='+lua_literal(fonts['enum_fonts'])+';R.uiCatalog='+lua_literal(ui)+'\n'
+    for name in ['datatypes','enums','value_types','physical_properties','font','sequences','random','brickcolor','datetime','query_params','scheduler','instances','services','ui','camera','json','http','encoding','attributes','model_properties','assets','spatial','tweens','bootstrap']:
         source+='do local initialize=(function()\n'+(root/f'engine/{name}.luau').read_text(encoding='utf-8')+'\nend)();initialize(R) end\n'
     return source
 
@@ -170,11 +171,14 @@ def main(argv=None):
     p.add_argument('--duration',type=float,default=1)
     p.add_argument('--realtime',action='store_true',help='Pace scheduler events with the monotonic wall clock')
     p.add_argument('--memory-mb',type=int,default=256)
+    p.add_argument('--viewport-width',type=int,default=1280,help='Headless UI viewport width in pixels')
+    p.add_argument('--viewport-height',type=int,default=720,help='Headless UI viewport height in pixels')
     p.add_argument('--wall-timeout',type=float,help='Optional real-time deadline in seconds; stops the entire VM process tree (Windows)')
     p.add_argument('--model',type=Path,action='append',default=[],help='Import supported .rbxmx XML or .rbxm binary model data under Workspace; repeatable')
     args=p.parse_args(arguments)
     if not math.isfinite(args.duration) or args.duration<0:p.error('--duration must be finite and nonnegative')
     if args.memory_mb<=0:p.error('--memory-mb must be positive')
+    if args.viewport_width<=0 or args.viewport_height<=0:p.error('Viewport dimensions must be positive')
     if args.wall_timeout is not None and (not math.isfinite(args.wall_timeout) or args.wall_timeout<=0):p.error('--wall-timeout must be finite and positive')
     if not args.script.exists():p.error(f'Script/project not found: {args.script}')
     if args.script.is_file() and args.script.suffix not in {'.lua','.luau'}:p.error('Expected a .lua or .luau file')
@@ -192,7 +196,7 @@ def main(argv=None):
         runtime.open_libraries()
         with tempfile.TemporaryDirectory(prefix='recovery-luau-') as folder:
             working=Path(folder)
-            execute_source(runtime,root,bootstrap(root,{'side':args.mode,'duration':args.duration,'realtime':args.realtime}),working,'engine-bootstrap')
+            execute_source(runtime,root,bootstrap(root,{'side':args.mode,'duration':args.duration,'realtime':args.realtime,'viewportSize':[args.viewport_width,args.viewport_height]}),working,'engine-bootstrap')
             source_count=0
             compilations=[]
             def load_source(file,text=None,label=None):

@@ -10,6 +10,14 @@ return function(R)
                     if item.Value==value then found=item;break end
                 end
                 value=assert(found,'Invalid imported enum value')
+            elseif kind=='Font' then value=R.importFont(value)
+            elseif kind=='NumberSequence' or kind=='ColorSequence' then
+                local points={}
+                for _,point in value do
+                    table.insert(points,if kind=='NumberSequence' then R.datatypes.NumberSequenceKeypoint.new(table.unpack(point))
+                        else R.datatypes.ColorSequenceKeypoint.new(point[1],R.datatypes.Color3.new(point[2],point[3],point[4])))
+                end
+                value=R.datatypes[kind].new(points)
             elseif kind=='PhysicalProperties?' then
                 if value~=nil then value=R.datatypes.PhysicalProperties.new(table.unpack(value)) end
             elseif kind~='number' and kind~='boolean' and kind~='string' then

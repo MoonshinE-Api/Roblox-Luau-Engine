@@ -87,7 +87,7 @@ def read_model(path):
                 raw=shared.get(text.strip()) if prop.tag=='SharedString' else base64.b64decode(''.join(text.split()),validate=True)
                 if raw is None:raise ValueError('Missing shared Tags payload')
                 tags=[x.decode('utf-8') for x in raw.split(b'\0') if x];continue
-            if key in {'Archivable','Disabled','Enabled'} and prop.tag=='bool':
+            if (key=='Archivable' or key in {'Disabled','Enabled'} and kind in {'Script','LocalScript'}) and prop.tag=='bool':
                 if text not in {'true','false'}:raise ValueError(f'Invalid XML boolean {key}')
                 if key!='Archivable' and kind not in {'Script','LocalScript'}:raise ValueError(f'{key} requires BaseScript')
                 fields[key]=text=='true';continue

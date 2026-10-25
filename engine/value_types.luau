@@ -67,7 +67,14 @@ return function(R)
         return record("Rect",{Min=min,Max=max,Width=max.X-min.X,Height=max.Y-min.Y})
     end
     R.datatypes.Rect=table.freeze(Rect)
-    local Ray={}
+    local Ray,rayMethods={},{}
+    function rayMethods:ClosestPoint(point)
+        assert(typeof(point)=='Vector3','Expected Vector3')
+        local square=self.Direction:Dot(self.Direction)
+        if square<=(square+1)*0.00001 then return self.Origin end
+        return self.Origin+self.Direction*(math.max(0,(point-self.Origin):Dot(self.Direction))/square)
+    end
+    function rayMethods:Distance(point) return (point-self:ClosestPoint(point)).Magnitude end
     function Ray.new(origin,direction)
         local V3=R.datatypes.Vector3
         origin,direction=origin or V3.zero,direction or V3.zero
@@ -75,6 +82,7 @@ return function(R)
         return make("Ray",{Origin=origin,Direction=direction},function(_,key,d)
             if d[key] then return d[key] end
             if key=="Unit" then return Ray.new(origin,direction.Unit) end
+            if rayMethods[key] then return rayMethods[key] end
             error(key.." is not a valid member of Ray",2)
         end,{__tostring=function() return "{"..tostring(origin).."}, {"..tostring(direction).."}" end})
     end

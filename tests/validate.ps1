@@ -56,6 +56,18 @@ foreach ($case in @('hierarchy_checks','physical_model_checks','font_checks')) {
 if ($LASTEXITCODE -ne 0) { throw 'Host deadline/process-tree checks failed' }
 & python "$ProjectRoot\run.py" "$ProjectRoot\examples\materials_fonts.luau" --binary $Binary --mode both --duration 0.5
 if ($LASTEXITCODE -ne 0) { throw 'Material/Font combined example failed' }
+foreach ($case in @('ui','camera')) {
+    & python "$ProjectRoot\run.py" "$ProjectRoot\tests\$case.luau" --binary $Binary --mode both --duration 1
+    if ($LASTEXITCODE -ne 0) { throw "UI/camera value checks failed: $case" }
+}
+foreach ($case in @('ui_model_checks','ui_camera_checks')) {
+    & python "$ProjectRoot\tests\$case.py" --binary $Binary
+    if ($LASTEXITCODE -ne 0) { throw "UI import/viewport checks failed: $case" }
+}
+foreach ($case in @('headless_ui','projected_target')) {
+    & python "$ProjectRoot\run.py" "$ProjectRoot\examples\$case.luau" --binary $Binary --mode client --duration 1
+    if ($LASTEXITCODE -ne 0) { throw "UI/camera example failed: $case" }
+}
 & python "$ProjectRoot\tests\validation_inputs.py" finish
 if ($LASTEXITCODE -ne 0) { throw 'Validation inputs changed during checks' }
-Write-Host 'All eight differential checks and thirty-five runtime/CLI checks passed.'
+Write-Host 'All eight differential checks and forty-one runtime/CLI checks passed.'

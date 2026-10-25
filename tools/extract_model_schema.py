@@ -15,6 +15,9 @@ CLASSES=['ModuleScript','Script','LocalScript','Folder','Model','Part','Configur
     'BoolValue','NumberValue','IntValue','StringValue','ObjectValue','Vector3Value',
     'CFrameValue','Color3Value','BrickColorValue','Camera','Humanoid',
     'BindableEvent','BindableFunction','RemoteEvent','RemoteFunction','MaterialVariant','WedgePart','CornerWedgePart']
+CLASSES+=['ScreenGui','Frame','CanvasGroup','TextLabel','TextButton','TextBox','ImageLabel','ImageButton',
+    'ScrollingFrame','ViewportFrame','UICorner','UIStroke','UIGradient','UIScale','UIPadding',
+    'UISizeConstraint','UIAspectRatioConstraint','UITextSizeConstraint']
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -33,6 +36,7 @@ for _,name in CLASSES do
     classes[name]=table.clone(R.instances[object].propertyTypes)
 end
 classes.Part.Position='Vector3';classes.Part.BrickColor='BrickColor'
+for _,name in {'TextLabel','TextButton','TextBox'} do classes[name].Font='Enum.Font' end
 return R.jsonEncode(classes)'''.replace('CLASSES',lua_literal(CLASSES))
             classes=json.loads(execute_source(runtime,root,source,working,'schema')[0])
     finally:runtime.close()
@@ -40,7 +44,7 @@ return R.jsonEncode(classes)'''.replace('CLASSES',lua_literal(CLASSES))
     classes={key:(value or {}) for key,value in classes.items()}
     report={'meaning':'Explicit import class allowlist; property types observed from implemented runtime, not full engine support.',
         'runtime_version':'0.735.19.7351131','classes':classes,
-        'source_sha256':{name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ('engine/instances.luau','engine/services.luau')}}
+        'source_sha256':{name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ('engine/instances.luau','engine/services.luau','engine/ui.luau','engine/camera.luau','data/ui_property_catalog.json')}}
     (root/'data/model_property_schema.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'classes':len(classes),'property_declarations':sum(len(x) for x in classes.values())}))
 

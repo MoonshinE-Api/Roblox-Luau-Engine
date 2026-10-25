@@ -159,6 +159,7 @@ return function(R)
             local new=state(value)
             new.name,new.archivable=old.name,old.archivable
             new.props,new.attributes,new.tags=table.clone(old.props),table.clone(old.attributes),table.clone(old.tags)
+            for key,value in new.props do new.props[key]=R.copyValue(value) end
             for key,value in new.attributes do new.attributes[key]=R.copyValue(value) end
             for _,child in old.children do local cloned=copy(child);if cloned then R.parent(cloned,value) end end
             return value
@@ -187,7 +188,7 @@ return function(R)
         if method then return method end
         local getter=lookup(R.classGetters,d.class,key)
         if getter then return getter(object) end
-        if d.propertyTypes[key] then return d.props[key] end
+        if d.propertyTypes[key] then return R.copyValue(d.props[key]) end
         if eventNames[key] or lookup(R.classEvents,d.class,key) then return R.signal(object,key) end
         local child=object:FindFirstChild(key);if child then return child end
         error(key.." is not a valid member of "..d.class..' "'..d.name..'"',2)

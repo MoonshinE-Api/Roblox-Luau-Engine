@@ -64,6 +64,24 @@ Names are case-sensitive, as in Studio: `Instance.new("Part")`, `Clone`, and
   supported references and typed attributes are restored before script execution.
 - Material variants, density-based mass for supported primitive shapes, bounds,
   and spatial queries. These calculations do not provide dynamic physics.
+- 186 typed UI configuration declarations across 22 class definitions, with
+  inherited defaults, change signals, cloning, focus, and XML/RBXM import.
+- Headless UDim2 geometry, anchors, UIScale, padding, size/aspect constraints, clipping,
+  scrolling offsets, and GUI hit ordering. No window or text renderer is created.
+- Camera viewport/screen projection, inverse rays, FOV modes, and Ray closest
+  point/distance methods. Projection uses semantic double-precision math.
+
+```powershell
+python .\run.py .\examples\headless_ui.luau --binary $studio --mode client
+python .\run.py .\examples\projected_target.luau --binary $studio --mode client
+```
+
+Set the simulated viewport with `--viewport-width` and `--viewport-height`
+(defaults: 1280 by 720). UI defaults are sourced from reflection build 741;
+the underlying VM remains build 735. AutomaticSize, list/grid layout, text
+measurement, hardware input, rotated GUI hit testing, VR and occlusion are
+not implemented. UI configuration storage does not imply visual rendering.
+Camera near-plane offset defaults to -0.5 studs in this headless environment.
 
 `--duration` controls simulated scheduler time; `--realtime` paces it against a
 monotonic clock. `--memory-mb` limits VM backing allocations. `--wall-timeout N`
@@ -114,9 +132,10 @@ python -m pip install -r .\tools\requirements.txt
 powershell -File .\tests\validate.ps1 -Binary $studio
 ```
 
-Validation covers 8 differential suites and 35 runtime/CLI scenarios, including
+Validation covers 8 differential suites and 41 runtime/CLI scenarios, including
 HTTP against local fixtures, model imports, nested Fiu execution, memory limits,
-and worker timeouts. Passing these checks does not establish compatibility with
+worker timeouts, all 186 UI property declarations, UI model import, and 200 camera
+projection round trips. Passing these checks does not establish compatibility with
 every Roblox script. Generated diagnostics remain local and are ignored by Git.
 The optional external vLua model is not bundled. Metadata reconstruction tools in `tools/`
 may additionally require original source artifacts; ordinary execution uses the
