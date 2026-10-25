@@ -1,0 +1,75 @@
+local function rejects(fn) assert(not pcall(fn),'Expected an error') end
+for _,V in {Vector2int16,Vector3int16} do
+    assert(V.new()==V.new(0,0,0) and typeof(V.new())==if V==Vector2int16 then 'Vector2int16' else 'Vector3int16')
+    assert(V.new('1.9',-2.9,false)==V.new(1,-2,0))
+    assert(V.new(32768,-32769,65536)==V.new(-32768,32767,0))
+    assert(V.new(math.huge,-math.huge,0/0)==V.new())
+    assert(V.new(2147483648,4294967297,{}).X==0)
+    assert((V.new(32767,-32768,1)+V.new(1,-1,-1))==V.new(-32768,32767,0))
+    assert(V.new(300,-300,3)*V.new(200,200,-1)==V.new(-5536,5536,-3))
+    assert(-V.new(2,3,4)==V.new(-2,-3,-4))
+    assert(-V.new(-32768,0,-32768)==V.new(-32768,0,-32768))
+    assert(V.new(-7,7,9)/V.new(2,-2,2)==V.new(-3,-3,4))
+    assert(V.new(-7,7,9)/2.5==V.new(-2,2,3))
+    assert(V.new(-7,7,9).x==-7 and V.new(-7,7,9).y==7)
+    rejects(function() return V.new()/V.new(0,1,1) end)
+    rejects(function() return V.new()+Vector3.new() end)
+    rejects(function() return V.new().Magnitude end)
+    rejects(function() V.new().X=3 end)
+    rejects(function() V.zero=V.new() end)
+    local rng=Random.new(735)
+    for i=1,300 do
+        local a=V.new(rng:NextInteger(-32768,32767),rng:NextInteger(-32768,32767),rng:NextInteger(-32768,32767))
+        local b=V.new(rng:NextInteger(-32768,32767),rng:NextInteger(-32768,32767),rng:NextInteger(-32768,32767))
+        assert((a+b)-b==a and a*b==b*a and -(-a)==a)
+    end
+end
+-- Scalar conversion differs between the two native vector bridge families.
+assert(Vector2int16.new(3,-3)*1.9==Vector2int16.new(5,-5))
+assert(1.9*Vector2int16.new(3,-3)==Vector2int16.new(5,-5))
+assert(Vector3int16.new(3,-3,5)*1.9==Vector3int16.new(3,-3,5))
+assert(1.9*Vector3int16.new(3,-3,5)==Vector3int16.new(3,-3,5))
+assert(12/Vector3int16.new(2,-3,4)==Vector3int16.new(6,-4,3))
+assert(65538/Vector2int16.new(1,2)==Vector2int16.new(2,1))
+assert(Vector3int16.new(1,2,3)/0==Vector3int16.new())
+rejects(function() return Vector2int16.new(1,2)/0 end)
+assert(Vector3.new(Vector3int16.new(1,2,3))==Vector3.zero)
+
+local minimum,maximum=Vector3.new(-5,-1,2),Vector3.new(3,7,10)
+local region=Region3.new(minimum,maximum)
+assert(typeof(region)=='Region3' and region.CFrame==CFrame.new(-1,3,6) and region.Size==Vector3.new(8,8,8))
+local expanded=region:ExpandToGrid(4)
+assert(expanded.CFrame==CFrame.new(-2,2,6) and expanded.Size==Vector3.new(12,12,12))
+assert(region.Size==Vector3.new(8,8,8))
+assert(Region3.new(maximum,minimum).Size==Vector3.new(-8,-8,-8))
+assert(Region3.new().Size==Vector3.zero and Region3.new().CFrame==CFrame.identity)
+assert(Region3.new(Vector3.one).Size==-Vector3.one)
+assert(Region3.new(minimum,maximum)==region)
+rejects(function() region.Size=Vector3.zero end)
+rejects(function() Region3.new(nil) end)
+rejects(function() Region3.new(Vector3int16.new(),Vector3int16.new()) end)
+for _,resolution in {0,-1,math.huge,-math.huge,0/0,1e-50,1e100,'bad',false,{}} do
+    rejects(function() region:ExpandToGrid(resolution) end)
+end
+local rng=Random.new(737)
+for i=1,500 do
+    local a=Vector3.new(rng:NextInteger(-10000,10000)/8,rng:NextInteger(-10000,10000)/8,rng:NextInteger(-10000,10000)/8)
+    local b=a+Vector3.new(rng:NextInteger(0,1000)/8,rng:NextInteger(0,1000)/8,rng:NextInteger(0,1000)/8)
+    local resolution=2^rng:NextInteger(-2,5)
+    local aligned=Region3.new(a,b):ExpandToGrid(resolution)
+    assert(aligned:ExpandToGrid(resolution)==aligned)
+    local lower,upper=aligned.CFrame.Position-aligned.Size/2,aligned.CFrame.Position+aligned.Size/2
+    for _,axis in {'X','Y','Z'} do
+        assert(lower[axis]<=a[axis] and upper[axis]>=b[axis])
+        assert(lower[axis]%resolution==0 and upper[axis]%resolution==0)
+    end
+end
+local min16,max16=Vector3int16.new(9,-3,2),Vector3int16.new(-2,7,12)
+local r16=Region3int16.new(min16,max16)
+assert(typeof(r16)=='Region3int16' and r16.Min==min16 and r16.Max==max16)
+assert(r16==Region3int16.new(min16,max16))
+assert(Region3int16.new().Min==Vector3int16.new() and Region3int16.new(min16).Max==Vector3int16.new())
+rejects(function() r16.Min=min16 end)
+rejects(function() Region3int16.new(Vector3.zero,Vector3.zero) end)
+rejects(function() Region3int16.new(nil) end)
+print('INT16 VECTOR ARITHMETIC, REGIONS AND GRID INVARIANTS PASSED',1100)

@@ -8,7 +8,7 @@ if (-not (Test-Path -LiteralPath $Binary -PathType Leaf)) { throw "Missing suppl
 if ($Build) { & "$ProjectRoot\build.ps1" }
 & python "$ProjectRoot\tests\validation_inputs.py" start
 if ($LASTEXITCODE -ne 0) { throw 'Validation input snapshot failed' }
-foreach ($script in @('oracle.py', 'bootstrap_oracle.py', 'allocator_oracle.py', 'initialization_oracle.py', 'random_oracle.py', 'brickcolor_oracle.py', 'datetime_oracle.py', 'physical_oracle.py')) {
+foreach ($script in @('oracle.py', 'bootstrap_oracle.py', 'allocator_oracle.py', 'initialization_oracle.py', 'random_oracle.py', 'brickcolor_oracle.py', 'datetime_oracle.py', 'physical_oracle.py', 'region_oracle.py')) {
     & python "$ProjectRoot\tests\$script" --binary $Binary
     if ($LASTEXITCODE -ne 0) { throw "Comparison failed: $script" }
 }
@@ -92,6 +92,12 @@ if ($LASTEXITCODE -ne 0) { throw 'Server render restrictions failed' }
 if ($LASTEXITCODE -ne 0) { throw 'Both-mode render contexts failed' }
 & python "$ProjectRoot\tests\render_checks.py" --binary $Binary
 if ($LASTEXITCODE -ne 0) { throw 'Render callback error/yield checks failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\datatype_math.luau" --binary $Binary --duration 0.1
+if ($LASTEXITCODE -ne 0) { throw 'Vector/color/CFrame/UDim math checks failed' }
+& python "$ProjectRoot\tests\numeric_conversion_checks.py" --binary $Binary
+if ($LASTEXITCODE -ne 0) { throw 'Original VM integer conversion checks failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\regions.luau" --binary $Binary --duration 0.1
+if ($LASTEXITCODE -ne 0) { throw 'Int16 vectors/region/grid invariant checks failed' }
 & python "$ProjectRoot\tests\validation_inputs.py" finish
 if ($LASTEXITCODE -ne 0) { throw 'Validation inputs changed during checks' }
-Write-Host 'All eight differential checks and fifty-three runtime/CLI checks passed.'
+Write-Host 'All nine differential checks and fifty-six runtime/CLI checks passed.'

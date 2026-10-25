@@ -21,7 +21,7 @@ return function(R)
         local function components(a) assert(typeof(a)==name,"Expected "..name);return values[a] end
         local function make(...)
             local input={...};local data={}
-            for i=1,dimensions do data[i]=input[i] or 0;assert(type(data[i])=="number","Expected number") end
+            for i=1,dimensions do data[i]=tonumber(input[i]) or 0 end
             return object(name,data,function(self,key,v)
                 local i=keys[key]
                 if i and i<=dimensions then return v[i] end
@@ -56,11 +56,55 @@ return function(R)
         end
         function methods:Dot(other) local a,b=components(self),components(other);local n=0;for i=1,dimensions do n+=a[i]*b[i] end;return n end
         function methods:Lerp(other,alpha) return self+(other-self)*alpha end
-        function methods:FuzzyEq(other,epsilon) return (self-other).Magnitude <= (epsilon or 1e-5) end
-        function methods:Min(other) local a,b=components(self),components(other);local c={};for i=1,dimensions do c[i]=math.min(a[i],b[i]) end;return make(table.unpack(c)) end
-        function methods:Max(other) local a,b=components(self),components(other);local c={};for i=1,dimensions do c[i]=math.max(a[i],b[i]) end;return make(table.unpack(c)) end
+        function methods:FuzzyEq(other,...)
+            local a,b=components(self),components(other)
+            local epsilon=1e-5
+            if select('#',...)>0 then
+                local value=tonumber((...))
+                if dimensions==2 then assert(value,'Expected numeric epsilon');assert(not (math.abs(value)>0.1),'Vector2 epsilon must not exceed 0.1') end
+                epsilon=math.abs(value or 0)
+            end
+            for i=1,dimensions do
+                if a[i]~=b[i] then
+                    local magnitude=math.abs(a[i])+1
+                    local tolerance=epsilon*(if magnitude==math.huge then 1 else magnitude)
+                    local delta=math.abs(a[i]-b[i])
+                    if dimensions==2 and i==2 then return tolerance>=delta end
+                    if tolerance<delta then return false end
+                end
+            end
+            return true
+        end
+        function methods:Min(...)
+            local c=table.clone(components(self))
+            for i=1,select('#',...) do local b=components(select(i,...));for j=1,dimensions do c[j]=if c[j]<b[j] then c[j] else b[j] end end
+            return make(table.unpack(c))
+        end
+        function methods:Max(...)
+            local c=table.clone(components(self))
+            for i=1,select('#',...) do local b=components(select(i,...));for j=1,dimensions do c[j]=if c[j]>b[j] then c[j] else b[j] end end
+            return make(table.unpack(c))
+        end
+        local function map(self,fn) local c={};for i,value in components(self) do c[i]=fn(value) end;return make(table.unpack(c)) end
+        function methods:Abs() return map(self,math.abs) end
+        function methods:Ceil() return map(self,math.ceil) end
+        function methods:Floor() return map(self,math.floor) end
+        function methods:Sign() return map(self,function(x) return if x>0 then 1 elseif x<0 then -1 else 0 end) end
         if dimensions==3 then
             function methods:Cross(other) local a,b=components(self),components(other);return make(a[2]*b[3]-a[3]*b[2],a[3]*b[1]-a[1]*b[3],a[1]*b[2]-a[2]*b[1]) end
+            function methods:Angle(other,axis)
+                components(other);local cross=self:Cross(other)
+                local angle=math.atan2(cross.Magnitude,self:Dot(other))
+                if axis~=nil then components(axis);if cross:Dot(axis)<0 then angle=-angle end end
+                return angle
+            end
+        else
+            function methods:Cross(other) local a,b=components(self),components(other);return a[1]*b[2]-a[2]*b[1] end
+            function methods:Angle(other,signed)
+                assert(signed==nil or type(signed)=='boolean','Expected isSigned boolean')
+                local angle=math.atan2(self:Cross(other),self:Dot(other))
+                return if signed then angle else math.abs(angle)
+            end
         end
         library.new=make;library.zero=make();library.one=make(1,1,1)
         library.xAxis=make(1,0,0);library.yAxis=make(0,1,0)
@@ -137,12 +181,21 @@ return function(R)
     cfMethods.inverse=cfMethods.Inverse
     function cfMethods:GetComponents() return table.unpack(values[self]) end
     cfMethods.components=cfMethods.GetComponents
-    function cfMethods:ToWorldSpace(other) return self*other end
-    function cfMethods:ToObjectSpace(other) return self:Inverse()*other end
-    function cfMethods:PointToWorldSpace(v) return transform(values[self],v,true) end
-    function cfMethods:PointToObjectSpace(v) return self:Inverse():PointToWorldSpace(v) end
-    function cfMethods:VectorToWorldSpace(v) return transform(values[self],v,false) end
-    function cfMethods:VectorToObjectSpace(v) return self:Inverse():VectorToWorldSpace(v) end
+    local function multiple(kind,default,operation,...)
+        local n=select('#',...)
+        if n==0 then return operation(default) end
+        local result={}
+        for i=1,n do local value=select(i,...);assert(typeof(value)==kind,'Expected '..kind);result[i]=operation(value) end
+        return table.unpack(result,1,n)
+    end
+    function cfMethods:ToWorldSpace(...) return multiple('CFrame',CF.identity,function(value) return self*value end,...) end
+    function cfMethods:ToObjectSpace(...)
+        local inverse=self:Inverse();return multiple('CFrame',CF.identity,function(value) return inverse*value end,...)
+    end
+    function cfMethods:PointToWorldSpace(...) return multiple('Vector3',V3.zero,function(v) return transform(values[self],v,true) end,...) end
+    function cfMethods:PointToObjectSpace(...) return self:Inverse():PointToWorldSpace(...) end
+    function cfMethods:VectorToWorldSpace(...) return multiple('Vector3',V3.zero,function(v) return transform(values[self],v,false) end,...) end
+    function cfMethods:VectorToObjectSpace(...) return self:Inverse():VectorToWorldSpace(...) end
     local function quaternion(c)
         local x,y,z,w
         local trace=c[4]+c[8]+c[12]
@@ -184,7 +237,7 @@ return function(R)
     CF.identity=CF.new();R.datatypes.CFrame=table.freeze(CF)
     local Color3={};local colorMethods={}
     function Color3.new(r,g,b)
-        return object("Color3",{r or 0,g or 0,b or 0},function(self,key,c)
+        return object("Color3",{tonumber(r) or 0,tonumber(g) or 0,tonumber(b) or 0},function(self,key,c)
             if key=="R" or key=="r" then return c[1] elseif key=="G" or key=="g" then return c[2] elseif key=="B" or key=="b" then return c[3] end
             if colorMethods[key] then return colorMethods[key] end;error(key.." is not a valid member of Color3",2)
         end,{
@@ -192,12 +245,35 @@ return function(R)
             __eq=function(a,b) return typeof(a)=="Color3" and typeof(b)=="Color3" and a.R==b.R and a.G==b.G and a.B==b.B end,
         })
     end
-    function Color3.fromRGB(r,g,b) return Color3.new(r/255,g/255,b/255) end
+    function Color3.fromRGB(r,g,b) return Color3.new((tonumber(r) or 0)/255,(tonumber(g) or 0)/255,(tonumber(b) or 0)/255) end
     function Color3.fromHSV(h,s,v)
+        h,s,v=tonumber(h) or 0,tonumber(s) or 0,tonumber(v) or 0
         local c=v*s;local x=c*(1-math.abs((h*6)%2-1));local m=v-c
         local rgb=({{c,x,0},{x,c,0},{0,c,x},{0,x,c},{x,0,c},{c,0,x}})[math.floor(h*6)%6+1]
         return Color3.new(rgb[1]+m,rgb[2]+m,rgb[3]+m)
     end
+    function Color3.fromHex(hex)
+        assert(type(hex)=='string' or type(hex)=='number','Color3.fromHex requires a hex string')
+        hex=string.split(tostring(hex),'\0')[1]
+        if string.sub(hex,1,1)=='#' then hex=string.sub(hex,2) end
+        assert((#hex==3 or #hex==6) and string.match(hex,'^%x+$'),'Unable to convert characters to hex value')
+        if #hex==3 then hex=string.gsub(hex,'.',function(c) return c..c end) end
+        return Color3.fromRGB(tonumber(string.sub(hex,1,2),16),tonumber(string.sub(hex,3,4),16),tonumber(string.sub(hex,5,6),16))
+    end
+    local function hsv(r,g,b)
+        local maximum,minimum=math.max(r,g,b),math.min(r,g,b)
+        local delta=maximum-minimum
+        local h=0
+        if delta~=0 then
+            if maximum==r then h=((g-b)/delta)%6 elseif maximum==g then h=(b-r)/delta+2 else h=(r-g)/delta+4 end
+            h/=6
+        end
+        return h,if maximum==0 then 0 else delta/maximum,maximum
+    end
+    function Color3.toHSV(value)
+        assert(typeof(value)=='Color3','Color3.toHSV requires Color3');return hsv(value.R,value.G,value.B)
+    end
+    function colorMethods:ToHSV() return hsv(math.clamp(self.R,0,1),math.clamp(self.G,0,1),math.clamp(self.B,0,1)) end
     function colorMethods:Lerp(other,t) return Color3.new(self.R+(other.R-self.R)*t,self.G+(other.G-self.G)*t,self.B+(other.B-self.B)*t) end
     function colorMethods:ToHex() return string.format("%02x%02x%02x",math.round(math.clamp(self.R,0,1)*255),math.round(math.clamp(self.G,0,1)*255),math.round(math.clamp(self.B,0,1)*255)) end
     R.datatypes.Color3=table.freeze(Color3)

@@ -58,6 +58,11 @@ Names are case-sensitive, as in Studio: `Instance.new("Part")`, `Clone`, and
   cooperative tasks, module caching, and selected local Bindable/Remote behavior.
 - Vector2/3, CFrame, Color3, UDim/UDim2, sequences, query parameters, tweens,
   Random, BrickColor, DateTime, PhysicalProperties, Font, and other partial types.
+- Vector component operations, signed angles and relative FuzzyEq; Color3 HSV/hex
+  conversion; batched CFrame transforms; native VM integer conversion for UDim.
+- Vector2int16/Vector3int16 with wrapping arithmetic; Region3 construction and
+  grid expansion with float32 operations; Region3int16 boundaries.
+  Other geometry calculations use doubles; engine-wide float32 rounding is not emulated.
 - HTTP and JSON, Base64/Zstandard, hashes, authenticated asset delivery, and
   `require(id)` for supported assets and contexts.
 - XML and compressed RBXM imports with an explicit class/property schema;
@@ -93,6 +98,15 @@ measurement, hardware input, rotated GUI hit testing, VR and occlusion are not
 implemented. Cyclic/non-converging automatic-size dependencies produce an error.
 UI configuration storage does not imply visual rendering.
 Camera near-plane offset defaults to -0.5 studs in this headless environment.
+
+Int16 constructors truncate toward zero, convert through native VM int32 rules,
+and keep the low 16 bits. Build 735 Vector3int16 scalar multiplication truncates
+the scalar before multiplying. Vector2int16 uses the fixed
+`FixVector2int16WithFloatMult` behavior in both operand orders; runtime flag
+configuration is not simulated. These vector types have no Magnitude/Unit properties.
+Region3 preserves signed sizes and does not sort its constructor bounds.
+Use `GetPartBoundsInBox(region.CFrame, region.Size)` for nonnegative regions;
+legacy `FindPartsInRegion3` and terrain voxel APIs are not implemented.
 
 ## Local storage
 
@@ -164,12 +178,14 @@ python -m pip install -r .\tools\requirements.txt
 powershell -File .\tests\validate.ps1 -Binary $studio
 ```
 
-Validation covers 8 differential suites and 53 runtime/CLI scenarios, including
+Validation covers 9 differential suites and 56 runtime/CLI scenarios, including
 HTTP against local fixtures, model imports, nested Fiu execution, memory limits,
 worker timeouts, all 199 UI property declarations, UI model import, 200 camera
 projection round trips, layout/autosizing, concurrent SQLite updates, persistence
 across processes, memory-store TTLs, queue leases, and render callback contexts,
-ordering, lifecycle and error propagation. Passing these checks does
+ordering, lifecycle and error propagation, randomized vector/color math, batched
+CFrame transforms, 285 integer conversions against the original VM, and 609
+region/grid comparisons against unchanged original machine functions. Passing these checks does
 not establish compatibility with
 every Roblox script. Generated diagnostics remain local and are ignored by Git.
 The optional external vLua model is not bundled. Metadata reconstruction tools in `tools/`

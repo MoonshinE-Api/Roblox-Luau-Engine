@@ -1,5 +1,7 @@
 return function(R)
     local make=R.makeValue
+    local scratch=buffer.create(4)
+    function R.float32(value) buffer.writef32(scratch,0,value);return buffer.readf32(scratch,0) end
     local function record(name,fields,extra)
         return make(name,fields,function(self,key,data)
             if data[key]~=nil then return data[key] end
@@ -14,17 +16,23 @@ return function(R)
     end
     R.makeRecord=record
     local UDim,UDim2={},{}
+    local function wrapOffset(value)
+        value%=4294967296
+        return if value>=2147483648 then value-4294967296 else value
+    end
+    function R.toInt32(value)
+        value=math.modf(tonumber(value) or 0)
+        return if value~=value or value < -2147483648 or value>2147483647 then -2147483648 else value
+    end
     function UDim.new(scale,offset)
-        scale,offset=scale or 0,offset or 0
-        assert(type(scale)=="number" and type(offset)=="number","UDim requires numbers")
-        offset=math.modf(offset)
+        scale,offset=tonumber(scale) or 0,R.toInt32(offset)
         return make("UDim",{Scale=scale,Offset=offset},function(_,key,d)
             if d[key]~=nil then return d[key] end;error(key.." is not a valid member of UDim",2)
         end,{
             __tostring=function(self) return tostring(self.Scale)..", "..tostring(self.Offset) end,
             __eq=function(a,b) return typeof(a)=="UDim" and typeof(b)=="UDim" and a.Scale==b.Scale and a.Offset==b.Offset end,
-            __add=function(a,b) return UDim.new(a.Scale+b.Scale,a.Offset+b.Offset) end,
-            __sub=function(a,b) return UDim.new(a.Scale-b.Scale,a.Offset-b.Offset) end,
+            __add=function(a,b) return UDim.new(a.Scale+b.Scale,wrapOffset(a.Offset+b.Offset)) end,
+            __sub=function(a,b) return UDim.new(a.Scale-b.Scale,wrapOffset(a.Offset-b.Offset)) end,
             __unm=function(a) return UDim.new(-a.Scale,-a.Offset) end,
         })
     end

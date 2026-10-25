@@ -1,7 +1,5 @@
 return function(R)
     local fields={'Density','Friction','Elasticity','FrictionWeight','ElasticityWeight','AcousticAbsorption'}
-    local scratch=buffer.create(4)
-    function R.float32(value) buffer.writef32(scratch,0,value);return buffer.readf32(scratch,0) end
     local limits={{R.physicalCatalog.minimum_density,100},{0,2},{0,1},{0,100},{0,100},{0,1}}
     local function make(values)
         local data={};for i,name in fields do data[name]=values[i] end

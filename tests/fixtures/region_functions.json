@@ -1,0 +1,60 @@
+{
+  "functions": {
+    "region_init": {
+      "address": "0x102a91e80",
+      "size": 106,
+      "sha256": "80ec8db19bef2145a12f2b696d3f08b433be60b274a605607b7a6764c8ec7f17",
+      "data_references": [
+        "0x108f23a94",
+        "0x108f302c8",
+        "0x108f39940"
+      ]
+    },
+    "region_constructor": {
+      "address": "0x102a91eea",
+      "size": 88,
+      "sha256": "83b7c13e622eab302b64ff2e77de615bc973630ee458a2e4c82c8f63414b7c47",
+      "data_references": [
+        "0x108f23a94"
+      ]
+    },
+    "region_min": {
+      "address": "0x102a91fee",
+      "size": 44,
+      "sha256": "00a562389c311c11e8c9b8df855374b611c4806a9c10c653b74b3f6f4d1b7a39",
+      "data_references": [
+        "0x108f302b0",
+        "0x108f302c4"
+      ]
+    },
+    "region_max": {
+      "address": "0x102a9201a",
+      "size": 44,
+      "sha256": "c2d61c6ff72cdbcd773926454eff97758630b41c81cd1b4959f86dc6a9328a8d",
+      "data_references": [
+        "0x108f302c8",
+        "0x108f39940"
+      ]
+    },
+    "region_is_nan_inf": {
+      "address": "0x103206e00",
+      "size": 23,
+      "sha256": "03103af2a0fb36a293cb20bbb56fe66ebe45750051f10a7148e25fdbb1c8f8bb",
+      "data_references": []
+    },
+    "region_expand": {
+      "address": "0x104645e3e",
+      "size": 220,
+      "sha256": "1b0bf3f60d95e18506bce7e01d869bcd0a8465503cf3e1851c5bb2be255bb3fa",
+      "data_references": [
+        "0x108f23a94",
+        "0x10bd6034e"
+      ]
+    }
+  },
+  "unexecuted_exception_targets": [
+    "0x1041ac28e"
+  ],
+  "source": "util/Region3.c; script/Region3Bridge.c",
+  "restriction": "Only positive finite float32 resolutions enter the native expansion function."
+}

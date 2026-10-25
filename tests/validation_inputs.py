@@ -20,7 +20,7 @@ def inputs(root=ROOT):
         if not path.is_file() or any(part in {'__pycache__','target'} for part in path.relative_to(root).parts):continue
         relative=path.relative_to(root).as_posix()
         if relative in OUTPUTS or path.name.endswith('_comparison.json'):continue
-        if path.suffix in {'.py','.lua','.luau','.ps1','.rs','.toml','.lock','.exe','.dll'} or (path.suffix=='.json' and relative.startswith('data/')):
+        if path.suffix in {'.py','.lua','.luau','.ps1','.rs','.toml','.lock','.exe','.dll'} or (path.suffix=='.json' and relative.startswith(('data/','tests/fixtures/'))):
             result[relative]=hashlib.sha256(path.read_bytes()).hexdigest()
     return result
 
