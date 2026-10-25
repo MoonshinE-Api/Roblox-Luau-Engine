@@ -56,6 +56,10 @@ Names are case-sensitive, as in Studio: `Instance.new("Part")`, `Clone`, and
 
 - Instance parenting, lookup, cloning, destruction, attributes, tags, signals,
   cooperative tasks, module caching, and selected local Bindable/Remote behavior.
+- Yielding BindableFunction/RemoteFunction calls, queues awaiting callback
+  assignment, independent callee coroutines, nil-preserving result tuples, and
+  error propagation. Callback assignments retain their server/client context;
+  BindableFunction handlers are separate per side. Callback members are write-only.
 - Vector2/3, CFrame, Color3, UDim/UDim2, sequences, query parameters, tweens,
   Random, BrickColor, DateTime, PhysicalProperties, Font, and other partial types.
 - Vector component operations, signed angles and relative FuzzyEq; Color3 HSV/hex
@@ -185,6 +189,12 @@ python .\run.py .\examples\headless_server.luau --binary $studio --no-player --r
 Sun/moon math targets build 735 and is compared against its original sky
 functions within 3e-6. This does not provide sky rendering or a physics solver.
 
+Function calls without a handler remain suspended until a handler is assigned.
+Replacing or clearing a handler affects later calls; a running invocation keeps
+its original function. Cancelling its caller does not cancel the callee.
+Remote callbacks are still local emulation over a shared object tree, without
+network serialization, replication, or disconnect/error semantics of real clients.
+
 ## Source layout
 
 | Path | Purpose |
@@ -228,8 +238,8 @@ python -m pip install -r .\tools\requirements.txt
 powershell -File .\tests\validate.ps1 -Binary $studio
 ```
 
-The nested-interpreter geometry test executes seven datatype, region, CFrame,
-BasePart, Attachment/Bone, environment and sky suites through Fiu. It is included in
+The nested-interpreter test executes eight datatype, region, CFrame, BasePart,
+Attachment/Bone, environment, sky and callback suites through Fiu. It is included in
 the full validation and can also run separately. Its vector constants use the
 engine's Vector3 constructor:
 
@@ -237,7 +247,7 @@ engine's Vector3 constructor:
 python .\tests\nested_geometry_checks.py --binary $studio
 ```
 
-Validation covers 12 differential suites and 67 runtime/CLI scenarios, including
+Validation covers 12 differential suites and 70 runtime/CLI scenarios, including
 HTTP against local fixtures, model imports, nested Fiu execution, memory limits,
 worker timeouts, all 199 UI property declarations, UI model import, 200 camera
 projection round trips, layout/autosizing, concurrent SQLite updates, persistence
@@ -249,7 +259,9 @@ decompositions and 206 lookAlong comparisons with native math, plus orientation
 signals and camera/tween integration, all 149 environment declarations, attachment
 and bone hierarchies, XML/RBXM effect references, 2,046 native lighting clock
 comparisons, 1,056 original sun/moon direction comparisons, continuous host
-lifetime, interruption cleanup, and servers without a player. Passing these checks does
+lifetime, interruption cleanup, servers without a player, queued callback assignment,
+80 concurrent function calls, callee cancellation independence, callback errors and
+server/client callback isolation. Passing these checks does
 not establish compatibility with
 every Roblox script. Generated diagnostics remain local and are ignored by Git.
 The optional external vLua model is not bundled. Metadata reconstruction tools in `tools/`

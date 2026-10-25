@@ -904,7 +904,8 @@
   },
   "source_sha256": {
     "engine/instances.luau": "64cdf0b194aeefb3c5f7a7f34c23f5ba4d2d236c98b2f9322a05e0e2a4a42d45",
-    "engine/services.luau": "7e3c1c5533df056a685fff5cc2c2991cb00a2435b15e8d38792ac010d93cd408",
+    "engine/services.luau": "0c6f054cacd9e421a398b2e094350268c078fe7d9e8aba28df336c58fd660690",
+    "engine/callbacks.luau": "850caaf8bf2804e8af385141eb3e027ff79cd2a50a267befd0ab157101b390c9",
     "engine/attachments.luau": "f83109fca81e7c09aea2fff2e767e0e9b49c62d1b78e30badcbbdaaad0d3dfd3",
     "engine/environment.luau": "d4aab0787c3c9a7a5c45b9c8874ebf300147a28b09eb8cf8f3e2457b62c11104",
     "engine/sky.luau": "f134f5d38cfaa3c802a429bfd7b97774ba40dec10198e9f1eae40aa870f8744b",

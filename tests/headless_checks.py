@@ -27,7 +27,7 @@ local remote=Instance.new('RemoteEvent')
 local called=false;remote.OnClientEvent:Connect(function() called=true end)
 remote:FireAllClients();assert(not called)
 assert(not pcall(function() remote:FireClient(nil) end))
-local fn=Instance.new('RemoteFunction');fn.OnClientInvoke=function() error('NO CLIENT') end
+local fn=Instance.new('RemoteFunction')
 assert(not pcall(function() fn:InvokeClient(nil) end))
 local part=Instance.new('Part',workspace)
 game:GetService('Debris'):AddItem(part,0.06)

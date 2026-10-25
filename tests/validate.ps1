@@ -118,6 +118,12 @@ if ($LASTEXITCODE -ne 0) { throw 'Nested geometry/attachment/environment suites 
 if ($LASTEXITCODE -ne 0) { throw 'Continuous host and player-free server checks failed' }
 & python "$ProjectRoot\run.py" "$ProjectRoot\examples\headless_server.luau" --binary $Binary --no-player --duration 2.2
 if ($LASTEXITCODE -ne 0) { throw 'Headless server day/night cycle example failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\callbacks.luau" --binary $Binary --duration 1
+if ($LASTEXITCODE -ne 0) { throw 'Yielding callback queues/results/lifecycle checks failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\callback_contexts" --binary $Binary --mode both --duration 0.5
+if ($LASTEXITCODE -ne 0) { throw 'Queued remote and per-side bindable callback contexts failed' }
+& python "$ProjectRoot\tests\callback_checks.py" --binary $Binary
+if ($LASTEXITCODE -ne 0) { throw 'Callback error/source-location/suspended-invocation checks failed' }
 & python "$ProjectRoot\tests\validation_inputs.py" finish
 if ($LASTEXITCODE -ne 0) { throw 'Validation inputs changed during checks' }
-Write-Host 'All twelve differential checks and sixty-seven runtime/CLI checks passed.'
+Write-Host 'All twelve differential checks and seventy runtime/CLI checks passed.'

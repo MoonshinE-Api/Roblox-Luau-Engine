@@ -241,30 +241,10 @@ return function(R)
     M.BindableEvent={Fire=function(self,...) R.fire(self,"Event",...) end};E.BindableEvent={Event=true}
     M.RemoteEvent={
         FireServer=function(self,...) assert(R.current().side=="client","FireServer requires client context");R.fire(self,"OnServerEvent",R.player,...) end,
-        FireClient=function(self,player,...) assert(R.current().side=="server","FireClient requires server context");assert(R.player and player==R.player,"Unknown player");R.fire(self,"OnClientEvent",...) end,
+        FireClient=function(self,player,...) assert(R.current().side=="server","FireClient requires server context");assert(R.player and player==R.player and player.Parent==players,"Unknown player");R.fire(self,"OnClientEvent",...) end,
         FireAllClients=function(self,...) assert(R.current().side=="server","FireAllClients requires server context");if R.player then R.fire(self,"OnClientEvent",...) end end,
     }
     E.RemoteEvent={OnServerEvent=true,OnClientEvent=true}
-    local callbacks=setmetatable({}, {__mode="k"})
-    local function slot(class,key)
-        G[class]=G[class] or {};S[class]=S[class] or {}
-        G[class][key]=function(self) local c=callbacks[self] and callbacks[self][key];return if c then c.fn else nil end
-        S[class][key]=function(self,fn)
-            assert(fn==nil or type(fn)=="function","Expected callback function")
-            callbacks[self]=callbacks[self] or {}
-            callbacks[self][key]=if fn then {fn=fn,context=R.current()} else nil
-        end
-    end
-    slot("BindableFunction","OnInvoke");slot("RemoteFunction","OnServerInvoke");slot("RemoteFunction","OnClientInvoke")
-    local function invoke(self,key,...)
-        local c=callbacks[self] and callbacks[self][key];assert(c,key.." callback is not assigned")
-        return R.withContext(c.context,c.fn,...)
-    end
-    M.BindableFunction={Invoke=function(self,...) return invoke(self,"OnInvoke",...) end}
-    M.RemoteFunction={
-        InvokeServer=function(self,...) assert(R.current().side=="client","InvokeServer requires client context");return invoke(self,"OnServerInvoke",R.player,...) end,
-        InvokeClient=function(self,player,...) assert(R.current().side=="server","InvokeClient requires server context");assert(R.player and player==R.player,"Unknown player");return invoke(self,"OnClientInvoke",...) end,
-    }
     M.Debris={AddItem=function(_,object,lifetime) R.task.delay(lifetime or 10,function() object:Destroy() end) end}
     local tagSignals={added={},removed={}}
     function R.tagChanged(object,tag,added)
