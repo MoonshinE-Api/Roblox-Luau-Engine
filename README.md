@@ -184,6 +184,14 @@ python -m pip install -r .\tools\requirements.txt
 powershell -File .\tests\validate.ps1 -Binary $studio
 ```
 
+An additional nested-interpreter test executes the datatype math, regions,
+CFrame rotations, and BasePart transform suites through Fiu. Its vector constants
+use the engine's Vector3 constructor:
+
+```powershell
+python .\tests\nested_geometry_checks.py --binary $studio
+```
+
 Validation covers 10 differential suites and 59 runtime/CLI scenarios, including
 HTTP against local fixtures, model imports, nested Fiu execution, memory limits,
 worker timeouts, all 199 UI property declarations, UI model import, 200 camera
