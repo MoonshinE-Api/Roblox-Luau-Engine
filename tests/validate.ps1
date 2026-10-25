@@ -8,7 +8,7 @@ if (-not (Test-Path -LiteralPath $Binary -PathType Leaf)) { throw "Missing suppl
 if ($Build) { & "$ProjectRoot\build.ps1" }
 & python "$ProjectRoot\tests\validation_inputs.py" start
 if ($LASTEXITCODE -ne 0) { throw 'Validation input snapshot failed' }
-foreach ($script in @('oracle.py', 'bootstrap_oracle.py', 'allocator_oracle.py', 'initialization_oracle.py', 'random_oracle.py', 'brickcolor_oracle.py', 'datetime_oracle.py', 'physical_oracle.py', 'region_oracle.py')) {
+foreach ($script in @('oracle.py', 'bootstrap_oracle.py', 'allocator_oracle.py', 'initialization_oracle.py', 'random_oracle.py', 'brickcolor_oracle.py', 'datetime_oracle.py', 'physical_oracle.py', 'region_oracle.py', 'rotation_oracle.py')) {
     & python "$ProjectRoot\tests\$script" --binary $Binary
     if ($LASTEXITCODE -ne 0) { throw "Comparison failed: $script" }
 }
@@ -98,6 +98,12 @@ if ($LASTEXITCODE -ne 0) { throw 'Vector/color/CFrame/UDim math checks failed' }
 if ($LASTEXITCODE -ne 0) { throw 'Original VM integer conversion checks failed' }
 & python "$ProjectRoot\run.py" "$ProjectRoot\tests\regions.luau" --binary $Binary --duration 0.1
 if ($LASTEXITCODE -ne 0) { throw 'Int16 vectors/region/grid invariant checks failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\cframe_rotation.luau" --binary $Binary --duration 0.1
+if ($LASTEXITCODE -ne 0) { throw 'CFrame rotation/axis-angle/quaternion checks failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\part_transforms.luau" --binary $Binary --duration 1
+if ($LASTEXITCODE -ne 0) { throw 'BasePart rotation/orientation/signal checks failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\examples\orbit_camera.luau" --binary $Binary --mode client --duration 1.2
+if ($LASTEXITCODE -ne 0) { throw 'Orbit camera/orientation tween example failed' }
 & python "$ProjectRoot\tests\validation_inputs.py" finish
 if ($LASTEXITCODE -ne 0) { throw 'Validation inputs changed during checks' }
-Write-Host 'All nine differential checks and fifty-six runtime/CLI checks passed.'
+Write-Host 'All ten differential checks and fifty-nine runtime/CLI checks passed.'

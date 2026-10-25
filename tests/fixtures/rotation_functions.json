@@ -1,0 +1,110 @@
+{
+  "functions": {
+    "rotation_yxz": {
+      "address": "0x10321337e",
+      "size": 244,
+      "sha256": "e48532d3ed2b36a7b3d157cf200f1f584d8252fa669cf6f6033ea4521a5871d1",
+      "data_references": [
+        "0x108f23a94",
+        "0x108f246c0",
+        "0x108f246e0",
+        "0x108f4a5a4",
+        "0x10903e80c",
+        "0x1094d2084",
+        "0x1094d2088"
+      ]
+    },
+    "rotation_xyz": {
+      "address": "0x103214450",
+      "size": 252,
+      "sha256": "11622be08c84ac184c4767f54aaba99209ad07ba31422b1e1da023536de1d301",
+      "data_references": [
+        "0x108f23a94",
+        "0x108f246c0",
+        "0x108f246e0",
+        "0x108f4a5a4",
+        "0x10903e80c",
+        "0x1094d2084",
+        "0x1094d2088"
+      ]
+    },
+    "rotation_xzy": {
+      "address": "0x10321454c",
+      "size": 246,
+      "sha256": "c3e11681b28148a58933bdcb9f47958b9e07d5af59c5d6702403d09776da2f35",
+      "data_references": [
+        "0x108f23a94",
+        "0x108f246c0",
+        "0x108f246e0",
+        "0x108f4a5a4",
+        "0x10903e80c",
+        "0x1094d2084",
+        "0x1094d2088"
+      ]
+    },
+    "rotation_yzx": {
+      "address": "0x103214642",
+      "size": 252,
+      "sha256": "90c28604cc45aea7176f99e35f43fc914a596eb999b404474f056db804b80615",
+      "data_references": [
+        "0x108f23a94",
+        "0x108f246c0",
+        "0x108f246e0",
+        "0x108f4a5a4",
+        "0x10903e80c",
+        "0x1094d2084",
+        "0x1094d2088"
+      ]
+    },
+    "rotation_zxy": {
+      "address": "0x10321473e",
+      "size": 252,
+      "sha256": "16ed0629f32d2ca46ac117a5b074a54245158e3d925a04badecbf152064d93e1",
+      "data_references": [
+        "0x108f23a94",
+        "0x108f246c0",
+        "0x108f246e0",
+        "0x108f4a5a4",
+        "0x10903e80c",
+        "0x1094d2084",
+        "0x1094d2088"
+      ]
+    },
+    "rotation_zyx": {
+      "address": "0x10321483a",
+      "size": 258,
+      "sha256": "764ab03026752eef4050a058976313b16437396956645dade98b2046cc286453",
+      "data_references": [
+        "0x108f23a94",
+        "0x108f246c0",
+        "0x108f246e0",
+        "0x108f4a5a4",
+        "0x10903e80c",
+        "0x1094d2084",
+        "0x1094d2088"
+      ]
+    },
+    "rotation_look_along": {
+      "address": "0x103203538",
+      "size": 500,
+      "sha256": "51a6656003e489b9c44ec59471c5b3d6d7f5eff8a05383f2d1b5a49a39d9219b",
+      "data_references": [
+        "0x108f23a94",
+        "0x108f246c0",
+        "0x108f2f400",
+        "0x108f46760",
+        "0x108f49f94"
+      ]
+    }
+  },
+  "external_calls": {
+    "0x108822b18": {
+      "import": "_atan2f"
+    },
+    "0x108822b00": {
+      "import": "_asinf"
+    }
+  },
+  "source": "rbx/Matrix3.c; script/CoordinateFrameBridge.c",
+  "comparison": "Unchanged Euler decomposition and lookAlong bytes; asinf/atan2f imports use host float math; tolerance 3e-6."
+}

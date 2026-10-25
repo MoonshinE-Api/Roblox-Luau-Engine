@@ -151,28 +151,106 @@ return function(R)
     end
     function CF.new(...)
         local a=table.pack(...)
-        if a.n==12 then return cframe({...}) end
-        if typeof(a[1])=="Vector3" then
-            if a.n==2 then return CF.lookAt(a[1],a[2]) end
+        if a.n==12 then
+            for i=1,12 do a[i]=tonumber(a[i]) or 0 end
+            return cframe(a)
+        end
+        if a.n==7 then
+            for i=1,7 do a[i]=tonumber(a[i]) or 0 end
+            local length=math.sqrt(a[4]^2+a[5]^2+a[6]^2+a[7]^2)
+            local x,y,z,w=a[4]/length,a[5]/length,a[6]/length,a[7]/length
+            return cframe({a[1],a[2],a[3],1-2*(y*y+z*z),2*(x*y-z*w),2*(x*z+y*w),
+                2*(x*y+z*w),1-2*(x*x+z*z),2*(y*z-x*w),2*(x*z-y*w),2*(y*z+x*w),1-2*(x*x+y*y)})
+        end
+        if a.n==1 or a.n==2 then
+            assert(typeof(a[1])=='Vector3','Expected Vector3')
+            if a.n==2 then assert(typeof(a[2])=='Vector3','Expected Vector3');return CF.lookAt(a[1],a[2]) end
             return cframe({a[1].X,a[1].Y,a[1].Z,1,0,0,0,1,0,0,0,1})
         end
         assert(a.n==0 or a.n==3,"Unsupported CFrame.new overload")
-        return cframe({a[1] or 0,a[2] or 0,a[3] or 0,1,0,0,0,1,0,0,0,1})
+        return cframe({tonumber(a[1]) or 0,tonumber(a[2]) or 0,tonumber(a[3]) or 0,1,0,0,0,1,0,0,0,1})
     end
     function CF.fromMatrix(position,right,up,back)
         back=back or right:Cross(up)
         return cframe({position.X,position.Y,position.Z,right.X,up.X,back.X,right.Y,up.Y,back.Y,right.Z,up.Z,back.Z})
     end
     function CF.lookAt(position,target,up)
-        local back=(position-target).Unit
-        local right=(up or V3.yAxis):Cross(back).Unit
-        return CF.fromMatrix(position,right,back:Cross(right),back)
+        assert(typeof(position)=='Vector3' and typeof(target)=='Vector3','Expected Vector3 position and target')
+        return CF.lookAlong(position,target-position,up)
     end
     function CF.Angles(x,y,z)
         local a,b,c,d,e,f=math.cos(x),math.sin(x),math.cos(y),math.sin(y),math.cos(z),math.sin(z)
         return cframe({0,0,0,c*e,-c*f,d,a*f+b*d*e,a*e-b*d*f,-b*c,b*f-a*d*e,b*e+a*d*f,a*c})
     end
     CF.fromEulerAnglesXYZ=CF.Angles
+    local rotationOrders={XYZ={1,2,3,1},XZY={1,3,2,-1},YZX={2,3,1,1},YXZ={2,1,3,-1},ZXY={3,1,2,1},ZYX={3,2,1,-1}}
+    local function orderAxes(order)
+        if order==nil then return rotationOrders.XYZ end
+        assert(typeof(order)=='EnumItem' and order.EnumType==R.Enum.RotationOrder,'Expected Enum.RotationOrder')
+        return rotationOrders[order.Name]
+    end
+    function CF.fromEulerAngles(x,y,z,order)
+        local axes=orderAxes(order)
+        x,y,z=tonumber(x),tonumber(y),tonumber(z)
+        assert(x and y and z,'Expected three numeric angles')
+        local rotations={CF.Angles(x,0,0),CF.Angles(0,y,0),CF.Angles(0,0,z)}
+        return rotations[axes[1]]*rotations[axes[2]]*rotations[axes[3]]
+    end
+    function CF.fromEulerAnglesYXZ(x,y,z) return CF.fromEulerAngles(x,y,z,R.Enum.RotationOrder.YXZ) end
+    CF.fromOrientation=CF.fromEulerAnglesYXZ
+    function CF.fromAxisAngle(axis,angle)
+        assert(typeof(axis)=='Vector3','Expected Vector3');angle=tonumber(angle);assert(angle,'Expected numeric angle')
+        local unit=axis.Unit;local x,y,z=unit.X,unit.Y,unit.Z
+        local c,s=math.cos(angle),math.sin(angle);local t=1-c
+        return cframe({0,0,0,c+x*x*t,x*y*t-z*s,x*z*t+y*s,
+            y*x*t+z*s,c+y*y*t,y*z*t-x*s,z*x*t-y*s,z*y*t+x*s,c+z*z*t})
+    end
+    function CF.lookAlong(position,direction,up)
+        assert(typeof(position)=='Vector3' and typeof(direction)=='Vector3','Expected Vector3 position and direction')
+        up=if up==nil then V3.yAxis else up;assert(typeof(up)=='Vector3','Expected Vector3 up')
+        local forward=direction.Unit
+        local right=forward:Cross(up.Unit)
+        local function parallel(v) return math.max(math.abs(v.X),math.abs(v.Y),math.abs(v.Z))<5e-7 end
+        if parallel(right) then right=forward:Cross(V3.xAxis);if parallel(right) then right=forward:Cross(V3.yAxis) end end
+        right=right.Unit
+        return CF.fromMatrix(position,right,right:Cross(forward),-forward)
+    end
+    function cfMethods:ToEulerAngles(order)
+        local axes=orderAxes(order);local i,j,k,sign=table.unpack(axes)
+        local m=values[self]
+        local function entry(row,column) return m[3+(row-1)*3+column] end
+        local middle=math.clamp(sign*entry(i,k),-1,1)
+        local result={}
+        if math.abs(middle)>=0.99999958 then
+            result[j]=if middle>0 then math.pi/2 else -math.pi/2
+            result[i]=math.atan2((if middle>0 then 1 else -1)*entry(j,i),entry(j,j))
+            result[k]=0
+        else
+            result[j]=math.asin(middle)
+            result[i]=math.atan2(-sign*entry(j,k),entry(k,k))
+            result[k]=math.atan2(-sign*entry(i,j),entry(i,i))
+        end
+        return table.unpack(result,1,3)
+    end
+    function cfMethods:ToEulerAnglesXYZ() return self:ToEulerAngles() end
+    function cfMethods:ToEulerAnglesYXZ() return self:ToEulerAngles(R.Enum.RotationOrder.YXZ) end
+    cfMethods.ToOrientation=cfMethods.ToEulerAnglesYXZ
+    function cfMethods:ToAxisAngle()
+        local m=values[self]
+        local angle=math.acos(math.clamp((m[4]+m[8]+m[12]-1)/2,-1,1))
+        if angle<=1e-4 then return V3.xAxis,angle end
+        if angle<math.pi-1e-4 then return V3.new(m[11]-m[9],m[6]-m[10],m[7]-m[5]).Unit,angle end
+        if m[4]>=m[8] and m[4]>=m[12] then
+            local x=math.sqrt(math.max(0,1+m[4]-m[8]-m[12]))/2
+            return V3.new(x,m[5]/(2*x),m[6]/(2*x)),angle
+        elseif m[8]>=m[12] then
+            local y=math.sqrt(math.max(0,1+m[8]-m[4]-m[12]))/2
+            return V3.new(m[5]/(2*y),y,m[9]/(2*y)),angle
+        else
+            local z=math.sqrt(math.max(0,1+m[12]-m[4]-m[8]))/2
+            return V3.new(m[6]/(2*z),m[9]/(2*z),z),angle
+        end
+    end
     function cfMethods:Inverse()
         local c=values[self];local p=V3.new(c[1],c[2],c[3])
         return cframe({-p:Dot(V3.new(c[4],c[7],c[10])),-p:Dot(V3.new(c[5],c[8],c[11])),-p:Dot(V3.new(c[6],c[9],c[12])),

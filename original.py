@@ -32,6 +32,10 @@ class Original:
     ENGINE_REGION = {'region_init':0x102a91e80,'region_constructor':0x102a91eea,
                      'region_min':0x102a91fee,'region_max':0x102a9201a,
                      'region_is_nan_inf':0x103206e00,'region_expand':0x104645e3e}
+    ENGINE_ROTATION = {'rotation_yxz':0x10321337e,'rotation_xyz':0x103214450,
+                       'rotation_xzy':0x10321454c,'rotation_yzx':0x103214642,
+                       'rotation_zxy':0x10321473e,'rotation_zyx':0x10321483a,
+                       'rotation_look_along':0x103203538}
     def __init__(self, binary, report, dll, hooks=None, enabled=None, data_overrides=None, pointer_arrays=None,
                  core=False, auto_rebase=False, data_padding=0, writable_data=False):
         self.dll, self.binary = dll, binary
@@ -47,7 +51,7 @@ class Original:
         self.api.GetCurrentProcess.restype = ctypes.c_void_p
         hooks = hooks or {}
         self.enabled = frozenset(enabled) if enabled is not None else self.ALLOWED | (self.BOUNDARY if hooks else frozenset())
-        reviewed_engine=self.ENGINE_RANDOM | self.ENGINE_BRICK | self.ENGINE_DATE | self.ENGINE_PHYSICAL | self.ENGINE_REGION
+        reviewed_engine=self.ENGINE_RANDOM | self.ENGINE_BRICK | self.ENGINE_DATE | self.ENGINE_PHYSICAL | self.ENGINE_REGION | self.ENGINE_ROTATION
         permitted = self.ALLOWED | self.BOUNDARY | self.ALLOCATOR | self.INITIALIZER | reviewed_engine.keys()
         for name in self.enabled & reviewed_engine.keys():
             if int(report['functions'][name]['address'],16)!=reviewed_engine[name]:

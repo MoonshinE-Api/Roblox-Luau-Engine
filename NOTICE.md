@@ -10,7 +10,7 @@ executable. Neither that executable nor the decompiled source tree, fonts,
 textures, account data, or private working notes are distributed here.
 Some source reconstructs behavior from those artifacts. Required class/enum
 catalogs, offsets, hashes, and reviewed instruction metadata are included in
-`data/`. These components are not represented as a clean-room recreation.
+`data/` and `tests/fixtures/`. These components are not represented as a clean-room recreation.
 
 Project-owned contributions use the repository's MIT license. That grant only
 covers rights held by the project contributors. Third-party and proprietary

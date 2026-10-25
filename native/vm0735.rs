@@ -18,6 +18,12 @@ pub unsafe extern "C" fn original_call_region(address:usize,output:*mut u8,regio
 }
 
 #[unsafe(no_mangle)]
+pub unsafe extern "C" fn original_call4(address:usize,a:usize,b:usize,c:usize,d:usize)->usize {
+    let function:unsafe extern "sysv64" fn(usize,usize,usize,usize)->usize=unsafe {std::mem::transmute(address)};
+    unsafe {function(a,b,c,d)}
+}
+
+#[unsafe(no_mangle)]
 pub unsafe extern "C" fn original_call_physical(address:usize,output:*mut u8,d:f32,f:f32,e:f32,fw:f32,ew:f32,a:f32) {
     let function:unsafe extern "sysv64" fn(*mut u8,f32,f32,f32,f32,f32,f32)=unsafe {std::mem::transmute(address)};
     unsafe {function(output,d,f,e,fw,ew,a)}

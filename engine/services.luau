@@ -24,6 +24,7 @@ return function(R)
             for _,key in {"Anchored","Massless","Locked"} do property(d,key,"boolean",false) end
             for _,key in {"CanCollide","CanTouch","CanQuery","CastShadow"} do property(d,key,"boolean",true) end
             property(d,"CFrame","CFrame",CF.new());property(d,"PivotOffset","CFrame",CF.new())
+            for _,key in {'Position','Orientation','Rotation'} do property(d,key,'Vector3',V3.zero) end
             property(d,"Size","Vector3",V3.new(4,1.2,2));property(d,"Color","Color3",C3.fromRGB(163,162,165))
             property(d,"Transparency","number",0);property(d,"Reflectance","number",0)
             property(d,"Velocity","Vector3",V3.zero);property(d,"RotVelocity","Vector3",V3.zero)
@@ -97,7 +98,17 @@ return function(R)
             R.fire(run,"RenderStepped",dt)
         end
     end
+    local function displayAngles(...)
+        local result={...}
+        for i,angle in result do
+            local degrees=math.round(math.deg(angle)*1000)/1000
+            result[i]=if degrees==-180 then 180 else degrees
+        end
+        return V3.new(table.unpack(result))
+    end
     G.BasePart={Position=function(self) return self.CFrame.Position end,
+        Orientation=function(self) return displayAngles(self.CFrame:ToOrientation()) end,
+        Rotation=function(self) return displayAngles(self.CFrame:ToEulerAnglesXYZ()) end,
         Mass=function(self) return self:GetMass() end,
         AssemblyMass=function(self) return if self.Anchored then math.huge else self:GetMass() end,
         CenterOfMass=function(self)
@@ -111,7 +122,22 @@ return function(R)
         end,
         AssemblyCenterOfMass=function(self) return self.CFrame:PointToWorldSpace(self.CenterOfMass) end,
         AssemblyRootPart=function(self) return self end,BrickColor=function(self) return R.datatypes.BrickColor.new(self.Color) end}
-    S.BasePart={Position=function(self,v) assert(typeof(v)=="Vector3","Position requires Vector3");self.CFrame=self.CFrame.Rotation+v;R.changed(self,"Position") end,
+    S.BasePart={Position=function(self,v) assert(typeof(v)=="Vector3","Position requires Vector3");self.CFrame=self.CFrame.Rotation+v end,
+        CFrame=function(self,value)
+            assert(typeof(value)=='CFrame','CFrame requires CFrame')
+            local d=R.instances[self]
+            if d.props.CFrame==value then return end
+            d.props.CFrame=value
+            for _,key in {'CFrame','Position','AssemblyCenterOfMass','Orientation','Rotation'} do R.changed(self,key) end
+        end,
+        Orientation=function(self,value)
+            assert(typeof(value)=='Vector3','Orientation requires Vector3')
+            self.CFrame=CF.fromOrientation(math.rad(value.X),math.rad(value.Y),math.rad(value.Z))+self.Position
+        end,
+        Rotation=function(self,value)
+            assert(typeof(value)=='Vector3','Rotation requires Vector3')
+            self.CFrame=CF.Angles(math.rad(value.X),math.rad(value.Y),math.rad(value.Z))+self.Position
+        end,
         Color=function(self,v)
             assert(typeof(v)=="Color3","Color requires Color3")
             local d=R.instances[self]

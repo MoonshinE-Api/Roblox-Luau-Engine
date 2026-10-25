@@ -63,6 +63,11 @@ Names are case-sensitive, as in Studio: `Instance.new("Part")`, `Clone`, and
 - Vector2int16/Vector3int16 with wrapping arithmetic; Region3 construction and
   grid expansion with float32 operations; Region3int16 boundaries.
   Other geometry calculations use doubles; engine-wide float32 rounding is not emulated.
+- CFrame quaternion construction, all six Euler rotation orders and decomposition,
+  orientation aliases, axis-angle conversion, and lookAlong with parallel-up fallback.
+- BasePart Orientation (YXZ) and Rotation (XYZ) in degrees, three-decimal display
+  rounding, transform change signals, cloning, model import, and orientation tweens.
+  Weld/motor adjustment and physics side effects of transform writes are not simulated.
 - HTTP and JSON, Base64/Zstandard, hashes, authenticated asset delivery, and
   `require(id)` for supported assets and contexts.
 - XML and compressed RBXM imports with an explicit class/property schema;
@@ -88,6 +93,7 @@ Names are case-sensitive, as in Studio: `Instance.new("Part")`, `Clone`, and
 ```powershell
 python .\run.py .\examples\headless_ui.luau --binary $studio --mode client
 python .\run.py .\examples\projected_target.luau --binary $studio --mode client
+python .\run.py .\examples\orbit_camera.luau --binary $studio --mode client --duration 1.2
 ```
 
 Set the simulated viewport with `--viewport-width` and `--viewport-height`
@@ -178,14 +184,16 @@ python -m pip install -r .\tools\requirements.txt
 powershell -File .\tests\validate.ps1 -Binary $studio
 ```
 
-Validation covers 9 differential suites and 56 runtime/CLI scenarios, including
+Validation covers 10 differential suites and 59 runtime/CLI scenarios, including
 HTTP against local fixtures, model imports, nested Fiu execution, memory limits,
 worker timeouts, all 199 UI property declarations, UI model import, 200 camera
 projection round trips, layout/autosizing, concurrent SQLite updates, persistence
 across processes, memory-store TTLs, queue leases, and render callback contexts,
 ordering, lifecycle and error propagation, randomized vector/color math, batched
 CFrame transforms, 285 integer conversions against the original VM, and 609
-region/grid comparisons against unchanged original machine functions. Passing these checks does
+region/grid comparisons against unchanged original machine functions, 3,108 Euler
+decompositions and 206 lookAlong comparisons with native math, plus orientation
+signals and camera/tween integration. Passing these checks does
 not establish compatibility with
 every Roblox script. Generated diagnostics remain local and are ignored by Git.
 The optional external vLua model is not bundled. Metadata reconstruction tools in `tools/`
