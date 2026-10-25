@@ -116,6 +116,7 @@ return function(R)
         local nodes={object};for _,child in object:GetDescendants() do table.insert(nodes,child) end
         local ancestor=old
         while ancestor do for _,node in nodes do R.fire(ancestor,"DescendantRemoving",node) end;ancestor=state(ancestor).parent end
+        if R.beforeParentChanged then R.beforeParentChanged(object,old,parent) end
         if old then local children=state(old).children;table.remove(children,assert(table.find(children,object))) end
         d.parent=parent
         if parent then table.insert(state(parent).children,object) end

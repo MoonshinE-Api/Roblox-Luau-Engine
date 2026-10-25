@@ -1,0 +1,42 @@
+{
+  "functions": {
+    "players_lookup": {
+      "address": "0x105759350",
+      "size": 250,
+      "sha256": "5112675f1de340a9a4649d34541424806a33b588d58dcab7019db46d3259314c",
+      "data_references": [
+        "0x10d7f6ee8"
+      ]
+    },
+    "players_snapshot": {
+      "address": "0x10076e920",
+      "size": 36,
+      "sha256": "d8a8450b987d56843ba99073c494a74db909d8b52c2f5466dde31f3af3638723",
+      "data_references": []
+    },
+    "players_count": {
+      "address": "0x10076f4e6",
+      "size": 24,
+      "sha256": "55aad6f26d85b61e41921f117edc3245dc21621f284c6b8e44cc5eb766157d0e",
+      "data_references": []
+    },
+    "player_ptr_destroy": {
+      "address": "0x1003fb994",
+      "size": 66,
+      "sha256": "202758234f368ea90f03d5ddfecec47411e3309c92dbcdc096c04a1001bb51c2",
+      "data_references": []
+    }
+  },
+  "unexecuted_targets": [
+    "0x10005edfc",
+    "0x100729224",
+    "0x10881e396",
+    "0x108822734"
+  ],
+  "flag_override": {
+    "0x10d7f6ee8": 1
+  },
+  "source": "v8datamodel/Players.c; rbx/PlayersProp.c; std::shared_ptr<Player> destructor",
+  "comparison": "Four unchanged native bodies; borrowed vector/player fixtures with null reference controllers.",
+  "limits": "MigrateUserIdAccessors enabled. No account/domain-ID translation, actual connection setup, ownership destruction or character simulation."
+}

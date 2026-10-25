@@ -903,8 +903,9 @@
     }
   },
   "source_sha256": {
-    "engine/instances.luau": "64cdf0b194aeefb3c5f7a7f34c23f5ba4d2d236c98b2f9322a05e0e2a4a42d45",
-    "engine/services.luau": "d5fdcd2ed613d0fba615c60cc9eb08e6c7f1e92a8ee72ec0edab216b7fca9519",
+    "engine/instances.luau": "02578b5081b4faa905a8635f8afc853285add7970714a3dce26677abb52e85f4",
+    "engine/services.luau": "e5c96c7946cabfaf0f93b7de078d562b0f979ae1663f8e1de30f036c49d8d4e9",
+    "engine/players.luau": "c5ff97fff082c11f62f643d7014c74439a348333d652e98b9b28a72c4009ad0e",
     "engine/callbacks.luau": "850caaf8bf2804e8af385141eb3e027ff79cd2a50a267befd0ab157101b390c9",
     "engine/lifecycle.luau": "7404ef5bf0b057fbcbfccd6059b2ab2fa40b0efb45eab5185a911bd4c33ed951",
     "engine/attachments.luau": "f83109fca81e7c09aea2fff2e767e0e9b49c62d1b78e30badcbbdaaad0d3dfd3",

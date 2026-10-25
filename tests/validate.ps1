@@ -8,7 +8,7 @@ if (-not (Test-Path -LiteralPath $Binary -PathType Leaf)) { throw "Missing suppl
 if ($Build) { & "$ProjectRoot\build.ps1" }
 & python "$ProjectRoot\tests\validation_inputs.py" start
 if ($LASTEXITCODE -ne 0) { throw 'Validation input snapshot failed' }
-foreach ($script in @('oracle.py', 'bootstrap_oracle.py', 'allocator_oracle.py', 'initialization_oracle.py', 'random_oracle.py', 'brickcolor_oracle.py', 'datetime_oracle.py', 'physical_oracle.py', 'region_oracle.py', 'rotation_oracle.py', 'lighting_oracle.py', 'sky_oracle.py')) {
+foreach ($script in @('oracle.py', 'bootstrap_oracle.py', 'allocator_oracle.py', 'initialization_oracle.py', 'random_oracle.py', 'brickcolor_oracle.py', 'datetime_oracle.py', 'physical_oracle.py', 'region_oracle.py', 'rotation_oracle.py', 'lighting_oracle.py', 'sky_oracle.py', 'player_oracle.py')) {
     & python "$ProjectRoot\tests\$script" --binary $Binary
     if ($LASTEXITCODE -ne 0) { throw "Comparison failed: $script" }
 }
@@ -132,6 +132,16 @@ foreach ($side in @('server','client')) {
 if ($LASTEXITCODE -ne 0) { throw 'Shutdown persistence/interrupt/deadline checks failed' }
 & python "$ProjectRoot\run.py" "$ProjectRoot\examples\saved_server.luau" --binary $Binary --no-player --duration 2.2
 if ($LASTEXITCODE -ne 0) { throw 'Saved headless world example failed' }
+foreach ($side in @('server','client')) {
+    & python "$ProjectRoot\run.py" "$ProjectRoot\tests\players.luau" --binary $Binary --mode $side --duration 0.1
+    if ($LASTEXITCODE -ne 0) { throw "Player roster/character check failed: $side" }
+}
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\players.luau" --binary $Binary --no-player --duration 0.1
+if ($LASTEXITCODE -ne 0) { throw 'Initially empty player roster check failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\player_contexts" --binary $Binary --mode both --duration 0.2
+if ($LASTEXITCODE -ne 0) { throw 'Player server/client signal and broadcast contexts failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\examples\player_sessions.luau" --binary $Binary --duration 0.1
+if ($LASTEXITCODE -ne 0) { throw 'Player session/character/save example failed' }
 & python "$ProjectRoot\tests\validation_inputs.py" finish
 if ($LASTEXITCODE -ne 0) { throw 'Validation inputs changed during checks' }
-Write-Host 'All twelve differential checks and seventy-four runtime/CLI checks passed.'
+Write-Host 'All thirteen differential checks and seventy-nine runtime/CLI checks passed.'

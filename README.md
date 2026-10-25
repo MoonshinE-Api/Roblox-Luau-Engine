@@ -62,6 +62,9 @@ Names are case-sensitive, as in Studio: `Instance.new("Part")`, `Clone`, and
   BindableFunction handlers are separate per side. Callback members are write-only.
 - Server BindToClose handlers, concurrent yielding shutdown callbacks, close reasons,
   bounded shutdown, and graceful Ctrl+C with a second interrupt for forced stop.
+- Live Players rosters, independent GetPlayers snapshots, UserId/character lookup,
+  NumPlayers, joins/removals, typed manual Character assignment, character events,
+  and head-based DistanceFromCharacter with float32 arithmetic.
 - Vector2/3, CFrame, Color3, UDim/UDim2, sequences, query parameters, tweens,
   Random, BrickColor, DateTime, PhysicalProperties, Font, and other partial types.
 - Vector component operations, signed angles and relative FuzzyEq; Color3 HSV/hex
@@ -215,6 +218,24 @@ This example saves a world's clock and elapsed time to a local SQLite store:
 python .\run.py .\examples\saved_server.luau --binary $studio --no-player --run-forever --data-store "$env:TEMP\saved-roblox-world.sqlite3"
 ```
 
+Players:GetPlayers tracks direct Player children of the Players service. Leaving
+players are removed from its roster before PlayerRemoving, while their Parent
+still refers to Players. Rejoining appends them again. The default synthetic
+player has UserId 1; manually created Player records start with UserId 0 and an
+empty DisplayName. Only the default player has a simulated client context;
+additional Player instances are local records, without network connections.
+
+Character accepts Model or nil. Replacement fires CharacterRemoving before
+changing the reference, then CharacterAdded before the Character property signal.
+Server assignments unparent the previous model. Assigning a model does not spawn
+or parent an avatar. Avatar downloads, automatic respawn, network ownership,
+deferred character destruction, and engine-wide event deferral are not emulated.
+DistanceFromCharacter uses the direct Head BasePart, returning 0 if it is absent.
+
+```powershell
+python .\run.py .\examples\player_sessions.luau --binary $studio --duration 0.1
+```
+
 ## Source layout
 
 | Path | Purpose |
@@ -258,8 +279,8 @@ python -m pip install -r .\tools\requirements.txt
 powershell -File .\tests\validate.ps1 -Binary $studio
 ```
 
-The nested-interpreter test executes eight datatype, region, CFrame, BasePart,
-Attachment/Bone, environment, sky and callback suites through Fiu. It is included in
+The nested-interpreter test executes nine datatype, region, CFrame, BasePart,
+Attachment/Bone, environment, sky, callback and player suites through Fiu. It is included in
 the full validation and can also run separately. Its vector constants use the
 engine's Vector3 constructor:
 
@@ -267,7 +288,7 @@ engine's Vector3 constructor:
 python .\tests\nested_geometry_checks.py --binary $studio
 ```
 
-Validation covers 12 differential suites and 74 runtime/CLI scenarios, including
+Validation covers 13 differential suites and 79 runtime/CLI scenarios, including
 HTTP against local fixtures, model imports, nested Fiu execution, memory limits,
 worker timeouts, all 199 UI property declarations, UI model import, 200 camera
 projection round trips, layout/autosizing, concurrent SQLite updates, persistence
@@ -283,6 +304,10 @@ lifetime, interruption cleanup, servers without a player, queued callback assign
 80 concurrent function calls, callee cancellation independence, callback errors and
 server/client callback isolation, shutdown saves across processes, concurrent
 close callbacks, destroyed callback owners, grace limits, and forced interrupts.
+Player checks include 800 native roster/count/snapshot fixtures and 3,200 native
+UserId lookup comparisons. The native ID comparison enables MigrateUserIdAccessors
+and uses borrowed fixtures with null reference controllers; it does not exercise
+account/domain-ID translation, real joins, or native object ownership.
 Passing these checks does
 not establish compatibility with
 every Roblox script. Generated diagnostics remain local and are ignored by Git.

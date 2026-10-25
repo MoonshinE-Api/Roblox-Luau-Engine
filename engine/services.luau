@@ -58,7 +58,7 @@ return function(R)
             local defaults={boolean=false,number=0,string="",Vector3=V3.zero,CFrame=CF.new(),Color3=C3.new(),BrickColor=R.datatypes.BrickColor.Gray()}
             property(d,"Value",kinds[d.class],defaults[kinds[d.class]])
         end
-        if d.class=="Player" then property(d,"UserId","number",1);property(d,"DisplayName","string","LocalPlayer");property(d,"Character","Instance?",nil) end
+        if d.class=="Player" then property(d,"UserId","number",0);property(d,"DisplayName","string","");property(d,"Character","Instance?",nil) end
         if d.class=="Humanoid" then
             property(d,"Health","number",100);property(d,"MaxHealth","number",100);property(d,"WalkSpeed","number",16)
             property(d,"JumpPower","number",50);property(d,"JumpHeight","number",7.2);property(d,"UseJumpPower","boolean",true)
@@ -230,18 +230,14 @@ return function(R)
     local players=R.game:GetService("Players")
     if not R.config.noPlayer then
         R.player=R.new("Player",players,true);R.player.Name=R.config.playerName or "LocalPlayer"
+        R.player.UserId=1;R.player.DisplayName=R.player.Name
         R.new("PlayerGui",R.player,true);R.new("PlayerScripts",R.player,true)
     end
-    G.Players={LocalPlayer=function() return if R.current().side=="client" then R.player else nil end}
-    M.Players={GetPlayers=function() return {R.player} end,
-        GetPlayerByUserId=function(_,id) return if R.player and id==R.player.UserId then R.player else nil end,
-        GetPlayerFromCharacter=function(_,model) return if R.player and R.player.Character==model then R.player else nil end}
-    E.Players={PlayerAdded=true,PlayerRemoving=true};E.Player={CharacterAdded=true,CharacterRemoving=true}
     M.BindableEvent={Fire=function(self,...) R.fire(self,"Event",...) end};E.BindableEvent={Event=true}
     M.RemoteEvent={
         FireServer=function(self,...) assert(R.current().side=="client","FireServer requires client context");R.fire(self,"OnServerEvent",R.player,...) end,
         FireClient=function(self,player,...) assert(R.current().side=="server","FireClient requires server context");assert(R.player and player==R.player and player.Parent==players,"Unknown player");R.fire(self,"OnClientEvent",...) end,
-        FireAllClients=function(self,...) assert(R.current().side=="server","FireAllClients requires server context");if R.player then R.fire(self,"OnClientEvent",...) end end,
+        FireAllClients=function(self,...) assert(R.current().side=="server","FireAllClients requires server context");if R.player and R.playerPresent(R.player) then R.fire(self,"OnClientEvent",...) end end,
     }
     E.RemoteEvent={OnServerEvent=true,OnClientEvent=true}
     M.Debris={AddItem=function(_,object,lifetime) R.task.delay(lifetime or 10,function() object:Destroy() end) end}
