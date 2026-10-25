@@ -84,6 +84,14 @@ foreach ($case in @('layout_gallery','local_inventory')) {
     & python "$ProjectRoot\run.py" "$ProjectRoot\examples\$case.luau" --binary $Binary --duration 5
     if ($LASTEXITCODE -ne 0) { throw "Layout/storage example failed: $case" }
 }
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\render_steps.luau" --binary $Binary --mode client --duration 0.5
+if ($LASTEXITCODE -ne 0) { throw 'Client render bindings failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\render_steps.luau" --binary $Binary --mode server --duration 0.1
+if ($LASTEXITCODE -ne 0) { throw 'Server render restrictions failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\render_contexts" --binary $Binary --mode both --duration 0.3
+if ($LASTEXITCODE -ne 0) { throw 'Both-mode render contexts failed' }
+& python "$ProjectRoot\tests\render_checks.py" --binary $Binary
+if ($LASTEXITCODE -ne 0) { throw 'Render callback error/yield checks failed' }
 & python "$ProjectRoot\tests\validation_inputs.py" finish
 if ($LASTEXITCODE -ne 0) { throw 'Validation inputs changed during checks' }
-Write-Host 'All eight differential checks and forty-nine runtime/CLI checks passed.'
+Write-Host 'All eight differential checks and fifty-three runtime/CLI checks passed.'

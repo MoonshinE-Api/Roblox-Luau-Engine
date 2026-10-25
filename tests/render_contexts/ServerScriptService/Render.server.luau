@@ -1,0 +1,8 @@
+local run=game:GetService('RunService')
+local storage=game:GetService('ReplicatedStorage')
+assert(run:IsServer())
+assert(not pcall(function() run:BindToRenderStep('server',1,function()end) end))
+task.wait(0.08)
+assert(storage:GetAttribute('ClientRenderTicks')>=3)
+assert(run:IsServer() and game:GetService('Players').LocalPlayer==nil)
+print('BOTH-MODE SERVER CONTEXT PASSED')

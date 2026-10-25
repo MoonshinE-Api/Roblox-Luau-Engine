@@ -76,6 +76,9 @@ Names are case-sensitive, as in Studio: `Instance.new("Part")`, `Clone`, and
   cached reads, atomic UpdateAsync retries, ordered stores, and paginated lists.
 - Process-local MemoryStore hash/sorted maps and queues: expiration, update
   callbacks, sorted ranges, priorities, read leases, and waiting readers.
+- Client render-step bindings with priority ordering, duplicate-name removal,
+  callback context, owner cleanup, and PreRender/RenderStepped in `both` mode.
+  These are headless frame callbacks; equal-priority ties use registration order.
 
 ```powershell
 python .\run.py .\examples\headless_ui.luau --binary $studio --mode client
@@ -161,11 +164,12 @@ python -m pip install -r .\tools\requirements.txt
 powershell -File .\tests\validate.ps1 -Binary $studio
 ```
 
-Validation covers 8 differential suites and 49 runtime/CLI scenarios, including
+Validation covers 8 differential suites and 53 runtime/CLI scenarios, including
 HTTP against local fixtures, model imports, nested Fiu execution, memory limits,
 worker timeouts, all 199 UI property declarations, UI model import, 200 camera
 projection round trips, layout/autosizing, concurrent SQLite updates, persistence
-across processes, memory-store TTLs, and queue leases. Passing these checks does
+across processes, memory-store TTLs, queue leases, and render callback contexts,
+ordering, lifecycle and error propagation. Passing these checks does
 not establish compatibility with
 every Roblox script. Generated diagnostics remain local and are ignored by Git.
 The optional external vLua model is not bundled. Metadata reconstruction tools in `tools/`

@@ -91,7 +91,11 @@ return function(R)
         end
         R.fire(run,"PreSimulation",dt);R.fire(run,"Stepped",R.now,dt)
         R.fire(run,"PostSimulation",dt);R.fire(run,"Heartbeat",dt)
-        if R.config.side=="client" then R.fire(run,"PreRender",dt);R.fire(run,"RenderStepped",dt) end
+        if R.config.side=="client" or R.config.side=="both" then
+            R.fire(run,"PreRender",dt)
+            if R.renderBindings then R.renderBindings(dt) end
+            R.fire(run,"RenderStepped",dt)
+        end
     end
     G.BasePart={Position=function(self) return self.CFrame.Position end,
         Mass=function(self) return self:GetMass() end,
