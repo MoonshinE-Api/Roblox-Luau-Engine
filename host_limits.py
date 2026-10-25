@@ -1,4 +1,4 @@
-"""Optional process deadline. A Windows Job owns the VM and its subprocesses.
+"""Process deadline and graceful stop. A Windows Job owns the VM and its children.
 
 This is lifecycle containment, not a security sandbox. The worker waits until
 job assignment succeeds; no scripts or compilers run before that gate opens.
@@ -78,7 +78,7 @@ def worker_arguments(arguments):
     return result
 
 
-def _worker(arguments,ready,temporary_root):
+def _worker(arguments,ready,temporary_root,shutdown):
     import signal
     # Only the supervising process handles console Ctrl+C. Its job owns this
     # worker and any compiler/decoder children, including during native calls.
@@ -87,7 +87,7 @@ def _worker(arguments,ready,temporary_root):
     tempfile.tempdir=temporary_root
     if not ready.wait(15):raise SystemExit(125)
     from run import main,ScriptFailure
-    try:main(arguments,supervised=True)
+    try:main(arguments,supervised=True,shutdown_event=shutdown)
     except ScriptFailure as error:
         print(f'Execution failed: {error}',file=sys.stderr,flush=True)
         raise SystemExit(1) from None
@@ -95,13 +95,13 @@ def _worker(arguments,ready,temporary_root):
 
 def supervise(arguments,seconds):
     if os.name!='nt':raise OSError('The process deadline currently requires Windows')
-    context=mp.get_context('spawn');ready=context.Event()
+    context=mp.get_context('spawn');ready=context.Event();shutdown=context.Event()
     deadline=None if seconds is None else time.monotonic()+seconds
     job=WindowsJob();process=None
     try:
         with tempfile.TemporaryDirectory(prefix='recovery-worker-') as directory:
             try:
-                process=context.Process(target=_worker,args=(worker_arguments(arguments),ready,directory))
+                process=context.Process(target=_worker,args=(worker_arguments(arguments),ready,directory,shutdown))
                 process.start();job.assign(process);ready.set()
                 while process.is_alive():
                     remaining=None if deadline is None else deadline-time.monotonic()
@@ -110,6 +110,18 @@ def supervise(arguments,seconds):
                         return 124
                     process.join(.1 if remaining is None else min(.1,remaining))
                 return process.exitcode
+            except KeyboardInterrupt:
+                shutdown.set()
+                print('Shutdown requested; waiting up to 30 seconds for server callbacks. Press Ctrl+C again to force stop.',file=sys.stderr,flush=True)
+                grace=time.monotonic()+31
+                if deadline is not None:grace=min(grace,deadline)
+                try:
+                    while process is not None and process.pid is not None and process.is_alive():
+                        remaining=grace-time.monotonic()
+                        if remaining<=0:break
+                        process.join(min(.1,remaining))
+                except KeyboardInterrupt:pass
+                return 130
             finally:
                 # Close the job before touching worker files. This also stops
                 # any compiler/asset decoder surviving a failed VM process.

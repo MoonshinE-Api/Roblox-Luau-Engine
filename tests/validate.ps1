@@ -124,6 +124,14 @@ if ($LASTEXITCODE -ne 0) { throw 'Yielding callback queues/results/lifecycle che
 if ($LASTEXITCODE -ne 0) { throw 'Queued remote and per-side bindable callback contexts failed' }
 & python "$ProjectRoot\tests\callback_checks.py" --binary $Binary
 if ($LASTEXITCODE -ne 0) { throw 'Callback error/source-location/suspended-invocation checks failed' }
+foreach ($side in @('server','client')) {
+    & python "$ProjectRoot\run.py" "$ProjectRoot\tests\shutdown.luau" --binary $Binary --mode $side --duration 0.1
+    if ($LASTEXITCODE -ne 0) { throw "Close callback lifecycle check failed: $side" }
+}
+& python "$ProjectRoot\tests\shutdown_checks.py" --binary $Binary
+if ($LASTEXITCODE -ne 0) { throw 'Shutdown persistence/interrupt/deadline checks failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\examples\saved_server.luau" --binary $Binary --no-player --duration 2.2
+if ($LASTEXITCODE -ne 0) { throw 'Saved headless world example failed' }
 & python "$ProjectRoot\tests\validation_inputs.py" finish
 if ($LASTEXITCODE -ne 0) { throw 'Validation inputs changed during checks' }
-Write-Host 'All twelve differential checks and seventy runtime/CLI checks passed.'
+Write-Host 'All twelve differential checks and seventy-four runtime/CLI checks passed.'

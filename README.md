@@ -60,6 +60,8 @@ Names are case-sensitive, as in Studio: `Instance.new("Part")`, `Clone`, and
   assignment, independent callee coroutines, nil-preserving result tuples, and
   error propagation. Callback assignments retain their server/client context;
   BindableFunction handlers are separate per side. Callback members are write-only.
+- Server BindToClose handlers, concurrent yielding shutdown callbacks, close reasons,
+  bounded shutdown, and graceful Ctrl+C with a second interrupt for forced stop.
 - Vector2/3, CFrame, Color3, UDim/UDim2, sequences, query parameters, tweens,
   Random, BrickColor, DateTime, PhysicalProperties, Font, and other partial types.
 - Vector component operations, signed angles and relative FuzzyEq; Color3 HSV/hex
@@ -174,8 +176,9 @@ compilation, and returns exit code 124. A non-yielding loop is not stopped by
 Use `--run-forever` to keep the environment running until Ctrl+C. It enables
 real-time pacing and keeps frames and scheduled tasks alive even after the entry
 script returns. It cannot be combined with `--duration`; `--wall-timeout` remains
-available as an optional deadline. The supervising process stops the VM and its
-compiler/decoder children together on interruption (exit code 130).
+available as an optional deadline. Ctrl+C requests graceful shutdown (exit code
+130). Server BindToClose callbacks can finish before the VM exits; a second
+Ctrl+C forces termination. The supervising process owns the VM and its children.
 
 Use `--no-player` for a server with an empty Players service. It requires server
 mode; the default synthetic player remains available for existing examples.
@@ -194,6 +197,23 @@ Replacing or clearing a handler affects later calls; a running invocation keeps
 its original function. Cancelling its caller does not cancel the callee.
 Remote callbacks are still local emulation over a shared object tree, without
 network serialization, replication, or disconnect/error semantics of real clients.
+
+BindToClose runs when a finite session ends or the supervisor requests shutdown.
+Handlers retain their server/script context, run concurrently, and receive
+`Enum.CloseReason.DeveloperShutdown`. Registration is rejected on clients and
+after closing begins; handlers owned by destroyed scripts are skipped.
+The close phase permits up to 30 scheduler seconds and 30 real seconds. With
+`--realtime` or `--run-forever` these clocks advance together. A hard
+`--wall-timeout` remains an immediate process deadline and bypasses callbacks.
+Non-yielding Luau requires the supervisor to enforce forced termination; the
+interrupt supervisor allows 31 seconds including cleanup, bounded by any hard
+deadline. Unsupervised finite runs cannot preempt a non-yielding callback.
+
+This example saves a world's clock and elapsed time to a local SQLite store:
+
+```powershell
+python .\run.py .\examples\saved_server.luau --binary $studio --no-player --run-forever --data-store "$env:TEMP\saved-roblox-world.sqlite3"
+```
 
 ## Source layout
 
@@ -247,7 +267,7 @@ engine's Vector3 constructor:
 python .\tests\nested_geometry_checks.py --binary $studio
 ```
 
-Validation covers 12 differential suites and 70 runtime/CLI scenarios, including
+Validation covers 12 differential suites and 74 runtime/CLI scenarios, including
 HTTP against local fixtures, model imports, nested Fiu execution, memory limits,
 worker timeouts, all 199 UI property declarations, UI model import, 200 camera
 projection round trips, layout/autosizing, concurrent SQLite updates, persistence
@@ -261,7 +281,9 @@ and bone hierarchies, XML/RBXM effect references, 2,046 native lighting clock
 comparisons, 1,056 original sun/moon direction comparisons, continuous host
 lifetime, interruption cleanup, servers without a player, queued callback assignment,
 80 concurrent function calls, callee cancellation independence, callback errors and
-server/client callback isolation. Passing these checks does
+server/client callback isolation, shutdown saves across processes, concurrent
+close callbacks, destroyed callback owners, grace limits, and forced interrupts.
+Passing these checks does
 not establish compatibility with
 every Roblox script. Generated diagnostics remain local and are ignored by Git.
 The optional external vLua model is not bundled. Metadata reconstruction tools in `tools/`

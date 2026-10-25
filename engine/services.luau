@@ -77,8 +77,7 @@ return function(R)
     R.game=R.new("DataModel",nil,true);R.game.Name="Game"
     R.workspace=R.game:GetService("Workspace")
     for _,name in {"Players","RunService","ReplicatedStorage","ServerStorage","ServerScriptService","StarterPlayer","StarterGui","Lighting","CollectionService"} do R.game:GetService(name) end
-    M.DataModel={IsLoaded=function() return true end,BindToClose=function(_,fn) table.insert(R.closeCallbacks,fn) end}
-    R.closeCallbacks={}
+    M.DataModel={IsLoaded=function() return true end}
     G.DataModel={PlaceId=function() return R.config.placeId or 0 end,GameId=function() return R.config.gameId or 0 end,
         JobId=function() return "standalone-local" end,CreatorId=function() return R.config.creatorId or 0 end}
     local run=R.game:GetService("RunService")

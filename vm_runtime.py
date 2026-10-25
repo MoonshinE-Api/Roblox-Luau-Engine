@@ -16,8 +16,9 @@ U=C.c_size_t
 
 
 class Runtime:
-    def __init__(self,binary_path,memory_mb=256,data_store_path=None):
+    def __init__(self,binary_path,memory_mb=256,data_store_path=None,shutdown_event=None):
         self.data_store_path=data_store_path
+        self.shutdown_event=shutdown_event
         root=Path(__file__).parent
         self.dll=C.CDLL(str((root/'vm0735.dll').resolve()))
         self.dll.oracle_dependency.argtypes,self.dll.oracle_dependency.restype=[C.c_uint],U
@@ -113,7 +114,7 @@ class Runtime:
             '__Z12lua_tobufferP9lua_StateiPm','__Z13lua_tonumberxP9lua_StateiPi',
             '__Z14lua_pushnumberP9lua_Stated','__Z11lua_pushnilP9lua_State')))
         from http_runtime import HttpRuntime
-        self.http=HttpRuntime(self.data_store_path)
+        self.http=HttpRuntime(self.data_store_path,self.shutdown_event)
         self.dll.host_setup_http.argtypes=[U]*4
         self.dll.host_setup_http(C.cast(self.http.dispatch,C.c_void_p).value,
             self.functions['__Z13lua_tolstringP9lua_StateiPm'],

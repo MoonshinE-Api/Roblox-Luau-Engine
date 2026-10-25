@@ -138,13 +138,22 @@ return function(R)
     function R.disconnectSignal(signal)
         for _,state in R.signals[signal].connections do state.connected=false end
     end
-    function R.drain()
+    function R.pendingCount()
+        local count=0
+        for thread in active do if not cancelled[thread] and coroutine.status(thread)~='dead' then count+=1 end end
+        return count
+    end
+    function R.drain(options)
+        options=options or {}
         R.syncTime()
         local frame=R.now+1/60
         local lastFrame=R.now
-        local limit=if R.config.forever then math.huge else R.config.duration or 1
+        local limit=options.limit or (if R.config.forever then math.huge else R.config.duration or 1)
         local steps=0
+        local early=false
         while true do
+            if (options.done and options.done()) or (options.wallDeadline and os.clock()>=options.wallDeadline)
+                or (not options.ignoreHostStop and R.stopRequested and R.stopRequested()) then early=true;break end
             if R.pollExternal then R.pollExternal() end
             local nextTime=if queue[1] then queue[1].time else math.huge
             if not R.config.realtime and R.externalPending and R.externalPending() and nextTime>R.now then
@@ -179,12 +188,10 @@ return function(R)
                 frame=if R.config.realtime then R.now+1/60 else frame+1/60
             end
         end
-        if R.config.realtime then
+        if not early and R.config.realtime then
             local remaining=limit-R.syncTime()
             while remaining>0 do __host_sleep(remaining);remaining=limit-R.syncTime() end
-        else R.now=limit end
-        local pending=0
-        for thread in active do if not cancelled[thread] and coroutine.status(thread)~="dead" then pending+=1 end end
-        return {errors=#R.errors,pending=pending}
+        elseif not early then R.now=limit end
+        return {errors=#R.errors,pending=R.pendingCount()}
     end
 end

@@ -43,6 +43,7 @@ pub unsafe extern "sysv64" fn host_http(lua:usize)->i32 {
         }
         let arg=get(lua,2,std::ptr::null_mut()) as usize;
         let result=callback(op,arg);
+        if op==5 {push(lua,result as f64);return 1;}
         if op==1 {
             if result==0 {nil(lua);return 1;}
             let response=&*(result as *const Transfer);

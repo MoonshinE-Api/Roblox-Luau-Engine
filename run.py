@@ -49,7 +49,7 @@ def bootstrap(root,config):
     source+='R.physicalCatalog='+lua_literal({key:physical[key] for key in ('materials','minimum_density','unit_volume','unit_center')})+'\n'
     source+='R.fontCatalog='+lua_literal(fonts['enum_fonts'])+';R.uiCatalog='+lua_literal(ui)+'\n'
     source+='R.environmentCatalog='+lua_literal(environment)+'\n'
-    for name in ['datatypes','enums','value_types','integer_vectors','regions','physical_properties','font','sequences','random','brickcolor','datetime','query_params','scheduler','instances','services','callbacks','attachments','environment','sky','ui','ui_layout','camera','render_bindings','json','http','datastores','memory_stores','encoding','attributes','model_properties','assets','spatial','tweens','bootstrap']:
+    for name in ['datatypes','enums','value_types','integer_vectors','regions','physical_properties','font','sequences','random','brickcolor','datetime','query_params','scheduler','instances','services','callbacks','attachments','environment','sky','ui','ui_layout','camera','render_bindings','json','http','datastores','memory_stores','encoding','attributes','model_properties','assets','spatial','tweens','lifecycle','bootstrap']:
         source+='do local initialize=(function()\n'+(root/f'engine/{name}.luau').read_text(encoding='utf-8')+'\nend)();initialize(R) end\n'
     return source
 
@@ -151,11 +151,11 @@ def project_entry(path,mode,load_source=None,models=()):
     for ref,name,side,factory in scripts:
         if mode=='both' or mode==side:
             lines.append(f'R.run(({factory})(),{lua_literal(name)},{lua_literal(side)},{ref})')
-    lines.append('local result=R.drain();assert(result.errors==0,"Script task errors: "..result.errors);return result.pending')
+    lines.append('R.drain();R.shutdown();assert(#R.errors==0,"Script task errors: "..#R.errors);return R.pendingCount()')
     return '\n'.join(lines)
 
 
-def main(argv=None,*,supervised=False):
+def main(argv=None,*,supervised=False,shutdown_event=None):
     # Pipe output must preserve fetched Unicode and JSON independently of the
     # Windows legacy code page used by a parent process.
     for stream in (sys.stdout,sys.stderr):
@@ -201,7 +201,8 @@ def main(argv=None,*,supervised=False):
     try:models=[read_model(path) for path in args.model]
     except (OSError,ValueError,subprocess.TimeoutExpired) as error:p.error(f'Model import: {error}')
     root=Path(__file__).parent
-    runtime=Runtime(args.binary,memory_mb=args.memory_mb,data_store_path=args.data_store)
+    if shutdown_event is not None and shutdown_event.is_set():return
+    runtime=Runtime(args.binary,memory_mb=args.memory_mb,data_store_path=args.data_store,shutdown_event=shutdown_event)
     try:
         runtime.open_libraries()
         with tempfile.TemporaryDirectory(prefix='recovery-luau-') as folder:
@@ -232,6 +233,7 @@ def main(argv=None,*,supervised=False):
                     bytecode=output_path.read_bytes()
                     for name in slots.values():
                         runtime.load(bytecode,('@'+label).encode());runtime.publish_top(name)
+            if shutdown_event is not None and shutdown_event.is_set():return
             result=execute_source(runtime,root,entry,working,args.script.name)
             if result and result[0]:print(f'{int(result[0])} script thread(s) remain suspended.')
     finally:runtime.close()

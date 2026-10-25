@@ -43,7 +43,7 @@ class Completion:
         self.transfer=Transfer(C.addressof(self.metadata),len(encoded),C.addressof(self.body),len(body))
 
 class HttpRuntime:
-    def __init__(self,data_store_path=None):
+    def __init__(self,data_store_path=None,shutdown_event=None):
         self.condition=threading.Condition()
         self.next_id=0
         self.jobs={}
@@ -52,10 +52,12 @@ class HttpRuntime:
         self.closed=False
         self.callback_errors=[]
         self.data_store_path=data_store_path
+        self.shutdown_event=shutdown_event
         self.data_stores=None
         @C.CFUNCTYPE(C.c_size_t,C.c_size_t,C.c_size_t)
         def dispatch(op,arg):
             try:
+                if op==5:return int(self.shutdown_event is not None and self.shutdown_event.is_set())
                 if op in (0,4):
                     data=Transfer.from_address(arg)
                     metadata=json.loads(C.string_at(data.metadata,data.metadata_len))
