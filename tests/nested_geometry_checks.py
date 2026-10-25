@@ -9,7 +9,7 @@ import sys
 import tempfile
 
 ROOT=Path(__file__).resolve().parents[1]
-CASES=['datatype_math','regions','cframe_rotation','part_transforms','attachments','environment']
+CASES=['datatype_math','regions','cframe_rotation','part_transforms','attachments','environment','sky']
 
 
 def main():

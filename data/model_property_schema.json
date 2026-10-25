@@ -904,9 +904,10 @@
   },
   "source_sha256": {
     "engine/instances.luau": "64cdf0b194aeefb3c5f7a7f34c23f5ba4d2d236c98b2f9322a05e0e2a4a42d45",
-    "engine/services.luau": "0fd2dbcfc6cf7089bf313e6cd0363979b032db29b99254f06f05059c71092ab8",
+    "engine/services.luau": "7e3c1c5533df056a685fff5cc2c2991cb00a2435b15e8d38792ac010d93cd408",
     "engine/attachments.luau": "f83109fca81e7c09aea2fff2e767e0e9b49c62d1b78e30badcbbdaaad0d3dfd3",
-    "engine/environment.luau": "24133a012592e15cfc6f58b70a02f8721553eb50ae772e86aadf40d149603f47",
+    "engine/environment.luau": "d4aab0787c3c9a7a5c45b9c8874ebf300147a28b09eb8cf8f3e2457b62c11104",
+    "engine/sky.luau": "f134f5d38cfaa3c802a429bfd7b97774ba40dec10198e9f1eae40aa870f8744b",
     "engine/ui.luau": "2953c42e5d2a8bfa08d1c76fd3dda75f016f5f5d350a82a9a7c00c0da52a0dad",
     "engine/ui_layout.luau": "980e83d607a86836fd42bdda42557074cadcaf52839defd7c130ef4ff6849198",
     "engine/camera.luau": "262ac8b98f75f0b0b81220b5d7140b497139ce806c31391b64186c14f4689051",

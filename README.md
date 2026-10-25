@@ -74,7 +74,8 @@ Names are case-sensitive, as in Studio: `Instance.new("Part")`, `Clone`, and
   lights, post effects, atmosphere, sky, ParticleEmitter, Beam, Trail, Fire, Smoke and Sparkles.
   Includes 37 source-backed scalar limits, float32 storage and XML/RBXM import.
 - Lighting ClockTime/TimeOfDay, minute conversion, whole-second quantization,
-  day wrapping, moon phase, LightingChanged signals, and clock/property tweens.
+  day wrapping, moon phase, sun/moon directions, geographic latitude,
+  LightingChanged signals, and clock/property tweens.
 - HTTP and JSON, Base64/Zstandard, hashes, authenticated asset delivery, and
   `require(id)` for supported assets and contexts.
 - XML and compressed RBXM imports with an explicit class/property schema;
@@ -132,7 +133,7 @@ are not reproduced. Constraint support stores Attachment0/Attachment1, Enabled a
 Visible and supports GetConstraints; it does not solve constraint forces.
 
 Environment objects store typed configuration. Particle emission/clearing, particle
-simulation, mesh skinning, texture rendering, and sun/moon direction calculations are
+simulation, mesh skinning, and texture rendering are
 not implemented. Clock setters follow build 735's whole-second behavior; TimeOfDay
 accepts signed HH:MM:SS with optional fractional seconds, while other Boost date-time
 string formats are unsupported. Minute inputs are bounded to a local host range
@@ -165,6 +166,24 @@ monotonic clock. `--memory-mb` limits VM backing allocations. `--wall-timeout N`
 stops the worker process tree after N real seconds, including initialization and
 compilation, and returns exit code 124. A non-yielding loop is not stopped by
 `--duration` alone. This runtime is not a security sandbox.
+
+Use `--run-forever` to keep the environment running until Ctrl+C. It enables
+real-time pacing and keeps frames and scheduled tasks alive even after the entry
+script returns. It cannot be combined with `--duration`; `--wall-timeout` remains
+available as an optional deadline. The supervising process stops the VM and its
+compiler/decoder children together on interruption (exit code 130).
+
+Use `--no-player` for a server with an empty Players service. It requires server
+mode; the default synthetic player remains available for existing examples.
+No Studio window opens. Lighting.ClockTime stays fixed until a script changes it;
+sun/moon directions follow the configured time and latitude. A scripted cycle:
+
+```powershell
+python .\run.py .\examples\headless_server.luau --binary $studio --no-player --run-forever
+```
+
+Sun/moon math targets build 735 and is compared against its original sky
+functions within 3e-6. This does not provide sky rendering or a physics solver.
 
 ## Source layout
 
@@ -209,8 +228,8 @@ python -m pip install -r .\tools\requirements.txt
 powershell -File .\tests\validate.ps1 -Binary $studio
 ```
 
-The nested-interpreter geometry test executes six datatype, region, CFrame,
-BasePart, Attachment/Bone and environment suites through Fiu. It is included in
+The nested-interpreter geometry test executes seven datatype, region, CFrame,
+BasePart, Attachment/Bone, environment and sky suites through Fiu. It is included in
 the full validation and can also run separately. Its vector constants use the
 engine's Vector3 constructor:
 
@@ -218,7 +237,7 @@ engine's Vector3 constructor:
 python .\tests\nested_geometry_checks.py --binary $studio
 ```
 
-Validation covers 11 differential suites and 64 runtime/CLI scenarios, including
+Validation covers 12 differential suites and 67 runtime/CLI scenarios, including
 HTTP against local fixtures, model imports, nested Fiu execution, memory limits,
 worker timeouts, all 199 UI property declarations, UI model import, 200 camera
 projection round trips, layout/autosizing, concurrent SQLite updates, persistence
@@ -228,8 +247,9 @@ CFrame transforms, 285 integer conversions against the original VM, and 609
 region/grid comparisons against unchanged original machine functions, 3,108 Euler
 decompositions and 206 lookAlong comparisons with native math, plus orientation
 signals and camera/tween integration, all 149 environment declarations, attachment
-and bone hierarchies, XML/RBXM effect references, and 1,022 native lighting clock
-comparisons. Passing these checks does
+and bone hierarchies, XML/RBXM effect references, 2,046 native lighting clock
+comparisons, 1,056 original sun/moon direction comparisons, continuous host
+lifetime, interruption cleanup, and servers without a player. Passing these checks does
 not establish compatibility with
 every Roblox script. Generated diagnostics remain local and are ignored by Git.
 The optional external vLua model is not bundled. Metadata reconstruction tools in `tools/`

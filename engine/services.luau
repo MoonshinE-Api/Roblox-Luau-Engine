@@ -229,18 +229,20 @@ return function(R)
     end
     function M.Model:MoveTo(position) self:PivotTo(self:GetPivot().Rotation+position) end
     local players=R.game:GetService("Players")
-    R.player=R.new("Player",players,true);R.player.Name=R.config.playerName or "LocalPlayer"
-    R.new("PlayerGui",R.player,true);R.new("PlayerScripts",R.player,true)
+    if not R.config.noPlayer then
+        R.player=R.new("Player",players,true);R.player.Name=R.config.playerName or "LocalPlayer"
+        R.new("PlayerGui",R.player,true);R.new("PlayerScripts",R.player,true)
+    end
     G.Players={LocalPlayer=function() return if R.current().side=="client" then R.player else nil end}
     M.Players={GetPlayers=function() return {R.player} end,
-        GetPlayerByUserId=function(_,id) return if id==R.player.UserId then R.player else nil end,
-        GetPlayerFromCharacter=function(_,model) return if R.player.Character==model then R.player else nil end}
+        GetPlayerByUserId=function(_,id) return if R.player and id==R.player.UserId then R.player else nil end,
+        GetPlayerFromCharacter=function(_,model) return if R.player and R.player.Character==model then R.player else nil end}
     E.Players={PlayerAdded=true,PlayerRemoving=true};E.Player={CharacterAdded=true,CharacterRemoving=true}
     M.BindableEvent={Fire=function(self,...) R.fire(self,"Event",...) end};E.BindableEvent={Event=true}
     M.RemoteEvent={
         FireServer=function(self,...) assert(R.current().side=="client","FireServer requires client context");R.fire(self,"OnServerEvent",R.player,...) end,
-        FireClient=function(self,player,...) assert(R.current().side=="server","FireClient requires server context");assert(player==R.player,"Unknown player");R.fire(self,"OnClientEvent",...) end,
-        FireAllClients=function(self,...) assert(R.current().side=="server","FireAllClients requires server context");R.fire(self,"OnClientEvent",...) end,
+        FireClient=function(self,player,...) assert(R.current().side=="server","FireClient requires server context");assert(R.player and player==R.player,"Unknown player");R.fire(self,"OnClientEvent",...) end,
+        FireAllClients=function(self,...) assert(R.current().side=="server","FireAllClients requires server context");if R.player then R.fire(self,"OnClientEvent",...) end end,
     }
     E.RemoteEvent={OnServerEvent=true,OnClientEvent=true}
     local callbacks=setmetatable({}, {__mode="k"})
@@ -261,7 +263,7 @@ return function(R)
     M.BindableFunction={Invoke=function(self,...) return invoke(self,"OnInvoke",...) end}
     M.RemoteFunction={
         InvokeServer=function(self,...) assert(R.current().side=="client","InvokeServer requires client context");return invoke(self,"OnServerInvoke",R.player,...) end,
-        InvokeClient=function(self,player,...) assert(R.current().side=="server","InvokeClient requires server context");assert(player==R.player,"Unknown player");return invoke(self,"OnClientInvoke",...) end,
+        InvokeClient=function(self,player,...) assert(R.current().side=="server","InvokeClient requires server context");assert(R.player and player==R.player,"Unknown player");return invoke(self,"OnClientInvoke",...) end,
     }
     M.Debris={AddItem=function(_,object,lifetime) R.task.delay(lifetime or 10,function() object:Destroy() end) end}
     local tagSignals={added={},removed={}}

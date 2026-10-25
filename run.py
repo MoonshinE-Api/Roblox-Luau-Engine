@@ -49,7 +49,7 @@ def bootstrap(root,config):
     source+='R.physicalCatalog='+lua_literal({key:physical[key] for key in ('materials','minimum_density','unit_volume','unit_center')})+'\n'
     source+='R.fontCatalog='+lua_literal(fonts['enum_fonts'])+';R.uiCatalog='+lua_literal(ui)+'\n'
     source+='R.environmentCatalog='+lua_literal(environment)+'\n'
-    for name in ['datatypes','enums','value_types','integer_vectors','regions','physical_properties','font','sequences','random','brickcolor','datetime','query_params','scheduler','instances','services','attachments','environment','ui','ui_layout','camera','render_bindings','json','http','datastores','memory_stores','encoding','attributes','model_properties','assets','spatial','tweens','bootstrap']:
+    for name in ['datatypes','enums','value_types','integer_vectors','regions','physical_properties','font','sequences','random','brickcolor','datetime','query_params','scheduler','instances','services','attachments','environment','sky','ui','ui_layout','camera','render_bindings','json','http','datastores','memory_stores','encoding','attributes','model_properties','assets','spatial','tweens','bootstrap']:
         source+='do local initialize=(function()\n'+(root/f'engine/{name}.luau').read_text(encoding='utf-8')+'\nend)();initialize(R) end\n'
     return source
 
@@ -155,7 +155,7 @@ def project_entry(path,mode,load_source=None,models=()):
     return '\n'.join(lines)
 
 
-def main(argv=None):
+def main(argv=None,*,supervised=False):
     # Pipe output must preserve fetched Unicode and JSON independently of the
     # Windows legacy code page used by a parent process.
     for stream in (sys.stdout,sys.stderr):
@@ -172,8 +172,11 @@ def main(argv=None):
     p.add_argument('script',type=Path)
     p.add_argument('--binary',type=Path,default=Path(r'D:/Release-RobloxStudioApp/RobloxStudio.app/Contents/MacOS/RobloxStudio'))
     p.add_argument('--mode',choices=['server','client','both'],default='server')
-    p.add_argument('--duration',type=float,default=1)
+    lifetime=p.add_mutually_exclusive_group()
+    lifetime.add_argument('--duration',type=float,default=1)
+    lifetime.add_argument('--run-forever',action='store_true',help='Keep the headless environment running in real time until Ctrl+C (Windows)')
     p.add_argument('--realtime',action='store_true',help='Pace scheduler events with the monotonic wall clock')
+    p.add_argument('--no-player',action='store_true',help='Run a server without the default synthetic player')
     p.add_argument('--memory-mb',type=int,default=256)
     p.add_argument('--viewport-width',type=int,default=1280,help='Headless UI viewport width in pixels')
     p.add_argument('--viewport-height',type=int,default=720,help='Headless UI viewport height in pixels')
@@ -187,7 +190,9 @@ def main(argv=None):
     if args.wall_timeout is not None and (not math.isfinite(args.wall_timeout) or args.wall_timeout<=0):p.error('--wall-timeout must be finite and positive')
     if not args.script.exists():p.error(f'Script/project not found: {args.script}')
     if args.script.is_file() and args.script.suffix not in {'.lua','.luau'}:p.error('Expected a .lua or .luau file')
-    if args.wall_timeout is not None:
+    if args.no_player and (args.mode!='server' or args.script.is_file() and args.script.stem.endswith('.client')):
+        p.error('--no-player requires a server script/project and --mode server')
+    if (args.wall_timeout is not None or args.run_forever) and not supervised:
         from host_limits import supervise
         try:raise SystemExit(supervise(arguments,args.wall_timeout))
         except KeyboardInterrupt:raise SystemExit(130) from None
@@ -201,7 +206,7 @@ def main(argv=None):
         runtime.open_libraries()
         with tempfile.TemporaryDirectory(prefix='recovery-luau-') as folder:
             working=Path(folder)
-            execute_source(runtime,root,bootstrap(root,{'side':args.mode,'duration':args.duration,'realtime':args.realtime,'viewportSize':[args.viewport_width,args.viewport_height]}),working,'engine-bootstrap')
+            execute_source(runtime,root,bootstrap(root,{'side':args.mode,'duration':args.duration,'forever':args.run_forever,'realtime':args.realtime or args.run_forever,'noPlayer':args.no_player,'viewportSize':[args.viewport_width,args.viewport_height]}),working,'engine-bootstrap')
             source_count=0
             compilations=[]
             def load_source(file,text=None,label=None):

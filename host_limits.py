@@ -79,11 +79,15 @@ def worker_arguments(arguments):
 
 
 def _worker(arguments,ready,temporary_root):
+    import signal
+    # Only the supervising process handles console Ctrl+C. Its job owns this
+    # worker and any compiler/decoder children, including during native calls.
+    signal.signal(signal.SIGINT,signal.SIG_IGN)
     # The parent owns temporary files even when the VM is forcibly stopped.
     tempfile.tempdir=temporary_root
     if not ready.wait(15):raise SystemExit(125)
     from run import main,ScriptFailure
-    try:main(arguments)
+    try:main(arguments,supervised=True)
     except ScriptFailure as error:
         print(f'Execution failed: {error}',file=sys.stderr,flush=True)
         raise SystemExit(1) from None
@@ -92,17 +96,19 @@ def _worker(arguments,ready,temporary_root):
 def supervise(arguments,seconds):
     if os.name!='nt':raise OSError('The process deadline currently requires Windows')
     context=mp.get_context('spawn');ready=context.Event()
-    deadline=time.monotonic()+seconds
+    deadline=None if seconds is None else time.monotonic()+seconds
     job=WindowsJob();process=None
     try:
         with tempfile.TemporaryDirectory(prefix='recovery-worker-') as directory:
             try:
                 process=context.Process(target=_worker,args=(worker_arguments(arguments),ready,directory))
                 process.start();job.assign(process);ready.set()
-                process.join(max(0,deadline-time.monotonic()))
-                if process.is_alive():
-                    print(f'Execution stopped: wall-time limit of {seconds:g} seconds exceeded.',file=sys.stderr,flush=True)
-                    return 124
+                while process.is_alive():
+                    remaining=None if deadline is None else deadline-time.monotonic()
+                    if remaining is not None and remaining<=0:
+                        print(f'Execution stopped: wall-time limit of {seconds:g} seconds exceeded.',file=sys.stderr,flush=True)
+                        return 124
+                    process.join(.1 if remaining is None else min(.1,remaining))
                 return process.exitcode
             finally:
                 # Close the job before touching worker files. This also stops

@@ -1,0 +1,123 @@
+{
+  "functions": {
+    "sky_time": {
+      "address": "0x103210916",
+      "size": 1554,
+      "sha256": "c4596cf41b8463099f89dd19bb4b2885970db34a85e8e75875d5fe8bfabb8729",
+      "data_references": [
+        "0x108f23a90",
+        "0x108f23a94",
+        "0x108f246c0",
+        "0x108f2f400",
+        "0x108f302c8",
+        "0x108f33130",
+        "0x108f46790",
+        "0x108f46794",
+        "0x108f4682c",
+        "0x108f46830",
+        "0x108f46868",
+        "0x108f46878",
+        "0x108f4687c",
+        "0x108f46888",
+        "0x108f49e60",
+        "0x108f49e64",
+        "0x108f4a43c",
+        "0x108f4a6d0",
+        "0x108f97b84",
+        "0x109061a00",
+        "0x1094d1e6c",
+        "0x1094d1e70",
+        "0x1094d1e78",
+        "0x1094d1e80",
+        "0x1094d1e88",
+        "0x1094d1e90",
+        "0x1094d1ea0",
+        "0x1094d1eb0",
+        "0x1094d1ec0",
+        "0x1094d1ed0",
+        "0x1094d1ee0",
+        "0x1094d1ef0",
+        "0x1094d1f50",
+        "0x1094d1fa0",
+        "0x1094d1ff0",
+        "0x109ad3430",
+        "0x10c3b2d48",
+        "0x10d2fad30",
+        "0x10d2fada8"
+      ]
+    },
+    "sky_axis_angle": {
+      "address": "0x103213968",
+      "size": 216,
+      "sha256": "e0d02b080ae2ef71f8e0744fb0efea8e166e75b303698dce8aa0fade5778043d",
+      "data_references": [
+        "0x108f23a94"
+      ]
+    },
+    "sky_white": {
+      "address": "0x103200fec",
+      "size": 14,
+      "sha256": "9476b1330d163921c98e839b926bde66529c20789417755374c3a43e08598bc8",
+      "data_references": [
+        "0x10cd9d8b0"
+      ]
+    },
+    "sky_spline": {
+      "address": "0x103210f5a",
+      "size": 174,
+      "sha256": "f15a9aa32b1175b7c8f74e9dc7dfe1cbf9c041f9b3deefb33ffbe62592bc4bd3",
+      "data_references": [
+        "0x108f23a94"
+      ]
+    },
+    "sky_initialize_colors": {
+      "address": "0x108629d90",
+      "size": 180,
+      "sha256": "5bf91dd19e7d54fa70d0e73fe2d35b915728071a24da74622855e3ba0dcacd09",
+      "data_references": [
+        "0x109061a10",
+        "0x1094d1f00",
+        "0x1094d1f10",
+        "0x1094d1f20",
+        "0x1094d1f30",
+        "0x1094d1f40",
+        "0x10d2fad30",
+        "0x10d2fad40",
+        "0x10d2fad50",
+        "0x10d2fad60",
+        "0x10d2fad68",
+        "0x10d2fad6c",
+        "0x10d2fad74",
+        "0x10d2fad78",
+        "0x10d2fad88",
+        "0x10d2fad98",
+        "0x10d2fada8"
+      ]
+    }
+  },
+  "external_calls": {
+    "0x108822a58": {
+      "import": "___sincosf_stret"
+    },
+    "0x108822be4": {
+      "import": "_cos"
+    },
+    "0x1088229ec": {
+      "import": "___cxa_guard_acquire"
+    },
+    "0x1088229f2": {
+      "import": "___cxa_guard_release"
+    }
+  },
+  "unexecuted_exception_calls": {
+    "0x108822a6a": {
+      "import": "___stack_chk_fail"
+    },
+    "0x10881e396": {
+      "import": "__Unwind_Resume"
+    }
+  },
+  "stack_guard_slot": "0x10c3b2d48",
+  "source": "rbx/LightingParameters.c; rbx/Matrix3.c; v8datamodel/Lighting.c",
+  "comparison": "All five original function bodies unchanged. Only cos/sincosf, C++ initialization guards and the stack-guard pointer are adapted to Windows."
+}

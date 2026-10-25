@@ -12,6 +12,12 @@ mod datetime;
 mod http;
 
 #[unsafe(no_mangle)]
+pub unsafe extern "C" fn original_call_sky(address:usize,output:*mut u8,seconds:f64,ambient:f32,latitude:f32) {
+    let function:unsafe extern "sysv64" fn(*mut u8,f64,f32,f32)->usize=unsafe {std::mem::transmute(address)};
+    unsafe {function(output,seconds,ambient,latitude)};
+}
+
+#[unsafe(no_mangle)]
 pub unsafe extern "C" fn original_call_clock(address:usize,output:*mut u8,hours:f32) {
     let function:unsafe extern "sysv64" fn(*mut u8,f32)->*mut u8=unsafe {std::mem::transmute(address)};
     unsafe {function(output,hours)};

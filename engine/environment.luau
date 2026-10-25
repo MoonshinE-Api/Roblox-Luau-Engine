@@ -115,7 +115,14 @@ return function(R)
     M.Lighting=M.Lighting or {}
     function M.Lighting:GetMinutesAfterMidnight() return R.instances[self].props._lightingSeconds/60 end
     function M.Lighting:SetMinutesAfterMidnight(value)
-        assert(type(value)=='number','Expected minutes number');clockWrite(self,value*60)
+        assert(type(value)=='number','Expected minutes number')
+        local microseconds=math.modf(value*60000000)
+        local seconds=math.modf(microseconds/1000000)
+        -- Avoid a double-precision division rounding across an integer-second
+        -- boundary; the original code uses signed integer division here.
+        if microseconds>=0 and seconds*1000000>microseconds then seconds-=1
+        elseif microseconds<0 and seconds*1000000<microseconds then seconds+=1 end
+        clockWrite(self,seconds)
     end
     function M.Lighting:GetMoonPhase() return 0.75 end
     M.Lighting.getMinutesAfterMidnight=M.Lighting.GetMinutesAfterMidnight

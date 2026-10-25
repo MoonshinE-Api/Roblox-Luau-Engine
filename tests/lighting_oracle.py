@@ -49,6 +49,9 @@ def main():
     hours.extend(rng.uniform(-100,100) for _ in range(600))
     minutes=[-1500,-1440,-0.03,-0.001,0,0.001,0.03,1440,1500,2147483647/60,2147483648/60]
     minutes.extend(rng.uniform(-1e7,1e7) for _ in range(400))
+    for _ in range(512):
+        seconds=rng.randrange(-2147483648,2147483648)
+        minutes.extend([seconds/60,(seconds+0.000001)/60])
     rows=[];minute_rows=[]
     with MachO(args.binary) as binary:
         report=extract(binary) if args.extract else json.loads(FIXTURE.read_text())

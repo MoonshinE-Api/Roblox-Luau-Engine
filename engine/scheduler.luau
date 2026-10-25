@@ -142,7 +142,7 @@ return function(R)
         R.syncTime()
         local frame=R.now+1/60
         local lastFrame=R.now
-        local limit=R.config.duration or 1
+        local limit=if R.config.forever then math.huge else R.config.duration or 1
         local steps=0
         while true do
             if R.pollExternal then R.pollExternal() end
@@ -161,7 +161,9 @@ return function(R)
                 while remaining>0 do __host_sleep(remaining);remaining=at-R.syncTime() end
             else R.now=at end
             steps+=1
-            if steps>200000 then R.report("Scheduler operation limit exceeded");break end
+            -- Perpetual mode is wall-paced and must not expire after a fixed
+            -- lifetime event count. Finite virtual runs retain their guard.
+            if not R.config.forever and steps>200000 then R.report("Scheduler operation limit exceeded");break end
             -- A task waking on a frame boundary observes that frame's update.
             -- In particular PrimaryPart cleanup / tween updates precede wakeup.
             if nextTime<frame then

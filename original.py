@@ -37,6 +37,8 @@ class Original:
                        'rotation_zxy':0x10321473e,'rotation_zyx':0x10321483a,
                        'rotation_look_along':0x103203538}
     ENGINE_ENVIRONMENT = {'lighting_clock':0x104b3cfee,'lighting_time_normalize':0x104b3ce48}
+    ENGINE_SKY = {'sky_time':0x103210916,'sky_axis_angle':0x103213968,'sky_white':0x103200fec,
+                  'sky_spline':0x103210f5a,'sky_initialize_colors':0x108629d90}
     def __init__(self, binary, report, dll, hooks=None, enabled=None, data_overrides=None, pointer_arrays=None,
                  core=False, auto_rebase=False, data_padding=0, writable_data=False):
         self.dll, self.binary = dll, binary
@@ -52,7 +54,7 @@ class Original:
         self.api.GetCurrentProcess.restype = ctypes.c_void_p
         hooks = hooks or {}
         self.enabled = frozenset(enabled) if enabled is not None else self.ALLOWED | (self.BOUNDARY if hooks else frozenset())
-        reviewed_engine=self.ENGINE_RANDOM | self.ENGINE_BRICK | self.ENGINE_DATE | self.ENGINE_PHYSICAL | self.ENGINE_REGION | self.ENGINE_ROTATION | self.ENGINE_ENVIRONMENT
+        reviewed_engine=self.ENGINE_RANDOM | self.ENGINE_BRICK | self.ENGINE_DATE | self.ENGINE_PHYSICAL | self.ENGINE_REGION | self.ENGINE_ROTATION | self.ENGINE_ENVIRONMENT | self.ENGINE_SKY
         permitted = self.ALLOWED | self.BOUNDARY | self.ALLOCATOR | self.INITIALIZER | reviewed_engine.keys()
         for name in self.enabled & reviewed_engine.keys():
             if int(report['functions'][name]['address'],16)!=reviewed_engine[name]:

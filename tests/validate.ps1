@@ -8,7 +8,7 @@ if (-not (Test-Path -LiteralPath $Binary -PathType Leaf)) { throw "Missing suppl
 if ($Build) { & "$ProjectRoot\build.ps1" }
 & python "$ProjectRoot\tests\validation_inputs.py" start
 if ($LASTEXITCODE -ne 0) { throw 'Validation input snapshot failed' }
-foreach ($script in @('oracle.py', 'bootstrap_oracle.py', 'allocator_oracle.py', 'initialization_oracle.py', 'random_oracle.py', 'brickcolor_oracle.py', 'datetime_oracle.py', 'physical_oracle.py', 'region_oracle.py', 'rotation_oracle.py', 'lighting_oracle.py')) {
+foreach ($script in @('oracle.py', 'bootstrap_oracle.py', 'allocator_oracle.py', 'initialization_oracle.py', 'random_oracle.py', 'brickcolor_oracle.py', 'datetime_oracle.py', 'physical_oracle.py', 'region_oracle.py', 'rotation_oracle.py', 'lighting_oracle.py', 'sky_oracle.py')) {
     & python "$ProjectRoot\tests\$script" --binary $Binary
     if ($LASTEXITCODE -ne 0) { throw "Comparison failed: $script" }
 }
@@ -104,7 +104,7 @@ if ($LASTEXITCODE -ne 0) { throw 'CFrame rotation/axis-angle/quaternion checks f
 if ($LASTEXITCODE -ne 0) { throw 'BasePart rotation/orientation/signal checks failed' }
 & python "$ProjectRoot\run.py" "$ProjectRoot\examples\orbit_camera.luau" --binary $Binary --mode client --duration 1.2
 if ($LASTEXITCODE -ne 0) { throw 'Orbit camera/orientation tween example failed' }
-foreach ($case in @('attachments','environment')) {
+foreach ($case in @('attachments','environment','sky')) {
     & python "$ProjectRoot\run.py" "$ProjectRoot\tests\$case.luau" --binary $Binary --duration 0.5
     if ($LASTEXITCODE -ne 0) { throw "Attachment/environment checks failed: $case" }
 }
@@ -114,6 +114,10 @@ if ($LASTEXITCODE -ne 0) { throw 'Environment XML/RBXM model checks failed' }
 if ($LASTEXITCODE -ne 0) { throw 'Animated environment example failed' }
 & python "$ProjectRoot\tests\nested_geometry_checks.py" --binary $Binary
 if ($LASTEXITCODE -ne 0) { throw 'Nested geometry/attachment/environment suites failed' }
+& python "$ProjectRoot\tests\headless_checks.py" --binary $Binary
+if ($LASTEXITCODE -ne 0) { throw 'Continuous host and player-free server checks failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\examples\headless_server.luau" --binary $Binary --no-player --duration 2.2
+if ($LASTEXITCODE -ne 0) { throw 'Headless server day/night cycle example failed' }
 & python "$ProjectRoot\tests\validation_inputs.py" finish
 if ($LASTEXITCODE -ne 0) { throw 'Validation inputs changed during checks' }
-Write-Host 'All eleven differential checks and sixty-four runtime/CLI checks passed.'
+Write-Host 'All twelve differential checks and sixty-seven runtime/CLI checks passed.'

@@ -46,6 +46,9 @@ unary!(h_acos=>acos,h_asin=>asin,h_atan=>atan,h_cos=>cos,h_cosh=>cosh,h_exp=>exp
 unsafe extern "sysv64" fn h_atan2(a:f64,b:f64)->f64 {a.atan2(b)}
 unsafe extern "sysv64" fn h_atan2f(a:f32,b:f32)->f32 {a.atan2(b)}
 unsafe extern "sysv64" fn h_asinf(a:f32)->f32 {a.asin()}
+#[repr(C)]
+struct SinCosPair { sine:f32, cosine:f32 }
+unsafe extern "sysv64" fn h_sincosf(a:f32)->SinCosPair {SinCosPair{sine:a.sin(),cosine:a.cos()}}
 unsafe extern "sysv64" fn h_pow(a:f64,b:f64)->f64 {a.powf(b)}
 unsafe extern "sysv64" fn h_fmod(a:f64,b:f64)->f64 {a%b}
 unsafe extern "sysv64" fn h_frexp(a:f64,b:*mut i32)->f64 {unsafe {frexp(a,b)}}
@@ -267,6 +270,7 @@ pub unsafe extern "C" fn host_import_address(name:*const u8,length:usize)->usize
     match name {
         b"_acos"=>ptr!(h_acos),b"_asin"=>ptr!(h_asin),b"_atan"=>ptr!(h_atan),b"_atan2"=>ptr!(h_atan2),
         b"_asinf"=>ptr!(h_asinf),b"_atan2f"=>ptr!(h_atan2f),
+        b"___sincosf_stret"=>ptr!(h_sincosf),
         b"_cos"=>ptr!(h_cos),b"_cosh"=>ptr!(h_cosh),b"_exp"=>ptr!(h_exp),b"_log"=>ptr!(h_log),
         b"_log10"=>ptr!(h_log10),b"_log2"=>ptr!(h_log2),b"_sin"=>ptr!(h_sin),b"_sinh"=>ptr!(h_sinh),
         b"_tan"=>ptr!(h_tan),b"_tanh"=>ptr!(h_tanh),b"_pow"=>ptr!(h_pow),b"_fmod"=>ptr!(h_fmod),
