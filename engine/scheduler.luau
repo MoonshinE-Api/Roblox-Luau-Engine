@@ -124,17 +124,23 @@ return function(R)
         R.signals[signal]=data
         return signal
     end
-    function R.fireSignal(signal,...)
+    local function fireSignal(signal,side,...)
         R.syncTime()
         local data=R.signals[signal];local args=table.pack(...)
         local waiters=data.waiters;data.waiters={}
         for _,waiter in waiters do
-            if not waiter.done then waiter.done=true;R.enqueue(waiter.thread,args,R.now,waiter.context) end
+            if not waiter.done then
+                if not side or waiter.context.side==side then
+                    waiter.done=true;R.enqueue(waiter.thread,args,R.now,waiter.context)
+                else table.insert(data.waiters,waiter) end
+            end
         end
         for _,state in table.clone(data.connections) do
-            if state.connected then R.spawnWith(state.context,state.callback,table.unpack(args,1,args.n)) end
+            if state.connected and (not side or state.context.side==side) then R.spawnWith(state.context,state.callback,table.unpack(args,1,args.n)) end
         end
     end
+    function R.fireSignal(signal,...) return fireSignal(signal,nil,...) end
+    function R.fireSignalSide(signal,side,...) return fireSignal(signal,side,...) end
     function R.disconnectSignal(signal)
         for _,state in R.signals[signal].connections do state.connected=false end
     end

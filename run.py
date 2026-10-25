@@ -49,7 +49,7 @@ def bootstrap(root,config):
     source+='R.physicalCatalog='+lua_literal({key:physical[key] for key in ('materials','minimum_density','unit_volume','unit_center')})+'\n'
     source+='R.fontCatalog='+lua_literal(fonts['enum_fonts'])+';R.uiCatalog='+lua_literal(ui)+'\n'
     source+='R.environmentCatalog='+lua_literal(environment)+'\n'
-    for name in ['datatypes','enums','value_types','integer_vectors','regions','physical_properties','font','sequences','random','brickcolor','datetime','query_params','scheduler','instances','services','players','callbacks','attachments','environment','sky','ui','ui_layout','camera','render_bindings','json','http','datastores','memory_stores','encoding','attributes','model_properties','assets','spatial','tweens','lifecycle','bootstrap']:
+    for name in ['datatypes','enums','value_types','integer_vectors','regions','physical_properties','font','sequences','random','brickcolor','datetime','query_params','scheduler','instances','services','humanoids','players','callbacks','attachments','environment','sky','ui','ui_layout','camera','render_bindings','json','http','datastores','memory_stores','encoding','attributes','model_properties','assets','spatial','tweens','lifecycle','bootstrap']:
         source+='do local initialize=(function()\n'+(root/f'engine/{name}.luau').read_text(encoding='utf-8')+'\nend)();initialize(R) end\n'
     return source
 

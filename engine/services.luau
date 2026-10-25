@@ -90,6 +90,7 @@ return function(R)
             if primary and not primary:IsDescendantOf(model) then model.PrimaryPart=nil end
         end
         R.fire(run,"PreSimulation",dt);R.fire(run,"Stepped",R.now,dt)
+        if R.simulate then R.simulate(dt) end
         R.fire(run,"PostSimulation",dt);R.fire(run,"Heartbeat",dt)
         if R.config.side=="client" or R.config.side=="both" then
             R.fire(run,"PreRender",dt)

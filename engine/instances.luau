@@ -110,6 +110,7 @@ return function(R)
         assert(not d.locked,"The Parent property is locked")
         assert(parent~=object and (parent==nil or not parent:IsDescendantOf(object)),"Attempt to set Parent would result in circular reference")
         assert(not d.parenting,"Recursive Parent assignment")
+        if R.validateParent then R.validateParent(object,parent) end
         d.parenting=true
         local old=d.parent
         local wasInGame=R.game and object:IsDescendantOf(R.game) or false

@@ -1,0 +1,24 @@
+{
+  "functions": {
+    "humanoid_health_view": {
+      "address": "0x105aab8f0",
+      "size": 28,
+      "sha256": "9c11614980ab26d1f56446b4b3ca1ddba04dc51280038a1faeeff28d6deda06b",
+      "data_references": []
+    },
+    "humanoid_state_enabled": {
+      "address": "0x105ac6200",
+      "size": 42,
+      "sha256": "118466c86289ae28b0a0c7d18de4647e31d8a1a9d08b0bedee07ddb70cc4b7e9",
+      "data_references": [
+        "0x10be32e7b"
+      ]
+    }
+  },
+  "unexecuted_invalid_state_logging": [
+    "0x102a88e45"
+  ],
+  "source": "humanoid/Humanoid.part001.c; humanoid/Humanoid.part002.c",
+  "comparison": "Unchanged transformHealthCallback and getStateTransitionEnabled bodies.",
+  "limits": "Borrowed scalar/flag fixtures only; no rigs, locomotion, damage, death state machine, ownership or native events executed."
+}

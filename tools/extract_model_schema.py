@@ -13,7 +13,7 @@ from vm_runtime import Runtime
 
 CLASSES=['ModuleScript','Script','LocalScript','Folder','Model','Part','Configuration',
     'BoolValue','NumberValue','IntValue','StringValue','ObjectValue','Vector3Value',
-    'CFrameValue','Color3Value','BrickColorValue','Camera','Humanoid',
+    'CFrameValue','Color3Value','BrickColorValue','Camera','Humanoid','ForceField',
     'BindableEvent','BindableFunction','RemoteEvent','RemoteFunction','MaterialVariant','WedgePart','CornerWedgePart']
 CLASSES+=['ScreenGui','Frame','CanvasGroup','TextLabel','TextButton','TextBox','ImageLabel','ImageButton',
     'ScrollingFrame','ViewportFrame','UICorner','UIStroke','UIGradient','UIScale','UIPadding',
@@ -44,10 +44,21 @@ return R.jsonEncode(classes)'''.replace('CLASSES',lua_literal(CLASSES))
     finally:runtime.close()
     # Empty Lua dictionaries serialize as [], normalize before publishing.
     classes={key:(value or {}) for key,value in classes.items()}
+    # Preserve the published order; Lua table rehashing must not reorder an
+    # otherwise unchanged schema when a class/property is added.
+    output=root/'data/model_property_schema.json'
+    previous=json.loads(output.read_text(encoding='utf-8')).get('classes',{}) if output.exists() else {}
+    names=[name for name in previous if name in classes]+sorted(classes.keys()-previous.keys())
+    ordered={}
+    for name in names:
+        keys=[key for key in previous.get(name,{}) if key in classes[name]]
+        keys+=sorted(classes[name].keys()-set(keys))
+        ordered[name]={key:classes[name][key] for key in keys}
+    classes=ordered
     report={'meaning':'Explicit import class allowlist; property types observed from implemented runtime, not full engine support.',
         'runtime_version':'0.735.19.7351131','classes':classes,
-        'source_sha256':{name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ('engine/instances.luau','engine/services.luau','engine/players.luau','engine/callbacks.luau','engine/lifecycle.luau','engine/attachments.luau','engine/environment.luau','engine/sky.luau','engine/ui.luau','engine/ui_layout.luau','engine/camera.luau','data/ui_property_catalog.json','data/environment_property_catalog.json')}}
-    (root/'data/model_property_schema.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+        'source_sha256':{name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ('engine/instances.luau','engine/services.luau','engine/humanoids.luau','engine/players.luau','engine/callbacks.luau','engine/lifecycle.luau','engine/attachments.luau','engine/environment.luau','engine/sky.luau','engine/ui.luau','engine/ui_layout.luau','engine/camera.luau','data/ui_property_catalog.json','data/environment_property_catalog.json')}}
+    output.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'classes':len(classes),'property_declarations':sum(len(x) for x in classes.values())}))
 
 if __name__=='__main__':main()

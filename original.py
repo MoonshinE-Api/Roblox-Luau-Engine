@@ -41,6 +41,7 @@ class Original:
                   'sky_spline':0x103210f5a,'sky_initialize_colors':0x108629d90}
     ENGINE_PLAYERS = {'players_lookup':0x105759350,'players_snapshot':0x10076e920,
                       'players_count':0x10076f4e6,'player_ptr_destroy':0x1003fb994}
+    ENGINE_HUMANOID = {'humanoid_health_view':0x105aab8f0,'humanoid_state_enabled':0x105ac6200}
     def __init__(self, binary, report, dll, hooks=None, enabled=None, data_overrides=None, pointer_arrays=None,
                  core=False, auto_rebase=False, data_padding=0, writable_data=False):
         self.dll, self.binary = dll, binary
@@ -56,7 +57,7 @@ class Original:
         self.api.GetCurrentProcess.restype = ctypes.c_void_p
         hooks = hooks or {}
         self.enabled = frozenset(enabled) if enabled is not None else self.ALLOWED | (self.BOUNDARY if hooks else frozenset())
-        reviewed_engine=self.ENGINE_RANDOM | self.ENGINE_BRICK | self.ENGINE_DATE | self.ENGINE_PHYSICAL | self.ENGINE_REGION | self.ENGINE_ROTATION | self.ENGINE_ENVIRONMENT | self.ENGINE_SKY | self.ENGINE_PLAYERS
+        reviewed_engine=self.ENGINE_RANDOM | self.ENGINE_BRICK | self.ENGINE_DATE | self.ENGINE_PHYSICAL | self.ENGINE_REGION | self.ENGINE_ROTATION | self.ENGINE_ENVIRONMENT | self.ENGINE_SKY | self.ENGINE_PLAYERS | self.ENGINE_HUMANOID
         permitted = self.ALLOWED | self.BOUNDARY | self.ALLOCATOR | self.INITIALIZER | reviewed_engine.keys()
         for name in self.enabled & reviewed_engine.keys():
             if int(report['functions'][name]['address'],16)!=reviewed_engine[name]:

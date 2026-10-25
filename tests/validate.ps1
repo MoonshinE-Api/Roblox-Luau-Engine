@@ -8,7 +8,7 @@ if (-not (Test-Path -LiteralPath $Binary -PathType Leaf)) { throw "Missing suppl
 if ($Build) { & "$ProjectRoot\build.ps1" }
 & python "$ProjectRoot\tests\validation_inputs.py" start
 if ($LASTEXITCODE -ne 0) { throw 'Validation input snapshot failed' }
-foreach ($script in @('oracle.py', 'bootstrap_oracle.py', 'allocator_oracle.py', 'initialization_oracle.py', 'random_oracle.py', 'brickcolor_oracle.py', 'datetime_oracle.py', 'physical_oracle.py', 'region_oracle.py', 'rotation_oracle.py', 'lighting_oracle.py', 'sky_oracle.py', 'player_oracle.py')) {
+foreach ($script in @('oracle.py', 'bootstrap_oracle.py', 'allocator_oracle.py', 'initialization_oracle.py', 'random_oracle.py', 'brickcolor_oracle.py', 'datetime_oracle.py', 'physical_oracle.py', 'region_oracle.py', 'rotation_oracle.py', 'lighting_oracle.py', 'sky_oracle.py', 'player_oracle.py', 'humanoid_oracle.py')) {
     & python "$ProjectRoot\tests\$script" --binary $Binary
     if ($LASTEXITCODE -ne 0) { throw "Comparison failed: $script" }
 }
@@ -142,6 +142,16 @@ if ($LASTEXITCODE -ne 0) { throw 'Initially empty player roster check failed' }
 if ($LASTEXITCODE -ne 0) { throw 'Player server/client signal and broadcast contexts failed' }
 & python "$ProjectRoot\run.py" "$ProjectRoot\examples\player_sessions.luau" --binary $Binary --duration 0.1
 if ($LASTEXITCODE -ne 0) { throw 'Player session/character/save example failed' }
+foreach ($side in @('server','client')) {
+    & python "$ProjectRoot\run.py" "$ProjectRoot\tests\humanoids.luau" --binary $Binary --mode $side --duration 0.3
+    if ($LASTEXITCODE -ne 0) { throw "Humanoid health/force field/death check failed: $side" }
+}
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\humanoid_contexts" --binary $Binary --mode both --duration 0.2
+if ($LASTEXITCODE -ne 0) { throw 'Humanoid peer flags/death/waiter contexts failed' }
+& python "$ProjectRoot\tests\humanoid_model_checks.py" --binary $Binary
+if ($LASTEXITCODE -ne 0) { throw 'Humanoid/force field model import checks failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\examples\damage_arena.luau" --binary $Binary --duration 0.1
+if ($LASTEXITCODE -ne 0) { throw 'Damage/heal/protection/death example failed' }
 & python "$ProjectRoot\tests\validation_inputs.py" finish
 if ($LASTEXITCODE -ne 0) { throw 'Validation inputs changed during checks' }
-Write-Host 'All thirteen differential checks and seventy-nine runtime/CLI checks passed.'
+Write-Host 'All fourteen differential checks and eighty-four runtime/CLI checks passed.'

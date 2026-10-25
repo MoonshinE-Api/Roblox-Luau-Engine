@@ -65,6 +65,9 @@ Names are case-sensitive, as in Studio: `Instance.new("Part")`, `Clone`, and
 - Live Players rosters, independent GetPlayers snapshots, UserId/character lookup,
   NumPlayers, joins/removals, typed manual Character assignment, character events,
   and head-based DistanceFromCharacter with float32 arithmetic.
+- Float32 Humanoid Health/MaxHealth, HealthChanged, TakeDamage/healing, ForceField
+  protection, per-side state-enable flags, and health-driven Died events during
+  simulation. ForceField.Visible supports cloning and XML/RBXM import.
 - Vector2/3, CFrame, Color3, UDim/UDim2, sequences, query parameters, tweens,
   Random, BrickColor, DateTime, PhysicalProperties, Font, and other partial types.
 - Vector component operations, signed angles and relative FuzzyEq; Color3 HSV/hex
@@ -236,6 +239,29 @@ DistanceFromCharacter uses the direct Head BasePart, returning 0 if it is absent
 python .\run.py .\examples\player_sessions.luau --binary $studio --duration 0.1
 ```
 
+Humanoid Health preserves build 735's raw stored value while its getter clamps
+the result to [0, MaxHealth]. Raising MaxHealth can reveal previously stored
+health above the old limit. Raw health writes and MaxHealth changes emit the
+corresponding property/HealthChanged notifications. NaN health remains NaN;
+MaxHealth is nonnegative. TakeDamage subtracts from visible health in float32;
+negative damage heals. ForceFields block both, including when Visible is false,
+while direct Health writes bypass protection. Fields on the root part, the same
+parent, or ancestors below Workspace provide protection; direct Workspace
+parenting of a ForceField is rejected. RootPart is a name-based headless lookup.
+
+Health-driven death runs between PreSimulation and PostSimulation for Workspace
+descendants with the Dead state enabled. It fires once per side and maintains
+zero health on subsequent steps. State-enable flags and their notifications are
+separate for server/client contexts; filtered signals preserve the other side's
+waiting coroutines. Clone construction starts fresh internal state metadata.
+This is not the full humanoid state machine: locomotion, rig/neck validation,
+joint breaking, animations, automatic regeneration, physical assembly roots,
+and network ownership are not implemented.
+
+```powershell
+python .\run.py .\examples\damage_arena.luau --binary $studio --duration 0.1
+```
+
 ## Source layout
 
 | Path | Purpose |
@@ -279,8 +305,8 @@ python -m pip install -r .\tools\requirements.txt
 powershell -File .\tests\validate.ps1 -Binary $studio
 ```
 
-The nested-interpreter test executes nine datatype, region, CFrame, BasePart,
-Attachment/Bone, environment, sky, callback and player suites through Fiu. It is included in
+The nested-interpreter test executes ten datatype, region, CFrame, BasePart,
+Attachment/Bone, environment, sky, callback, player and humanoid suites through Fiu. It is included in
 the full validation and can also run separately. Its vector constants use the
 engine's Vector3 constructor:
 
@@ -288,7 +314,7 @@ engine's Vector3 constructor:
 python .\tests\nested_geometry_checks.py --binary $studio
 ```
 
-Validation covers 13 differential suites and 79 runtime/CLI scenarios, including
+Validation covers 14 differential suites and 84 runtime/CLI scenarios, including
 HTTP against local fixtures, model imports, nested Fiu execution, memory limits,
 worker timeouts, all 199 UI property declarations, UI model import, 200 camera
 projection round trips, layout/autosizing, concurrent SQLite updates, persistence
@@ -308,6 +334,9 @@ Player checks include 800 native roster/count/snapshot fixtures and 3,200 native
 UserId lookup comparisons. The native ID comparison enables MigrateUserIdAccessors
 and uses borrowed fixtures with null reference controllers; it does not exercise
 account/domain-ID translation, real joins, or native object ownership.
+Humanoid comparisons cover 1,678 original float32 health views and 1,920 original
+state-flag reads. Damage, force fields, health-driven death, peer isolation and
+model import are integration checks; native rig/state-machine code is not run.
 Passing these checks does
 not establish compatibility with
 every Roblox script. Generated diagnostics remain local and are ignored by Git.
