@@ -1,5 +1,5 @@
--- Headless UI configuration and explicit UDim geometry. No text shaping,
--- rendering, automatic/list/grid layout, device input, or safe-area discovery.
+-- Headless UI configuration and manual geometry. List/grid/container autosizing
+-- is supplied by ui_layout. No text shaping, renderer, or input hardware.
 return function(R)
     local V2,U2=R.datatypes.Vector2,R.datatypes.UDim2
     local M,G,S,E=R.classMethods,R.classGetters,R.classSetters,R.classEvents
@@ -15,8 +15,17 @@ return function(R)
         end
         return assert(enumValues[name][value],"Unknown UI enum value")
     end
+    local function numeric(value)
+        if type(value)~='table' then return value end
+        if value['$number'] then
+            if value['$number']=='Infinity' then return math.huge end
+            if value['$number']=='-Infinity' then return -math.huge end
+            return 0/0
+        end
+        local copy={};for key,item in value do copy[key]=numeric(item) end;return copy
+    end
     local function decode(record)
-        local kind,v=record.kind,record.values
+        local kind,v=record.kind,numeric(record.values)
         if kind=='Instance?' then return nil
         elseif string.sub(kind,1,5)=='Enum.' then return enum(string.sub(kind,6),v)
         elseif kind=='boolean' or kind=='number' or kind=='string' then return v
@@ -44,7 +53,7 @@ return function(R)
         return value
     end
     local integers={LayoutOrder=true,ZIndex=true,DisplayOrder=true,SelectionOrder=true,BorderSizePixel=true,
-        CursorPosition=true,SelectionStart=true,MaxVisibleGraphemes=true,MaxTextSize=true,MinTextSize=true}
+        CursorPosition=true,SelectionStart=true,MaxVisibleGraphemes=true,MaxTextSize=true,MinTextSize=true,FillDirectionMaxCells=true}
     local function write(object,key,value)
         local d=R.instances[object];value=valid(value,assert(d.uiRules[key]))
         if type(value)=='number' then
@@ -132,12 +141,13 @@ return function(R)
         return position+offset-object.AnchorPoint*size,size,scale,parentRotation+object.Rotation
     end
     G.GuiBase2d=G.GuiBase2d or {}
-    G.GuiBase2d.AbsolutePosition=function(self) local p=rect(self);return p end
-    G.GuiBase2d.AbsoluteSize=function(self) local _,s=rect(self);return s end
-    G.GuiBase2d.AbsoluteRotation=function(self) local _,_,_,a=rect(self);return a end
+    G.GuiBase2d.AbsolutePosition=function(self) local p=R.uiRect(self);return p end
+    G.GuiBase2d.AbsoluteSize=function(self) local _,s=R.uiRect(self);return s end
+    G.GuiBase2d.AbsoluteRotation=function(self) local _,_,_,a=R.uiRect(self);return a end
     G.ScrollingFrame={AbsoluteCanvasSize=function(self)
+        if R.uiCanvasSize then return R.uiCanvasSize(self) end
         assert(self.AutomaticCanvasSize==R.Enum.AutomaticSize.None,'AutomaticCanvasSize layout is not implemented')
-        local _,size,scale=rect(self)
+        local _,size,scale=R.uiRect(self)
         return V2.new(self.CanvasSize.X.Scale*size.X+self.CanvasSize.X.Offset*scale,
             self.CanvasSize.Y.Scale*size.Y+self.CanvasSize.Y.Offset*scale):Max(size)
     end,AbsoluteWindowSize=function(self) return self.AbsoluteSize end}
@@ -152,7 +162,7 @@ return function(R)
     end
     local function inside(object,x,y)
         assert(object.AbsoluteRotation==0,'Rotated UI hit testing is not implemented')
-        local p,s=rect(object);return x>=p.X and y>=p.Y and x<p.X+s.X and y<p.Y+s.Y
+        local p,s=R.uiRect(object);return x>=p.X and y>=p.Y and x<p.X+s.X and y<p.Y+s.Y
     end
     M.BasePlayerGui=M.BasePlayerGui or {}
     function M.BasePlayerGui:GetGuiObjectsAtPosition(x,y)
@@ -256,7 +266,7 @@ return function(R)
     local signal=R.signal
     function R.signal(object,name)
         local key=string.match(name,'^property:(Absolute%w+)$')
-        if key and object:IsA('GuiBase2d') then
+        if key and (object:IsA('GuiBase2d') or object:IsA('UIGridStyleLayout')) then
             watched[object]=watched[object] or {}
             local ok,value=pcall(function() return object[key] end)
             if ok and watched[object][key]==nil then watched[object][key]=value end

@@ -43,7 +43,7 @@ class Completion:
         self.transfer=Transfer(C.addressof(self.metadata),len(encoded),C.addressof(self.body),len(body))
 
 class HttpRuntime:
-    def __init__(self):
+    def __init__(self,data_store_path=None):
         self.condition=threading.Condition()
         self.next_id=0
         self.jobs={}
@@ -51,6 +51,8 @@ class HttpRuntime:
         self.workers=0
         self.closed=False
         self.callback_errors=[]
+        self.data_store_path=data_store_path
+        self.data_stores=None
         @C.CFUNCTYPE(C.c_size_t,C.c_size_t,C.c_size_t)
         def dispatch(op,arg):
             try:
@@ -108,13 +110,22 @@ class HttpRuntime:
 
     def work(self,identifier,options,body):
         try:
-            if options.get('Kind')=='Asset':
+            if options.get('Kind')=='DataStore':
+                with self.condition:
+                    if self.closed:raise RuntimeError('Runtime is closed')
+                    if self.data_stores is None:
+                        from datastore_runtime import DataStores
+                        self.data_stores=DataStores(self.data_store_path)
+                    stores=self.data_stores
+                metadata,body=stores.request(options,body)
+            elif options.get('Kind')=='Asset':
                 from assets import load_asset
                 metadata,body=load_asset(Path(__file__).resolve().parent,options,self.request)
             else:metadata,body=self.request(options,body)
             result=Completion(metadata,body)
         except Exception as error:
-            result=Completion({'Error':f'HTTP transport: {type(error).__name__}: {error}'})
+            label='Local data store' if options.get('Kind')=='DataStore' else 'HTTP transport'
+            result=Completion({'Error':f'{label}: {type(error).__name__}: {error}'})
         with self.condition:
             self.workers-=1
             # Never replace a pinned completion: the native caller may currently
@@ -188,3 +199,4 @@ class HttpRuntime:
     def close(self):
         with self.condition:
             self.closed=True;self.jobs.clear();self.deadlines.clear();self.condition.notify_all()
+        if self.data_stores is not None:self.data_stores.close()

@@ -56,6 +56,15 @@ def main():
         corner=item(button,'UICorner','Corner');prop(corner,'UDim','CornerRadius',parts=[('S',0),('O',12)])
         for key in ('TopLeftRadius','TopRightRadius','BottomLeftRadius','BottomRightRadius'):
             prop(corner,'UDim',key,parts=[('S',0),('O',12)])
+        layout=item(frame,'UIListLayout','Layout')
+        prop(layout,'UDim','Padding',parts=[('S',0),('O',5)])
+        prop(layout,'token','FillDirection',str(ENUMS['FillDirection']['Vertical']))
+        inventory=item(gui,'Frame','Inventory')
+        prop(inventory,'UDim2','Size',parts=[('XS',0),('XO',150),('YS',0),('YO',80)])
+        grid=item(inventory,'UIGridLayout','Grid')
+        prop(grid,'UDim2','CellSize',parts=[('XS',0),('XO',40),('YS',0),('YO',20)])
+        prop(grid,'UDim2','CellPadding',parts=[('XS',0),('XO',5),('YS',0),('YO',5)])
+        for i in range(5):item(inventory,'Frame',f'Slot{i}')
         xml=folder/'ui.rbxmx';rbxm=folder/'ui.rbxm';driver=folder/'main.luau'
         ET.ElementTree(tree).write(xml,encoding='utf-8')
         subprocess.run([str(ROOT/'recovery-asset-codec.exe'),'to-binary',str(xml),str(rbxm)],check=True)
@@ -69,11 +78,14 @@ assert(p.Icon.Image=='rbxassetid://1234' and p.Icon.SliceCenter==Rect.new(2,3,20
 assert(b.Gradient.Color.Keypoints[2].Value==Color3.new(0,0,1))
 assert(math.abs(b.Gradient.Transparency.Keypoints[2].Value-0.9)<1e-6)
 assert(b.Corner.CornerRadius==UDim.new(0,12))
+assert(p.Layout.AbsoluteContentSize==Vector2.new(210,45))
+assert(gui.Inventory.Grid.AbsoluteCellCount==Vector2.new(3,2))
+assert(gui.Inventory.Grid.AbsoluteContentSize==Vector2.new(130,45))
 local clone=gui:Clone();assert(clone.Panel.Button.NextSelectionDown==clone.Panel.Button)
 print('UI MODEL IMPORT PASSED')
 ''',encoding='utf-8')
         for model in (xml,rbxm):
-            assert read_model(model)['count']==6
+            assert read_model(model)['count']==14
             subprocess.run([sys.executable,str(ROOT/'run.py'),str(driver),'--binary',args.binary,'--model',str(model),'--wall-timeout','30'],check=True)
         # Host-side import errors must be diagnosed before entering the VM.
         for tag,name,text,parts in [('NumberSequence','Transparency','0 0 -1 1 1 0',None),

@@ -64,12 +64,18 @@ Names are case-sensitive, as in Studio: `Instance.new("Part")`, `Clone`, and
   supported references and typed attributes are restored before script execution.
 - Material variants, density-based mass for supported primitive shapes, bounds,
   and spatial queries. These calculations do not provide dynamic physics.
-- 186 typed UI configuration declarations across 22 class definitions, with
+- 199 typed UI configuration declarations across 25 class definitions, with
   inherited defaults, change signals, cloning, focus, and XML/RBXM import.
 - Headless UDim2 geometry, anchors, UIScale, padding, size/aspect constraints, clipping,
   scrolling offsets, and GUI hit ordering. No window or text renderer is created.
 - Camera viewport/screen projection, inverse rays, FOV modes, and Ray closest
   point/distance methods. Projection uses semantic double-precision math.
+- UIListLayout and UIGridLayout: sorting, alignment, wrapping, cell spans,
+  content-size notifications, container AutomaticSize, and AutomaticCanvasSize.
+- Local DataStoreService: JSON values, metadata/user IDs, key versions, scopes,
+  cached reads, atomic UpdateAsync retries, ordered stores, and paginated lists.
+- Process-local MemoryStore hash/sorted maps and queues: expiration, update
+  callbacks, sorted ranges, priorities, read leases, and waiting readers.
 
 ```powershell
 python .\run.py .\examples\headless_ui.luau --binary $studio --mode client
@@ -78,10 +84,33 @@ python .\run.py .\examples\projected_target.luau --binary $studio --mode client
 
 Set the simulated viewport with `--viewport-width` and `--viewport-height`
 (defaults: 1280 by 720). UI defaults are sourced from reflection build 741;
-the underlying VM remains build 735. AutomaticSize, list/grid layout, text
-measurement, hardware input, rotated GUI hit testing, VR and occlusion are
-not implemented. UI configuration storage does not imply visual rendering.
+the underlying VM remains build 735. AutomaticSize supports containers; intrinsic
+text sizing, flex grow/shrink and item-line alignment, page/table layouts, text
+measurement, hardware input, rotated GUI hit testing, VR and occlusion are not
+implemented. Cyclic/non-converging automatic-size dependencies produce an error.
+UI configuration storage does not imply visual rendering.
 Camera near-plane offset defaults to -0.5 studs in this headless environment.
+
+## Local storage
+
+Data stores are isolated and in memory by default. Supply an explicit SQLite
+file to keep data across runner invocations:
+
+```powershell
+python .\run.py .\examples\local_inventory.luau --binary $studio --duration 5 --data-store "$env:TEMP\roblox-engine-inventory.sqlite3"
+python .\run.py .\examples\layout_gallery.luau --binary $studio
+```
+
+These services do not read or write Roblox cloud data. SQLite keeps every local
+write as a version; Roblox request budgets, throttling and version-retention
+policies are not simulated. Values are limited to 4 MiB of UTF-8 JSON, ordered
+values to exact Luau integers, and listing snapshots to 10,000 entries. Update
+callbacks cannot yield. GetAsync uses a four-second cache with optional bypass.
+
+MemoryStore data lives in one VM and expires using the simulated scheduler clock
+(wall-paced with `--realtime`). It is not shared across separate runner processes.
+Queue reads make items temporarily invisible; removal after the lease expires
+does not remove the item. Local memory-store values are limited to 32 KiB.
 
 `--duration` controls simulated scheduler time; `--realtime` paces it against a
 monotonic clock. `--memory-mb` limits VM backing allocations. `--wall-timeout N`
@@ -132,10 +161,12 @@ python -m pip install -r .\tools\requirements.txt
 powershell -File .\tests\validate.ps1 -Binary $studio
 ```
 
-Validation covers 8 differential suites and 41 runtime/CLI scenarios, including
+Validation covers 8 differential suites and 49 runtime/CLI scenarios, including
 HTTP against local fixtures, model imports, nested Fiu execution, memory limits,
-worker timeouts, all 186 UI property declarations, UI model import, and 200 camera
-projection round trips. Passing these checks does not establish compatibility with
+worker timeouts, all 199 UI property declarations, UI model import, 200 camera
+projection round trips, layout/autosizing, concurrent SQLite updates, persistence
+across processes, memory-store TTLs, and queue leases. Passing these checks does
+not establish compatibility with
 every Roblox script. Generated diagnostics remain local and are ignored by Git.
 The optional external vLua model is not bundled. Metadata reconstruction tools in `tools/`
 may additionally require original source artifacts; ordinary execution uses the

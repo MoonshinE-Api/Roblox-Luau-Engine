@@ -1,9 +1,10 @@
 local function rejects(fn) assert(not pcall(fn),"Expected failure") end
 local function equal(a,b) assert((a-b).Magnitude<1e-5,tostring(a).." ~= "..tostring(b)) end
 local R=__engine
-local representatives={GuiBase2d='Frame',LayerCollector='ScreenGui',GuiObject='Frame',GuiButton='TextButton'}
+local representatives={GuiBase2d='Frame',LayerCollector='ScreenGui',GuiObject='Frame',GuiButton='TextButton',UIGridStyleLayout='UIListLayout'}
 local checked=0
 assert(Instance.new('TextButton').Active and Instance.new('TextBox').Selectable)
+assert(Instance.new('UISizeConstraint').MaxSize==Vector2.new(math.huge,math.huge))
 for owner,fields in R.uiCatalog.classes do
     for key,record in fields do
         local object=Instance.new(representatives[owner] or owner)
@@ -41,7 +42,7 @@ for owner,fields in R.uiCatalog.classes do
         checked+=1
     end
 end
-assert(checked==186,checked)
+assert(checked==199,checked)
 local gui=Instance.new('ScreenGui',R.player.PlayerGui)
 gui.IgnoreGuiInset=true
 local outer=Instance.new('Frame',gui)

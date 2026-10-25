@@ -18,6 +18,8 @@ def lua_literal(value):
     if value is None:return 'nil'
     if value is True:return 'true'
     if value is False:return 'false'
+    if isinstance(value,float) and not math.isfinite(value):
+        return '(0/0)' if math.isnan(value) else 'math.huge' if value>0 else '(-math.huge)'
     if isinstance(value,(int,float)):return repr(value)
     if isinstance(value,str):
         # JSON's \u0001 escapes are not valid Luau (which uses \u{...}).
@@ -45,7 +47,7 @@ def bootstrap(root,config):
     source+='R.dateTimeLocales='+lua_literal(dates['locales'])+';R.dateTimeTokens='+lua_literal(dates['tokens'])+';R.dateTimeFallbacks='+lua_literal(dates['language_fallbacks'])+'\n'
     source+='R.physicalCatalog='+lua_literal({key:physical[key] for key in ('materials','minimum_density','unit_volume','unit_center')})+'\n'
     source+='R.fontCatalog='+lua_literal(fonts['enum_fonts'])+';R.uiCatalog='+lua_literal(ui)+'\n'
-    for name in ['datatypes','enums','value_types','physical_properties','font','sequences','random','brickcolor','datetime','query_params','scheduler','instances','services','ui','camera','json','http','encoding','attributes','model_properties','assets','spatial','tweens','bootstrap']:
+    for name in ['datatypes','enums','value_types','physical_properties','font','sequences','random','brickcolor','datetime','query_params','scheduler','instances','services','ui','ui_layout','camera','json','http','datastores','memory_stores','encoding','attributes','model_properties','assets','spatial','tweens','bootstrap']:
         source+='do local initialize=(function()\n'+(root/f'engine/{name}.luau').read_text(encoding='utf-8')+'\nend)();initialize(R) end\n'
     return source
 
@@ -173,6 +175,7 @@ def main(argv=None):
     p.add_argument('--memory-mb',type=int,default=256)
     p.add_argument('--viewport-width',type=int,default=1280,help='Headless UI viewport width in pixels')
     p.add_argument('--viewport-height',type=int,default=720,help='Headless UI viewport height in pixels')
+    p.add_argument('--data-store',type=Path,help='Local SQLite file for persistent data stores (default: isolated in-memory store)')
     p.add_argument('--wall-timeout',type=float,help='Optional real-time deadline in seconds; stops the entire VM process tree (Windows)')
     p.add_argument('--model',type=Path,action='append',default=[],help='Import supported .rbxmx XML or .rbxm binary model data under Workspace; repeatable')
     args=p.parse_args(arguments)
@@ -191,7 +194,7 @@ def main(argv=None):
     try:models=[read_model(path) for path in args.model]
     except (OSError,ValueError,subprocess.TimeoutExpired) as error:p.error(f'Model import: {error}')
     root=Path(__file__).parent
-    runtime=Runtime(args.binary,memory_mb=args.memory_mb)
+    runtime=Runtime(args.binary,memory_mb=args.memory_mb,data_store_path=args.data_store)
     try:
         runtime.open_libraries()
         with tempfile.TemporaryDirectory(prefix='recovery-luau-') as folder:

@@ -6,6 +6,7 @@ typed configuration data, not a renderer or a claim of behavioral equivalence.
 import argparse
 import hashlib
 import json
+import math
 from pathlib import Path
 
 import msgpack
@@ -16,7 +17,8 @@ CLASSES = ('GuiBase2d', 'LayerCollector', 'GuiObject', 'GuiButton', 'Frame',
            'CanvasGroup', 'ScreenGui', 'TextLabel', 'TextButton', 'TextBox',
            'ImageLabel', 'ImageButton', 'ScrollingFrame', 'ViewportFrame',
            'UICorner', 'UIStroke', 'UIGradient', 'UIScale', 'UIPadding',
-           'UISizeConstraint', 'UIAspectRatioConstraint', 'UITextSizeConstraint')
+           'UISizeConstraint', 'UIAspectRatioConstraint', 'UITextSizeConstraint',
+           'UIGridStyleLayout', 'UIListLayout', 'UIGridLayout')
 SUPPORTED = {'Bool': 'boolean', 'String': 'string', 'Content': 'string',
              'Float32': 'number', 'Float64': 'number', 'Int32': 'number',
              'Vector2': 'Vector2', 'Vector3': 'Vector3', 'Color3': 'Color3',
@@ -24,7 +26,7 @@ SUPPORTED = {'Bool': 'boolean', 'String': 'string', 'Content': 'string',
              'NumberSequence': 'NumberSequence', 'ColorSequence': 'ColorSequence',
              'Font': 'Font'}
 REPRESENTATIVE = {'GuiBase2d': 'Frame', 'LayerCollector': 'ScreenGui',
-                  'GuiObject': 'Frame', 'GuiButton': 'TextButton'}
+                  'GuiObject': 'Frame', 'GuiButton': 'TextButton', 'UIGridStyleLayout': 'UIListLayout'}
 ALIASES = {'InputSink': 'Sink', 'Image': 'ImageContent', 'HoverImage': 'HoverImageContent',
            'PressedImage': 'PressedImageContent', 'BottomImage': 'BottomImageContent',
            'MidImage': 'MidImageContent', 'TopImage': 'TopImageContent',
@@ -107,7 +109,7 @@ def extract(database, reference):
             'source_revision': '03a3e1f63db883c42a2d0929c6058234d0f0785d',
             'source_sha256': hashlib.sha256(raw).hexdigest(),
             'reference_revision': reference.name, 'classes': result, 'default_overrides': overrides, 'skipped': skipped,
-            'limits': 'Typed headless configuration. Rendering, text shaping, input hardware, and automatic/list/grid layout are not implemented. Defaults come from the recorded reflection version, not native 0.735 verification.'}
+            'limits': 'Typed headless configuration. Rendering, text shaping and input hardware are not implemented. Defaults come from the recorded reflection version, not native 0.735 verification.'}
 
 
 def main():
@@ -117,7 +119,13 @@ def main():
     parser.add_argument('--out', type=Path, default=ROOT/'data/ui_property_catalog.json')
     args = parser.parse_args()
     report = extract(args.database, args.reference)
-    args.out.write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8', newline='\n')
+    def strict(value):
+        if isinstance(value,float) and not math.isfinite(value):
+            return {'$number': 'NaN' if math.isnan(value) else 'Infinity' if value>0 else '-Infinity'}
+        if isinstance(value,list):return [strict(item) for item in value]
+        if isinstance(value,dict):return {key:strict(item) for key,item in value.items()}
+        return value
+    args.out.write_text(json.dumps(strict(report), indent=2, allow_nan=False)+'\n', encoding='utf-8', newline='\n')
     print(json.dumps({'classes': len(report['classes']), 'declarations': sum(map(len, report['classes'].values())), 'skipped': len(report['skipped'])}))
 
 

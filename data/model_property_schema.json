@@ -378,6 +378,27 @@
       "SelectionGroup": "boolean",
       "SelectionBehaviorUp": "Enum.SelectionBehavior"
     },
+    "UIGridLayout": {
+      "VerticalAlignment": "Enum.VerticalAlignment",
+      "SortOrder": "Enum.SortOrder",
+      "HorizontalAlignment": "Enum.HorizontalAlignment",
+      "FillDirection": "Enum.FillDirection",
+      "CellPadding": "UDim2",
+      "FillDirectionMaxCells": "number",
+      "CellSize": "UDim2",
+      "StartCorner": "Enum.StartCorner"
+    },
+    "UIListLayout": {
+      "FillDirection": "Enum.FillDirection",
+      "HorizontalAlignment": "Enum.HorizontalAlignment",
+      "HorizontalFlex": "Enum.UIFlexAlignment",
+      "VerticalAlignment": "Enum.VerticalAlignment",
+      "Wraps": "boolean",
+      "VerticalFlex": "Enum.UIFlexAlignment",
+      "Padding": "UDim",
+      "ItemLineAlignment": "Enum.ItemLineAlignment",
+      "SortOrder": "Enum.SortOrder"
+    },
     "UIStroke": {
       "Enabled": "boolean",
       "BorderOffset": "UDim",
@@ -666,8 +687,9 @@
   "source_sha256": {
     "engine/instances.luau": "64cdf0b194aeefb3c5f7a7f34c23f5ba4d2d236c98b2f9322a05e0e2a4a42d45",
     "engine/services.luau": "ae1a16739ebeb4e0aa712002db7867bf3add14ef9e1571f08dc546db95dc5c3e",
-    "engine/ui.luau": "681a4811025aafd93769018d2287aaf3e2b07b63816a14a22efc631b35ebd17a",
+    "engine/ui.luau": "2953c42e5d2a8bfa08d1c76fd3dda75f016f5f5d350a82a9a7c00c0da52a0dad",
+    "engine/ui_layout.luau": "980e83d607a86836fd42bdda42557074cadcaf52839defd7c130ef4ff6849198",
     "engine/camera.luau": "262ac8b98f75f0b0b81220b5d7140b497139ce806c31391b64186c14f4689051",
-    "data/ui_property_catalog.json": "9ce78f04b27edd1a5401dc0ee1b1bf4c0f5af6d724505914f01b5d8ebce26113"
+    "data/ui_property_catalog.json": "ce5f1617bbb5a4eb0d2618e7ad9279597bc302dbe53157fa9581f9fd445bda2c"
   }
 }

@@ -1,12 +1,14 @@
 """Non-default viewport, GUI inset, camera FOV and scalar UI import checks."""
 import argparse
+import json
+import math
 from pathlib import Path
 import sys
 import tempfile
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
-from run import bootstrap,execute_source
+from run import bootstrap,execute_source,lua_literal
 from vm_runtime import Runtime
 
 
@@ -14,11 +16,15 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--binary',default='D:/Release-RobloxStudioApp/RobloxStudio.app/Contents/MacOS/RobloxStudio')
     args=parser.parse_args()
+    def invalid_constant(value):raise ValueError('Non-standard JSON number '+value)
+    json.loads((ROOT/'data/ui_property_catalog.json').read_text(),parse_constant=invalid_constant)
     runtime=Runtime(args.binary)
     try:
         runtime.open_libraries()
         with tempfile.TemporaryDirectory(prefix='ui-insets-') as folder:
             work=Path(folder)
+            numbers=execute_source(runtime,ROOT,'return '+','.join(lua_literal(v) for v in [float('inf'),float('-inf'),float('nan')]),work,'numeric-constants')
+            assert numbers[0]==float('inf') and numbers[1]==float('-inf') and math.isnan(numbers[2])
             execute_source(runtime,ROOT,bootstrap(ROOT,{'side':'client','duration':0,'viewportSize':[800,600],'guiInset':[0,36]}),work,'bootstrap')
             execute_source(runtime,ROOT,'''local c=workspace.CurrentCamera
 c.CFrame=CFrame.new();c.FieldOfView=90

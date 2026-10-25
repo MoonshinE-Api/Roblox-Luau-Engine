@@ -68,6 +68,22 @@ foreach ($case in @('headless_ui','projected_target')) {
     & python "$ProjectRoot\run.py" "$ProjectRoot\examples\$case.luau" --binary $Binary --mode client --duration 1
     if ($LASTEXITCODE -ne 0) { throw "UI/camera example failed: $case" }
 }
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\ui_layout.luau" --binary $Binary --duration 1
+if ($LASTEXITCODE -ne 0) { throw 'List/grid/automatic layout checks failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\datastore.luau" --binary $Binary --duration 10
+if ($LASTEXITCODE -ne 0) { throw 'Data store API checks failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\datastore.luau" --binary $Binary --mode client --duration 1
+if ($LASTEXITCODE -ne 0) { throw 'Client data store restriction failed' }
+& python "$ProjectRoot\tests\datastore_checks.py" --binary $Binary
+if ($LASTEXITCODE -ne 0) { throw 'SQLite atomicity/persistence checks failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\memory_store.luau" --binary $Binary --duration 5
+if ($LASTEXITCODE -ne 0) { throw 'Memory store map/queue checks failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\memory_store.luau" --binary $Binary --mode client --duration 1
+if ($LASTEXITCODE -ne 0) { throw 'Client memory store restriction failed' }
+foreach ($case in @('layout_gallery','local_inventory')) {
+    & python "$ProjectRoot\run.py" "$ProjectRoot\examples\$case.luau" --binary $Binary --duration 5
+    if ($LASTEXITCODE -ne 0) { throw "Layout/storage example failed: $case" }
+}
 & python "$ProjectRoot\tests\validation_inputs.py" finish
 if ($LASTEXITCODE -ne 0) { throw 'Validation inputs changed during checks' }
-Write-Host 'All eight differential checks and forty-one runtime/CLI checks passed.'
+Write-Host 'All eight differential checks and forty-nine runtime/CLI checks passed.'

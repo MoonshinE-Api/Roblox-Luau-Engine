@@ -1011,8 +1011,12 @@
       "MaxSize": {
         "kind": "Vector2",
         "values": [
-          Infinity,
-          Infinity
+          {
+            "$number": "Infinity"
+          },
+          {
+            "$number": "Infinity"
+          }
         ]
       },
       "MinSize": {
@@ -1045,6 +1049,85 @@
       "MinTextSize": {
         "kind": "number",
         "values": 1
+      }
+    },
+    "UIGridStyleLayout": {
+      "FillDirection": {
+        "kind": "Enum.FillDirection",
+        "values": 1
+      },
+      "HorizontalAlignment": {
+        "kind": "Enum.HorizontalAlignment",
+        "values": 1
+      },
+      "SortOrder": {
+        "kind": "Enum.SortOrder",
+        "values": 0
+      },
+      "VerticalAlignment": {
+        "kind": "Enum.VerticalAlignment",
+        "values": 1
+      }
+    },
+    "UIListLayout": {
+      "HorizontalFlex": {
+        "kind": "Enum.UIFlexAlignment",
+        "values": 0
+      },
+      "ItemLineAlignment": {
+        "kind": "Enum.ItemLineAlignment",
+        "values": 0
+      },
+      "Padding": {
+        "kind": "UDim",
+        "values": [
+          0.0,
+          0
+        ]
+      },
+      "VerticalFlex": {
+        "kind": "Enum.UIFlexAlignment",
+        "values": 0
+      },
+      "Wraps": {
+        "kind": "boolean",
+        "values": false
+      }
+    },
+    "UIGridLayout": {
+      "CellPadding": {
+        "kind": "UDim2",
+        "values": [
+          [
+            0.0,
+            5
+          ],
+          [
+            0.0,
+            5
+          ]
+        ]
+      },
+      "CellSize": {
+        "kind": "UDim2",
+        "values": [
+          [
+            0.0,
+            100
+          ],
+          [
+            0.0,
+            100
+          ]
+        ]
+      },
+      "FillDirectionMaxCells": {
+        "kind": "number",
+        "values": 0
+      },
+      "StartCorner": {
+        "kind": "Enum.StartCorner",
+        "values": 0
       }
     }
   },
@@ -1098,6 +1181,12 @@
         "kind": "boolean",
         "values": true
       }
+    },
+    "UIGridLayout": {
+      "FillDirection": {
+        "kind": "Enum.FillDirection",
+        "values": 0
+      }
     }
   },
   "skipped": [
@@ -1109,5 +1198,5 @@
     "ScrollingFrame.MidImageContent: Content datatype not implemented",
     "ScrollingFrame.TopImageContent: Content datatype not implemented"
   ],
-  "limits": "Typed headless configuration. Rendering, text shaping, input hardware, and automatic/list/grid layout are not implemented. Defaults come from the recorded reflection version, not native 0.735 verification."
+  "limits": "Typed headless configuration. Rendering, text shaping and input hardware are not implemented. Defaults come from the recorded reflection version, not native 0.735 verification."
 }
