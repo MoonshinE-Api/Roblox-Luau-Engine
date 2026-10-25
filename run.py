@@ -42,12 +42,14 @@ def bootstrap(root,config):
     physical=json.loads((root/'data/physical_recovery.json').read_text(encoding='utf-8'))
     fonts=json.loads((root/'data/font_recovery.json').read_text(encoding='utf-8'))
     ui=json.loads((root/'data/ui_property_catalog.json').read_text(encoding='utf-8'))
+    environment=json.loads((root/'data/environment_property_catalog.json').read_text(encoding='utf-8'))
     colors=[[row['number'],row['name'],*row['rgb']] for row in brickcolors['colors']]
     source='local R={proxy=__host_proxy,config='+lua_literal(config)+',classes='+lua_literal(parents)+',knownClasses='+lua_literal(known)+',enumCatalog='+lua_literal(enums)+',brickColors='+lua_literal(colors)+',brickPalette='+lua_literal(brickcolors['palette'])+',brickConstants='+lua_literal(brickcolors['constant_constructors'])+'}\n'
     source+='R.dateTimeLocales='+lua_literal(dates['locales'])+';R.dateTimeTokens='+lua_literal(dates['tokens'])+';R.dateTimeFallbacks='+lua_literal(dates['language_fallbacks'])+'\n'
     source+='R.physicalCatalog='+lua_literal({key:physical[key] for key in ('materials','minimum_density','unit_volume','unit_center')})+'\n'
     source+='R.fontCatalog='+lua_literal(fonts['enum_fonts'])+';R.uiCatalog='+lua_literal(ui)+'\n'
-    for name in ['datatypes','enums','value_types','integer_vectors','regions','physical_properties','font','sequences','random','brickcolor','datetime','query_params','scheduler','instances','services','ui','ui_layout','camera','render_bindings','json','http','datastores','memory_stores','encoding','attributes','model_properties','assets','spatial','tweens','bootstrap']:
+    source+='R.environmentCatalog='+lua_literal(environment)+'\n'
+    for name in ['datatypes','enums','value_types','integer_vectors','regions','physical_properties','font','sequences','random','brickcolor','datetime','query_params','scheduler','instances','services','attachments','environment','ui','ui_layout','camera','render_bindings','json','http','datastores','memory_stores','encoding','attributes','model_properties','assets','spatial','tweens','bootstrap']:
         source+='do local initialize=(function()\n'+(root/f'engine/{name}.luau').read_text(encoding='utf-8')+'\nend)();initialize(R) end\n'
     return source
 

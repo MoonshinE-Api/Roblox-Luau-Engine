@@ -18,6 +18,8 @@ CLASSES=['ModuleScript','Script','LocalScript','Folder','Model','Part','Configur
 CLASSES+=['ScreenGui','Frame','CanvasGroup','TextLabel','TextButton','TextBox','ImageLabel','ImageButton',
     'ScrollingFrame','ViewportFrame','UICorner','UIStroke','UIGradient','UIScale','UIPadding',
     'UISizeConstraint','UIAspectRatioConstraint','UITextSizeConstraint','UIListLayout','UIGridLayout']
+CLASSES+=['Attachment','Bone','RopeConstraint','PointLight','SpotLight','SurfaceLight','BloomEffect','BlurEffect',
+    'ColorCorrectionEffect','DepthOfFieldEffect','SunRaysEffect','Atmosphere','Sky','ParticleEmitter','Beam','Trail','Smoke','Fire','Sparkles']
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -44,7 +46,7 @@ return R.jsonEncode(classes)'''.replace('CLASSES',lua_literal(CLASSES))
     classes={key:(value or {}) for key,value in classes.items()}
     report={'meaning':'Explicit import class allowlist; property types observed from implemented runtime, not full engine support.',
         'runtime_version':'0.735.19.7351131','classes':classes,
-        'source_sha256':{name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ('engine/instances.luau','engine/services.luau','engine/ui.luau','engine/ui_layout.luau','engine/camera.luau','data/ui_property_catalog.json')}}
+        'source_sha256':{name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ('engine/instances.luau','engine/services.luau','engine/attachments.luau','engine/environment.luau','engine/ui.luau','engine/ui_layout.luau','engine/camera.luau','data/ui_property_catalog.json','data/environment_property_catalog.json')}}
     (root/'data/model_property_schema.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'classes':len(classes),'property_declarations':sum(len(x) for x in classes.values())}))
 

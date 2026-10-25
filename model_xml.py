@@ -108,5 +108,8 @@ def read_model(path):
         if value is not None:
             if value not in referents:raise ValueError('Unresolved/external XML reference')
             reference['values']=referents[value]
-            if reference['name']=='PrimaryPart' and node_classes[reference['values']]!='Part':raise ValueError('Imported PrimaryPart must reference a BasePart')
+            if reference['name']=='PrimaryPart' and node_classes[reference['values']] not in {'Part','WedgePart','CornerWedgePart'}:
+                raise ValueError('Imported PrimaryPart must reference a BasePart')
+            if reference['name'] in {'Attachment0','Attachment1'} and node_classes[reference['values']] not in {'Attachment','Bone'}:
+                raise ValueError('Imported attachment reference must target Attachment or Bone')
     return {'path':path,'sha256':hashlib.sha256(data).hexdigest(),'items':items,'count':count}

@@ -10,7 +10,10 @@ SCHEMA=json.loads((ROOT/'data/model_property_schema.json').read_text(encoding='u
 ENUMS=json.loads((ROOT/'data/enum_catalog.json').read_text(encoding='utf-8'))['enums']
 ALIASES={'size':'Size','shape':'Shape','Color3uint8':'Color','WorldPivotData':'WorldPivot',
     'ImageContent':'Image','HoverImageContent':'HoverImage','PressedImageContent':'PressedImage',
-    'BottomImageContent':'BottomImage','MidImageContent':'MidImage','TopImageContent':'TopImage'}
+    'BottomImageContent':'BottomImage','MidImageContent':'MidImage','TopImageContent':'TopImage',
+    'TextureContent':'Texture','MoonTextureContent':'MoonTextureId','SunTextureContent':'SunTextureId',
+    'SkyboxBackContent':'SkyboxBk','SkyboxDownContent':'SkyboxDn','SkyboxFrontContent':'SkyboxFt',
+    'SkyboxLeftContent':'SkyboxLf','SkyboxRightContent':'SkyboxRt','SkyboxUpContent':'SkyboxUp'}
 
 
 def number(text,single=False):
@@ -62,6 +65,10 @@ def parse_property(class_name,key,prop):
         value=None if text.strip() in ('','null','nil') else text.strip()
     elif kind=='Vector2' and tag=='Vector2':value=components(('X','Y'))
     elif kind=='Vector3' and tag=='Vector3':value=components(('X','Y','Z'))
+    elif kind=='NumberRange' and tag=='NumberRange':
+        if list(prop):raise ValueError('Unexpected XML NumberRange children')
+        value=[number(part,True) for part in text.split()]
+        if len(value)!=2 or value[0]>value[1]:raise ValueError('Invalid XML NumberRange')
     elif kind=='UDim' and tag=='UDim':value=components(('S','O'))
     elif kind=='UDim2' and tag=='UDim2':value=components(('XS','XO','YS','YO'))
     elif kind=='Rect' and tag=='Rect2D':

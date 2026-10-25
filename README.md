@@ -68,6 +68,13 @@ Names are case-sensitive, as in Studio: `Instance.new("Part")`, `Clone`, and
 - BasePart Orientation (YXZ) and Rotation (XYZ) in degrees, three-decimal display
   rounding, transform change signals, cloning, model import, and orientation tweens.
   Weld/motor adjustment and physics side effects of transform writes are not simulated.
+- Attachment local/world transforms, orthogonal axes, nested ancestors, writable
+  world coordinates, Bone animation offsets, constraint-reference snapshots and cloning.
+- 149 typed environment property declarations across 19 class definitions:
+  lights, post effects, atmosphere, sky, ParticleEmitter, Beam, Trail, Fire, Smoke and Sparkles.
+  Includes 37 source-backed scalar limits, float32 storage and XML/RBXM import.
+- Lighting ClockTime/TimeOfDay, minute conversion, whole-second quantization,
+  day wrapping, moon phase, LightingChanged signals, and clock/property tweens.
 - HTTP and JSON, Base64/Zstandard, hashes, authenticated asset delivery, and
   `require(id)` for supported assets and contexts.
 - XML and compressed RBXM imports with an explicit class/property schema;
@@ -94,6 +101,7 @@ Names are case-sensitive, as in Studio: `Instance.new("Part")`, `Clone`, and
 python .\run.py .\examples\headless_ui.luau --binary $studio --mode client
 python .\run.py .\examples\projected_target.luau --binary $studio --mode client
 python .\run.py .\examples\orbit_camera.luau --binary $studio --mode client --duration 1.2
+python .\run.py .\examples\animated_environment.luau --binary $studio --duration 0.8
 ```
 
 Set the simulated viewport with `--viewport-width` and `--viewport-height`
@@ -113,6 +121,23 @@ configuration is not simulated. These vector types have no Magnitude/Unit proper
 Region3 preserves signed sizes and does not sort its constructor bounds.
 Use `GetPartBoundsInBox(region.CFrame, region.Size)` for nonnegative regions;
 legacy `FindPartsInRegion3` and terrain voxel APIs are not implemented.
+
+## Attachments and environment
+
+Attachment world getters resolve the nearest Attachment, BasePart or Model ancestor.
+Bone world getters omit their own Transform; TransformedWorldCFrame includes it.
+Descendants inherit animated ancestor transforms. Explicit attachment writes notify
+changed derived values; exact native signal ordering and ancestor-motion notifications
+are not reproduced. Constraint support stores Attachment0/Attachment1, Enabled and
+Visible and supports GetConstraints; it does not solve constraint forces.
+
+Environment objects store typed configuration. Particle emission/clearing, particle
+simulation, mesh skinning, texture rendering, and sun/moon direction calculations are
+not implemented. Clock setters follow build 735's whole-second behavior; TimeOfDay
+accepts signed HH:MM:SS with optional fractional seconds, while other Boost date-time
+string formats are unsupported. Minute inputs are bounded to a local host range
+of approximately 9 billion seconds. Defaults come from reflection build 741, with
+source-backed behavioral rules from build 735.
 
 ## Local storage
 
@@ -184,15 +209,16 @@ python -m pip install -r .\tools\requirements.txt
 powershell -File .\tests\validate.ps1 -Binary $studio
 ```
 
-An additional nested-interpreter test executes the datatype math, regions,
-CFrame rotations, and BasePart transform suites through Fiu. Its vector constants
-use the engine's Vector3 constructor:
+The nested-interpreter geometry test executes six datatype, region, CFrame,
+BasePart, Attachment/Bone and environment suites through Fiu. It is included in
+the full validation and can also run separately. Its vector constants use the
+engine's Vector3 constructor:
 
 ```powershell
 python .\tests\nested_geometry_checks.py --binary $studio
 ```
 
-Validation covers 10 differential suites and 59 runtime/CLI scenarios, including
+Validation covers 11 differential suites and 64 runtime/CLI scenarios, including
 HTTP against local fixtures, model imports, nested Fiu execution, memory limits,
 worker timeouts, all 199 UI property declarations, UI model import, 200 camera
 projection round trips, layout/autosizing, concurrent SQLite updates, persistence
@@ -201,7 +227,9 @@ ordering, lifecycle and error propagation, randomized vector/color math, batched
 CFrame transforms, 285 integer conversions against the original VM, and 609
 region/grid comparisons against unchanged original machine functions, 3,108 Euler
 decompositions and 206 lookAlong comparisons with native math, plus orientation
-signals and camera/tween integration. Passing these checks does
+signals and camera/tween integration, all 149 environment declarations, attachment
+and bone hierarchies, XML/RBXM effect references, and 1,022 native lighting clock
+comparisons. Passing these checks does
 not establish compatibility with
 every Roblox script. Generated diagnostics remain local and are ignored by Git.
 The optional external vLua model is not bundled. Metadata reconstruction tools in `tools/`

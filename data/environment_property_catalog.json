@@ -1,0 +1,1227 @@
+{
+  "reflection_version": [
+    0,
+    741,
+    19,
+    7411056
+  ],
+  "vm_version": "0.735.19.7351131",
+  "source": "rbx_reflection_database 3.0.1+roblox-741 (rbx-dom)",
+  "source_revision": "03a3e1f63db883c42a2d0929c6058234d0f0785d",
+  "source_sha256": "cca78d6aba8d3daadcf129e6a607c48d063aed2fe48948955755c83d83187178",
+  "reference_revision": "46be165f526ec23305394ac0c56a95edd2d7f7d9",
+  "classes": {
+    "Lighting": {
+      "Ambient": {
+        "kind": "Color3",
+        "values": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "storage": "Color3"
+      },
+      "Brightness": {
+        "kind": "number",
+        "values": 1.981249213218689,
+        "storage": "Float32"
+      },
+      "ColorShift_Bottom": {
+        "kind": "Color3",
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "storage": "Color3"
+      },
+      "ColorShift_Top": {
+        "kind": "Color3",
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "storage": "Color3"
+      },
+      "EnvironmentDiffuseScale": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "EnvironmentSpecularScale": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "ExposureCompensation": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "FogColor": {
+        "kind": "Color3",
+        "values": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "storage": "Color3"
+      },
+      "FogEnd": {
+        "kind": "number",
+        "values": 100000.0,
+        "storage": "Float32"
+      },
+      "FogStart": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "GeographicLatitude": {
+        "kind": "number",
+        "values": 41.733299255371094,
+        "storage": "Float32"
+      },
+      "GlobalShadows": {
+        "kind": "boolean",
+        "values": false,
+        "storage": "Bool"
+      },
+      "LightingStyle": {
+        "kind": "Enum.LightingStyle",
+        "values": 1,
+        "storage": "Enum"
+      },
+      "OutdoorAmbient": {
+        "kind": "Color3",
+        "values": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "storage": "Color3"
+      },
+      "PrioritizeLightingQuality": {
+        "kind": "boolean",
+        "values": false,
+        "storage": "Bool"
+      },
+      "ShadowSoftness": {
+        "kind": "number",
+        "values": 0.5,
+        "storage": "Float32"
+      },
+      "TimeOfDay": {
+        "kind": "string",
+        "values": "14:00:00",
+        "storage": "String"
+      },
+      "ClockTime": {
+        "kind": "number",
+        "values": 14.0,
+        "storage": "Float32",
+        "derived": "TimeOfDay"
+      }
+    },
+    "Light": {
+      "Brightness": {
+        "kind": "number",
+        "values": 1.0,
+        "storage": "Float32"
+      },
+      "Color": {
+        "kind": "Color3",
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "storage": "Color3"
+      },
+      "Enabled": {
+        "kind": "boolean",
+        "values": true,
+        "storage": "Bool"
+      },
+      "Shadows": {
+        "kind": "boolean",
+        "values": false,
+        "storage": "Bool"
+      }
+    },
+    "PointLight": {
+      "Range": {
+        "kind": "number",
+        "values": 8.0,
+        "storage": "Float32"
+      }
+    },
+    "SpotLight": {
+      "Angle": {
+        "kind": "number",
+        "values": 90.0,
+        "storage": "Float32"
+      },
+      "Face": {
+        "kind": "Enum.NormalId",
+        "values": 5,
+        "storage": "Enum"
+      },
+      "Range": {
+        "kind": "number",
+        "values": 16.0,
+        "storage": "Float32"
+      }
+    },
+    "SurfaceLight": {
+      "Angle": {
+        "kind": "number",
+        "values": 90.0,
+        "storage": "Float32"
+      },
+      "Face": {
+        "kind": "Enum.NormalId",
+        "values": 5,
+        "storage": "Enum"
+      },
+      "Range": {
+        "kind": "number",
+        "values": 16.0,
+        "storage": "Float32"
+      }
+    },
+    "PostEffect": {
+      "Enabled": {
+        "kind": "boolean",
+        "values": true,
+        "storage": "Bool"
+      }
+    },
+    "BloomEffect": {
+      "Intensity": {
+        "kind": "number",
+        "values": 0.4000000059604645,
+        "storage": "Float32"
+      },
+      "Size": {
+        "kind": "number",
+        "values": 24.0,
+        "storage": "Float32"
+      },
+      "Threshold": {
+        "kind": "number",
+        "values": 0.949999988079071,
+        "storage": "Float32"
+      }
+    },
+    "BlurEffect": {
+      "Size": {
+        "kind": "number",
+        "values": 24.0,
+        "storage": "Float32"
+      }
+    },
+    "ColorCorrectionEffect": {
+      "Brightness": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "Contrast": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "Saturation": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "TintColor": {
+        "kind": "Color3",
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "storage": "Color3"
+      }
+    },
+    "DepthOfFieldEffect": {
+      "FarIntensity": {
+        "kind": "number",
+        "values": 0.75,
+        "storage": "Float32"
+      },
+      "FocusDistance": {
+        "kind": "number",
+        "values": 0.05000000074505806,
+        "storage": "Float32"
+      },
+      "InFocusRadius": {
+        "kind": "number",
+        "values": 10.0,
+        "storage": "Float32"
+      },
+      "NearIntensity": {
+        "kind": "number",
+        "values": 0.75,
+        "storage": "Float32"
+      }
+    },
+    "SunRaysEffect": {
+      "Intensity": {
+        "kind": "number",
+        "values": 0.25,
+        "storage": "Float32"
+      },
+      "Spread": {
+        "kind": "number",
+        "values": 1.0,
+        "storage": "Float32"
+      }
+    },
+    "Atmosphere": {
+      "Color": {
+        "kind": "Color3",
+        "values": [
+          0.7843000292778015,
+          0.666700005531311,
+          0.4235000014305115
+        ],
+        "storage": "Color3"
+      },
+      "Decay": {
+        "kind": "Color3",
+        "values": [
+          0.36079999804496765,
+          0.2353000044822693,
+          0.05490000173449516
+        ],
+        "storage": "Color3"
+      },
+      "Density": {
+        "kind": "number",
+        "values": 0.39500001072883606,
+        "storage": "Float32"
+      },
+      "Glare": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "Haze": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "Offset": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      }
+    },
+    "Sky": {
+      "CelestialBodiesShown": {
+        "kind": "boolean",
+        "values": true,
+        "storage": "Bool"
+      },
+      "MoonAngularSize": {
+        "kind": "number",
+        "values": 11.0,
+        "storage": "Float32"
+      },
+      "MoonTextureId": {
+        "kind": "string",
+        "values": "rbxasset://sky/moon.jpg",
+        "storage": "ContentId"
+      },
+      "SkyboxBk": {
+        "kind": "string",
+        "values": "rbxasset://textures/sky/sky512_bk.tex",
+        "storage": "ContentId"
+      },
+      "SkyboxDn": {
+        "kind": "string",
+        "values": "rbxasset://textures/sky/sky512_dn.tex",
+        "storage": "ContentId"
+      },
+      "SkyboxFt": {
+        "kind": "string",
+        "values": "rbxasset://textures/sky/sky512_ft.tex",
+        "storage": "ContentId"
+      },
+      "SkyboxLf": {
+        "kind": "string",
+        "values": "rbxasset://textures/sky/sky512_lf.tex",
+        "storage": "ContentId"
+      },
+      "SkyboxOrientation": {
+        "kind": "Vector3",
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "storage": "Vector3"
+      },
+      "SkyboxRt": {
+        "kind": "string",
+        "values": "rbxasset://textures/sky/sky512_rt.tex",
+        "storage": "ContentId"
+      },
+      "SkyboxUp": {
+        "kind": "string",
+        "values": "rbxasset://textures/sky/sky512_up.tex",
+        "storage": "ContentId"
+      },
+      "StarCount": {
+        "kind": "number",
+        "values": 3000,
+        "storage": "Int32"
+      },
+      "SunAngularSize": {
+        "kind": "number",
+        "values": 21.0,
+        "storage": "Float32"
+      },
+      "SunTextureId": {
+        "kind": "string",
+        "values": "rbxasset://sky/sun.jpg",
+        "storage": "ContentId"
+      }
+    },
+    "ParticleEmitter": {
+      "Acceleration": {
+        "kind": "Vector3",
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "storage": "Vector3"
+      },
+      "Brightness": {
+        "kind": "number",
+        "values": 1.0,
+        "storage": "Float32"
+      },
+      "Color": {
+        "kind": "ColorSequence",
+        "values": [
+          [
+            [
+              0.0,
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            [
+              1.0,
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ]
+          ]
+        ],
+        "storage": "ColorSequence"
+      },
+      "Drag": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "EmissionDirection": {
+        "kind": "Enum.NormalId",
+        "values": 1,
+        "storage": "Enum"
+      },
+      "Enabled": {
+        "kind": "boolean",
+        "values": true,
+        "storage": "Bool"
+      },
+      "FlipbookBlendFrames": {
+        "kind": "boolean",
+        "values": true,
+        "storage": "Bool"
+      },
+      "FlipbookFramerate": {
+        "kind": "NumberRange",
+        "values": [
+          1.0,
+          1.0
+        ],
+        "storage": "NumberRange"
+      },
+      "FlipbookIncompatible": {
+        "kind": "string",
+        "values": "Particle texture must be 1024 by 1024 to use flipbooks.",
+        "storage": "String"
+      },
+      "FlipbookLayout": {
+        "kind": "Enum.ParticleFlipbookLayout",
+        "values": 0,
+        "storage": "Enum"
+      },
+      "FlipbookMode": {
+        "kind": "Enum.ParticleFlipbookMode",
+        "values": 0,
+        "storage": "Enum"
+      },
+      "FlipbookSizeX": {
+        "kind": "number",
+        "values": 1,
+        "storage": "Int32"
+      },
+      "FlipbookSizeY": {
+        "kind": "number",
+        "values": 1,
+        "storage": "Int32"
+      },
+      "FlipbookStartRandom": {
+        "kind": "boolean",
+        "values": false,
+        "storage": "Bool"
+      },
+      "Lifetime": {
+        "kind": "NumberRange",
+        "values": [
+          5.0,
+          10.0
+        ],
+        "storage": "NumberRange"
+      },
+      "LightEmission": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "LightInfluence": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "LockedToPart": {
+        "kind": "boolean",
+        "values": false,
+        "storage": "Bool"
+      },
+      "Orientation": {
+        "kind": "Enum.ParticleOrientation",
+        "values": 0,
+        "storage": "Enum"
+      },
+      "Rate": {
+        "kind": "number",
+        "values": 20.0,
+        "storage": "Float32"
+      },
+      "RotSpeed": {
+        "kind": "NumberRange",
+        "values": [
+          0.0,
+          0.0
+        ],
+        "storage": "NumberRange"
+      },
+      "Rotation": {
+        "kind": "NumberRange",
+        "values": [
+          0.0,
+          0.0
+        ],
+        "storage": "NumberRange"
+      },
+      "Shape": {
+        "kind": "Enum.ParticleEmitterShape",
+        "values": 0,
+        "storage": "Enum"
+      },
+      "ShapeInOut": {
+        "kind": "Enum.ParticleEmitterShapeInOut",
+        "values": 0,
+        "storage": "Enum"
+      },
+      "ShapePartial": {
+        "kind": "number",
+        "values": 1.0,
+        "storage": "Float32"
+      },
+      "ShapeStyle": {
+        "kind": "Enum.ParticleEmitterShapeStyle",
+        "values": 0,
+        "storage": "Enum"
+      },
+      "Size": {
+        "kind": "NumberSequence",
+        "values": [
+          [
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        ],
+        "storage": "NumberSequence"
+      },
+      "Speed": {
+        "kind": "NumberRange",
+        "values": [
+          5.0,
+          5.0
+        ],
+        "storage": "NumberRange"
+      },
+      "SpreadAngle": {
+        "kind": "Vector2",
+        "values": [
+          0.0,
+          0.0
+        ],
+        "storage": "Vector2"
+      },
+      "Squash": {
+        "kind": "NumberSequence",
+        "values": [
+          [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        ],
+        "storage": "NumberSequence"
+      },
+      "Texture": {
+        "kind": "string",
+        "values": "rbxasset://textures/particles/sparkles_main.dds",
+        "storage": "ContentId"
+      },
+      "TimeScale": {
+        "kind": "number",
+        "values": 1.0,
+        "storage": "Float32"
+      },
+      "Transparency": {
+        "kind": "NumberSequence",
+        "values": [
+          [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        ],
+        "storage": "NumberSequence"
+      },
+      "VelocityInheritance": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "WindAffectsDrag": {
+        "kind": "boolean",
+        "values": false,
+        "storage": "Bool"
+      },
+      "ZOffset": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      }
+    },
+    "Beam": {
+      "Attachment0": {
+        "kind": "Instance?",
+        "values": null,
+        "target": "Attachment",
+        "storage": "Ref"
+      },
+      "Attachment1": {
+        "kind": "Instance?",
+        "values": null,
+        "target": "Attachment",
+        "storage": "Ref"
+      },
+      "Brightness": {
+        "kind": "number",
+        "values": 1.0,
+        "storage": "Float32"
+      },
+      "Color": {
+        "kind": "ColorSequence",
+        "values": [
+          [
+            [
+              0.0,
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            [
+              1.0,
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ]
+          ]
+        ],
+        "storage": "ColorSequence"
+      },
+      "CurveSize0": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "CurveSize1": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "Enabled": {
+        "kind": "boolean",
+        "values": true,
+        "storage": "Bool"
+      },
+      "FaceCamera": {
+        "kind": "boolean",
+        "values": false,
+        "storage": "Bool"
+      },
+      "LightEmission": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "LightInfluence": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "Segments": {
+        "kind": "number",
+        "values": 10,
+        "storage": "Int32"
+      },
+      "Texture": {
+        "kind": "string",
+        "values": "",
+        "storage": "ContentId"
+      },
+      "TextureLength": {
+        "kind": "number",
+        "values": 1.0,
+        "storage": "Float32"
+      },
+      "TextureMode": {
+        "kind": "Enum.TextureMode",
+        "values": 0,
+        "storage": "Enum"
+      },
+      "TextureSpeed": {
+        "kind": "number",
+        "values": 1.0,
+        "storage": "Float32"
+      },
+      "Transparency": {
+        "kind": "NumberSequence",
+        "values": [
+          [
+            [
+              0.0,
+              0.5,
+              0.0
+            ],
+            [
+              1.0,
+              0.5,
+              0.0
+            ]
+          ]
+        ],
+        "storage": "NumberSequence"
+      },
+      "Width0": {
+        "kind": "number",
+        "values": 1.0,
+        "storage": "Float32"
+      },
+      "Width1": {
+        "kind": "number",
+        "values": 1.0,
+        "storage": "Float32"
+      },
+      "ZOffset": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      }
+    },
+    "Trail": {
+      "Attachment0": {
+        "kind": "Instance?",
+        "values": null,
+        "target": "Attachment",
+        "storage": "Ref"
+      },
+      "Attachment1": {
+        "kind": "Instance?",
+        "values": null,
+        "target": "Attachment",
+        "storage": "Ref"
+      },
+      "Brightness": {
+        "kind": "number",
+        "values": 1.0,
+        "storage": "Float32"
+      },
+      "Color": {
+        "kind": "ColorSequence",
+        "values": [
+          [
+            [
+              0.0,
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            [
+              1.0,
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ]
+          ]
+        ],
+        "storage": "ColorSequence"
+      },
+      "Enabled": {
+        "kind": "boolean",
+        "values": true,
+        "storage": "Bool"
+      },
+      "FaceCamera": {
+        "kind": "boolean",
+        "values": false,
+        "storage": "Bool"
+      },
+      "Lifetime": {
+        "kind": "number",
+        "values": 2.0,
+        "storage": "Float32"
+      },
+      "LightEmission": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "LightInfluence": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "MaxLength": {
+        "kind": "number",
+        "values": 0.0,
+        "storage": "Float32"
+      },
+      "MinLength": {
+        "kind": "number",
+        "values": 0.10000000149011612,
+        "storage": "Float32"
+      },
+      "Texture": {
+        "kind": "string",
+        "values": "",
+        "storage": "ContentId"
+      },
+      "TextureLength": {
+        "kind": "number",
+        "values": 1.0,
+        "storage": "Float32"
+      },
+      "TextureMode": {
+        "kind": "Enum.TextureMode",
+        "values": 0,
+        "storage": "Enum"
+      },
+      "Transparency": {
+        "kind": "NumberSequence",
+        "values": [
+          [
+            [
+              0.0,
+              0.5,
+              0.0
+            ],
+            [
+              1.0,
+              0.5,
+              0.0
+            ]
+          ]
+        ],
+        "storage": "NumberSequence"
+      },
+      "WidthScale": {
+        "kind": "NumberSequence",
+        "values": [
+          [
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        ],
+        "storage": "NumberSequence"
+      }
+    },
+    "Smoke": {
+      "Color": {
+        "kind": "Color3",
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "storage": "Color3"
+      },
+      "Enabled": {
+        "kind": "boolean",
+        "values": true,
+        "storage": "Bool"
+      },
+      "Opacity": {
+        "kind": "number",
+        "values": 0.5,
+        "storage": "Float32"
+      },
+      "RiseVelocity": {
+        "kind": "number",
+        "values": 1.0,
+        "storage": "Float32"
+      },
+      "Size": {
+        "kind": "number",
+        "values": 1.0,
+        "storage": "Float32"
+      },
+      "TimeScale": {
+        "kind": "number",
+        "values": 1.0,
+        "storage": "Float32"
+      }
+    },
+    "Fire": {
+      "Color": {
+        "kind": "Color3",
+        "values": [
+          0.9254902601242065,
+          0.545098066329956,
+          0.27450981736183167
+        ],
+        "storage": "Color3"
+      },
+      "Enabled": {
+        "kind": "boolean",
+        "values": true,
+        "storage": "Bool"
+      },
+      "Heat": {
+        "kind": "number",
+        "values": 9.0,
+        "storage": "Float32"
+      },
+      "SecondaryColor": {
+        "kind": "Color3",
+        "values": [
+          0.545098066329956,
+          0.3137255012989044,
+          0.21568629145622253
+        ],
+        "storage": "Color3"
+      },
+      "Size": {
+        "kind": "number",
+        "values": 5.0,
+        "storage": "Float32"
+      },
+      "TimeScale": {
+        "kind": "number",
+        "values": 1.0,
+        "storage": "Float32"
+      }
+    },
+    "Sparkles": {
+      "Enabled": {
+        "kind": "boolean",
+        "values": true,
+        "storage": "Bool"
+      },
+      "SparkleColor": {
+        "kind": "Color3",
+        "values": [
+          0.5647059082984924,
+          0.09803922474384308,
+          1.0
+        ],
+        "storage": "Color3"
+      },
+      "TimeScale": {
+        "kind": "number",
+        "values": 1.0,
+        "storage": "Float32"
+      }
+    }
+  },
+  "default_overrides": {},
+  "skipped": [
+    "Sky.MoonTextureContent: Content datatype not implemented",
+    "Sky.SkyboxBackContent: Content datatype not implemented",
+    "Sky.SkyboxDownContent: Content datatype not implemented",
+    "Sky.SkyboxFrontContent: Content datatype not implemented",
+    "Sky.SkyboxLeftContent: Content datatype not implemented",
+    "Sky.SkyboxRightContent: Content datatype not implemented",
+    "Sky.SkyboxUpContent: Content datatype not implemented",
+    "Sky.SunTextureContent: Content datatype not implemented",
+    "ParticleEmitter.TextureContent: Content datatype not implemented",
+    "Beam.TextureContent: Content datatype not implemented",
+    "Trail.TextureContent: Content datatype not implemented"
+  ],
+  "limits": "Typed headless configuration, source-backed scalar clamps and float32 storage. No rendering, particle simulation or asset textures. Defaults use reflection build 741; engine behavior targets build 735.",
+  "clamps": {
+    "Lighting": {
+      "EnvironmentDiffuseScale": [
+        0.0,
+        1.0
+      ],
+      "EnvironmentSpecularScale": [
+        0.0,
+        1.0
+      ],
+      "ShadowSoftness": [
+        0.0,
+        1.0
+      ]
+    },
+    "PointLight": {
+      "Range": [
+        0.0,
+        120.0
+      ]
+    },
+    "SpotLight": {
+      "Angle": [
+        0.0,
+        180.0
+      ],
+      "Range": [
+        0.0,
+        120.0
+      ]
+    },
+    "SurfaceLight": {
+      "Angle": [
+        0.0,
+        180.0
+      ],
+      "Range": [
+        0.0,
+        120.0
+      ]
+    },
+    "DepthOfFieldEffect": {
+      "FarIntensity": [
+        0.0,
+        1.0
+      ],
+      "FocusDistance": [
+        0.0,
+        500.0
+      ],
+      "InFocusRadius": [
+        -500.0,
+        500.0
+      ],
+      "NearIntensity": [
+        0.0,
+        1.0
+      ]
+    },
+    "Atmosphere": {
+      "Density": [
+        0.0,
+        1.0
+      ],
+      "Glare": [
+        0.0,
+        10.0
+      ],
+      "Haze": [
+        0.0,
+        10.0
+      ],
+      "Offset": [
+        0.0,
+        1.0
+      ]
+    },
+    "Sky": {
+      "MoonAngularSize": [
+        0.0,
+        60.0
+      ],
+      "SunAngularSize": [
+        0.0,
+        60.0
+      ]
+    },
+    "ParticleEmitter": {
+      "Brightness": [
+        0.0,
+        10000.0
+      ],
+      "TimeScale": [
+        0.0,
+        1.0
+      ]
+    },
+    "Beam": {
+      "Brightness": [
+        0.0,
+        10000.0
+      ],
+      "LightEmission": [
+        0.0,
+        1.0
+      ],
+      "LightInfluence": [
+        0.0,
+        1.0
+      ],
+      "TextureLength": [
+        0.1,
+        null
+      ],
+      "Width0": [
+        0.0,
+        null
+      ],
+      "Width1": [
+        0.0,
+        null
+      ],
+      "Segments": [
+        1,
+        1000
+      ]
+    },
+    "Trail": {
+      "Brightness": [
+        0.0,
+        10000.0
+      ],
+      "Lifetime": [
+        0.0099999998,
+        20.0
+      ],
+      "LightEmission": [
+        0.0,
+        1.0
+      ],
+      "MinLength": [
+        0.0,
+        null
+      ],
+      "TextureLength": [
+        0.1,
+        null
+      ],
+      "LightInfluence": [
+        0.0,
+        1.0
+      ],
+      "MaxLength": [
+        0.0,
+        null
+      ]
+    },
+    "Fire": {
+      "Heat": [
+        -25.0,
+        25.0
+      ],
+      "Size": [
+        2.0,
+        30.0
+      ]
+    },
+    "Light": {
+      "Brightness": [
+        0,
+        null
+      ]
+    }
+  },
+  "clamp_source_sha256": {
+    "rbx/LightingProp.c": "ce1a7c9f5f0a1db1f0cfe76ebe9e710cfd48b4ed7a7ee9e4afb38389b0125bc1",
+    "rbx/LightProp.c": "126442485e989c9a7bf1870e5e088708cb27bcd7bb63de5b951059785156433a",
+    "rbx/PointLightProp.c": "af24922c1f8305e40bdc444bbf1507b0f72241ea68050b64c3f37bebc322c75f",
+    "rbx/SpotLightProp.c": "f3e9e56d136a0aad6edfa9dbbce5bff87de3c35bd357cf5ecf13410968dc4415",
+    "rbx/SurfaceLightProp.c": "71ba0a5347d2d7937489e5f5a598db3e621afebab6a204d062a963b97d9ba5de",
+    "rbx/PostEffectProp.c": "5e2b3cedd6180fcc8da61295205cfd580fa6319506447a11cedf05d0bff28092",
+    "rbx/BloomEffectProp.c": "5272f3198afcce1fa25411b569ccc86ae5b16437e2df7c8ad49ec18d1b8a595f",
+    "rbx/BlurEffectProp.c": "d7c72d204ef98079314bd9807daff9ba57b5fa171686686120491d3bd4604bc6",
+    "rbx/ColorCorrectionEffectProp.c": "6d9a2903a4627f5ffd2647187f719e8fb959e0eab13a26d81ade300493197b81",
+    "rbx/DepthOfFieldEffectProp.c": "ab4af0392d8502d5b3c84bbfdaa4536b98c416ea075180b4937a6d89acba1e3b",
+    "rbx/SunRaysEffectProp.c": "8e97c8bf0d18b236e09000a45a71cd708162a552bcc57e4105471f8433aeb1dd",
+    "rbx/AtmosphereProp.c": "ccdda76d125642085d8cd0e5fea3c0f65be8f8c7a6231c34814456ed23b47f4f",
+    "rbx/SkyProp.c": "ea8e2276d8f9646e529bc7126262951f9290d79ce4d42a24d1ee705f02107f9a",
+    "rbx/ParticleEmitterProp.c": "0eab6e52769cad01d08fe6e976f091a2a72352288166901cfa103532099d5fd2",
+    "rbx/BeamProp.c": "ff8bf3fa91482711c436bc9647c34a870746669bacb14d550813ee68db58408c",
+    "rbx/TrailProp.c": "fbd59d12533e8e9a73a7d50743bc17c0216c2f4f937f621570d7697de7159e44",
+    "rbx/SmokeProp.c": "0e57d706e91fc51419e7c96dbe52e1593ab574519515b597c77f1165cb8e9fe0",
+    "rbx/FireProp.c": "63565c3f0092e630dafe8cddb98f58143e4e24f6d4cb85be2263d47148818587",
+    "rbx/SparklesProp.c": "cecae2af827a52f687d0112568252594156c5af04b894f65e2db2efef9211b41",
+    "v8datamodel/Light.c": "e2de5b533f9da17b5f7ae6c1953a65cbe6af1dbfbb543d25d5dca05efe5d4b40"
+  }
+}

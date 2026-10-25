@@ -13,6 +13,19 @@
       "MaxHealth": "number",
       "WalkSpeed": "number"
     },
+    "Sparkles": {
+      "Enabled": "boolean",
+      "SparkleColor": "Color3",
+      "TimeScale": "number"
+    },
+    "Fire": {
+      "Enabled": "boolean",
+      "Heat": "number",
+      "Color": "Color3",
+      "Size": "number",
+      "SecondaryColor": "Color3",
+      "TimeScale": "number"
+    },
     "Part": {
       "Anchored": "boolean",
       "RightSurface": "Enum.SurfaceType",
@@ -48,21 +61,183 @@
       "CastShadow": "boolean",
       "PivotOffset": "CFrame"
     },
+    "SpotLight": {
+      "Enabled": "boolean",
+      "Shadows": "boolean",
+      "Face": "Enum.NormalId",
+      "Color": "Color3",
+      "Brightness": "number",
+      "Range": "number",
+      "Angle": "number"
+    },
     "BindableEvent": {},
+    "Trail": {
+      "Enabled": "boolean",
+      "FaceCamera": "boolean",
+      "Attachment1": "Instance?",
+      "Texture": "string",
+      "Color": "ColorSequence",
+      "MinLength": "number",
+      "WidthScale": "NumberSequence",
+      "MaxLength": "number",
+      "LightInfluence": "number",
+      "Transparency": "NumberSequence",
+      "Attachment0": "Instance?",
+      "Lifetime": "number",
+      "LightEmission": "number",
+      "Brightness": "number",
+      "TextureMode": "Enum.TextureMode",
+      "TextureLength": "number"
+    },
     "Folder": {},
+    "Beam": {
+      "FaceCamera": "boolean",
+      "Color": "ColorSequence",
+      "ZOffset": "number",
+      "LightInfluence": "number",
+      "Segments": "number",
+      "Attachment0": "Instance?",
+      "Brightness": "number",
+      "TextureMode": "Enum.TextureMode",
+      "Attachment1": "Instance?",
+      "Enabled": "boolean",
+      "TextureSpeed": "number",
+      "CurveSize1": "number",
+      "CurveSize0": "number",
+      "Texture": "string",
+      "TextureLength": "number",
+      "LightEmission": "number",
+      "Width1": "number",
+      "Transparency": "NumberSequence",
+      "Width0": "number"
+    },
     "IntValue": {
       "Value": "number"
     },
     "BrickColorValue": {
       "Value": "BrickColor"
     },
+    "BloomEffect": {
+      "Threshold": "number",
+      "Enabled": "boolean",
+      "Intensity": "number",
+      "Size": "number"
+    },
+    "Attachment": {
+      "WorldPosition": "Vector3",
+      "WorldOrientation": "Vector3",
+      "CFrame": "CFrame",
+      "Axis": "Vector3",
+      "Rotation": "Vector3",
+      "WorldCFrame": "CFrame",
+      "SecondaryAxis": "Vector3",
+      "Position": "Vector3",
+      "Orientation": "Vector3",
+      "WorldSecondaryAxis": "Vector3",
+      "WorldAxis": "Vector3",
+      "Visible": "boolean"
+    },
     "Color3Value": {
       "Value": "Color3"
+    },
+    "ParticleEmitter": {
+      "ShapeStyle": "Enum.ParticleEmitterShapeStyle",
+      "FlipbookFramerate": "NumberRange",
+      "LightInfluence": "number",
+      "Lifetime": "NumberRange",
+      "FlipbookLayout": "Enum.ParticleFlipbookLayout",
+      "SpreadAngle": "Vector2",
+      "LockedToPart": "boolean",
+      "FlipbookBlendFrames": "boolean",
+      "FlipbookSizeX": "number",
+      "Transparency": "NumberSequence",
+      "LightEmission": "number",
+      "WindAffectsDrag": "boolean",
+      "Color": "ColorSequence",
+      "Drag": "number",
+      "ZOffset": "number",
+      "TimeScale": "number",
+      "Squash": "NumberSequence",
+      "Speed": "NumberRange",
+      "Brightness": "number",
+      "Size": "NumberSequence",
+      "Enabled": "boolean",
+      "Acceleration": "Vector3",
+      "RotSpeed": "NumberRange",
+      "FlipbookSizeY": "number",
+      "FlipbookIncompatible": "string",
+      "ShapeInOut": "Enum.ParticleEmitterShapeInOut",
+      "Rate": "number",
+      "FlipbookStartRandom": "boolean",
+      "VelocityInheritance": "number",
+      "ShapePartial": "number",
+      "Orientation": "Enum.ParticleOrientation",
+      "Rotation": "NumberRange",
+      "FlipbookMode": "Enum.ParticleFlipbookMode",
+      "Texture": "string",
+      "Shape": "Enum.ParticleEmitterShape",
+      "EmissionDirection": "Enum.NormalId"
+    },
+    "Sky": {
+      "StarCount": "number",
+      "SkyboxUp": "string",
+      "MoonTextureId": "string",
+      "SkyboxBk": "string",
+      "CelestialBodiesShown": "boolean",
+      "SkyboxOrientation": "Vector3",
+      "SkyboxLf": "string",
+      "SkyboxFt": "string",
+      "SunTextureId": "string",
+      "SunAngularSize": "number",
+      "SkyboxDn": "string",
+      "SkyboxRt": "string",
+      "MoonAngularSize": "number"
+    },
+    "CanvasGroup": {
+      "NextSelectionLeft": "Instance?",
+      "GroupTransparency": "number",
+      "SelectionBehaviorLeft": "Enum.SelectionBehavior",
+      "Interactable": "boolean",
+      "SizeConstraint": "Enum.SizeConstraint",
+      "ZIndex": "number",
+      "BorderSizePixel": "number",
+      "AutoLocalize": "boolean",
+      "NextSelectionDown": "Instance?",
+      "SelectionOrder": "number",
+      "BackgroundColor3": "Color3",
+      "BorderMode": "Enum.BorderMode",
+      "Selectable": "boolean",
+      "AnchorPoint": "Vector2",
+      "SelectionBehaviorDown": "Enum.SelectionBehavior",
+      "GroupColor3": "Color3",
+      "AutomaticSize": "Enum.AutomaticSize",
+      "Size": "UDim2",
+      "Visible": "boolean",
+      "NextSelectionRight": "Instance?",
+      "InputSink": "Enum.InputSink",
+      "ClipsDescendants": "boolean",
+      "BorderColor3": "Color3",
+      "Active": "boolean",
+      "Position": "UDim2",
+      "LayoutOrder": "number",
+      "Rotation": "number",
+      "RootLocalizationTable": "Instance?",
+      "BackgroundTransparency": "number",
+      "SelectionImageObject": "Instance?",
+      "SelectionBehaviorRight": "Enum.SelectionBehavior",
+      "NextSelectionUp": "Instance?",
+      "SelectionGroup": "boolean",
+      "SelectionBehaviorUp": "Enum.SelectionBehavior"
     },
     "Script": {
       "Enabled": "boolean",
       "Disabled": "boolean",
       "RunContext": "Enum.RunContext"
+    },
+    "SunRaysEffect": {
+      "Enabled": "boolean",
+      "Intensity": "number",
+      "Spread": "number"
     },
     "WedgePart": {
       "BackSurface": "Enum.SurfaceType",
@@ -96,6 +271,13 @@
       "Massless": "boolean",
       "CastShadow": "boolean",
       "PivotOffset": "CFrame"
+    },
+    "DepthOfFieldEffect": {
+      "Enabled": "boolean",
+      "FarIntensity": "number",
+      "FocusDistance": "number",
+      "InFocusRadius": "number",
+      "NearIntensity": "number"
     },
     "CornerWedgePart": {
       "BackSurface": "Enum.SurfaceType",
@@ -182,6 +364,13 @@
       "SelectionGroup": "boolean",
       "SelectionBehaviorUp": "Enum.SelectionBehavior"
     },
+    "ColorCorrectionEffect": {
+      "Enabled": "boolean",
+      "Saturation": "number",
+      "Contrast": "number",
+      "TintColor": "Color3",
+      "Brightness": "number"
+    },
     "Camera": {
       "FieldOfViewMode": "Enum.FieldOfViewMode",
       "MaxAxisFieldOfView": "number",
@@ -247,6 +436,16 @@
       "SelectionGroup": "boolean",
       "SelectionBehaviorUp": "Enum.SelectionBehavior"
     },
+    "UIGradient": {
+      "Offset": "Vector2",
+      "Type": "Enum.GradientType",
+      "Transparency": "NumberSequence",
+      "Rotation": "number",
+      "Color": "ColorSequence",
+      "Scale": "number",
+      "Enabled": "boolean",
+      "TileMode": "Enum.GradientTileMode"
+    },
     "TextBox": {
       "NextSelectionLeft": "Instance?",
       "CursorPosition": "number",
@@ -310,6 +509,15 @@
     "NumberValue": {
       "Value": "number"
     },
+    "SurfaceLight": {
+      "Enabled": "boolean",
+      "Shadows": "boolean",
+      "Face": "Enum.NormalId",
+      "Color": "Color3",
+      "Brightness": "number",
+      "Range": "number",
+      "Angle": "number"
+    },
     "MaterialVariant": {
       "BaseMaterial": "Enum.Material",
       "CustomPhysicalProperties": "PhysicalProperties?"
@@ -328,12 +536,33 @@
       "Disabled": "boolean",
       "RunContext": "Enum.RunContext"
     },
+    "Smoke": {
+      "Enabled": "boolean",
+      "Size": "number",
+      "Color": "Color3",
+      "Opacity": "number",
+      "RiseVelocity": "number",
+      "TimeScale": "number"
+    },
     "Configuration": {},
+    "UICorner": {
+      "TopLeftRadius": "UDim",
+      "TopRightRadius": "UDim",
+      "BottomRightRadius": "UDim",
+      "BottomLeftRadius": "UDim",
+      "CornerRadius": "UDim"
+    },
     "StringValue": {
       "Value": "string"
     },
     "ObjectValue": {
       "Value": "Instance?"
+    },
+    "RopeConstraint": {
+      "Enabled": "boolean",
+      "Visible": "boolean",
+      "Attachment1": "Instance?",
+      "Attachment0": "Instance?"
     },
     "RemoteFunction": {},
     "BoolValue": {
@@ -341,6 +570,21 @@
     },
     "CFrameValue": {
       "Value": "CFrame"
+    },
+    "Bone": {
+      "WorldPosition": "Vector3",
+      "Transform": "CFrame",
+      "WorldOrientation": "Vector3",
+      "CFrame": "CFrame",
+      "Axis": "Vector3",
+      "Rotation": "Vector3",
+      "WorldCFrame": "CFrame",
+      "SecondaryAxis": "Vector3",
+      "Position": "Vector3",
+      "Orientation": "Vector3",
+      "WorldSecondaryAxis": "Vector3",
+      "WorldAxis": "Vector3",
+      "Visible": "boolean"
     },
     "ImageLabel": {
       "NextSelectionLeft": "Instance?",
@@ -471,26 +715,20 @@
     "UIScale": {
       "Scale": "number"
     },
-    "UIGradient": {
-      "Offset": "Vector2",
-      "Type": "Enum.GradientType",
-      "Transparency": "NumberSequence",
-      "Rotation": "number",
-      "Color": "ColorSequence",
-      "Scale": "number",
+    "BlurEffect": {
       "Enabled": "boolean",
-      "TileMode": "Enum.GradientTileMode"
+      "Size": "number"
     },
     "UITextSizeConstraint": {
       "MaxTextSize": "number",
       "MinTextSize": "number"
     },
-    "UICorner": {
-      "TopLeftRadius": "UDim",
-      "TopRightRadius": "UDim",
-      "BottomRightRadius": "UDim",
-      "BottomLeftRadius": "UDim",
-      "CornerRadius": "UDim"
+    "PointLight": {
+      "Enabled": "boolean",
+      "Shadows": "boolean",
+      "Color": "Color3",
+      "Brightness": "number",
+      "Range": "number"
     },
     "ScreenGui": {
       "Enabled": "boolean",
@@ -513,41 +751,13 @@
       "WorldPivot": "CFrame",
       "PrimaryPart": "Instance?"
     },
-    "CanvasGroup": {
-      "NextSelectionLeft": "Instance?",
-      "GroupTransparency": "number",
-      "SelectionBehaviorLeft": "Enum.SelectionBehavior",
-      "Interactable": "boolean",
-      "SizeConstraint": "Enum.SizeConstraint",
-      "ZIndex": "number",
-      "BorderSizePixel": "number",
-      "AutoLocalize": "boolean",
-      "NextSelectionDown": "Instance?",
-      "SelectionOrder": "number",
-      "BackgroundColor3": "Color3",
-      "BorderMode": "Enum.BorderMode",
-      "Selectable": "boolean",
-      "AnchorPoint": "Vector2",
-      "SelectionBehaviorDown": "Enum.SelectionBehavior",
-      "GroupColor3": "Color3",
-      "AutomaticSize": "Enum.AutomaticSize",
-      "Size": "UDim2",
-      "Visible": "boolean",
-      "NextSelectionRight": "Instance?",
-      "InputSink": "Enum.InputSink",
-      "ClipsDescendants": "boolean",
-      "BorderColor3": "Color3",
-      "Active": "boolean",
-      "Position": "UDim2",
-      "LayoutOrder": "number",
-      "Rotation": "number",
-      "RootLocalizationTable": "Instance?",
-      "BackgroundTransparency": "number",
-      "SelectionImageObject": "Instance?",
-      "SelectionBehaviorRight": "Enum.SelectionBehavior",
-      "NextSelectionUp": "Instance?",
-      "SelectionGroup": "boolean",
-      "SelectionBehaviorUp": "Enum.SelectionBehavior"
+    "Atmosphere": {
+      "Density": "number",
+      "Glare": "number",
+      "Color": "Color3",
+      "Decay": "Color3",
+      "Haze": "number",
+      "Offset": "number"
     },
     "TextButton": {
       "NextSelectionLeft": "Instance?",
@@ -695,9 +905,12 @@
   "source_sha256": {
     "engine/instances.luau": "64cdf0b194aeefb3c5f7a7f34c23f5ba4d2d236c98b2f9322a05e0e2a4a42d45",
     "engine/services.luau": "0fd2dbcfc6cf7089bf313e6cd0363979b032db29b99254f06f05059c71092ab8",
+    "engine/attachments.luau": "f83109fca81e7c09aea2fff2e767e0e9b49c62d1b78e30badcbbdaaad0d3dfd3",
+    "engine/environment.luau": "24133a012592e15cfc6f58b70a02f8721553eb50ae772e86aadf40d149603f47",
     "engine/ui.luau": "2953c42e5d2a8bfa08d1c76fd3dda75f016f5f5d350a82a9a7c00c0da52a0dad",
     "engine/ui_layout.luau": "980e83d607a86836fd42bdda42557074cadcaf52839defd7c130ef4ff6849198",
     "engine/camera.luau": "262ac8b98f75f0b0b81220b5d7140b497139ce806c31391b64186c14f4689051",
-    "data/ui_property_catalog.json": "ce5f1617bbb5a4eb0d2618e7ad9279597bc302dbe53157fa9581f9fd445bda2c"
+    "data/ui_property_catalog.json": "ce5f1617bbb5a4eb0d2618e7ad9279597bc302dbe53157fa9581f9fd445bda2c",
+    "data/environment_property_catalog.json": "7587a9c7ccd22da2b2525280e864bec9bd97dda29cdd001fd7e00979581b5796"
   }
 }

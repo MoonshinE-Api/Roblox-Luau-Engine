@@ -1,0 +1,21 @@
+{
+  "functions": {
+    "lighting_clock": {
+      "address": "0x104b3cfee",
+      "size": 54,
+      "sha256": "d35b25697117023ea6722a081918a7c3ad7eab6cbcaa8752c724415a536b65a5",
+      "data_references": [
+        "0x10971d620",
+        "0x10a4497d4"
+      ]
+    },
+    "lighting_time_normalize": {
+      "address": "0x104b3ce48",
+      "size": 98,
+      "sha256": "d042773169097b42b441118aa4fec7007f7814013c575f998bef6b87c861cdd7",
+      "data_references": []
+    }
+  },
+  "source": "v8datamodel/Lighting.c",
+  "comparison": "Unchanged float32 clock conversion and signed duration normalization functions."
+}

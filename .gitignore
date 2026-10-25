@@ -41,3 +41,4 @@ data/*
 !data/vm_core.json
 !data/hierarchy_reference.json
 !data/ui_property_catalog.json
+!data/environment_property_catalog.json

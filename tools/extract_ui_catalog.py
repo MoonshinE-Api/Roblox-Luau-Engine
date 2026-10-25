@@ -24,7 +24,7 @@ SUPPORTED = {'Bool': 'boolean', 'String': 'string', 'Content': 'string',
              'Vector2': 'Vector2', 'Vector3': 'Vector3', 'Color3': 'Color3',
              'UDim': 'UDim', 'UDim2': 'UDim2', 'Rect': 'Rect',
              'NumberSequence': 'NumberSequence', 'ColorSequence': 'ColorSequence',
-             'Font': 'Font'}
+             'Font': 'Font', 'NumberRange': 'NumberRange', 'BrickColor': 'BrickColor'}
 REPRESENTATIVE = {'GuiBase2d': 'Frame', 'LayerCollector': 'ScreenGui',
                   'GuiObject': 'Frame', 'GuiButton': 'TextButton', 'UIGridStyleLayout': 'UIListLayout'}
 ALIASES = {'InputSink': 'Sink', 'Image': 'ImageContent', 'HoverImage': 'HoverImageContent',
@@ -33,13 +33,16 @@ ALIASES = {'InputSink': 'Sink', 'Image': 'ImageContent', 'HoverImage': 'HoverIma
            'CornerRadius': 'TopLeftRadius'}
 
 
-def extract(database, reference):
+def extract(database, reference, *, classes_to_extract=None, representative=None, aliases=None):
+    selection=CLASSES if classes_to_extract is None else tuple(classes_to_extract)
+    representative=REPRESENTATIVE if representative is None else representative
+    aliases=ALIASES if aliases is None else aliases
     raw = database.read_bytes()
     version, classes, *_ = msgpack.unpackb(raw, raw=False, strict_map_key=False)
     enums = json.loads((ROOT/'data/enum_catalog.json').read_text(encoding='utf-8'))['enums']
     known = json.loads((ROOT/'data/class_catalog.json').read_text(encoding='utf-8'))['classes']
     result, skipped = {}, []
-    for name in CLASSES:
+    for name in selection:
         assert name in known, name
         doc = yaml.safe_load((reference/'classes'/f'{name}.yaml').read_text(encoding='utf-8'))
         public = {p['name'].split('.', 1)[1]: p for p in doc.get('properties', [])}
@@ -53,10 +56,10 @@ def extract(database, reference):
             if field['type'] == 'Content':
                 skipped.append(f'{name}.{key}: Content datatype not implemented')
                 continue
-            current, default = REPRESENTATIVE.get(name, name), None
+            current, default = representative.get(name, name), None
             while current:
                 entry = classes[current]
-                stored_key = key if key in entry[4] else ALIASES.get(key, key)
+                stored_key = key if key in entry[4] else aliases.get(key, key)
                 if stored_key in entry[4]:
                     default = entry[4][stored_key]
                     break
@@ -93,7 +96,7 @@ def extract(database, reference):
         result[name] = declarations
     overrides = {}
     for name in result:
-        if name in REPRESENTATIVE: continue
+        if name in representative: continue
         parent = classes[name][2]
         while parent:
             for key, record in result.get(parent, {}).items():

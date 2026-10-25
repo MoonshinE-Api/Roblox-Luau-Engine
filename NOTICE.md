@@ -22,10 +22,11 @@ material is not relicensed, and rights in the original executable are not grante
   provide the source-to-bytecode compiler.
 - [rbx-dom](https://github.com/rojo-rbx/rbx-dom) supplies the XML/binary asset
   codec and an independent attribute-format reference.
-  `data/ui_property_catalog.json` also contains a selected, typed extraction of
+  `data/ui_property_catalog.json` and `data/environment_property_catalog.json`
+  also contain selected, typed extractions of
   defaults from its `rbx_reflection_database` 3.0.1+roblox-741 database, revision
   `03a3e1f63db883c42a2d0929c6058234d0f0785d`. The source version and SHA-256 are
-  recorded in the catalog. Its MIT notice is retained in
+  recorded in each catalog. Its MIT notice is retained in
   `licenses/rbx-reflection-database/LICENSE`.
 - [Fiu](https://github.com/rce-incorporated/Fiu) is a vendored MIT-licensed test
   interpreter. Its license is preserved in `licenses/Fiu/LICENSE`.
