@@ -97,6 +97,7 @@ return function(R)
         end
         return result
     end
+    R.spatial={vector=vector,size=size,params=params,parts=parts}
     local function rayBox(origin,direction,part)
         local o=part.CFrame:PointToObjectSpace(origin)
         local d=part.CFrame:VectorToObjectSpace(direction)

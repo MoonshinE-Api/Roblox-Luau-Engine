@@ -45,6 +45,8 @@ class Original:
     ENGINE_TEAMS = {'teams_lookup':0x104ca0fba,'teams_from_player':0x104ca1050,
                     'teams_count':0x104ca0ef4,'teams_snapshot':0x104ca1676,
                     'teams_rebalance':0x104ca0de2}
+    ENGINE_GEOMETRY = {'ball_radius':0x1042ba91c,'cylinder_bound':0x1042bb76e,
+                       'poly_vertex':0x1042bc0b8,'poly_vertex_count':0x1042bc064}
     def __init__(self, binary, report, dll, hooks=None, enabled=None, data_overrides=None, pointer_arrays=None,
                  core=False, auto_rebase=False, data_padding=0, writable_data=False):
         self.dll, self.binary = dll, binary
@@ -60,7 +62,7 @@ class Original:
         self.api.GetCurrentProcess.restype = ctypes.c_void_p
         hooks = hooks or {}
         self.enabled = frozenset(enabled) if enabled is not None else self.ALLOWED | (self.BOUNDARY if hooks else frozenset())
-        reviewed_engine=self.ENGINE_RANDOM | self.ENGINE_BRICK | self.ENGINE_DATE | self.ENGINE_PHYSICAL | self.ENGINE_REGION | self.ENGINE_ROTATION | self.ENGINE_ENVIRONMENT | self.ENGINE_SKY | self.ENGINE_PLAYERS | self.ENGINE_HUMANOID | self.ENGINE_TEAMS
+        reviewed_engine=self.ENGINE_RANDOM | self.ENGINE_BRICK | self.ENGINE_DATE | self.ENGINE_PHYSICAL | self.ENGINE_REGION | self.ENGINE_ROTATION | self.ENGINE_ENVIRONMENT | self.ENGINE_SKY | self.ENGINE_PLAYERS | self.ENGINE_HUMANOID | self.ENGINE_TEAMS | self.ENGINE_GEOMETRY
         permitted = self.ALLOWED | self.BOUNDARY | self.ALLOCATOR | self.INITIALIZER | reviewed_engine.keys()
         for name in self.enabled & reviewed_engine.keys():
             if int(report['functions'][name]['address'],16)!=reviewed_engine[name]:

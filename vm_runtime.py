@@ -119,7 +119,7 @@ class Runtime:
         self.dll.host_setup_http(C.cast(self.http.dispatch,C.c_void_p).value,
             self.functions['__Z13lua_tolstringP9lua_StateiPm'],
             self.functions['__Z15lua_pushlstringP9lua_StatePKcm'],self.functions['__Z9luau_loadP9lua_StatePKcS2_mi'])
-        for name in ('__host_proxy','__host_random','__host_brickcolor','__host_datetime','__host_sleep','__host_http','__host_guid','__host_loadbytecode'):
+        for name in ('__host_proxy','__host_random','__host_brickcolor','__host_datetime','__host_sleep','__host_http','__host_guid','__host_loadbytecode','__host_geometry'):
             encoded=name.encode()
             self.set_cfunction(name,self.dll.host_import_address(encoded,len(encoded)))
 

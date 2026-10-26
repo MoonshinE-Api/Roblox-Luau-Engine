@@ -30,6 +30,10 @@ material is not relicensed, and rights in the original executable are not grante
   `licenses/rbx-reflection-database/LICENSE`.
 - [Fiu](https://github.com/rce-incorporated/Fiu) is a vendored MIT-licensed test
   interpreter. Its license is preserved in `licenses/Fiu/LICENSE`.
+- [Parry](https://github.com/dimforge/parry), by the Dimforge contributors,
+  supplies convex spatial queries through `parry3d-f64` 0.25.1. It is licensed
+  under Apache-2.0; its license is retained in `licenses/Parry/LICENSE`.
+  The native VM bridge now uses Cargo with locked dependencies in `native/`.
 - Compiler and codec dependencies are downloaded by Cargo rather than vendored
   here. Versions are pinned in their respective `Cargo.lock` files. Their
   upstream licenses continue to apply to those dependencies and built programs.

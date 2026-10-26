@@ -1,0 +1,16 @@
+[package]
+name = "vm0735"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+path = "vm0735.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+parry3d-f64 = { version = "=0.25.1", default-features = false, features = ["required-features", "std", "alloc"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+strip = true

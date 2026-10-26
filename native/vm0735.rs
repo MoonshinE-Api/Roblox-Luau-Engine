@@ -10,6 +10,21 @@ mod random;
 mod brickcolor;
 mod datetime;
 mod http;
+mod geometry;
+
+#[repr(C)]
+struct NativeVector3 { x:f32,y:f32,z:f32 }
+#[unsafe(no_mangle)]
+pub unsafe extern "C" fn original_call_vector_f32(address:usize,object:usize,vector:*const f32)->f32 {
+    let function:unsafe extern "sysv64" fn(usize,*const f32)->f32=unsafe {std::mem::transmute(address)};
+    unsafe {function(object,vector)}
+}
+#[unsafe(no_mangle)]
+pub unsafe extern "C" fn original_call_vertex(address:usize,mesh:usize,index:u32,output:*mut f32) {
+    let function:unsafe extern "sysv64" fn(usize,u32)->NativeVector3=unsafe {std::mem::transmute(address)};
+    let value=unsafe {function(mesh,index)};
+    unsafe {output.write(value.x);output.add(1).write(value.y);output.add(2).write(value.z)}
+}
 
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn original_call_scalar_f32(address:usize,object:usize,value:f32)->f32 {

@@ -8,7 +8,7 @@ if (-not (Test-Path -LiteralPath $Binary -PathType Leaf)) { throw "Missing suppl
 if ($Build) { & "$ProjectRoot\build.ps1" }
 & python "$ProjectRoot\tests\validation_inputs.py" start
 if ($LASTEXITCODE -ne 0) { throw 'Validation input snapshot failed' }
-foreach ($script in @('oracle.py', 'bootstrap_oracle.py', 'allocator_oracle.py', 'initialization_oracle.py', 'random_oracle.py', 'brickcolor_oracle.py', 'datetime_oracle.py', 'physical_oracle.py', 'region_oracle.py', 'rotation_oracle.py', 'lighting_oracle.py', 'sky_oracle.py', 'player_oracle.py', 'humanoid_oracle.py', 'team_oracle.py')) {
+foreach ($script in @('oracle.py', 'bootstrap_oracle.py', 'allocator_oracle.py', 'initialization_oracle.py', 'random_oracle.py', 'brickcolor_oracle.py', 'datetime_oracle.py', 'physical_oracle.py', 'region_oracle.py', 'rotation_oracle.py', 'lighting_oracle.py', 'sky_oracle.py', 'player_oracle.py', 'humanoid_oracle.py', 'team_oracle.py', 'geometry_oracle.py')) {
     & python "$ProjectRoot\tests\$script" --binary $Binary
     if ($LASTEXITCODE -ne 0) { throw "Comparison failed: $script" }
 }
@@ -172,6 +172,16 @@ foreach ($side in @('server','client')) {
 if ($LASTEXITCODE -ne 0) { throw 'Headless bulk movement fleet example failed' }
 & python "$ProjectRoot\tests\bulk_movement_checks.py" --binary $Binary
 if ($LASTEXITCODE -ne 0) { throw 'Realtime/Fiu fleet movement and shutdown persistence failed' }
+& python "$ProjectRoot\tests\geometry_kernel_checks.py"
+if ($LASTEXITCODE -ne 0) { throw 'Analytic convex query/reference/packet checks failed' }
+foreach ($side in @('server','client')) {
+    & python "$ProjectRoot\run.py" "$ProjectRoot\tests\geometry.luau" --binary $Binary --mode $side --duration 0.1
+    if ($LASTEXITCODE -ne 0) { throw "Convex query API and filter checks failed: $side" }
+}
+& python "$ProjectRoot\run.py" "$ProjectRoot\examples\projectile_arena.luau" --binary $Binary --no-player --duration 1.2 --wall-timeout 60
+if ($LASTEXITCODE -ne 0) { throw 'Continuous projectile arena example failed' }
+& python "$ProjectRoot\tests\geometry_checks.py" --binary $Binary
+if ($LASTEXITCODE -ne 0) { throw 'Nested convex arena, model imports and shutdown persistence failed' }
 & python "$ProjectRoot\tests\validation_inputs.py" finish
 if ($LASTEXITCODE -ne 0) { throw 'Validation inputs changed during checks' }
-Write-Host 'All fifteen differential checks and ninety-four runtime/CLI checks passed.'
+Write-Host 'All sixteen differential checks and ninety-nine runtime/CLI checks passed.'

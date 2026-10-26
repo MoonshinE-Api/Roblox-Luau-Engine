@@ -98,6 +98,9 @@ Names are case-sensitive, as in Studio: `Instance.new("Part")`, `Clone`, and
   supported references and typed attributes are restored before script execution.
 - Material variants, density-based mass for supported primitive shapes, bounds,
   and spatial queries. These calculations do not provide dynamic physics.
+- Rust convex geometry through Parry: Blockcast, Spherecast, Shapecast, and
+  primitive-aware Raycast/GetPartsInPart for boxes, balls, X-axis cylinders,
+  WedgeParts and CornerWedgeParts. Includes collision-group and instance filters.
 - 199 typed UI configuration declarations across 25 class definitions, with
   inherited defaults, change signals, cloning, focus, and XML/RBXM import.
 - Headless UDim2 geometry, anchors, UIScale, padding, size/aspect constraints, clipping,
@@ -306,12 +309,55 @@ and network ownership are not implemented.
 python .\run.py .\examples\damage_arena.luau --binary $studio --duration 0.1
 ```
 
+## Convex queries and continuous projectiles
+
+WorldRoot queries use a native Rust kernel with `parry3d-f64` 0.25.1. Raycast
+tests actual supported primitive surfaces; GetPartsInPart tests convex shapes,
+including curved surfaces and wedge slopes. GetPartBoundsInBox/Radius continue
+to test bounding boxes, so their results can deliberately include shapes that
+an exact overlap rejects. Workspace and nested WorldModel query spaces are isolated.
+
+Blockcast sweeps an oriented box. Spherecast sweeps a sphere. Shapecast sweeps
+the supplied supported part without moving it, excluding that part from its
+own results. A shape's orientation stays fixed during a cast. Initially
+intersecting targets are excluded. Distance measures shape travel; Position
+and Normal describe contact with the target surface. Zero-radius sphere casts
+and zero-size box casts behave as point rays. Cast distance is limited to 1,024
+studs, box dimensions to 512, and sphere radius to 256. The Shapecast signature
+targets build 735; newer CFrame/size override arguments are not implemented.
+
+Part dimensions are clamped to at least 0.05 and stored as float32 for collision
+geometry. Ball radius is half the smallest dimension. Cylinder length follows X,
+and its circular diameter is the smaller of Y and Z. Wedge hull vertices and
+primitive-radius rules are checked against unchanged original build 735 functions.
+Transforms are orthonormalized for queries. Rays starting strictly inside a solid
+ignore it. Contact selection for ambiguous edges/faces and numerical tolerances
+are not claimed to match Roblox's physics kernel bit for bit.
+
+Eligibility uses RaycastParams/OverlapParams, including descendant filters,
+CollisionGroup, CanQuery, RespectCanCollide and BruteForceAllSlow. Shape packets
+are cached until CFrame/Size/Shape changes; Rust's shape cache has a fixed
+256-entry cap. Queries reject more than 100,000 eligible candidates, nonfinite
+geometry, and coordinates above the host magnitude limit of 1e12. MeshParts,
+unions, terrain and other unsupported geometry fail explicitly. This supplies
+collision queries; it does not integrate gravity, contacts or physical assemblies.
+
+The example below simulates 32 anchored projectiles with Luau, sweeps before
+each movement, reflects velocities at contacts, updates transforms with
+BulkMoveTo, advances Lighting and saves its counters during a yielding shutdown
+callback. It checks that projectiles remain inside the room and retain speed.
+The same example is also compiled and run inside Fiu in the validation suite.
+
+```powershell
+python .\run.py .\examples\projectile_arena.luau --binary $studio --no-player --duration 1.2
+```
+
 ## Source layout
 
 | Path | Purpose |
 | --- | --- |
 | `engine/` | Engine API implementation in Luau |
-| `native/` | Rust VM bridge and native helpers |
+| `native/` | Cargo-based Rust VM bridge, convex query kernel and native helpers |
 | `compiler/` | Compiler using upstream Luau 0.740 |
 | `asset-codec/` | XML/RBXM codec using rbx-dom |
 | Root Python modules | VM loading, projects, models, HTTP, and assets |
@@ -349,8 +395,8 @@ python -m pip install -r .\tools\requirements.txt
 powershell -File .\tests\validate.ps1 -Binary $studio
 ```
 
-The nested-interpreter test executes twelve datatype, region, CFrame, BasePart,
-Attachment/Bone, environment, sky, callback, player, humanoid, team and bulk-movement suites through Fiu. It is included in
+The nested-interpreter test executes thirteen datatype, region, CFrame, BasePart,
+Attachment/Bone, environment, sky, callback, player, humanoid, team, bulk-movement and convex-geometry suites through Fiu. It is included in
 the full validation and can also run separately. Its vector constants use the
 engine's Vector3 constructor:
 
@@ -358,7 +404,7 @@ engine's Vector3 constructor:
 python .\tests\nested_geometry_checks.py --binary $studio
 ```
 
-Validation covers 15 differential suites and 94 runtime/CLI scenarios, including
+Validation covers 16 differential suites and 99 runtime/CLI scenarios, including
 HTTP against local fixtures, model imports, nested Fiu execution, memory limits,
 worker timeouts, all 199 UI property declarations, UI model import, 200 camera
 projection round trips, layout/autosizing, concurrent SQLite updates, persistence
@@ -390,6 +436,13 @@ BulkMoveTo checks cover 2,560 batched transforms, callback edits/yields, duplica
 parts, complete validation before mutation, both event modes and immediate
 raycasts. The 160-part Heartbeat fleet runs in real time and inside Fiu, clones
 its final transforms, saves on shutdown and verifies the save in another process.
+Convex geometry comparisons cover 2,408 unchanged native radius calculations,
+22,876 native hull-vertex results and native vertex counts. Independent references
+cover 1,500 analytic rays, 700 rounded-box sphere sweeps and 900 swept-box SAT
+cases, plus grazing/degenerate shapes and malformed packet/canary checks.
+Server/client API filters, cache invalidation, XML/RBXM imports, the nested
+32-projectile arena and its cross-process shutdown save are integration tests.
+These validate the replacement Parry query kernel, not native Roblox cast-solver parity.
 Passing these checks does
 not establish compatibility with
 every Roblox script. Generated diagnostics remain local and are ignored by Git.

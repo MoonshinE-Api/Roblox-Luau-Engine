@@ -1,6 +1,9 @@
+param([switch]$Offline)
 $ErrorActionPreference = 'Stop'
-Push-Location $PSScriptRoot
-try {
-    & rustc --edition 2024 --crate-type cdylib -O .\native\vm0735.rs -o .\vm0735.dll
-    if ($LASTEXITCODE -ne 0) { throw 'Native slice build failed' }
-} finally { Pop-Location }
+$arguments=@('build','--release','--locked','--manifest-path',"$PSScriptRoot\native\Cargo.toml")
+if ($Offline) { $arguments+='--offline' }
+& cargo @arguments
+if ($LASTEXITCODE -ne 0) { throw 'Native VM/geometry build failed' }
+$metadata=& cargo metadata --no-deps --format-version 1 --manifest-path "$PSScriptRoot\native\Cargo.toml" | ConvertFrom-Json
+if ($LASTEXITCODE -ne 0) { throw 'Cargo metadata failed' }
+Copy-Item -LiteralPath (Join-Path $metadata.target_directory 'release\vm0735.dll') -Destination (Join-Path $PSScriptRoot 'vm0735.dll')

@@ -1,0 +1,41 @@
+{
+  "functions": {
+    "ball_radius": {
+      "address": "0x1042ba91c",
+      "size": 32,
+      "sha256": "b79eee8c27253a618eb9a0ea55b6e88313c0a416ee43b3eaed71a62663e7eaf6",
+      "data_references": [
+        "0x108f302c8"
+      ]
+    },
+    "cylinder_bound": {
+      "address": "0x1042bb76e",
+      "size": 44,
+      "sha256": "414906ce73b46c8ba367d2adca786ca514fa49b1d246b99e694fe10d0db925ed",
+      "data_references": [
+        "0x108f302c8"
+      ]
+    },
+    "poly_vertex": {
+      "address": "0x1042bc0b8",
+      "size": 144,
+      "sha256": "4d351d8f086117735dc8a8fad0959642c1f8ba7372f3994161bf9d36aec93e64",
+      "data_references": [
+        "0x108f302c8",
+        "0x108f39940",
+        "0x108f46b10",
+        "0x1096903d0",
+        "0x109690420"
+      ]
+    },
+    "poly_vertex_count": {
+      "address": "0x1042bc064",
+      "size": 28,
+      "sha256": "ca16184904002ba1723a6fe1a5a5a1438ab2201e838c25e048432d812b9bb37b",
+      "data_references": []
+    }
+  },
+  "source": "v8world/Ball.c; v8world/Cylinder.c; v8world/Mesh.c",
+  "comparison": "Four unchanged native functions. Borrowed dimensions and fixed-size mesh records; no dependency bridges.",
+  "limits": "Compares primitive radii, vertex counts and hull vertices only. Parry replaces the collision kernel; Roblox cast, broadphase, margins and physics assembly algorithms are not executed."
+}

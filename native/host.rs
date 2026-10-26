@@ -299,6 +299,7 @@ pub unsafe extern "C" fn host_import_address(name:*const u8,length:usize)->usize
         b"__host_http"=>super::http::host_http as *const () as usize,
         b"__host_guid"=>super::http::host_guid as *const () as usize,
         b"__host_loadbytecode"=>super::http::host_loadbytecode as *const () as usize,
+        b"__host_geometry"=>super::geometry::host_geometry as *const () as usize,
         b"oracle_noop"=>ptr!(oracle_noop),
         _=>0,
     }
