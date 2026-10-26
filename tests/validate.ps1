@@ -164,6 +164,14 @@ if ($LASTEXITCODE -ne 0) { throw 'Team callback server/client contexts failed' }
 if ($LASTEXITCODE -ne 0) { throw 'Team/player model import checks failed' }
 & python "$ProjectRoot\run.py" "$ProjectRoot\examples\team_round.luau" --binary $Binary --duration 0.1
 if ($LASTEXITCODE -ne 0) { throw 'Local team round/damage/save example failed' }
+foreach ($side in @('server','client')) {
+    & python "$ProjectRoot\run.py" "$ProjectRoot\tests\bulk_movement.luau" --binary $Binary --mode $side --duration 0.1
+    if ($LASTEXITCODE -ne 0) { throw "Bulk movement/event mode checks failed: $side" }
+}
+& python "$ProjectRoot\run.py" "$ProjectRoot\examples\bulk_fleet.luau" --binary $Binary --no-player --duration 0.3
+if ($LASTEXITCODE -ne 0) { throw 'Headless bulk movement fleet example failed' }
+& python "$ProjectRoot\tests\bulk_movement_checks.py" --binary $Binary
+if ($LASTEXITCODE -ne 0) { throw 'Realtime/Fiu fleet movement and shutdown persistence failed' }
 & python "$ProjectRoot\tests\validation_inputs.py" finish
 if ($LASTEXITCODE -ne 0) { throw 'Validation inputs changed during checks' }
-Write-Host 'All fifteen differential checks and ninety runtime/CLI checks passed.'
+Write-Host 'All fifteen differential checks and ninety-four runtime/CLI checks passed.'

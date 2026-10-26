@@ -67,6 +67,8 @@ Names are case-sensitive, as in Studio: `Instance.new("Part")`, `Clone`, and
   and head-based DistanceFromCharacter with float32 arithmetic.
 - Team/Teams rosters, typed TeamColor/Neutral membership, server join balancing,
   team membership signals, duplicate colors, clones and XML/RBXM properties.
+- WorldRoot BulkMoveTo with full preflight validation, captured input arrays,
+  sequential duplicate entries and both BulkMoveMode property-notification modes.
 - Float32 Humanoid Health/MaxHealth, HealthChanged, TakeDamage/healing, ForceField
   protection, per-side state-enable flags, and health-driven Died events during
   simulation. ForceField.Visible supports cloning and XML/RBXM import.
@@ -266,6 +268,21 @@ remain unimplemented. A combined local team/character/damage/shutdown-save examp
 python .\run.py .\examples\team_round.luau --binary $studio --no-player --duration 0.1
 ```
 
+BulkMoveTo validates both arrays before moving any part. Immediate callbacks
+observe sequential moves, including repeated entries for the same part. Edits to
+the original arrays from a callback do not change the captured operation.
+FireAllEvents uses the ordinary CFrame/Position/AssemblyCenterOfMass/Orientation/
+Rotation property notifications; FireCFrameChanged emits only CFrame. Unchanged
+frames emit nothing. Derived attachment transforms and spatial queries read the
+new positions immediately. The receiver can be Workspace or WorldModel; parts
+need not be descendants of that receiver. This implements headless transforms,
+not physical assembly movement, contact updates or network ownership changes.
+See the [WorldRoot API](https://create.roblox.com/docs/reference/engine/classes/WorldRoot#BulkMoveTo).
+
+```powershell
+python .\run.py .\examples\bulk_fleet.luau --binary $studio --no-player --duration 0.3
+```
+
 Humanoid Health preserves build 735's raw stored value while its getter clamps
 the result to [0, MaxHealth]. Raising MaxHealth can reveal previously stored
 health above the old limit. Raw health writes and MaxHealth changes emit the
@@ -332,8 +349,8 @@ python -m pip install -r .\tools\requirements.txt
 powershell -File .\tests\validate.ps1 -Binary $studio
 ```
 
-The nested-interpreter test executes eleven datatype, region, CFrame, BasePart,
-Attachment/Bone, environment, sky, callback, player, humanoid and team suites through Fiu. It is included in
+The nested-interpreter test executes twelve datatype, region, CFrame, BasePart,
+Attachment/Bone, environment, sky, callback, player, humanoid, team and bulk-movement suites through Fiu. It is included in
 the full validation and can also run separately. Its vector constants use the
 engine's Vector3 constructor:
 
@@ -341,7 +358,7 @@ engine's Vector3 constructor:
 python .\tests\nested_geometry_checks.py --binary $studio
 ```
 
-Validation covers 15 differential suites and 90 runtime/CLI scenarios, including
+Validation covers 15 differential suites and 94 runtime/CLI scenarios, including
 HTTP against local fixtures, model imports, nested Fiu execution, memory limits,
 worker timeouts, all 199 UI property declarations, UI model import, 200 camera
 projection round trips, layout/autosizing, concurrent SQLite updates, persistence
@@ -369,6 +386,10 @@ neutral-filter and count checks, plus snapshot/no-op rebalance checks. The five
 compared bodies are unchanged; three dependencies return borrowed fixture
 descriptors and a Players service. Membership events, balancing, XML/RBXM imports
 and callback contexts are integration checks, not native C++ lifecycle execution.
+BulkMoveTo checks cover 2,560 batched transforms, callback edits/yields, duplicate
+parts, complete validation before mutation, both event modes and immediate
+raycasts. The 160-part Heartbeat fleet runs in real time and inside Fiu, clones
+its final transforms, saves on shutdown and verifies the save in another process.
 Passing these checks does
 not establish compatibility with
 every Roblox script. Generated diagnostics remain local and are ignored by Git.
