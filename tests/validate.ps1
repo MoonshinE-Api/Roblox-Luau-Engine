@@ -8,7 +8,7 @@ if (-not (Test-Path -LiteralPath $Binary -PathType Leaf)) { throw "Missing suppl
 if ($Build) { & "$ProjectRoot\build.ps1" }
 & python "$ProjectRoot\tests\validation_inputs.py" start
 if ($LASTEXITCODE -ne 0) { throw 'Validation input snapshot failed' }
-foreach ($script in @('oracle.py', 'bootstrap_oracle.py', 'allocator_oracle.py', 'initialization_oracle.py', 'random_oracle.py', 'brickcolor_oracle.py', 'datetime_oracle.py', 'physical_oracle.py', 'region_oracle.py', 'rotation_oracle.py', 'lighting_oracle.py', 'sky_oracle.py', 'player_oracle.py', 'humanoid_oracle.py')) {
+foreach ($script in @('oracle.py', 'bootstrap_oracle.py', 'allocator_oracle.py', 'initialization_oracle.py', 'random_oracle.py', 'brickcolor_oracle.py', 'datetime_oracle.py', 'physical_oracle.py', 'region_oracle.py', 'rotation_oracle.py', 'lighting_oracle.py', 'sky_oracle.py', 'player_oracle.py', 'humanoid_oracle.py', 'team_oracle.py')) {
     & python "$ProjectRoot\tests\$script" --binary $Binary
     if ($LASTEXITCODE -ne 0) { throw "Comparison failed: $script" }
 }
@@ -152,6 +152,18 @@ if ($LASTEXITCODE -ne 0) { throw 'Humanoid peer flags/death/waiter contexts fail
 if ($LASTEXITCODE -ne 0) { throw 'Humanoid/force field model import checks failed' }
 & python "$ProjectRoot\run.py" "$ProjectRoot\examples\damage_arena.luau" --binary $Binary --duration 0.1
 if ($LASTEXITCODE -ne 0) { throw 'Damage/heal/protection/death example failed' }
+foreach ($side in @('server','client')) {
+    & python "$ProjectRoot\run.py" "$ProjectRoot\tests\teams.luau" --binary $Binary --mode $side --duration 0.1
+    if ($LASTEXITCODE -ne 0) { throw "Team membership/assignment checks failed: $side" }
+}
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\teams.luau" --binary $Binary --no-player --duration 0.1
+if ($LASTEXITCODE -ne 0) { throw 'Team joins with an initially empty roster failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\tests\team_contexts" --binary $Binary --mode both --duration 0.15
+if ($LASTEXITCODE -ne 0) { throw 'Team callback server/client contexts failed' }
+& python "$ProjectRoot\tests\team_model_checks.py" --binary $Binary
+if ($LASTEXITCODE -ne 0) { throw 'Team/player model import checks failed' }
+& python "$ProjectRoot\run.py" "$ProjectRoot\examples\team_round.luau" --binary $Binary --duration 0.1
+if ($LASTEXITCODE -ne 0) { throw 'Local team round/damage/save example failed' }
 & python "$ProjectRoot\tests\validation_inputs.py" finish
 if ($LASTEXITCODE -ne 0) { throw 'Validation inputs changed during checks' }
-Write-Host 'All fourteen differential checks and eighty-four runtime/CLI checks passed.'
+Write-Host 'All fifteen differential checks and ninety runtime/CLI checks passed.'

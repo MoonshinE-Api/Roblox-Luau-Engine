@@ -37,6 +37,7 @@ return function(R)
                 -- Native onChildRemoving updates the roster before firing
                 -- PlayerRemoving, while the old Parent is still observable.
                 table.remove(roster,index)
+                if R.playerLeaving then R.playerLeaving(object) end
                 R.fire(players,'PlayerRemoving',object,R.Enum.PlayerExitReason.Unknown)
             end
         end
@@ -46,6 +47,7 @@ return function(R)
         if after then after(object,old,parent) end
         if parent==players and object:IsA('Player') and not R.playerPresent(object) then
             table.insert(roster,object)
+            if R.playerJoining then R.playerJoining(object) end
             R.fire(players,'PlayerAdded',object)
         end
     end

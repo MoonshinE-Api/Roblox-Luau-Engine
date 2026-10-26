@@ -65,6 +65,8 @@ Names are case-sensitive, as in Studio: `Instance.new("Part")`, `Clone`, and
 - Live Players rosters, independent GetPlayers snapshots, UserId/character lookup,
   NumPlayers, joins/removals, typed manual Character assignment, character events,
   and head-based DistanceFromCharacter with float32 arithmetic.
+- Team/Teams rosters, typed TeamColor/Neutral membership, server join balancing,
+  team membership signals, duplicate colors, clones and XML/RBXM properties.
 - Float32 Humanoid Health/MaxHealth, HealthChanged, TakeDamage/healing, ForceField
   protection, per-side state-enable flags, and health-driven Died events during
   simulation. ForceField.Visible supports cloning and XML/RBXM import.
@@ -239,6 +241,31 @@ DistanceFromCharacter uses the direct Head BasePart, returning 0 if it is absent
 python .\run.py .\examples\player_sessions.luau --binary $studio --duration 0.1
 ```
 
+Team membership follows TeamColor and Neutral. Team returns the first matching
+direct child of Teams; duplicate-color teams report the same players from
+GetPlayers. Changing a team's color does not recolor its players. Team accepts a
+Team under the Teams service or nil, and requires the player to be directly under
+Players. Neutral keeps the stored color. GetTeams/GetPlayers return independent
+snapshots; Team:GetPlayers rejects teams outside the service.
+
+Server-side joins choose the first AutoAssignable team with the smallest
+non-neutral roster, matching build 735's initial 10,000-member selection ceiling.
+Changing AutoAssignable does not move existing members. The deprecated
+RebalanceTeams method is empty in the original build and here. Team changes
+emit PlayerRemoved, PlayerAdded and the player's Team property signal; leaving
+players leave the roster before the team's removal event. Callbacks retain their
+server/client context across yields in the shared headless tree.
+
+Team Score and AutoColorCharacters are deprecated stored properties; automatic
+character recoloring is not implemented. XML can explicitly supply these and
+Player UserId/DisplayName, but normal RBXM serialization omits them according to
+reflection metadata. Avatar spawning, spawn pads and real client connections
+remain unimplemented. A combined local team/character/damage/shutdown-save example:
+
+```powershell
+python .\run.py .\examples\team_round.luau --binary $studio --no-player --duration 0.1
+```
+
 Humanoid Health preserves build 735's raw stored value while its getter clamps
 the result to [0, MaxHealth]. Raising MaxHealth can reveal previously stored
 health above the old limit. Raw health writes and MaxHealth changes emit the
@@ -305,8 +332,8 @@ python -m pip install -r .\tools\requirements.txt
 powershell -File .\tests\validate.ps1 -Binary $studio
 ```
 
-The nested-interpreter test executes ten datatype, region, CFrame, BasePart,
-Attachment/Bone, environment, sky, callback, player and humanoid suites through Fiu. It is included in
+The nested-interpreter test executes eleven datatype, region, CFrame, BasePart,
+Attachment/Bone, environment, sky, callback, player, humanoid and team suites through Fiu. It is included in
 the full validation and can also run separately. Its vector constants use the
 engine's Vector3 constructor:
 
@@ -314,7 +341,7 @@ engine's Vector3 constructor:
 python .\tests\nested_geometry_checks.py --binary $studio
 ```
 
-Validation covers 14 differential suites and 84 runtime/CLI scenarios, including
+Validation covers 15 differential suites and 90 runtime/CLI scenarios, including
 HTTP against local fixtures, model imports, nested Fiu execution, memory limits,
 worker timeouts, all 199 UI property declarations, UI model import, 200 camera
 projection round trips, layout/autosizing, concurrent SQLite updates, persistence
@@ -337,6 +364,11 @@ account/domain-ID translation, real joins, or native object ownership.
 Humanoid comparisons cover 1,678 original float32 health views and 1,920 original
 state-flag reads. Damage, force fields, health-driven death, peer isolation and
 model import are integration checks; native rig/state-machine code is not run.
+Team comparisons cover 320 fixture rosters and 8,960 native color lookup,
+neutral-filter and count checks, plus snapshot/no-op rebalance checks. The five
+compared bodies are unchanged; three dependencies return borrowed fixture
+descriptors and a Players service. Membership events, balancing, XML/RBXM imports
+and callback contexts are integration checks, not native C++ lifecycle execution.
 Passing these checks does
 not establish compatibility with
 every Roblox script. Generated diagnostics remain local and are ignored by Git.

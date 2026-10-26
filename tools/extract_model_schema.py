@@ -13,7 +13,7 @@ from vm_runtime import Runtime
 
 CLASSES=['ModuleScript','Script','LocalScript','Folder','Model','Part','Configuration',
     'BoolValue','NumberValue','IntValue','StringValue','ObjectValue','Vector3Value',
-    'CFrameValue','Color3Value','BrickColorValue','Camera','Humanoid','ForceField',
+    'CFrameValue','Color3Value','BrickColorValue','Camera','Humanoid','ForceField','Team','Player',
     'BindableEvent','BindableFunction','RemoteEvent','RemoteFunction','MaterialVariant','WedgePart','CornerWedgePart']
 CLASSES+=['ScreenGui','Frame','CanvasGroup','TextLabel','TextButton','TextBox','ImageLabel','ImageButton',
     'ScrollingFrame','ViewportFrame','UICorner','UIStroke','UIGradient','UIScale','UIPadding',
@@ -57,7 +57,7 @@ return R.jsonEncode(classes)'''.replace('CLASSES',lua_literal(CLASSES))
     classes=ordered
     report={'meaning':'Explicit import class allowlist; property types observed from implemented runtime, not full engine support.',
         'runtime_version':'0.735.19.7351131','classes':classes,
-        'source_sha256':{name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ('engine/instances.luau','engine/services.luau','engine/humanoids.luau','engine/players.luau','engine/callbacks.luau','engine/lifecycle.luau','engine/attachments.luau','engine/environment.luau','engine/sky.luau','engine/ui.luau','engine/ui_layout.luau','engine/camera.luau','data/ui_property_catalog.json','data/environment_property_catalog.json')}}
+        'source_sha256':{name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ('engine/instances.luau','engine/services.luau','engine/humanoids.luau','engine/players.luau','engine/teams.luau','engine/callbacks.luau','engine/lifecycle.luau','engine/attachments.luau','engine/environment.luau','engine/sky.luau','engine/ui.luau','engine/ui_layout.luau','engine/camera.luau','data/ui_property_catalog.json','data/environment_property_catalog.json')}}
     output.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'classes':len(classes),'property_declarations':sum(len(x) for x in classes.values())}))
 

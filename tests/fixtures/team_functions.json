@@ -1,0 +1,42 @@
+{
+  "functions": {
+    "teams_lookup": {
+      "address": "0x104ca0fba",
+      "size": 150,
+      "sha256": "5b5a6dac9a4fd08d7c338f1b11d4b82f21a25b4e3f8a8e3c7728ead2d7990a95",
+      "data_references": []
+    },
+    "teams_from_player": {
+      "address": "0x104ca1050",
+      "size": 30,
+      "sha256": "75eb153e0a1175a28d73bd282718ffc20a186e365798db7e37937b9dc83f857d",
+      "data_references": []
+    },
+    "teams_count": {
+      "address": "0x104ca0ef4",
+      "size": 180,
+      "sha256": "a5bb64edb43274ef8a8d233b981a348fd07458eab8a58e3fab85917743984b13",
+      "data_references": []
+    },
+    "teams_snapshot": {
+      "address": "0x104ca1676",
+      "size": 36,
+      "sha256": "12b583884690472f78ea84b7358a48862cb324b62d1963552ae10fc995482ff1",
+      "data_references": []
+    },
+    "teams_rebalance": {
+      "address": "0x104ca0de2",
+      "size": 6,
+      "sha256": "5a96d1fb661d55552184ea24023ae8190bd1523ae1f855a8d671b07143e8b1df",
+      "data_references": []
+    }
+  },
+  "adapted_dependencies": {
+    "0x10072f0fa": "fixture Player descriptor",
+    "0x100a5c2be": "fixture Team descriptor",
+    "0x1010b1d88": "fixture Players service"
+  },
+  "source": "v8datamodel/Teams.c",
+  "comparison": "Five unchanged bodies; borrowed vectors, class-range descriptors and null reference controllers.",
+  "limits": "Fixture service/descriptor lookup is bridged. No native membership events, network joins, automatic assignment, object construction or ownership destruction executed."
+}
